@@ -218,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* Licensed & Regulated */}
-      <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-y border-mist">
+      <section className="py-16 px-6 md:px-8 lg:px-12 bg-white border-y border-mist">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
             Licensed &amp; Regulated By
