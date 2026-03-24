@@ -7,7 +7,6 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { StatsCounter } from "@/components/sections/StatsCounter";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
-import { PricingTable } from "@/components/sections/PricingTable";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -48,7 +47,7 @@ const homepageFAQs = [
   {
     question: "How much do PRO services cost in Dubai?",
     answer:
-      "ZETUP's PRO retainers start from AED 8,000 per month for companies with 25–40 employees. The exact cost depends on your employee count, transaction volume, and service tier.",
+      "The cost depends on your employee count, transaction volume, and service tier. We provide a detailed written quote before engagement. Visit our pricing page for published starting rates.",
   },
   {
     question: "Do I need PRO services if I have a small company?",
