@@ -243,8 +243,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 md:px-8 lg:px-12 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source
+            src="/videos/web_landscape_video_template%20(1).mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-white/90" />
+        <div className="relative max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
             {t("sections.servicesTitle")}
           </h2>
