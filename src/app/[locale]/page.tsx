@@ -167,12 +167,19 @@ export default function HomePage() {
       />
       <TrustBar />
 
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-6">
-            {t("sections.problemTitle")}
-          </h2>
-          <div className="prose prose-lg max-w-3xl text-slate">
+      <section className="py-24 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-16 items-start">
+          <div className="lg:col-span-2">
+            <div className="inline-block mb-4 px-3 py-1 rounded-full bg-aurora-50 border border-aurora-200">
+              <span className="text-xs font-bold text-aurora-600 uppercase tracking-widest">
+                The Problem
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-fjord-900 leading-tight">
+              {t("sections.problemTitle")}
+            </h2>
+          </div>
+          <div className="lg:col-span-3 space-y-6 text-lg leading-relaxed text-graphite font-body">
             <p>
               Every business owner in Dubai knows the frustration. Your PRO
               company says &ldquo;tomorrow&rdquo; but tomorrow never comes. Your
@@ -182,11 +189,11 @@ export default function HomePage() {
             <p>
               We started ZETUP because we experienced these problems ourselves.
               As a Danish entrepreneur setting up in Dubai, Dennis Kristensen
-              saw firsthand how opaque and unreliable the PRO services market
-              can be. Edina Sultan, with over 17 years of UAE government
-              expertise, knew it could be done better.
+              saw firsthand how opaque the PRO services market can be. Edina
+              Sultan, with over 17 years of UAE government expertise, knew it
+              could be done better.
             </p>
-            <p>
+            <p className="text-fjord-900 font-semibold border-s-4 border-sage-400 ps-6">
               ZETUP is the result: a PRO company built on Scandinavian values of
               transparency, reliability, and straight talk.
             </p>
@@ -203,38 +210,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-8 lg:px-12">
+      <section className="py-24 px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
-            {t("sections.whyTitle")}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-3 py-1 rounded-full bg-sage-50 border border-sage-200">
+              <span className="text-xs font-bold text-sage-600 uppercase tracking-widest">
+                Our Promise
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-fjord-900">
+              {t("sections.whyTitle")}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
+                num: "01",
                 title: "Transparent Pricing",
                 text: "Your quote is your quote. We separate our service fees from government fees on every invoice. No hidden charges, no surprise add-ons.",
               },
               {
+                num: "02",
                 title: "Proactive Communication",
                 text: "Every client gets a dedicated WhatsApp group with real-time status updates. We send renewal reminders 60 days in advance.",
               },
               {
+                num: "03",
                 title: "First-Time Accuracy",
-                text: "Led by Edina Sultan's 17+ years of government expertise, our team knows exactly what every department needs.",
+                text: "Led by Edina Sultan\u2019s 17+ years of government expertise, our team knows exactly what every department needs.",
               },
               {
+                num: "04",
                 title: "No Lock-In Contracts",
                 text: "Our standard agreements include a 30-day termination clause. We earn your business every month through performance.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-8 rounded-xl border border-mist bg-white"
+                className="group relative p-8 rounded-2xl border border-mist bg-white hover:border-sage-200 transition-all duration-300"
               >
-                <h3 className="font-display text-xl font-semibold text-fjord-900 mb-3">
+                <span className="absolute top-6 end-6 font-display text-4xl font-extrabold text-fjord-50 group-hover:text-sage-50 transition-colors">
+                  {item.num}
+                </span>
+                <h3 className="font-display text-lg font-bold text-fjord-900 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-slate leading-relaxed">{item.text}</p>
+                <p className="text-slate leading-relaxed text-sm">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
