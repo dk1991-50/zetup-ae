@@ -317,53 +317,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Video section */}
-      <section className="py-24 px-6 md:px-8 lg:px-12 bg-fjord-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-950" />
-        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-sage-500/5 blur-[60px]" />
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <div className="inline-block mb-4 px-3 py-1 rounded-full border border-white/10 bg-white/5">
-              <span className="text-xs font-bold text-sage-400 uppercase tracking-widest">
-                See ZETUP in Action
-              </span>
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
-              How We Work
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                src: "/videos/web_landscape_video_template%20(1).mp4",
-                label: "Our Approach",
-              },
-              {
-                src: "/videos/web_landscape_video_template%20(2).mp4",
-                label: "Client Experience",
-              },
-              {
-                src: "/videos/web_landscape_video_template%20(3).mp4",
-                label: "Dubai Operations",
-              },
-            ].map((video) => (
-              <div key={video.label} className="group">
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-fjord-900">
-                  <video
-                    className="w-full aspect-video object-cover"
-                    controls
-                    preload="metadata"
-                    playsInline
-                    poster=""
-                  >
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                </div>
-                <p className="mt-3 text-sm font-medium text-slate-400 text-center font-body">
-                  {video.label}
-                </p>
-              </div>
-            ))}
+      {/* Video background CTA */}
+      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source
+            src="/videos/web_landscape_video_template%20(2).mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-fjord-950/80" />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center sm:px-8 lg:px-12">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Your Business Deserves a PRO Partner You Can Trust
+          </h2>
+          <p className="mt-6 text-lg text-slate-300 font-body max-w-xl mx-auto">
+            Join companies across Dubai who switched to transparent, reliable
+            PRO services with Scandinavian values.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/pro-health-check"
+              className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors"
+            >
+              {t("cta.bookHealthCheck")}
+            </Link>
+            <a
+              href={SITE_CONFIG.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+            >
+              {t("cta.whatsapp")}
+            </a>
           </div>
         </div>
       </section>
