@@ -217,7 +217,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
+      {/* Licensed & Regulated */}
+      <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-y border-mist">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
+            Licensed &amp; Regulated By
+          </p>
+          <div className="flex items-center justify-center gap-16">
+            <img
+              src="/images/misc/government_logos/misc_dubai-det-logo.jpg"
+              alt="Dubai DET"
+              className="h-16 w-auto object-contain"
+            />
+            <img
+              src="/images/misc/government_logos/misc_mohre-logo.jpg"
+              alt="MOHRE"
+              className="h-16 w-auto object-contain"
+            />
+            <img
+              src="/images/misc/government_logos/misc_dubai-government-logo.jpg"
+              alt="Dubai Government"
+              className="h-16 w-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
             {t("sections.servicesTitle")}
