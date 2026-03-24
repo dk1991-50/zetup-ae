@@ -123,7 +123,6 @@ const testimonials = [
     author: "Client",
     title: "Operations Director",
     company: "Construction Company, 50+ employees",
-    logo: "/images/misc/customer_logos/misc_logo-customer1.jpg",
   },
   {
     quote:
@@ -131,7 +130,6 @@ const testimonials = [
     author: "Client",
     title: "Managing Director",
     company: "Consultancy, 30+ employees",
-    logo: "/images/misc/customer_logos/misc_avis-logo-customer2.jpg",
   },
   {
     quote:
@@ -139,7 +137,22 @@ const testimonials = [
     author: "Client",
     title: "HR Director",
     company: "Hospitality Company, 70+ employees",
-    logo: "/images/misc/customer_logos/misc_emirates-logo-customer3.jpg",
+  },
+];
+
+const clientLogos = [
+  { src: "/images/misc/customer_logos/misc_logo-customer1.jpg", alt: "Client" },
+  {
+    src: "/images/misc/customer_logos/misc_avis-logo-customer2.jpg",
+    alt: "Avis",
+  },
+  {
+    src: "/images/misc/customer_logos/misc_emirates-logo-customer3.jpg",
+    alt: "Emirates",
+  },
+  {
+    src: "/images/misc/customer_logos/misc_btproperties-logo-customer4.jpg",
+    alt: "BT Properties",
   },
 ];
 
@@ -284,6 +297,25 @@ export default function HomePage() {
             {t("sections.testimonialsTitle")}
           </h2>
           <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
+
+      {/* Client logos */}
+      <section className="py-12 px-6 md:px-8 lg:px-12 border-y border-mist bg-frost">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-stone mb-8">
+            Trusted by companies across Dubai
+          </p>
+          <div className="flex items-center justify-center gap-12 flex-wrap">
+            {clientLogos.map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
