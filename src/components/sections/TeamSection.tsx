@@ -13,14 +13,11 @@ export function TeamSection({ className }: TeamSectionProps) {
           key={member.name}
           className="flex flex-col items-center text-center md:items-start md:text-start"
         >
-          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-fjord-100 text-fjord-700">
-            <span className="font-display text-2xl font-bold">
-              {member.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </span>
-          </div>
+          <img
+            src={member.image}
+            alt={member.name}
+            className="h-24 w-24 rounded-full object-cover"
+          />
           <h3 className="mt-4 font-display text-xl font-bold text-fjord-900">
             {member.name}
           </h3>

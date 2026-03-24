@@ -50,6 +50,13 @@ export default async function LocaleLayout({
       dir={dir}
       className={`${plusJakarta.variable} ${dmSans.variable} ${notoArabic.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="icon"
+          href="/images/misc/logos/zetup_favicon.png"
+          type="image/png"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-snow text-midnight">
         <NextIntlClientProvider messages={messages}>
           <Header />

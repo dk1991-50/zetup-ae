@@ -1,0 +1,44 @@
+ZETUP Image Dimensions Guide
+=============================
+
+HERO BACKGROUNDS (public/images/hero/)
+  - 1920 x 1080px, JPG/WebP, under 200KB
+  - Example: dubai-skyline.jpg, office-interior.jpg
+
+TEAM PHOTOS (public/images/team/)
+  - 800 x 800px, JPG/WebP, square (cropped to circle on site)
+  - Files needed:
+    - dennis-kristensen.jpg
+    - edina-sultan.jpg
+
+BLOG POST HEADERS (public/images/blog/photos/)
+  - 1200 x 400px, JPG/WebP, under 150KB
+  - Name to match slug: e.g. golden-visa-uae-2026.jpg
+
+SERVICE PAGE HEADERS (public/images/services/photos/)
+  - 1200 x 400px, JPG/WebP, under 150KB
+  - Name to match slug: e.g. pro-services.jpg
+
+GUIDE HEADERS (public/images/guides/photos/)
+  - 1200 x 400px, JPG/WebP, under 150KB
+
+OG / SOCIAL SHARE (public/images/og/)
+  - 1200 x 630px, JPG/PNG
+  - default-og already exists as SVG
+
+FAVICON / ICONS (public/images/icons/)
+  - favicon.ico: 32x32
+  - apple-touch-icon.png: 180x180
+  - logo.svg and logo-white.svg already exist
+
+MISC (public/images/misc/)
+  - Anything else: client logos, trust badges, certificates
+
+VIDEOS (public/videos/)
+  - 1920 x 1080px, MP4, under 10MB
+  - Example: office-tour.mp4, testimonial.mp4
+
+COMPRESSION
+  - Use https://squoosh.app or https://tinypng.com
+  - Target: under 200KB per image
+  - Next.js auto-serves AVIF/WebP via next/image

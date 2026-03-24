@@ -123,6 +123,7 @@ const testimonials = [
     author: "Client",
     title: "Operations Director",
     company: "Construction Company, 50+ employees",
+    logo: "/images/misc/customer_logos/misc_logo-customer1.jpg",
   },
   {
     quote:
@@ -130,6 +131,7 @@ const testimonials = [
     author: "Client",
     title: "Managing Director",
     company: "Consultancy, 30+ employees",
+    logo: "/images/misc/customer_logos/misc_avis-logo-customer2.jpg",
   },
   {
     quote:
@@ -137,6 +139,7 @@ const testimonials = [
     author: "Client",
     title: "HR Director",
     company: "Hospitality Company, 70+ employees",
+    logo: "/images/misc/customer_logos/misc_emirates-logo-customer3.jpg",
   },
 ];
 

@@ -6,6 +6,7 @@ interface Testimonial {
   author: string;
   title: string;
   company: string;
+  logo?: string;
 }
 
 interface TestimonialsCarouselProps {
@@ -30,13 +31,22 @@ export function TestimonialsCarousel({
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="mt-6 border-t border-mist pt-4">
-                  <p className="font-display text-sm font-semibold text-fjord-900">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-xs text-slate-500 font-body">
-                    {testimonial.title}, {testimonial.company}
-                  </p>
+                <div className="mt-6 border-t border-mist pt-4 flex items-center gap-3">
+                  {testimonial.logo && (
+                    <img
+                      src={testimonial.logo}
+                      alt={testimonial.company}
+                      className="h-8 w-8 rounded object-contain shrink-0"
+                    />
+                  )}
+                  <div>
+                    <p className="font-display text-sm font-semibold text-fjord-900">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-xs text-slate-500 font-body">
+                      {testimonial.title}, {testimonial.company}
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

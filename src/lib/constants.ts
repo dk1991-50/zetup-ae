@@ -20,13 +20,13 @@ export const SITE_CONFIG = {
       name: "Dennis Kristensen",
       role: "Co-Founder",
       origin: "Denmark",
-      image: "/images/team/dennis-kristensen.jpg",
+      image: "/images/team/zetup_dennis.jpg",
     },
     edina: {
       name: "Edina Sultan",
       role: "Co-Founder",
       experience: "17+ years UAE government expertise",
-      image: "/images/team/edina-sultan.jpg",
+      image: "/images/team/zetup_edina.jpg",
     },
   },
 } as const;
@@ -250,13 +250,13 @@ export const TEAM = [
     name: "Dennis Kristensen",
     role: "Co-Founder",
     bio: "Originally from Denmark, Dennis moved to Dubai to build businesses and saw firsthand how opaque the PRO services market can be. He leads business development, client relationships, and growth strategy.",
-    image: "/images/team/dennis-kristensen.jpg",
+    image: "/images/team/zetup_dennis.jpg",
   },
   {
     name: "Edina Sultan",
     role: "Co-Founder",
     bio: "Edina brings over 17 years of hands-on experience with UAE government processes. She leads operations, quality control, and government relations.",
-    image: "/images/team/edina-sultan.jpg",
+    image: "/images/team/zetup_edina.jpg",
   },
 ] as const;
 
@@ -267,8 +267,8 @@ export const ORGANIZATION_SCHEMA = {
   name: SITE_CONFIG.name,
   alternateName: "ZETUP",
   url: SITE_CONFIG.url,
-  logo: `${SITE_CONFIG.url}/images/icons/logo.svg`,
-  image: `${SITE_CONFIG.url}/images/og/default-og.jpg`,
+  logo: `${SITE_CONFIG.url}/images/misc/logos/zetup_pro_logo_wordmark_color.png`,
+  image: `${SITE_CONFIG.url}/images/og/Web_Social_share_templates%20(1).jpg`,
   description:
     "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai with Scandinavian values.",
   telephone: "+97143234578",

@@ -9,6 +9,18 @@ const trustItems = [
   { icon: Building2, labelKey: "trustBar.licensed" },
 ] as const;
 
+const governmentLogos = [
+  {
+    src: "/images/misc/government_logos/misc_dubai-det-logo.jpg",
+    alt: "Dubai DET",
+  },
+  { src: "/images/misc/government_logos/misc_mohre-logo.jpg", alt: "MOHRE" },
+  {
+    src: "/images/misc/government_logos/misc_dubai-government-logo.jpg",
+    alt: "Dubai Government",
+  },
+] as const;
+
 interface TrustBarProps {
   className?: string;
 }
@@ -38,6 +50,21 @@ export function TrustBar({ className }: TrustBarProps) {
             </div>
           );
         })}
+      </div>
+
+      {/* Government logos */}
+      <div className="mx-auto mt-6 flex max-w-7xl items-center justify-center gap-x-10 gap-y-4 px-6 sm:px-8 lg:px-12 flex-wrap border-t border-mist pt-6">
+        <span className="text-xs font-medium uppercase tracking-wider text-slate-400 font-display">
+          Licensed &amp; regulated by
+        </span>
+        {governmentLogos.map((logo) => (
+          <img
+            key={logo.alt}
+            src={logo.src}
+            alt={logo.alt}
+            className="h-10 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+          />
+        ))}
       </div>
     </section>
   );

@@ -11,7 +11,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "ZETUP Corporate Services",
-    images: [{ url: "/images/og/default-og.svg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/images/og/Web_Social_share_templates%20(1).jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

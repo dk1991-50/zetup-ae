@@ -906,6 +906,21 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   },
 };
 
+const SERVICE_HEADER_IMAGES: Record<string, string> = {
+  "pro-services":
+    "/images/services/photos/services_photos_pro-services.jpg.jpg",
+  "company-formation":
+    "/images/services/photos/services_photos_company-formation.jpg",
+  "visa-services": "/images/services/photos/services_photos_visa-services.jpg",
+  emiratisation: "/images/services/photos/services_photos_emiratisation.jpg",
+  "trade-license-renewal":
+    "/images/services/photos/services_photos_trade-license-renewal.jpg",
+  "corporate-tax": "/images/services/photos/services_photos_corporate-tax.jpg",
+  "document-clearing":
+    "/images/services/photos/services_photos_document-clearing.jpg",
+  "golden-visa": "/images/services/photos/services_photos_golden-visa.jpg",
+};
+
 const SERVICE_TITLES: Record<string, string> = {
   "pro-services": "PRO Services",
   "company-formation": "Company Formation",
@@ -987,6 +1002,13 @@ export default async function ServicePage({
       {/* Hero / H1 */}
       <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
+          {SERVICE_HEADER_IMAGES[slug] && (
+            <img
+              src={SERVICE_HEADER_IMAGES[slug]}
+              alt={SERVICE_TITLES[slug] || slug}
+              className="mb-10 h-64 w-full rounded-2xl object-cover"
+            />
+          )}
           <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-8">
             {service.h1}
           </h1>
