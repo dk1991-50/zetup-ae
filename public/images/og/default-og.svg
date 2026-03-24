@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#081B2E"/>
+      <stop offset="50%" style="stop-color:#0F2B46"/>
+      <stop offset="100%" style="stop-color:#0A2A4A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2E9B87;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#2E9B87;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#2E9B87;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="30%" cy="40%" r="40%">
+      <stop offset="0%" style="stop-color:#2E9B87;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#2E9B87;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="60%" r="35%">
+      <stop offset="0%" style="stop-color:#D4793E;stop-opacity:0.06"/>
+      <stop offset="100%" style="stop-color:#D4793E;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1" transform="translate(60,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1" transform="translate(120,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1" transform="translate(180,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1" transform="translate(240,0)"/>
+    <line x1="0" y1="0" x2="0" y2="630" stroke="white" stroke-width="1" transform="translate(300,0)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="1" transform="translate(0,60)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="1" transform="translate(0,120)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="1" transform="translate(0,180)"/>
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="white" stroke-width="1" transform="translate(0,240)"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(80, 180)">
+    <rect x="0" y="0" width="56" height="56" rx="12" fill="#0F2B46" stroke="#2E9B87" stroke-width="1.5" stroke-opacity="0.3"/>
+    <path d="M14 18L28 18L20 32H32" stroke="#47B5A0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 38L32 38L24 24" stroke="#47B5A0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  </g>
+
+  <!-- ZETUP text -->
+  <text x="152" y="225" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif" font-weight="800" font-size="42" fill="white" letter-spacing="2">ZETUP</text>
+
+  <!-- Tagline -->
+  <text x="80" y="300" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif" font-weight="700" font-size="48" fill="white">
+    <tspan x="80" dy="0">Transparent PRO Services</tspan>
+    <tspan x="80" dy="60">for Dubai Companies</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="80" y="420" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif" font-weight="400" font-size="22" fill="#94A3B8">
+    <tspan>Company Formation  |  Visa Processing  |  Emiratisation</tspan>
+  </text>
+
+  <!-- Sage accent bar -->
+  <rect x="80" y="270" width="60" height="3" rx="1.5" fill="#2E9B87"/>
+
+  <!-- Bottom info bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="#081B2E" fill-opacity="0.6"/>
+  <text x="80" y="602" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif" font-weight="500" font-size="18" fill="#64748B">zetup.ae</text>
+  <text x="1120" y="602" font-family="system-ui, -apple-system, Helvetica, Arial, sans-serif" font-weight="500" font-size="18" fill="#2E9B87" text-anchor="end">Scandinavian Transparency in Dubai</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="627" width="1200" height="3" fill="url(#accent)"/>
+</svg>

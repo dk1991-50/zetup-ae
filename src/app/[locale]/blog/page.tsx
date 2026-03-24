@@ -217,7 +217,13 @@ export default async function BlogPage({
                 href={`/blog/${post.slug}`}
                 className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow overflow-hidden"
               >
-                <div className="h-48 bg-gradient-to-br from-fjord-100 to-fjord-200" />
+                <div className="h-48 relative overflow-hidden">
+                  <img
+                    src={`/images/blog/${post.slug}.svg`}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="flex flex-wrap gap-2 mb-3">
                     {post.tags.map((tag) => (

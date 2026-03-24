@@ -13,11 +13,12 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Col 1: Brand */}
           <div className="space-y-4">
-            <Link
-              href="/"
-              className="font-display text-2xl font-extrabold tracking-tight"
-            >
-              ZETUP
+            <Link href="/" className="inline-block">
+              <img
+                src="/images/icons/logo.png"
+                alt="ZETUP"
+                className="h-8 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-slate-300 font-body">
               {t("footer.description")}

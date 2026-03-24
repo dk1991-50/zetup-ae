@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#081B2E"/>
+      <stop offset="50%" style="stop-color:#0F2B46"/>
+      <stop offset="100%" style="stop-color:#0A2A4A"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" style="stop-color:#F7B96A;stop-opacity:0.18"/>
+      <stop offset="50%" style="stop-color:#D4793E;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#D4793E;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="400" fill="url(#orb)"/>
+  <!-- Diamond pattern -->
+  <g opacity="0.04">
+    <polygon points="600,40 640,80 600,120 560,80" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="600,40 680,120 600,200 520,120" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="600,40 720,160 600,280 480,160" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="600,40 760,200 600,360 440,200" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="300,200 340,240 300,280 260,240" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="300,200 380,280 300,360 220,280" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="900,100 940,140 900,180 860,140" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="900,100 980,180 900,260 820,180" stroke="white" stroke-width="1" fill="none"/>
+    <polygon points="900,100 1020,220 900,340 780,220" stroke="white" stroke-width="1" fill="none"/>
+  </g>
+  <rect x="80" y="240" width="50" height="3" rx="1.5" fill="#F7B96A"/>
+  <text x="80" y="220" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="56" fill="white">Golden Visa</text>
+  <text x="80" y="290" font-family="system-ui,-apple-system,sans-serif" font-weight="400" font-size="20" fill="#94A3B8">ZETUP Corporate Services</text>
+  <rect x="0" y="0" width="1200" height="2" fill="#F7B96A" opacity="0.3"/>
+  <rect x="0" y="398" width="1200" height="2" fill="#F7B96A" opacity="0.3"/>
+</svg>

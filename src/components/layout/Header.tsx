@@ -60,11 +60,12 @@ export function Header() {
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-xl font-extrabold tracking-tight text-fjord-900"
-          >
-            ZETUP
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/icons/logo.png"
+              alt="ZETUP"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
