@@ -15,9 +15,9 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/images/icons/logo.png"
-                alt="ZETUP"
-                className="h-8 w-auto brightness-0 invert"
+                src="/images/icons/logo-white.svg"
+                alt="ZETUP Corporate Services"
+                className="h-9 w-auto"
               />
             </Link>
             <p className="text-sm leading-relaxed text-slate-300 font-body">

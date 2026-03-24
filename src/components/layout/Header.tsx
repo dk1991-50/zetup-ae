@@ -62,9 +62,9 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/images/icons/logo.png"
-              alt="ZETUP"
-              className="h-8 w-auto"
+              src="/images/icons/logo.svg"
+              alt="ZETUP Corporate Services"
+              className="h-9 w-auto"
             />
           </Link>
 
