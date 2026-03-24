@@ -378,18 +378,18 @@ export default function HomePage() {
       </section>
 
       {/* Client logos */}
-      <section className="py-12 px-6 md:px-8 lg:px-12 border-y border-mist bg-frost">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-stone mb-8">
-            Trusted by companies across Dubai
+      <section className="py-16 px-6 md:px-8 lg:px-12 bg-white border-y border-mist">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
+            Trusted By Companies Across Dubai
           </p>
-          <div className="flex items-center justify-center gap-12 flex-wrap">
+          <div className="flex items-center justify-center gap-16">
             {clientLogos.map((logo) => (
               <img
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="h-16 w-auto object-contain"
               />
             ))}
           </div>
