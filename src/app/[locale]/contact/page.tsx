@@ -32,16 +32,17 @@ export async function generateMetadata({
 
 async function handleContactForm(formData: FormData) {
   "use server";
-  const data = {
-    name: formData.get("name"),
-    company: formData.get("company"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-    employees: formData.get("employees"),
-    service: formData.get("service"),
-    message: formData.get("message"),
-  };
-  console.log("Contact form submission:", data);
+  const { supabase } = await import("@/lib/supabase");
+  await supabase.from("contact_submissions").insert({
+    form_type: "contact",
+    full_name: formData.get("name") as string,
+    company_name: formData.get("company") as string,
+    email: formData.get("email") as string,
+    phone: formData.get("phone") as string,
+    employee_count: formData.get("employees") as string,
+    service_interest: formData.get("service") as string,
+    message: formData.get("message") as string,
+  });
 }
 
 export default async function ContactPage({

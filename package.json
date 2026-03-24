@@ -12,6 +12,7 @@
     "@content-collections/core": "^0.14.3",
     "@content-collections/mdx": "^0.2.2",
     "@content-collections/next": "^0.2.11",
+    "@supabase/supabase-js": "^2.100.0",
     "clsx": "^2.1.1",
     "feed": "^5.2.0",
     "lucide-react": "^1.0.1",

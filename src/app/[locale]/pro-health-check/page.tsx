@@ -65,17 +65,18 @@ const healthCheckFAQs = [
 
 async function handleHealthCheckForm(formData: FormData) {
   "use server";
-  const data = {
-    name: formData.get("name"),
-    company: formData.get("company"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-    employees: formData.get("employees"),
-    currentProvider: formData.get("currentProvider"),
-    painPoint: formData.get("painPoint"),
-    preferredTime: formData.get("preferredTime"),
-  };
-  console.log("PRO Health Check form submission:", data);
+  const { supabase } = await import("@/lib/supabase");
+  await supabase.from("contact_submissions").insert({
+    form_type: "pro-health-check",
+    full_name: formData.get("name") as string,
+    company_name: formData.get("company") as string,
+    email: formData.get("email") as string,
+    phone: formData.get("phone") as string,
+    employee_count: formData.get("employees") as string,
+    current_provider: formData.get("currentProvider") as string,
+    pain_point: formData.get("painPoint") as string,
+    preferred_time: formData.get("preferredTime") as string,
+  });
 }
 
 export default async function ProHealthCheckPage({
