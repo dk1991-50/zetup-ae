@@ -149,14 +149,12 @@ export function Header() {
             </button>
 
             {/* CTA */}
-            <Button
-              variant="whatsapp"
-              size="sm"
-              asChild
-              className="hidden sm:inline-flex"
+            <Link
+              href="/pro-health-check"
+              className="hidden sm:inline-flex px-4 py-2 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors"
             >
-              <Link href="/pro-health-check">{t("nav.cta")}</Link>
-            </Button>
+              {t("nav.proHealthCheck")}
+            </Link>
 
             {/* Mobile hamburger */}
             <button

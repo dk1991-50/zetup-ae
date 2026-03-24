@@ -19,7 +19,7 @@ export function FAQSection({ items, className }: FAQSectionProps) {
     <section className={cn("py-20", className)}>
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-10 text-center font-display text-3xl font-bold text-fjord-900 md:text-4xl">
-          {t("faq.title")}
+          {t("sections.faqTitle")}
         </h2>
         <Accordion>
           {items.map((item, index) => (

@@ -133,7 +133,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
           <div className="border-t border-mist p-4 space-y-3">
             <Button variant="whatsapp" size="md" asChild className="w-full">
               <Link href="/pro-health-check" onClick={onClose}>
-                {t("nav.cta")}
+                {t("nav.proHealthCheck")}
               </Link>
             </Button>
 

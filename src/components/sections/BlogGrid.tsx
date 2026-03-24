@@ -47,7 +47,7 @@ export function BlogGrid({ posts, className }: BlogGridProps) {
                     {post.excerpt}
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-sage-600 transition-colors group-hover:text-sage-700 font-display">
-                    {t("common.readMore")}
+                    {t("blog.readMore")}
                     <ArrowRight
                       size={14}
                       strokeWidth={1.5}

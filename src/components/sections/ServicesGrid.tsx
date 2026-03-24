@@ -2,13 +2,13 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import {
   Building2,
-  Landmark,
-  Globe,
   FileText,
   Plane,
+  Users,
   RefreshCw,
-  ShieldCheck,
-  HeartPulse,
+  Calculator,
+  Stamp,
+  Award,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
@@ -18,13 +18,13 @@ import { SERVICES } from "@/lib/constants";
 
 const iconMap: Record<string, LucideIcon> = {
   Building2,
-  Landmark,
-  Globe,
   FileText,
   Plane,
+  Users,
   RefreshCw,
-  ShieldCheck,
-  HeartPulse,
+  Calculator,
+  Stamp,
+  Award,
 };
 
 interface ServicesGridProps {
@@ -41,7 +41,11 @@ export function ServicesGrid({ className }: ServicesGridProps) {
           {SERVICES.map((service) => {
             const Icon = iconMap[service.icon];
             return (
-              <Link key={`/services/${service.slug}`} href={`/services/${service.slug}`} className="group">
+              <Link
+                key={`/services/${service.slug}`}
+                href={`/services/${service.slug}`}
+                className="group"
+              >
                 <Card className="h-full transition-all duration-200 group-hover:border-sage-300 group-hover:shadow-md">
                   <CardHeader>
                     {Icon && (
@@ -50,7 +54,7 @@ export function ServicesGrid({ className }: ServicesGridProps) {
                       </div>
                     )}
                     <h3 className="mt-2 font-display text-base font-semibold text-fjord-900">
-                      {t(service.titleKey)}
+                      {t(`services.${service.titleKey}`)}
                     </h3>
                   </CardHeader>
                   <CardContent>
@@ -58,7 +62,7 @@ export function ServicesGrid({ className }: ServicesGridProps) {
                       {service.description}
                     </p>
                     <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sage-600 transition-colors group-hover:text-sage-700 font-display">
-                      {t("common.learnMore")}
+                      {t("cta.learnMore")}
                       <ArrowRight
                         size={14}
                         strokeWidth={1.5}
