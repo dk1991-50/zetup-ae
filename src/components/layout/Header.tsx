@@ -108,7 +108,7 @@ export function Header() {
                               href={child.href}
                               className="block rounded-lg px-3 py-2 text-sm font-body text-fjord-700 transition-colors hover:bg-frost hover:text-fjord-900"
                             >
-                              {child.labelKey}
+                              {child.label}
                             </Link>
                           ))}
                         </div>

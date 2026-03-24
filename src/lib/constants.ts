@@ -169,12 +169,23 @@ export const COMPANY = {
   social: SITE_CONFIG.social,
 } as const;
 
+const SERVICE_LABELS: Record<string, string> = {
+  proServices: "PRO Services",
+  companyFormation: "Company Formation",
+  visaServices: "Visa Processing",
+  emiratisation: "Emiratisation",
+  tradeLicense: "Trade License Renewal",
+  corporateTax: "Corporate Tax",
+  documentClearing: "Document Clearing",
+  goldenVisa: "Golden Visa",
+};
+
 export const NAV_ITEMS = [
   {
     labelKey: "nav.services",
     href: "/services",
     children: SERVICES.map((s) => ({
-      labelKey: `services.${s.titleKey}`,
+      label: SERVICE_LABELS[s.titleKey] || s.titleKey,
       href: `/services/${s.slug}`,
     })),
   },
@@ -183,26 +194,20 @@ export const NAV_ITEMS = [
     href: "/guides",
     children: [
       {
-        labelKey: "PRO Services Guide",
+        label: "PRO Services Guide",
         href: "/guides/pro-services-dubai-complete-guide",
       },
       {
-        labelKey: "Company Formation Guide",
+        label: "Company Formation Guide",
         href: "/guides/dubai-mainland-company-formation",
       },
+      { label: "Free Zone vs Mainland", href: "/guides/free-zone-vs-mainland" },
+      { label: "Visa Processing Guide", href: "/guides/uae-visa-processing" },
       {
-        labelKey: "Free Zone vs Mainland",
-        href: "/guides/free-zone-vs-mainland",
-      },
-      {
-        labelKey: "Visa Processing Guide",
-        href: "/guides/uae-visa-processing",
-      },
-      {
-        labelKey: "Emiratisation Guide",
+        label: "Emiratisation Guide",
         href: "/guides/emiratisation-compliance-2026",
       },
-      { labelKey: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
+      { label: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
     ],
   },
   { labelKey: "nav.pricing", href: "/pricing" },
