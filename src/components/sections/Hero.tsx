@@ -39,7 +39,7 @@ export function Hero({
 
       {/* Gradient orbs for depth */}
       <div className="absolute top-1/4 end-1/4 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 start-1/3 h-[400px] w-[400px] rounded-full bg-aurora-500/8 blur-[100px]" />
+      <div className="absolute bottom-0 start-1/3 h-[400px] w-[400px] rounded-full bg-aurora-500/10 blur-[80px]" />
 
       {/* Noise texture overlay */}
       <div
@@ -61,12 +61,15 @@ export function Hero({
           </div>
 
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            {title.split(".").map((part, i) => (
-              <span key={i}>
-                {i > 0 && <span className="text-sage-400">.</span>}
-                {part}
-              </span>
-            ))}
+            {title
+              .split(".")
+              .filter(Boolean)
+              .map((part, i) => (
+                <span key={i}>
+                  {i > 0 && <span className="text-sage-400">.</span>}
+                  {part}
+                </span>
+              ))}
           </h1>
 
           {subtitle && (

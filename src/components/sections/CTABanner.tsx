@@ -22,7 +22,7 @@ export function CTABanner({
     >
       {/* Background depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
-      <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-sage-500/5 blur-[100px]" />
+      <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-sage-500/5 blur-[60px]" />
 
       {/* Top/bottom accent lines */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />

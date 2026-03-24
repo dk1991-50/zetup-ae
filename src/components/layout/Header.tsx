@@ -151,7 +151,7 @@ export function Header() {
             {/* CTA */}
             <Link
               href="/pro-health-check"
-              className="hidden sm:inline-flex px-4 py-2 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 transition-colors"
+              className="hidden sm:inline-flex px-4 py-2 bg-sage-500 text-white text-sm font-semibold rounded-lg hover:bg-sage-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 transition-colors"
             >
               {t("nav.proHealthCheck")}
             </Link>

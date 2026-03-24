@@ -29,7 +29,9 @@
     "testimonialsTitle": "What Our Clients Say",
     "ctaTitle": "Stop Overpaying for Unreliable PRO Services",
     "blogTitle": "Latest from the Blog",
-    "faqTitle": "Frequently Asked Questions"
+    "faqTitle": "Frequently Asked Questions",
+    "problemLabel": "The Problem",
+    "promiseLabel": "Our Promise"
   },
   "services": {
     "proServices": "PRO Services",
@@ -66,12 +68,11 @@
     "services": "Services",
     "resources": "Resources",
     "contact": "Contact",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
     "copyright": "\u00a9 2026 ZETUP Corporate Services. All rights reserved.",
     "blog": "Blog",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "allRightsReserved": "All rights reserved."
   },
   "form": {
     "fullName": "Full Name",

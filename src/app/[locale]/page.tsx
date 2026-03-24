@@ -172,7 +172,7 @@ export default function HomePage() {
           <div className="lg:col-span-2">
             <div className="inline-block mb-4 px-3 py-1 rounded-full bg-aurora-50 border border-aurora-200">
               <span className="text-xs font-bold text-aurora-600 uppercase tracking-widest">
-                The Problem
+                {t("sections.problemLabel")}
               </span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-fjord-900 leading-tight">
@@ -215,7 +215,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <div className="inline-block mb-4 px-3 py-1 rounded-full bg-sage-50 border border-sage-200">
               <span className="text-xs font-bold text-sage-600 uppercase tracking-widest">
-                Our Promise
+                {t("sections.promiseLabel")}
               </span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-fjord-900">

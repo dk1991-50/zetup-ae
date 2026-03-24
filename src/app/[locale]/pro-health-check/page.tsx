@@ -65,18 +65,23 @@ const healthCheckFAQs = [
 
 async function handleHealthCheckForm(formData: FormData) {
   "use server";
+  const { redirect } = await import("next/navigation");
   const { supabase } = await import("@/lib/supabase");
-  await supabase.from("contact_submissions").insert({
+  const { error } = await supabase.from("contact_submissions").insert({
     form_type: "pro-health-check",
-    full_name: formData.get("name") as string,
-    company_name: formData.get("company") as string,
-    email: formData.get("email") as string,
-    phone: formData.get("phone") as string,
-    employee_count: formData.get("employees") as string,
-    current_provider: formData.get("currentProvider") as string,
-    pain_point: formData.get("painPoint") as string,
-    preferred_time: formData.get("preferredTime") as string,
+    full_name: formData.get("name")?.toString() ?? "",
+    company_name: formData.get("company")?.toString() ?? "",
+    email: formData.get("email")?.toString() ?? "",
+    phone: formData.get("phone")?.toString() ?? "",
+    employee_count: formData.get("employees")?.toString() || null,
+    current_provider: formData.get("currentProvider")?.toString() || null,
+    pain_point: formData.get("painPoint")?.toString() || null,
+    preferred_time: formData.get("preferredTime")?.toString() || null,
   });
+  if (error) {
+    throw new Error("Failed to submit form. Please try again.");
+  }
+  redirect("/en/pro-health-check?success=true");
 }
 
 export default async function ProHealthCheckPage({
