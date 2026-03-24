@@ -320,15 +320,15 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group relative p-8 rounded-2xl border border-mist bg-white hover:border-sage-200 transition-all duration-300"
+                className="group relative p-8 rounded-2xl border border-mist bg-white shadow-md shadow-fjord-900/5 hover:border-sage-300 hover:shadow-2xl hover:shadow-sage-500/15 hover:-translate-y-2 transition-all duration-300"
               >
-                <span className="absolute top-6 end-6 font-display text-4xl font-extrabold text-fjord-50 group-hover:text-sage-50 transition-colors">
+                <span className="absolute top-5 end-6 font-display text-6xl font-extrabold text-fjord-100 group-hover:text-sage-200 transition-colors duration-300">
                   {item.num}
                 </span>
-                <h3 className="font-display text-lg font-bold text-fjord-900 mb-3">
+                <h3 className="relative font-display text-lg font-bold text-fjord-900 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-slate leading-relaxed text-sm">
+                <p className="relative text-slate leading-relaxed text-sm">
                   {item.text}
                 </p>
               </div>
