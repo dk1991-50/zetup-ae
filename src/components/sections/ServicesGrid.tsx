@@ -62,15 +62,15 @@ export function ServicesGrid({ className }: ServicesGridProps) {
               {service.description}
             </p>
 
-            <div className="flex items-center justify-between border-t border-mist pt-4">
-              <span className="text-xs font-semibold text-aurora-600 font-body">
-                {service.price}
+            <div className="flex items-center justify-end border-t border-mist pt-4">
+              <span className="text-xs font-semibold text-sage-600 font-body flex items-center gap-1">
+                {t("cta.learnMore")}
+                <ArrowRight
+                  size={14}
+                  strokeWidth={2}
+                  className="transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
+                />
               </span>
-              <ArrowRight
-                size={14}
-                strokeWidth={2}
-                className="text-sage-400 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
-              />
             </div>
           </Link>
         );

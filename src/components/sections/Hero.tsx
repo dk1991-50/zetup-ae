@@ -56,10 +56,13 @@ export function Hero({
             {title
               .split(".")
               .filter(Boolean)
-              .map((part, i) => (
+              .map((part, i, arr) => (
                 <span key={i}>
                   {i > 0 && <span className="text-sage-400">.</span>}
                   {part}
+                  {i === arr.length - 1 && title.endsWith(".") && (
+                    <span className="text-sage-400">.</span>
+                  )}
                 </span>
               ))}
           </h1>
