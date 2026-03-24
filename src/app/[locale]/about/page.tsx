@@ -39,11 +39,23 @@ export default async function AboutPage({
 
   return (
     <>
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-8">
+      {/* Hero with background image */}
+      <section className="relative h-[50vh] min-h-[350px] flex items-end overflow-hidden">
+        <img
+          src="/images/hero/zetup_hero2.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-fjord-950/90 via-fjord-950/50 to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-12 md:px-8 lg:px-12">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
             Scandinavian Values. Dubai Expertise.
           </h1>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 md:px-8 lg:px-12">
+        <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg text-slate max-w-none">
             <p>
               ZETUP Corporate Services was founded on a simple observation: the

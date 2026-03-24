@@ -7,6 +7,7 @@ interface HeroProps {
   primaryCta?: ReactNode;
   secondaryCta?: ReactNode;
   trustBadges?: ReactNode;
+  backgroundImage?: string;
   className?: string;
 }
 
@@ -16,6 +17,7 @@ export function Hero({
   primaryCta,
   secondaryCta,
   trustBadges,
+  backgroundImage = "/images/hero/zetup_hero1.jpg",
   className,
 }: HeroProps) {
   return (
@@ -25,29 +27,19 @@ export function Hero({
         className,
       )}
     >
-      {/* Layered background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-950" />
-
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
+      {/* Background photo */}
+      <img
+        src={backgroundImage}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
       />
+
+      {/* Dark overlay on photo */}
+      <div className="absolute inset-0 bg-fjord-950/75" />
 
       {/* Gradient orbs for depth */}
       <div className="absolute top-1/4 end-1/4 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[120px]" />
       <div className="absolute bottom-0 start-1/3 h-[400px] w-[400px] rounded-full bg-aurora-500/10 blur-[80px]" />
-
-      {/* Noise texture overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-        }}
-      />
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 sm:px-8 lg:px-12">

@@ -60,13 +60,24 @@ export default async function ContactPage({
 
   return (
     <>
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-6">
+      <section className="relative h-[40vh] min-h-[300px] flex items-end overflow-hidden">
+        <img
+          src="/images/hero/zetup_hero3.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-fjord-950/90 via-fjord-950/50 to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 md:px-8 lg:px-12">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
             {locale === "ar"
               ? "دعنا نتحدث عن عملك"
-              : "Let's Talk About Your Business"}
+              : "Let\u2019s Talk About Your Business"}
           </h1>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
           <p className="text-xl text-slate max-w-2xl mb-16">
             {locale === "ar"
               ? "سواء كنت تبحث عن شريك PRO جديد أو تأسيس شركة في دبي أو تحتاج معالجة تأشيرات عاجلة — نحن هنا ونرد بسرعة."
