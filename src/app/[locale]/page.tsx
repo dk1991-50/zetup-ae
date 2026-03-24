@@ -221,7 +221,7 @@ export default function HomePage() {
       <section className="py-16 px-6 md:px-8 lg:px-12 bg-white border-y border-mist">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
-            Licensed &amp; Regulated By
+            We Work With
           </p>
           <div className="flex items-center justify-center gap-16">
             <img
