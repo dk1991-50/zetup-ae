@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "services": "Services",
+    "guides": "Guides",
+    "pricing": "Pricing",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "proHealthCheck": "Free PRO Check",
+    "switchLocale": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  "hero": {
+    "title": "Your Business Runs Dubai. We Run the Paperwork.",
+    "subtitle": "ZETUP handles PRO services, visa processing, company formation, and Emiratisation compliance for Dubai mainland companies \u2014 with Scandinavian transparency and zero hidden fees.",
+    "ctaPrimary": "Get a Free PRO Health Check",
+    "ctaSecondary": "View Our Pricing"
+  },
+  "trustBar": {
+    "experience": "17+ Years UAE Experience",
+    "location": "Business Bay, Dubai",
+    "pricing": "Transparent Pricing \u2014 No Hidden Fees",
+    "licensed": "Licensed & Government-Approved"
+  },
+  "sections": {
+    "problemTitle": "Running a Business in Dubai Shouldn\u2019t Mean Fighting Bureaucracy",
+    "servicesTitle": "Everything Your Dubai Company Needs \u2014 One Partner",
+    "whyTitle": "Built Different \u2014 The ZETUP Promise",
+    "processTitle": "How It Works \u2014 From First Call to Full Service",
+    "testimonialsTitle": "What Our Clients Say",
+    "ctaTitle": "Stop Overpaying for Unreliable PRO Services",
+    "blogTitle": "Latest from the Blog",
+    "faqTitle": "Frequently Asked Questions"
+  },
+  "services": {
+    "proServices": "PRO Services",
+    "companyFormation": "Company Formation",
+    "visaServices": "Visa Processing",
+    "emiratisation": "Emiratisation Compliance",
+    "tradeLicense": "Trade License Renewal",
+    "corporateTax": "Corporate Tax Services",
+    "documentClearing": "Document Clearing",
+    "goldenVisa": "Golden Visa Services"
+  },
+  "pricing": {
+    "essentials": "Essentials",
+    "professional": "Professional",
+    "enterprise": "Enterprise",
+    "fromAed": "From AED",
+    "perMonth": "/month",
+    "popular": "POPULAR",
+    "includes": "Includes",
+    "additionalTransactions": "Additional transactions",
+    "each": "each"
+  },
+  "cta": {
+    "bookHealthCheck": "Book Your Free PRO Health Check",
+    "viewPricing": "View Our Pricing",
+    "contactUs": "Contact Us",
+    "whatsapp": "Message Us on WhatsApp",
+    "learnMore": "Learn More",
+    "sendMessage": "Send Message",
+    "getQuote": "Get a Quote"
+  },
+  "footer": {
+    "description": "ZETUP Corporate Services provides transparent PRO services, company formation, visa processing, and Emiratisation compliance in Dubai.",
+    "services": "Services",
+    "resources": "Resources",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "\u00a9 2026 ZETUP Corporate Services. All rights reserved."
+  },
+  "form": {
+    "fullName": "Full Name",
+    "companyName": "Company Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "employees": "Number of Employees",
+    "serviceInterest": "Service Interest",
+    "message": "Message",
+    "painPoint": "Biggest Pain Point",
+    "preferredTime": "Preferred Time",
+    "submit": "Submit",
+    "required": "Required"
+  },
+  "blog": {
+    "readMore": "Read More",
+    "minRead": "min read",
+    "publishedOn": "Published on",
+    "relatedPosts": "Related Posts",
+    "backToBlog": "Back to Blog"
+  },
+  "common": {
+    "step": "Step",
+    "faq": "FAQ",
+    "quickAnswer": "QUICK ANSWER",
+    "lastUpdated": "Last Updated",
+    "tableOfContents": "Table of Contents",
+    "readingTime": "Reading Time",
+    "shareArticle": "Share this article"
+  }
+}

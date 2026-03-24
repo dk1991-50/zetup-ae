@@ -1,0 +1,297 @@
+import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/routing";
+import { Hero } from "@/components/sections/Hero";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { StatsCounter } from "@/components/sections/StatsCounter";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { PricingTable } from "@/components/sections/PricingTable";
+import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTABanner } from "@/components/sections/CTABanner";
+import { BlogGrid } from "@/components/sections/BlogGrid";
+import { FAQSchema } from "@/components/seo/FAQSchema";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { SITE_CONFIG } from "@/lib/constants";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "hero" });
+  return {
+    title:
+      locale === "ar"
+        ? "خدمات PRO دبي | تأسيس الشركات ومعالجة التأشيرات | زيتب"
+        : "PRO Services Dubai | Company Formation & Visa Processing | ZETUP",
+    description:
+      locale === "ar"
+        ? "زيتب للخدمات المؤسسية تقدم خدمات PRO شفافة وتأسيس الشركات ومعالجة التأشيرات والامتثال للتوطين في دبي. بمعايير اسكندنافية: بدون رسوم مخفية."
+        : "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
+    alternates: {
+      canonical: `${SITE_CONFIG.url}/${locale}`,
+      languages: { en: `${SITE_CONFIG.url}/en`, ar: `${SITE_CONFIG.url}/ar` },
+    },
+  };
+}
+
+const homepageFAQs = [
+  {
+    question: "What are PRO services in Dubai?",
+    answer:
+      "PRO (Public Relations Officer) services handle all government liaison work for your business in Dubai — including visa processing, trade license renewals, Emirates ID registration, labour card processing, and document attestation with MOHRE, DET, and GDRFA.",
+  },
+  {
+    question: "How much do PRO services cost in Dubai?",
+    answer:
+      "ZETUP's PRO retainers start from AED 8,000 per month for companies with 25–40 employees. The exact cost depends on your employee count, transaction volume, and service tier.",
+  },
+  {
+    question: "Do I need PRO services if I have a small company?",
+    answer:
+      "Any Dubai company that processes visas, renews trade licenses, or deals with government agencies can benefit from PRO services. For companies with 10+ employees, outsourcing is typically 30–50% cheaper than hiring an in-house PRO officer.",
+  },
+  {
+    question:
+      "What is the difference between mainland and free zone companies?",
+    answer:
+      "Mainland companies (licensed by DET) can trade directly within the UAE market and have no restrictions on business activities. Free zone companies are restricted to operating within their zone or internationally.",
+  },
+  {
+    question: "What are the Emiratisation requirements for 2026?",
+    answer:
+      "Companies with 50+ employees must reach 10% Emirati skilled workforce by December 2026. Non-compliance fines are AED 9,000 per month per missing position.",
+  },
+  {
+    question: "How long does visa processing take in Dubai?",
+    answer:
+      "Standard employment visa processing takes 3–7 business days after all documents are submitted. Golden Visa applications take 2–4 weeks.",
+  },
+  {
+    question: "Can I switch PRO providers without disruption?",
+    answer:
+      "Yes. ZETUP manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
+  },
+  {
+    question: "What is a PRO Health Check?",
+    answer:
+      "Our free 30-minute assessment where we review your current PRO setup, check Emiratisation compliance status, identify any overpayments or gaps, and provide a clear action plan.",
+  },
+  {
+    question: "Does ZETUP handle free zone companies?",
+    answer:
+      "Our primary focus is Dubai mainland (DET) companies. We can assist free zone companies with visa processing, document attestation, and certain government services.",
+  },
+  {
+    question: "Where is ZETUP's office?",
+    answer:
+      "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Sunday to Thursday, 9 AM to 6 PM.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Free PRO Health Check",
+    description:
+      "We review your current PRO setup, identify compliance gaps, and show you where you might be overpaying. 30 minutes, no obligation.",
+  },
+  {
+    title: "Clear Proposal",
+    description:
+      "Within 48 hours, you receive a one-page proposal with your recommended service tier, exact monthly retainer, and everything included.",
+  },
+  {
+    title: "Seamless Handover",
+    description:
+      "We take over from your current provider with zero disruption. You get a full 12-month renewal calendar on Day 7.",
+  },
+  {
+    title: "Ongoing Service",
+    description:
+      "Your dedicated account coordinator handles every transaction. Real-time WhatsApp updates. Monthly compliance reports.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Switching to ZETUP was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
+    author: "Client",
+    title: "Operations Director",
+    company: "Construction Company, 50+ employees",
+  },
+  {
+    quote:
+      "After years of surprise fees from our previous PRO company, ZETUP's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
+    author: "Client",
+    title: "Managing Director",
+    company: "Consultancy, 30+ employees",
+  },
+  {
+    quote:
+      "ZETUP handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
+    author: "Client",
+    title: "HR Director",
+    company: "Hospitality Company, 70+ employees",
+  },
+];
+
+export default function HomePage() {
+  const t = useTranslations();
+
+  return (
+    <>
+      <Hero
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        primaryCta={
+          <Link
+            href="/pro-health-check"
+            className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-lg"
+          >
+            {t("hero.ctaPrimary")}
+          </Link>
+        }
+        secondaryCta={
+          <Link
+            href="/pricing"
+            className="inline-block px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors text-lg"
+          >
+            {t("hero.ctaSecondary")}
+          </Link>
+        }
+      />
+      <TrustBar />
+
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-6">
+            {t("sections.problemTitle")}
+          </h2>
+          <div className="prose prose-lg max-w-3xl text-slate">
+            <p>
+              Every business owner in Dubai knows the frustration. Your PRO
+              company says &ldquo;tomorrow&rdquo; but tomorrow never comes. Your
+              visa renewal is delayed and your new hire cannot start working.
+              Your invoice arrives with charges you never agreed to.
+            </p>
+            <p>
+              We started ZETUP because we experienced these problems ourselves.
+              As a Danish entrepreneur setting up in Dubai, Dennis Kristensen
+              saw firsthand how opaque and unreliable the PRO services market
+              can be. Edina Sultan, with over 17 years of UAE government
+              expertise, knew it could be done better.
+            </p>
+            <p>
+              ZETUP is the result: a PRO company built on Scandinavian values of
+              transparency, reliability, and straight talk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
+            {t("sections.servicesTitle")}
+          </h2>
+          <ServicesGrid />
+        </div>
+      </section>
+
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
+            {t("sections.whyTitle")}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Transparent Pricing",
+                text: "Your quote is your quote. We separate our service fees from government fees on every invoice. No hidden charges, no surprise add-ons.",
+              },
+              {
+                title: "Proactive Communication",
+                text: "Every client gets a dedicated WhatsApp group with real-time status updates. We send renewal reminders 60 days in advance.",
+              },
+              {
+                title: "First-Time Accuracy",
+                text: "Led by Edina Sultan's 17+ years of government expertise, our team knows exactly what every department needs.",
+              },
+              {
+                title: "No Lock-In Contracts",
+                text: "Our standard agreements include a 30-day termination clause. We earn your business every month through performance.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-8 rounded-xl border border-mist bg-white"
+              >
+                <h3 className="font-display text-xl font-semibold text-fjord-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <StatsCounter />
+
+      <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
+            {t("sections.processTitle")}
+          </h2>
+          <ProcessSteps steps={processSteps} />
+        </div>
+      </section>
+
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
+            {t("sections.testimonialsTitle")}
+          </h2>
+          <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
+
+      <CTABanner
+        title={t("sections.ctaTitle")}
+        description="Get a free 30-minute PRO Health Check. We will review your current setup, identify any compliance gaps, and show you exactly what transparent PRO services should cost."
+        primaryCta={
+          <Link
+            href="/pro-health-check"
+            className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors"
+          >
+            {t("cta.bookHealthCheck")}
+          </Link>
+        }
+        secondaryCta={
+          <a
+            href={SITE_CONFIG.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+          >
+            {t("cta.whatsapp")}
+          </a>
+        }
+      />
+
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <FAQSection items={homepageFAQs} />
+        </div>
+      </section>
+
+      <FAQSchema items={homepageFAQs} />
+      <BreadcrumbSchema items={[{ name: "Home", url: SITE_CONFIG.url }]} />
+    </>
+  );
+}

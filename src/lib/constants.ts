@@ -1,0 +1,311 @@
+export const SITE_CONFIG = {
+  name: "ZETUP Corporate Services",
+  url: "https://zetup.ae",
+  phone: "+971 4 323 4578",
+  whatsapp: "+971585738177",
+  whatsappUrl: "https://wa.me/971585738177",
+  email: "info@zetup.ae",
+  address: {
+    street: "Churchill Executive Tower, Floor 35",
+    area: "Business Bay",
+    city: "Dubai",
+    country: "UAE",
+  },
+  coordinates: { lat: 25.186, lng: 55.2644 },
+  social: {
+    linkedin: "https://www.linkedin.com/company/zetup-corporate-services",
+  },
+  founders: {
+    dennis: {
+      name: "Dennis Kristensen",
+      role: "Co-Founder",
+      origin: "Denmark",
+      image: "/images/team/dennis-kristensen.jpg",
+    },
+    edina: {
+      name: "Edina Sultan",
+      role: "Co-Founder",
+      experience: "17+ years UAE government expertise",
+      image: "/images/team/edina-sultan.jpg",
+    },
+  },
+} as const;
+
+export const SERVICES = [
+  {
+    slug: "pro-services",
+    titleKey: "proServices",
+    icon: "FileText",
+    description:
+      "Government liaison, document processing, and everything between you and Dubai's bureaucracy. We handle Amer, Tasheel, MOHRE, DET, and immigration — so you stay focused on your business.",
+    price: "From AED 8,000/month",
+  },
+  {
+    slug: "company-formation",
+    titleKey: "companyFormation",
+    icon: "Building2",
+    description:
+      "Set up your Dubai mainland LLC with full transparency on costs and timelines. From initial approval to trade license issuance, we manage every step.",
+    price: "From AED 7,500",
+  },
+  {
+    slug: "visa-services",
+    titleKey: "visaServices",
+    icon: "Plane",
+    description:
+      "Employment visas, investor visas, dependent visas, and Golden Visas — processed accurately the first time. No rejected paperwork, no surprises.",
+    price: "From AED 3,500",
+  },
+  {
+    slug: "emiratisation",
+    titleKey: "emiratisation",
+    icon: "Users",
+    description:
+      "Navigate the 2026 Emiratisation requirements with confidence. Quota tracking, Nafis registration, and MoHRE reporting.",
+    price: "From AED 3,000/month",
+  },
+  {
+    slug: "trade-license-renewal",
+    titleKey: "tradeLicense",
+    icon: "RefreshCw",
+    description:
+      "Never miss a renewal deadline. We track every expiry date and complete the DET renewal process proactively.",
+    price: "Included in retainer",
+  },
+  {
+    slug: "corporate-tax",
+    titleKey: "corporateTax",
+    icon: "Calculator",
+    description:
+      "FTA coordination, EmaraTax management, and filing deadline tracking. Your bridge between accountant and government.",
+    price: "From AED 2,000/quarter",
+  },
+  {
+    slug: "document-clearing",
+    titleKey: "documentClearing",
+    icon: "Stamp",
+    description:
+      "Attestation, MOFA, embassy legalisation, and translation services. Per-document pricing with real-time tracking.",
+    price: "From AED 150/document",
+  },
+  {
+    slug: "golden-visa",
+    titleKey: "goldenVisa",
+    icon: "Award",
+    description:
+      "End-to-end 10-year residency applications for investors and professionals. Updated Feb 2026 criteria.",
+    price: "From AED 5,000",
+  },
+] as const;
+
+export const PRICING_TIERS = [
+  {
+    name: "essentials",
+    price: "8,000",
+    bestFor: "25\u201340 employees",
+    features: [
+      "Trade license renewal & establishment card",
+      "Up to 15 visa transactions per month",
+      "Emirates ID processing",
+      "Labour card processing",
+      "Basic Amer & Tasheel services",
+      "Named account coordinator",
+      "Monthly status report",
+      "Same business day response time",
+    ],
+    overage: "AED 350\u2013500 each",
+    highlighted: false,
+  },
+  {
+    name: "professional",
+    price: "14,000",
+    bestFor: "40\u201380 employees",
+    features: [
+      "Everything in Essentials, plus:",
+      "Up to 30 visa transactions per month",
+      "Emiratisation quota tracking & compliance",
+      "Document attestation services",
+      "Ejari management",
+      "Dedicated WhatsApp group",
+      "Bi-weekly status calls",
+      "4-hour urgent response time",
+    ],
+    overage: "AED 300\u2013450 each",
+    highlighted: true,
+  },
+  {
+    name: "enterprise",
+    price: "22,000",
+    bestFor: "80\u2013250+ employees",
+    features: [
+      "Everything in Professional, plus:",
+      "Unlimited transactions",
+      "Full Emiratisation programme management",
+      "Multi-entity support",
+      "Quarterly compliance audits",
+      "Corporate tax filing coordination",
+      "Dedicated senior account manager",
+      "2-hour guaranteed response time",
+    ],
+    overage: "Custom",
+    highlighted: false,
+  },
+] as const;
+
+export const COMPANY = {
+  legalName: SITE_CONFIG.name,
+  url: SITE_CONFIG.url,
+  phone: SITE_CONFIG.phone,
+  email: SITE_CONFIG.email,
+  whatsapp: SITE_CONFIG.whatsappUrl,
+  description:
+    "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
+  address: {
+    street: SITE_CONFIG.address.street,
+    city: SITE_CONFIG.address.city,
+    region: SITE_CONFIG.address.area,
+    country: SITE_CONFIG.address.country,
+  },
+  social: SITE_CONFIG.social,
+} as const;
+
+export const NAV_ITEMS = [
+  {
+    labelKey: "nav.services",
+    href: "/services",
+    children: SERVICES.map((s) => ({
+      labelKey: `services.${s.titleKey}`,
+      href: `/services/${s.slug}`,
+    })),
+  },
+  {
+    labelKey: "nav.guides",
+    href: "/guides",
+    children: [
+      {
+        labelKey: "PRO Services Guide",
+        href: "/guides/pro-services-dubai-complete-guide",
+      },
+      {
+        labelKey: "Company Formation Guide",
+        href: "/guides/dubai-mainland-company-formation",
+      },
+      {
+        labelKey: "Free Zone vs Mainland",
+        href: "/guides/free-zone-vs-mainland",
+      },
+      {
+        labelKey: "Visa Processing Guide",
+        href: "/guides/uae-visa-processing",
+      },
+      {
+        labelKey: "Emiratisation Guide",
+        href: "/guides/emiratisation-compliance-2026",
+      },
+      { labelKey: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
+    ],
+  },
+  { labelKey: "nav.pricing", href: "/pricing" },
+  { labelKey: "nav.about", href: "/about" },
+  { labelKey: "nav.blog", href: "/blog" },
+  { labelKey: "nav.contact", href: "/contact" },
+];
+
+export const NAV_SERVICES = SERVICES.map((s) => ({
+  labelKey: `services.${s.titleKey}`,
+  href: `/services/${s.slug}`,
+}));
+
+export const NAV_GUIDES = [
+  {
+    label: "PRO Services Guide",
+    href: "/guides/pro-services-dubai-complete-guide",
+  },
+  {
+    label: "Company Formation Guide",
+    href: "/guides/dubai-mainland-company-formation",
+  },
+  { label: "Free Zone vs Mainland", href: "/guides/free-zone-vs-mainland" },
+  { label: "Visa Processing Guide", href: "/guides/uae-visa-processing" },
+  {
+    label: "Emiratisation Guide",
+    href: "/guides/emiratisation-compliance-2026",
+  },
+  { label: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
+];
+
+export const STATS = [
+  { value: "100+", label: "Government transactions handled monthly" },
+  { value: "17+", label: "Years of combined UAE expertise" },
+  { value: "0", label: "Hidden fees — ever" },
+] as const;
+
+export const TEAM = [
+  {
+    name: "Dennis Kristensen",
+    role: "Co-Founder",
+    bio: "Originally from Denmark, Dennis moved to Dubai to build businesses and saw firsthand how opaque the PRO services market can be. He leads business development, client relationships, and growth strategy.",
+    image: "/images/team/dennis-kristensen.jpg",
+  },
+  {
+    name: "Edina Sultan",
+    role: "Co-Founder",
+    bio: "Edina brings over 17 years of hands-on experience with UAE government processes. She leads operations, quality control, and government relations.",
+    image: "/images/team/edina-sultan.jpg",
+  },
+] as const;
+
+export const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_CONFIG.url}/#organization`,
+  name: SITE_CONFIG.name,
+  alternateName: "ZETUP",
+  url: SITE_CONFIG.url,
+  logo: `${SITE_CONFIG.url}/images/icons/logo.svg`,
+  image: `${SITE_CONFIG.url}/images/og/default-og.jpg`,
+  description:
+    "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai with Scandinavian values.",
+  telephone: "+97143234578",
+  email: SITE_CONFIG.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE_CONFIG.address.street,
+    addressLocality: SITE_CONFIG.address.area,
+    addressRegion: SITE_CONFIG.address.city,
+    addressCountry: "AE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE_CONFIG.coordinates.lat,
+    longitude: SITE_CONFIG.coordinates.lng,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "City", name: "Dubai" },
+  ],
+  priceRange: "AED 8,000 - 35,000/month",
+  founder: [
+    {
+      "@type": "Person",
+      name: "Dennis Kristensen",
+      jobTitle: "Co-Founder",
+      nationality: "Danish",
+    },
+    {
+      "@type": "Person",
+      name: "Edina Sultan",
+      jobTitle: "Co-Founder",
+      description: "17+ years UAE government expertise",
+    },
+  ],
+  sameAs: [SITE_CONFIG.social.linkedin],
+};

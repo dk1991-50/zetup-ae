@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-fjord-50: #ebf0f5;
+  --color-fjord-100: #d1dee9;
+  --color-fjord-200: #a3bdd3;
+  --color-fjord-300: #759cbd;
+  --color-fjord-400: #4a7ba5;
+  --color-fjord-500: #2d5f8a;
+  --color-fjord-600: #1b4b7a;
+  --color-fjord-700: #0f3a65;
+  --color-fjord-800: #0a2a4a;
+  --color-fjord-900: #0f2b46;
+  --color-fjord-950: #081b2e;
+
+  --color-sage-50: #edfaf7;
+  --color-sage-100: #d5f4ed;
+  --color-sage-200: #abe9db;
+  --color-sage-300: #7ddcc7;
+  --color-sage-400: #47b5a0;
+  --color-sage-500: #2e9b87;
+  --color-sage-600: #24806f;
+  --color-sage-700: #1d6559;
+  --color-sage-800: #174b43;
+  --color-sage-900: #11352f;
+
+  --color-aurora-50: #fef7ed;
+  --color-aurora-100: #fdecd4;
+  --color-aurora-200: #fbd5a3;
+  --color-aurora-300: #f7b96a;
+  --color-aurora-400: #e8985a;
+  --color-aurora-500: #d4793e;
+  --color-aurora-600: #b35e2b;
+  --color-aurora-700: #8f4720;
+  --color-aurora-800: #6b351a;
+  --color-aurora-900: #4a2514;
+
+  --color-snow: #fafcfe;
+  --color-frost: #f1f5f9;
+  --color-mist: #e2e8f0;
+  --color-stone: #94a3b8;
+  --color-slate: #64748b;
+  --color-graphite: #334155;
+  --color-charcoal: #1e293b;
+  --color-midnight: #0f172a;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-arabic: var(--font-arabic);
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  color: var(--color-midnight);
+  background-color: var(--color-snow);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+[dir="rtl"] body,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
+
+[dir="rtl"] * {
+  line-height: 1.9;
+}
