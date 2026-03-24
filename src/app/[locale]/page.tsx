@@ -291,6 +291,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Video section */}
+      <section className="py-24 px-6 md:px-8 lg:px-12 bg-fjord-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-950" />
+        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-sage-500/5 blur-[60px]" />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-block mb-4 px-3 py-1 rounded-full border border-white/10 bg-white/5">
+              <span className="text-xs font-bold text-sage-400 uppercase tracking-widest">
+                See ZETUP in Action
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
+              How We Work
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                src: "/videos/web_landscape_video_template%20(1).mp4",
+                label: "Our Approach",
+              },
+              {
+                src: "/videos/web_landscape_video_template%20(2).mp4",
+                label: "Client Experience",
+              },
+              {
+                src: "/videos/web_landscape_video_template%20(3).mp4",
+                label: "Dubai Operations",
+              },
+            ].map((video) => (
+              <div key={video.label} className="group">
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-fjord-900">
+                  <video
+                    className="w-full aspect-video object-cover"
+                    controls
+                    preload="metadata"
+                    playsInline
+                    poster=""
+                  >
+                    <source src={video.src} type="video/mp4" />
+                  </video>
+                </div>
+                <p className="mt-3 text-sm font-medium text-slate-400 text-center font-body">
+                  {video.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
