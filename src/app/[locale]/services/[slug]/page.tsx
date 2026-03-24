@@ -921,17 +921,20 @@ const SERVICE_TITLES: Record<string, string> = {
 /*  Static params                                                            */
 /* ────────────────────────────────────────────────────────────────────────── */
 
+const locales = ["en", "ar"];
+const slugs = [
+  "pro-services",
+  "company-formation",
+  "visa-services",
+  "emiratisation",
+  "trade-license-renewal",
+  "corporate-tax",
+  "document-clearing",
+  "golden-visa",
+];
+
 export function generateStaticParams() {
-  return [
-    { slug: "pro-services" },
-    { slug: "company-formation" },
-    { slug: "visa-services" },
-    { slug: "emiratisation" },
-    { slug: "trade-license-renewal" },
-    { slug: "corporate-tax" },
-    { slug: "document-clearing" },
-    { slug: "golden-visa" },
-  ];
+  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
 /* ────────────────────────────────────────────────────────────────────────── */

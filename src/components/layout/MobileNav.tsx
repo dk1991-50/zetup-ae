@@ -104,7 +104,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
                                 onClick={onClose}
                                 className="block rounded-lg px-3 py-2 text-sm font-body text-fjord-600 transition-colors hover:bg-frost hover:text-fjord-900"
                               >
-                                {t(child.labelKey)}
+                                {child.labelKey}
                               </Link>
                             </li>
                           ))}

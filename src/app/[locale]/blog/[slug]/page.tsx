@@ -30,7 +30,9 @@ const blogSlugs = [
 ];
 
 export function generateStaticParams() {
-  return blogSlugs.map((slug) => ({ slug }));
+  return ["en", "ar"].flatMap((locale) =>
+    blogSlugs.map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({

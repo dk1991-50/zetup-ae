@@ -58,7 +58,9 @@ const guideData: Record<
 };
 
 export function generateStaticParams() {
-  return guideSlugs.map((slug) => ({ slug }));
+  return ["en", "ar"].flatMap((locale) =>
+    guideSlugs.map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({
