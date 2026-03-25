@@ -49,7 +49,7 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "زيتب للخدمات المؤسسية تقدم خدمات PRO شفافة وتأسيس الشركات ومعالجة التأشيرات والامتثال للتوطين في دبي. بمعايير اسكندنافية: بدون رسوم مخفية."
-        : "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
+        : "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}`,
       languages: { en: `${SITE_CONFIG.url}/en`, ar: `${SITE_CONFIG.url}/ar` },
@@ -92,7 +92,7 @@ const homepageFAQs = [
   {
     question: "Can I switch PRO providers without disruption?",
     answer:
-      "Yes. ZETUP manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
+      "Yes. ZETUP PRO manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
   },
   {
     question: "What is a PRO Health Check?",
@@ -105,7 +105,7 @@ const homepageFAQs = [
       "Our primary focus is Dubai mainland (DET) companies. We can assist free zone companies with visa processing, document attestation, and certain government services.",
   },
   {
-    question: "Where is ZETUP's office?",
+    question: "Where is ZETUP PRO's office?",
     answer:
       "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Sunday to Thursday, 9 AM to 6 PM.",
   },
@@ -137,21 +137,21 @@ const processSteps = [
 const testimonials = [
   {
     quote:
-      "Switching to ZETUP was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
+      "Switching to ZETUP PRO was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
     author: "Client",
     title: "Operations Director",
     company: "Construction Company, 50+ employees",
   },
   {
     quote:
-      "After years of surprise fees from our previous PRO company, ZETUP's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
+      "After years of surprise fees from our previous PRO company, ZETUP PRO's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
     author: "Client",
     title: "Managing Director",
     company: "Consultancy, 30+ employees",
   },
   {
     quote:
-      "ZETUP handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
+      "ZETUP PRO handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
     author: "Client",
     title: "HR Director",
     company: "Hospitality Company, 70+ employees",

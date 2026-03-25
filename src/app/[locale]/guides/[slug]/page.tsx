@@ -157,7 +157,7 @@ export default async function GuidePage({
               Need Professional Help?
             </h2>
             <p className="text-slate mb-6 font-body leading-relaxed">
-              ZETUP handles all the complexity covered in this guide. Book a
+              ZETUP PRO handles all the complexity covered in this guide. Book a
               free PRO Health Check to see how we can help your business.
             </p>
             <div className="flex flex-wrap gap-4">

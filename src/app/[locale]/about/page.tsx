@@ -59,7 +59,7 @@ export default async function AboutPage({
           </h2>
           <div className="prose prose-lg text-slate max-w-none prose-p:leading-relaxed">
             <p>
-              ZETUP Corporate Services was founded on a simple observation: the
+              ZETUP PRO Corporate Services was founded on a simple observation: the
               PRO services market in Dubai is broken. Business owners pay too
               much, get too little transparency, and spend too much of their own
               time managing the people who are supposed to manage their

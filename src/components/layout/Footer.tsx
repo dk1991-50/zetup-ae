@@ -16,7 +16,7 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <img
                 src="/images/misc/logos/zetup_pro_logo_wordmark_white_black.png"
-                alt="ZETUP Corporate Services"
+                alt="ZETUP PRO Corporate Services"
                 width={140}
                 height={36}
                 loading="lazy"

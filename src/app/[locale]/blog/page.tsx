@@ -13,7 +13,7 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "المدونة — زيتب للخدمات المؤسسية"
-        : "Blog — ZETUP Corporate Services",
+        : "Blog — ZETUP PRO Corporate Services",
     description:
       locale === "ar"
         ? "مقالات ونصائح حول خدمات PRO وتأسيس الشركات والتأشيرات والتوطين في دبي."

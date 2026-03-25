@@ -12,11 +12,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "سياسة الخصوصية — زيتب للخدمات المؤسسية"
-        : "Privacy Policy — ZETUP Corporate Services",
+        : "Privacy Policy — ZETUP PRO Corporate Services",
     description:
       locale === "ar"
         ? "سياسة الخصوصية لزيتب للخدمات المؤسسية. كيف نجمع ونستخدم ونحمي بياناتك الشخصية."
-        : "Privacy Policy for ZETUP Corporate Services. How we collect, use, and protect your personal data in compliance with UAE data protection laws and GDPR.",
+        : "Privacy Policy for ZETUP PRO Corporate Services. How we collect, use, and protect your personal data in compliance with UAE data protection laws and GDPR.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/privacy-policy`,
       languages: {
@@ -50,7 +50,7 @@ export default async function PrivacyPolicyPage({
                 1. Introduction
               </h2>
               <p>
-                ZETUP Corporate Services (&ldquo;ZETUP,&rdquo; &ldquo;we,&rdquo;
+                ZETUP PRO Corporate Services (&ldquo;ZETUP,&rdquo; &ldquo;we,&rdquo;
                 &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to
                 protecting the privacy and security of your personal data. This
                 Privacy Policy explains how we collect, use, store, and share
@@ -372,7 +372,7 @@ export default async function PrivacyPolicyPage({
               </p>
               <div className="bg-frost rounded-xl p-6 not-prose">
                 <p className="font-semibold text-fjord-900">
-                  ZETUP Corporate Services
+                  ZETUP PRO Corporate Services
                 </p>
                 <p className="text-slate mt-1">{SITE_CONFIG.address.street}</p>
                 <p className="text-slate">

@@ -19,7 +19,7 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "تواصل مع زيتب للخدمات المؤسسية في الخليج التجاري، دبي. هاتف: +971 4 323 4578، واتساب: +971 58 573 8177"
-        : "Reach ZETUP Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
+        : "Reach ZETUP PRO Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/contact`,
       languages: {

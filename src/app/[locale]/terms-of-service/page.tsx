@@ -12,11 +12,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "شروط الخدمة — زيتب للخدمات المؤسسية"
-        : "Terms of Service — ZETUP Corporate Services",
+        : "Terms of Service — ZETUP PRO Corporate Services",
     description:
       locale === "ar"
         ? "شروط الخدمة لزيتب للخدمات المؤسسية. الشروط والأحكام لخدمات PRO وتأسيس الشركات والتأشيرات في دبي."
-        : "Terms of Service for ZETUP Corporate Services. Terms and conditions governing PRO services, company formation, visa processing, and corporate services in Dubai.",
+        : "Terms of Service for ZETUP PRO Corporate Services. Terms and conditions governing PRO services, company formation, visa processing, and corporate services in Dubai.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/terms-of-service`,
       languages: {
@@ -51,8 +51,8 @@ export default async function TermsOfServicePage({
               </h2>
               <p>
                 These Terms of Service (&ldquo;Terms&rdquo;) govern your use of
-                the ZETUP Corporate Services website ({SITE_CONFIG.url}) and the
-                engagement of any services provided by ZETUP Corporate Services
+                the ZETUP PRO Corporate Services website ({SITE_CONFIG.url}) and the
+                engagement of any services provided by ZETUP PRO Corporate Services
                 (&ldquo;ZETUP,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
                 &ldquo;our&rdquo;), a company registered and operating in Dubai,
                 United Arab Emirates.
@@ -70,7 +70,7 @@ export default async function TermsOfServicePage({
                 2. Services
               </h2>
               <p>
-                ZETUP provides corporate services for companies operating in the
+                ZETUP PRO provides corporate services for companies operating in the
                 United Arab Emirates, including but not limited to:
               </p>
               <ul className="list-disc ps-6 space-y-2">
@@ -363,7 +363,7 @@ export default async function TermsOfServicePage({
               <p>For questions about these Terms of Service, contact us at:</p>
               <div className="bg-frost rounded-xl p-6 not-prose">
                 <p className="font-semibold text-fjord-900">
-                  ZETUP Corporate Services
+                  ZETUP PRO Corporate Services
                 </p>
                 <p className="text-slate mt-1">{SITE_CONFIG.address.street}</p>
                 <p className="text-slate">
