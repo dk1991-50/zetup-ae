@@ -6,6 +6,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { allPosts } from "@/../.content-collections/generated";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
+import { SpeakableSchema } from "@/components/seo/SpeakableSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 function getPost(locale: string, slug: string) {
@@ -125,6 +126,10 @@ export default async function BlogPostPage({
         </div>
       </article>
 
+      <SpeakableSchema
+        title={post.title}
+        url={`${SITE_CONFIG.url}/${locale}/blog/${slug}`}
+      />
       <ArticleSchema
         title={post.title}
         description={post.description}

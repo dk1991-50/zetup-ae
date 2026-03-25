@@ -7,6 +7,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { allPosts } from "@/../.content-collections/generated";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
+import { SpeakableSchema } from "@/components/seo/SpeakableSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 function getGuide(locale: string, slug: string) {
@@ -152,6 +153,10 @@ export default async function GuidePage({
         slug={slug}
         locale={locale}
         contentType="guide"
+      />
+      <SpeakableSchema
+        title={guide.title}
+        url={`${SITE_CONFIG.url}/${locale}/guides/${slug}`}
       />
       <BreadcrumbSchema
         items={[
