@@ -15,11 +15,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "تواصل مع زيتب — خدمات PRO وتأسيس الشركات دبي"
-        : "Contact ZETUP — PRO Services & Company Formation Dubai",
+        : "Contact ZETUP PRO — PRO Services & Company Formation Dubai",
     description:
       locale === "ar"
         ? "تواصل مع زيتب للخدمات المؤسسية في الخليج التجاري، دبي. هاتف: +971 4 323 4578، واتساب: +971 58 573 8177"
-        : "Reach ZETUP PRO Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
+        : "Reach ZETUP PRO_PRO_HOLD Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/contact`,
       languages: {
@@ -87,7 +87,7 @@ export default async function ContactPage({
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <a
-              href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
+              href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
               target="_blank"
               rel="noopener noreferrer"
               className="p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center group"

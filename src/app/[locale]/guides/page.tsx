@@ -14,7 +14,7 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "الأدلة الشاملة — زيتب"
-        : "Comprehensive Guides — ZETUP",
+        : "Comprehensive Guides — ZETUP PRO",
     description:
       locale === "ar"
         ? "أدلة شاملة حول خدمات PRO وتأسيس الشركات والتأشيرات والتوطين وضريبة الشركات في دبي."

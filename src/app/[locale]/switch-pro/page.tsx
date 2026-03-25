@@ -25,11 +25,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "غيّر مزود PRO بدون أي انقطاع — زيتب"
-        : "Switch Your PRO Provider Without Missing a Beat | ZETUP",
+        : "Switch Your PRO Provider Without Missing a Beat | ZETUP PRO",
     description:
       locale === "ar"
         ? "انتقل إلى زيتب بسلاسة. نحن ندير عملية التسليم الكاملة من مزودك الحالي بدون أي انقطاع في الخدمة أو فجوات في الامتثال."
-        : "Switch to ZETUP PRO seamlessly. We manage the full handover from your current PRO provider with zero service disruption, full compliance continuity, and transparent pricing from day one.",
+        : "Switch to ZETUP PRO_PRO_HOLD seamlessly. We manage the full handover from your current PRO provider with zero service disruption, full compliance continuity, and transparent pricing from day one.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/switch-pro`,
       languages: {
@@ -79,7 +79,7 @@ export default async function SwitchProPage({
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
         <div className="relative max-w-4xl mx-auto">
           <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
-            Switch to ZETUP PRO
+            Switch to ZETUP PRO_PRO_HOLD
           </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Switch Your PRO Provider Without Missing a Beat
@@ -130,7 +130,7 @@ export default async function SwitchProPage({
               </h3>
               <p className="text-slate leading-relaxed text-sm">
                 Charges you did not agree to, government fees marked up without
-                disclosure, and add-on costs that were never discussed. ZETUP
+                disclosure, and add-on costs that were never discussed. ZETUP PRO
                 separates service fees from government fees on every invoice.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 Visa processing that takes weeks instead of days. Licence
                 renewals submitted at the last minute. Status updates only when
-                you chase. ZETUP PRO provides proactive WhatsApp updates and 60-day
+                you chase. ZETUP PRO_PRO_HOLD provides proactive WhatsApp updates and 60-day
                 advance deadline management.
               </p>
             </div>
@@ -162,7 +162,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 Emails unanswered for days. Phone calls that go to voicemail.
                 Having to visit the office in person to get a status update.
-                Every ZETUP client gets a dedicated WhatsApp group with same-day
+                Every ZETUP PRO client gets a dedicated WhatsApp group with same-day
                 responses.
               </p>
             </div>
@@ -178,7 +178,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 Visa applications rejected because of errors your PRO should
                 have caught. Documents submitted with wrong information. Each
-                rejection adds 1-3 weeks. ZETUP PRO's pre-submission review prevents
+                rejection adds 1-3 weeks. ZETUP PRO_PRO_HOLD's pre-submission review prevents
                 this.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default async function SwitchProPage({
               </h3>
               <p className="text-slate leading-relaxed text-sm">
                 Paying enterprise rates for essentials-level service. Being
-                charged per transaction when a retainer would be cheaper. ZETUP
+                charged per transaction when a retainer would be cheaper. ZETUP PRO
                 publishes transparent pricing so you always know what you are
                 paying for.
               </p>
@@ -206,7 +206,7 @@ export default async function SwitchProPage({
               </h3>
               <p className="text-slate leading-relaxed text-sm">
                 With the December 2026 deadline approaching, many PRO companies
-                still do not offer Emiratisation programme management. ZETUP
+                still do not offer Emiratisation programme management. ZETUP PRO
                 includes it in our Professional and Enterprise tiers.
               </p>
             </div>
@@ -224,11 +224,11 @@ export default async function SwitchProPage({
         </div>
       </section>
 
-      {/* The ZETUP Difference */}
+      {/* The ZETUP PRO Difference */}
       <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-8">
-            The ZETUP Difference
+            The ZETUP PRO Difference
           </h2>
           <div className="prose prose-lg text-slate max-w-none">
             <p>
@@ -256,7 +256,7 @@ export default async function SwitchProPage({
                     Typical PRO
                   </th>
                   <th className="text-start py-4 px-5 font-display font-semibold text-sage-700 text-sm uppercase tracking-wider">
-                    ZETUP
+                    ZETUP PRO
                   </th>
                 </tr>
               </thead>
@@ -382,7 +382,7 @@ export default async function SwitchProPage({
       {/* CTA */}
       <CTABanner
         title="Ready to Switch?"
-        description="Start with a free PRO Health Check. In 30 minutes, you will know exactly where you stand — and exactly what switching to ZETUP PRO would look like."
+        description="Start with a free PRO Health Check. In 30 minutes, you will know exactly where you stand — and exactly what switching to ZETUP PRO_PRO_HOLD would look like."
         primaryCta={
           <Link
             href="/pro-health-check"

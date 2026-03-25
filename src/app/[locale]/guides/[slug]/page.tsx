@@ -132,7 +132,7 @@ export default async function GuidePage({
               {guide.readTime} read
             </span>
             <span className="h-1 w-1 rounded-full bg-stone" />
-            <span>ZETUP Team</span>
+            <span>ZETUP PRO Team</span>
           </div>
 
           {/* Lead paragraph */}
@@ -144,7 +144,7 @@ export default async function GuidePage({
           <div className="prose prose-lg max-w-none text-slate prose-headings:text-fjord-900 prose-headings:font-display prose-a:text-sage-600 prose-a:no-underline hover:prose-a:underline prose-p:leading-relaxed">
             <div className="not-prose p-6 rounded-xl border border-sage-200 bg-sage-50 mb-8">
               <p className="text-sm text-sage-700 font-body leading-relaxed">
-                The full version of this guide is being prepared by the ZETUP
+                The full version of this guide is being prepared by the ZETUP PRO
                 content team. In the meantime, contact us for personalised
                 guidance on this topic.
               </p>
@@ -157,7 +157,7 @@ export default async function GuidePage({
               Need Professional Help?
             </h2>
             <p className="text-slate mb-6 font-body leading-relaxed">
-              ZETUP PRO handles all the complexity covered in this guide. Book a
+              ZETUP PRO_PRO_HOLD handles all the complexity covered in this guide. Book a
               free PRO Health Check to see how we can help your business.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -182,7 +182,7 @@ export default async function GuidePage({
         title={guide.title}
         description={guide.description}
         date="2026-03-23"
-        author="ZETUP Team"
+        author="ZETUP PRO Team"
         slug={slug}
       />
       <BreadcrumbSchema

@@ -39,20 +39,20 @@ interface ServiceData {
 const SERVICE_DATA: Record<string, ServiceData> = {
   "pro-services": {
     meta: {
-      title: "PRO Services Dubai — Transparent Government Liaison | ZETUP",
+      title: "PRO Services Dubai — Transparent Government Liaison | ZETUP PRO",
       description:
-        "ZETUP PRO provides transparent PRO services for Dubai mainland companies. Visa processing, trade license renewals, document clearing, and Emiratisation compliance. From AED 8,000/month.",
+        "ZETUP PRO_PRO_HOLD provides transparent PRO services for Dubai mainland companies. Visa processing, trade license renewals, document clearing, and Emiratisation compliance. From AED 8,000/month.",
     },
     h1: "PRO Services in Dubai — Government Liaison Without the Headaches",
     answerCapsule:
-      "PRO services in Dubai handle all government liaison work for your business — including visa processing, trade license renewals, Emirates ID registration, labour card processing, Emiratisation compliance, and document attestation with MOHRE, DET, and GDRFA. ZETUP PRO provides these services on a monthly retainer basis starting from AED 8,000/month for companies with 25+ employees, with transparent pricing and no hidden fees.",
+      "PRO services in Dubai handle all government liaison work for your business — including visa processing, trade license renewals, Emirates ID registration, labour card processing, Emiratisation compliance, and document attestation with MOHRE, DET, and GDRFA. ZETUP PRO_PRO_HOLD provides these services on a monthly retainer basis starting from AED 8,000/month for companies with 25+ employees, with transparent pricing and no hidden fees.",
     priceRange: "AED 8,000 - AED 22,000+/month",
     serviceName: "PRO Services Dubai",
     sections: [
       {
         heading: "What PRO Services Cover",
         content:
-          "A PRO (Public Relations Officer) service company acts as the bridge between your business and Dubai's government agencies. Instead of sending your staff to queue at Amer centres, navigate the MOHRE portal, or figure out what documents the DET needs for your licence renewal, your PRO company handles all of it.\n\nZETUP PRO's PRO services cover the full spectrum of government transactions a Dubai mainland company needs.",
+          "A PRO (Public Relations Officer) service company acts as the bridge between your business and Dubai's government agencies. Instead of sending your staff to queue at Amer centres, navigate the MOHRE portal, or figure out what documents the DET needs for your licence renewal, your PRO company handles all of it.\n\nZETUP PRO_PRO_HOLD's PRO services cover the full spectrum of government transactions a Dubai mainland company needs.",
         list: [
           "Employment visa applications and renewals",
           "Visa cancellations and status changes",
@@ -73,12 +73,12 @@ const SERVICE_DATA: Record<string, ServiceData> = {
         ],
       },
       {
-        heading: "How ZETUP PRO's PRO Service Works",
+        heading: "How ZETUP PRO_PRO_HOLD's PRO Service Works",
         content:
           "Step 1: PRO Health Check (Free) — We start with a free 30-minute assessment of your current PRO setup. We identify compliance gaps, check visa and licence deadlines, review your Emiratisation status, and compare what you are paying now to what you should be paying.\n\nStep 2: Onboarding (Week 1) — We collect all company documents, set up your dedicated WhatsApp group, build your 12-month renewal calendar, and conduct a full compliance audit. You receive a branded onboarding report on Day 7 showing your compliance status across every obligation.\n\nStep 3: Ongoing Service — Your dedicated account coordinator handles every government transaction. You submit requests via WhatsApp. We process them, provide real-time status updates, and send transparent monthly invoices with government fee receipts attached.",
       },
       {
-        heading: "Why Companies Switch Their PRO to ZETUP",
+        heading: "Why Companies Switch Their PRO to ZETUP PRO",
         content:
           "Transparent pricing: We separate service fees from government fees on every invoice. No hidden charges, no surprise add-ons. Your monthly retainer is agreed before we start, and government fees are passed through at cost.\n\nProactive communication: Dedicated WhatsApp group for every client. Status updates before you ask. Renewal reminders 60 days in advance. Regulatory alerts within 24 hours of any changes that affect your business.\n\nFirst-time accuracy: Led by Edina Sultan's 17+ years of UAE government expertise, our team knows what every department needs. Applications go through correctly the first time, saving you the weeks of delays caused by rejected paperwork.\n\nNo lock-in: 30-day termination clause on all agreements. We earn your business through performance, not contractual obligation.",
       },
@@ -113,7 +113,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "Industries We Serve",
         content:
-          "ZETUP PRO's PRO services team has experience across every major sector operating on Dubai mainland.",
+          "ZETUP PRO_PRO_HOLD's PRO services team has experience across every major sector operating on Dubai mainland.",
         list: [
           "Professional Services and Consultancy — law firms, accounting firms, management consultancies",
           "Construction and Fit-Out — contractors, engineering firms, project management companies",
@@ -135,13 +135,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "How much do PRO services cost in Dubai?",
         answer:
-          "ZETUP PRO's corporate PRO retainers start from AED 8,000/month for companies with 25-40 employees. The exact cost depends on employee count, expected transaction volume, and service complexity. Government fees are billed separately at cost. We always provide a detailed written quote before engagement.",
+          "ZETUP PRO_PRO_HOLD's corporate PRO retainers start from AED 8,000/month for companies with 25-40 employees. The exact cost depends on employee count, expected transaction volume, and service complexity. Government fees are billed separately at cost. We always provide a detailed written quote before engagement.",
       },
       {
         question:
           "Can I outsource PRO services instead of hiring an in-house PRO?",
         answer:
-          "Yes, and it is typically 30-50% cheaper. An in-house PRO officer costs AED 8,000-15,000/month in salary alone, plus visa costs, insurance, and office space. With ZETUP, you get a full team for less than the cost of a single hire, with no HR liability.",
+          "Yes, and it is typically 30-50% cheaper. An in-house PRO officer costs AED 8,000-15,000/month in salary alone, plus visa costs, insurance, and office space. With ZETUP PRO, you get a full team for less than the cost of a single hire, with no HR liability.",
       },
       {
         question: "How quickly do you process visas?",
@@ -173,13 +173,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "company-formation": {
     meta: {
-      title: "Company Formation Dubai Mainland — Setup in Weeks | ZETUP",
+      title: "Company Formation Dubai Mainland — Setup in Weeks | ZETUP PRO",
       description:
-        "Set up your Dubai mainland company with ZETUP. 100% foreign ownership, transparent costs, and step-by-step guidance from trade name to trade license. No hidden fees.",
+        "Set up your Dubai mainland company with ZETUP PRO. 100% foreign ownership, transparent costs, and step-by-step guidance from trade name to trade license. No hidden fees.",
     },
     h1: "Dubai Mainland Company Formation — Start Your Business With Full Transparency",
     answerCapsule:
-      "Setting up a mainland company in Dubai costs approximately AED 25,000-50,000 in the first year, including trade license fees, visa costs, and office registration. The process takes 2-4 weeks from initial approval to trade license issuance. Since 2021, foreign investors can own 100% of mainland companies without a local sponsor for most business activities. ZETUP PRO handles the entire formation process with transparent, itemized pricing.",
+      "Setting up a mainland company in Dubai costs approximately AED 25,000-50,000 in the first year, including trade license fees, visa costs, and office registration. The process takes 2-4 weeks from initial approval to trade license issuance. Since 2021, foreign investors can own 100% of mainland companies without a local sponsor for most business activities. ZETUP PRO_PRO_HOLD handles the entire formation process with transparent, itemized pricing.",
     priceRange: "AED 7,500 - AED 15,000",
     serviceName: "Company Formation Dubai",
     sections: [
@@ -219,7 +219,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
             ["Establishment card", "2,000", "MOHRE fee"],
             ["Immigration card", "500-1,000", "GDRFA fee"],
             [
-              "ZETUP PRO formation service fee",
+              "ZETUP PRO_PRO_HOLD formation service fee",
               "7,500-15,000",
               "One-time, depends on complexity",
             ],
@@ -240,7 +240,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "Documents Required",
         content:
-          "For a standard mainland LLC with foreign ownership, you will need the following documents. ZETUP PRO provides a detailed, personalised document checklist based on your specific business activity and shareholder structure.",
+          "For a standard mainland LLC with foreign ownership, you will need the following documents. ZETUP PRO_PRO_HOLD provides a detailed, personalised document checklist based on your specific business activity and shareholder structure.",
         list: [
           "Passport copies of all shareholders (valid for 6+ months)",
           "Passport-size photographs",
@@ -252,7 +252,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
         ],
       },
       {
-        heading: "ZETUP PRO's Formation Service Includes",
+        heading: "ZETUP PRO_PRO_HOLD's Formation Service Includes",
         content:
           "Our formation service is a comprehensive package covering every step from initial planning to post-license compliance.",
         list: [
@@ -273,7 +273,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "Can a foreigner own 100% of a company in Dubai?",
         answer:
-          "Yes. Since June 2021, foreign investors can own 100% of mainland companies for most business activities. A few strategic sectors still require Emirati majority ownership, but ZETUP will confirm full eligibility for your specific activity during the initial consultation.",
+          "Yes. Since June 2021, foreign investors can own 100% of mainland companies for most business activities. A few strategic sectors still require Emirati majority ownership, but ZETUP PRO will confirm full eligibility for your specific activity during the initial consultation.",
       },
       {
         question: "How long does it take to set up a company in Dubai?",
@@ -316,13 +316,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   "visa-services": {
     meta: {
       title:
-        "Visa Processing Dubai — Employment, Investor & Golden Visa | ZETUP",
+        "Visa Processing Dubai — Employment, Investor & Golden Visa | ZETUP PRO",
       description:
-        "ZETUP PRO handles all visa processing for Dubai mainland companies. Employment visas, investor visas, Golden Visas, dependent visas — processed accurately the first time. No surprises.",
+        "ZETUP PRO_PRO_HOLD handles all visa processing for Dubai mainland companies. Employment visas, investor visas, Golden Visas, dependent visas — processed accurately the first time. No surprises.",
     },
     h1: "Visa Processing in Dubai — Every Visa Type, Handled End-to-End",
     answerCapsule:
-      "Visa processing in Dubai covers employment visas (3-7 business days, AED 3,500-6,000 per employee), investor visas (5-10 days, AED 5,000-8,000), Golden Visas (2-4 weeks, 10-year residency), dependent visas (5-10 days, AED 3,000-5,000), and Green Visas (2-3 weeks, 5-year self-sponsored). ZETUP PRO manages the full process for Dubai mainland companies — from MOHRE work permit through Emirates ID and residence visa stamping.",
+      "Visa processing in Dubai covers employment visas (3-7 business days, AED 3,500-6,000 per employee), investor visas (5-10 days, AED 5,000-8,000), Golden Visas (2-4 weeks, 10-year residency), dependent visas (5-10 days, AED 3,000-5,000), and Green Visas (2-3 weeks, 5-year self-sponsored). ZETUP PRO_PRO_HOLD manages the full process for Dubai mainland companies — from MOHRE work permit through Emirates ID and residence visa stamping.",
     priceRange: "AED 3,500 - AED 15,000",
     serviceName: "Visa Processing Dubai",
     sections: [
@@ -351,7 +351,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "Why Visa Processing Goes Wrong (and How We Prevent It)",
         content:
-          "The most common reason for visa delays is document errors — a name spelling that does not exactly match the passport, missing attestation stamps, incorrect job titles, or outdated document copies. A single error can add 1-3 weeks to the process because the entire application must be resubmitted.\n\nZETUP prevents this through a mandatory pre-submission document review. Every document is checked against the specific requirements of the relevant department before submission. Our team, led by Edina Sultan's 17+ years of government expertise, knows exactly what each department requires — including the unwritten requirements that change periodically without formal announcement.",
+          "The most common reason for visa delays is document errors — a name spelling that does not exactly match the passport, missing attestation stamps, incorrect job titles, or outdated document copies. A single error can add 1-3 weeks to the process because the entire application must be resubmitted.\n\nZETUP PRO prevents this through a mandatory pre-submission document review. Every document is checked against the specific requirements of the relevant department before submission. Our team, led by Edina Sultan's 17+ years of government expertise, knows exactly what each department requires — including the unwritten requirements that change periodically without formal announcement.",
       },
       {
         heading: "Documents Required (By Visa Type)",
@@ -359,7 +359,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
           "Employment visa: Passport copy (6+ months validity), passport photo, educational certificates (attested for regulated professions), job offer letter, employer establishment card, employee medical fitness certificate.\n\nInvestor visa: Passport copy, passport photo, trade licence, MOA showing shareholding, proof of investment, medical fitness certificate.\n\nGolden Visa (property investor): Passport copy, DLD property valuation (AED 2M+), title deed, medical fitness certificate.\n\nDependent visa: Sponsor passport and visa copy, sponsor Emirates ID, marriage/birth certificate (attested and translated), sponsor salary certificate, Ejari contract, health insurance proof.",
       },
       {
-        heading: "How ZETUP PRO's Visa Service Works",
+        heading: "How ZETUP PRO_PRO_HOLD's Visa Service Works",
         content:
           "1. Document collection — We send you a personalised checklist based on the visa type and applicant nationality.\n2. Pre-submission review — Every document checked for accuracy, completeness, and compliance.\n3. Government submission — We handle MOHRE, GDRFA, ICP, and DHA submissions.\n4. Real-time updates — Status notifications via your dedicated WhatsApp group at every stage.\n5. Completion — Visa stamped, Emirates ID issued, all copies provided to you digitally.",
       },
@@ -398,7 +398,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "Do you track visa expiry dates?",
         answer:
-          "Yes. For all PRO retainer clients, we maintain a complete renewal calendar and send reminders 60 days before any visa expiry. You will never miss a renewal with ZETUP.",
+          "Yes. For all PRO retainer clients, we maintain a complete renewal calendar and send reminders 60 days before any visa expiry. You will never miss a renewal with ZETUP PRO.",
       },
       {
         question: "Can my employees' families get visas?",
@@ -410,13 +410,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   emiratisation: {
     meta: {
-      title: "Emiratisation Compliance Services Dubai — 2026 Deadlines | ZETUP",
+      title: "Emiratisation Compliance Services Dubai — 2026 Deadlines | ZETUP PRO",
       description:
-        "ZETUP PRO manages your Emiratisation compliance end-to-end. Quota tracking, Nafis registration, MOHRE reporting, and penalty avoidance. December 2026 deadline — act now.",
+        "ZETUP PRO_PRO_HOLD manages your Emiratisation compliance end-to-end. Quota tracking, Nafis registration, MOHRE reporting, and penalty avoidance. December 2026 deadline — act now.",
     },
     h1: "Emiratisation Compliance — Navigate the 2026 Deadline With Confidence",
     answerCapsule:
-      "Emiratisation requires companies with 50+ employees to reach 10% Emirati skilled workforce by December 2026, with fines of AED 9,000 per month per missing position. ZETUP PRO provides full compliance management — quota calculation, Nafis registration, MOHRE reporting, and recruitment coordination — as an add-on service from AED 3,000/month or included in our Professional and Enterprise PRO tiers.",
+      "Emiratisation requires companies with 50+ employees to reach 10% Emirati skilled workforce by December 2026, with fines of AED 9,000 per month per missing position. ZETUP PRO_PRO_HOLD provides full compliance management — quota calculation, Nafis registration, MOHRE reporting, and recruitment coordination — as an add-on service from AED 3,000/month or included in our Professional and Enterprise PRO tiers.",
     priceRange: "AED 3,000 - AED 8,000/month",
     serviceName: "Emiratisation Compliance Services",
     sections: [
@@ -426,7 +426,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
           "If your company has 50 or more skilled employees, you must employ a workforce that is 10% Emirati by December 31, 2026. If you have 20-49 employees in a designated sector, you must employ at least 2 UAE nationals. The fines for non-compliance are AED 9,000 per month per missing position — and they start the day you fail your semi-annual assessment.\n\nThis is not a future problem. MOHRE assesses compliance semi-annually (June and December). Companies that are not on track face immediate financial penalties and operational restrictions including work permit suspension.",
       },
       {
-        heading: "What ZETUP PRO's Emiratisation Service Covers",
+        heading: "What ZETUP PRO_PRO_HOLD's Emiratisation Service Covers",
         content:
           "Quota Calculation and Gap Analysis — We calculate your current Emiratisation position based on your MOHRE-registered headcount, identify your target number, and quantify the gap. You receive a clear report showing where you stand and what needs to happen.\n\nNafis Platform Registration — We register your company on the Nafis portal, set up your employer profile, and ensure you are eligible for salary subsidies of up to AED 7,000/month per Emirati hire.\n\nRecruitment Coordination — We coordinate with specialised Emirati recruitment agencies and the Nafis job-matching platform to connect you with qualified candidates. We do not place candidates directly — we manage the compliance and documentation infrastructure around hiring.\n\nEmployment Documentation — We prepare MOHRE-compliant employment contracts, handle WPS registration, process social insurance enrollment, and manage all government documentation for new Emirati hires.\n\nOngoing MOHRE Reporting — Semi-annual compliance submissions, monthly quota tracking, and regular status reports to your management team.\n\nRegulatory Updates — Emiratisation rules change frequently. We provide real-time alerts on regulatory updates, fine adjustments, and new compliance requirements within 24 hours of announcement.",
       },
@@ -458,7 +458,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "The Cost of Doing Nothing",
         content:
-          "Non-compliance with Emiratisation requirements carries significant financial penalties. Compare the cost of fines to the cost of compliance: Emirati salaries of AED 6,000+/month (offset by Nafis subsidies of up to AED 7,000/month for bachelor's holders) plus ZETUP PRO's management fee of AED 3,000-8,000/month. For most companies, compliance is significantly cheaper than non-compliance.",
+          "Non-compliance with Emiratisation requirements carries significant financial penalties. Compare the cost of fines to the cost of compliance: Emirati salaries of AED 6,000+/month (offset by Nafis subsidies of up to AED 7,000/month for bachelor's holders) plus ZETUP PRO_PRO_HOLD's management fee of AED 3,000-8,000/month. For most companies, compliance is significantly cheaper than non-compliance.",
         table: {
           headers: [
             "Your Gap",
@@ -506,7 +506,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
           "For bachelor's degree holders, Nafis provides up to AED 7,000/month. Combined with the AED 6,000 minimum wage, the employer's net cost can be near zero in early years.",
       },
       {
-        question: "How quickly can ZETUP get us compliant?",
+        question: "How quickly can ZETUP PRO get us compliant?",
         answer:
           "The documentation and registration process takes 1-2 weeks. The actual hiring timeline depends on finding suitable Emirati candidates — which can take 4-12 weeks depending on roles and market availability.",
       },
@@ -525,13 +525,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "trade-license-renewal": {
     meta: {
-      title: "Trade License Renewal Dubai — Never Miss a Deadline | ZETUP",
+      title: "Trade License Renewal Dubai — Never Miss a Deadline | ZETUP PRO",
       description:
-        "ZETUP PRO manages your Dubai trade licence renewal proactively. 60-day advance reminders, activity amendments, partner changes, and penalty prevention. No missed deadlines.",
+        "ZETUP PRO_PRO_HOLD manages your Dubai trade licence renewal proactively. 60-day advance reminders, activity amendments, partner changes, and penalty prevention. No missed deadlines.",
     },
     h1: "Trade Licence Renewal in Dubai — Proactive, Not Reactive",
     answerCapsule:
-      "Dubai trade licence renewal is an annual obligation with DET, costing approximately AED 10,000-15,000 in government fees depending on business activities. Late renewals trigger a AED 2,000 fine on day one and AED 1,000 per month thereafter. ZETUP PRO manages renewals proactively with 60-day advance reminders and handles all associated requirements including establishment card renewals, activity amendments, and partner changes.",
+      "Dubai trade licence renewal is an annual obligation with DET, costing approximately AED 10,000-15,000 in government fees depending on business activities. Late renewals trigger a AED 2,000 fine on day one and AED 1,000 per month thereafter. ZETUP PRO_PRO_HOLD manages renewals proactively with 60-day advance reminders and handles all associated requirements including establishment card renewals, activity amendments, and partner changes.",
     priceRange: "Included in PRO retainer",
     serviceName: "Trade License Renewal Dubai",
     sections: [
@@ -543,13 +543,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "Renewal Timeline and Process",
         content:
-          "ZETUP PRO follows a structured timeline to ensure your licence is renewed well before the expiry date.",
+          "ZETUP PRO_PRO_HOLD follows a structured timeline to ensure your licence is renewed well before the expiry date.",
         table: {
           headers: ["Step", "Timeline", "Action"],
           rows: [
             [
               "60 days before expiry",
-              "ZETUP PRO sends reminder",
+              "ZETUP PRO_PRO_HOLD sends reminder",
               "Review company details, flag any changes needed",
             ],
             [
@@ -573,12 +573,12 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "Common Renewal Complications",
         content:
-          "Ejari expired or mismatched — DET requires an active Ejari contract matching your registered address. If your lease has expired or you have moved offices, the Ejari must be updated before renewal.\n\nPending MOHRE violations — Outstanding labour complaints, Emiratisation non-compliance, or WPS irregularities can block licence renewal. ZETUP identifies and resolves these before submission.\n\nActivity amendments — If your business activities have changed, the licence must be amended — which requires DET approval and potentially additional department clearances.\n\nPartner changes — Any changes to company ownership must be reflected in the MOA and registered with DET before renewal.",
+          "Ejari expired or mismatched — DET requires an active Ejari contract matching your registered address. If your lease has expired or you have moved offices, the Ejari must be updated before renewal.\n\nPending MOHRE violations — Outstanding labour complaints, Emiratisation non-compliance, or WPS irregularities can block licence renewal. ZETUP PRO identifies and resolves these before submission.\n\nActivity amendments — If your business activities have changed, the licence must be amended — which requires DET approval and potentially additional department clearances.\n\nPartner changes — Any changes to company ownership must be reflected in the MOA and registered with DET before renewal.",
       },
       {
         heading: "Costs",
         content:
-          "A breakdown of typical renewal costs. ZETUP PRO's processing is included in our PRO retainer — no additional fee for renewal handling.",
+          "A breakdown of typical renewal costs. ZETUP PRO_PRO_HOLD's processing is included in our PRO retainer — no additional fee for renewal handling.",
         table: {
           headers: ["Component", "Approximate AED"],
           rows: [
@@ -587,7 +587,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
             ["Ejari renewal (if needed)", "500-1,500"],
             ["Chamber of Commerce", "500-1,200"],
             ["Approval renewals (if applicable)", "1,000-5,000"],
-            ["ZETUP processing fee", "Included in PRO retainer"],
+            ["ZETUP PRO processing fee", "Included in PRO retainer"],
           ],
         },
       },
@@ -607,7 +607,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "How much does trade licence renewal cost?",
         answer:
-          "Government fees range from AED 10,000-15,000 depending on business activities. ZETUP PRO's processing is included in our PRO retainer — no additional fee for renewal handling.",
+          "Government fees range from AED 10,000-15,000 depending on business activities. ZETUP PRO_PRO_HOLD's processing is included in our PRO retainer — no additional fee for renewal handling.",
       },
       {
         question: "What is the penalty for late renewal?",
@@ -627,10 +627,10 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "What if I have moved offices since my last renewal?",
         answer:
-          "Your Ejari must be updated to reflect your current address before DET will process the renewal. ZETUP PRO handles Ejari updates as part of our service.",
+          "Your Ejari must be updated to reflect your current address before DET will process the renewal. ZETUP PRO_PRO_HOLD handles Ejari updates as part of our service.",
       },
       {
-        question: "Can ZETUP handle renewals for multiple entities?",
+        question: "Can ZETUP PRO handle renewals for multiple entities?",
         answer:
           "Yes. Our PRO Enterprise tier includes multi-entity support, managing renewals across all your mainland-registered companies from a single account.",
       },
@@ -639,18 +639,18 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "corporate-tax": {
     meta: {
-      title: "Corporate Tax Services Dubai — FTA Filing & Compliance | ZETUP",
+      title: "Corporate Tax Services Dubai — FTA Filing & Compliance | ZETUP PRO",
       description:
-        "ZETUP PRO coordinates your UAE corporate tax compliance. FTA registration, EmaraTax portal management, filing deadline tracking, and accountant liaison. Small Business Relief guidance.",
+        "ZETUP PRO_PRO_HOLD coordinates your UAE corporate tax compliance. FTA registration, EmaraTax portal management, filing deadline tracking, and accountant liaison. Small Business Relief guidance.",
     },
     h1: "UAE Corporate Tax Services — Government Coordination Made Simple",
     answerCapsule:
-      "UAE Corporate Tax applies a 9% rate on taxable income above AED 375,000 for mainland companies. Small Business Relief (zero tax for revenue under AED 3 million) expires December 2026. ZETUP PRO handles the government coordination layer — FTA registration, EmaraTax portal submissions, deadline tracking, and liaison with your accounting firm — from AED 2,000 per quarter.",
+      "UAE Corporate Tax applies a 9% rate on taxable income above AED 375,000 for mainland companies. Small Business Relief (zero tax for revenue under AED 3 million) expires December 2026. ZETUP PRO_PRO_HOLD handles the government coordination layer — FTA registration, EmaraTax portal submissions, deadline tracking, and liaison with your accounting firm — from AED 2,000 per quarter.",
     priceRange: "AED 2,000 - AED 5,000/quarter",
     serviceName: "Corporate Tax Services Dubai",
     sections: [
       {
-        heading: "What ZETUP Handles",
+        heading: "What ZETUP PRO Handles",
         content:
           "We are the bridge between your accountant and the FTA. We handle: EmaraTax portal registration and setup, tax return submission (prepared by your accountant, submitted by us), payment processing through FTA channels, deadline tracking with advance reminders, correspondence with the FTA on your behalf, and regulatory update alerts.\n\nWhat we do not do: tax computation, financial statement preparation, audit work, or tax advisory. These require a qualified accounting firm. We coordinate with your accountant to ensure everything reaches the FTA correctly and on time.",
       },
@@ -711,22 +711,22 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       },
       {
         question:
-          "Do I need a separate accountant, or does ZETUP handle everything?",
+          "Do I need a separate accountant, or does ZETUP PRO handle everything?",
         answer:
-          "You need a qualified accountant for tax computation and financial statements. ZETUP PRO handles the government coordination — registration, portal management, submission, and deadline tracking.",
+          "You need a qualified accountant for tax computation and financial statements. ZETUP PRO_PRO_HOLD handles the government coordination — registration, portal management, submission, and deadline tracking.",
       },
     ],
   },
 
   "document-clearing": {
     meta: {
-      title: "Document Clearing & Attestation Dubai — MOFA, Embassy | ZETUP",
+      title: "Document Clearing & Attestation Dubai — MOFA, Embassy | ZETUP PRO",
       description:
-        "ZETUP PRO handles document attestation, MOFA legalisation, embassy attestation, and certificate clearing in Dubai. Fast processing, transparent pricing, status tracking.",
+        "ZETUP PRO_PRO_HOLD handles document attestation, MOFA legalisation, embassy attestation, and certificate clearing in Dubai. Fast processing, transparent pricing, status tracking.",
     },
     h1: "Document Clearing and Attestation in Dubai — Fast, Tracked, Transparent",
     answerCapsule:
-      "Document clearing services in Dubai handle the attestation and legalisation of documents required for business and personal purposes — including MOFA attestation, embassy legalisation, notary public services, educational certificate attestation, and commercial document clearing. ZETUP processes all document types with real-time status tracking and transparent per-document pricing.",
+      "Document clearing services in Dubai handle the attestation and legalisation of documents required for business and personal purposes — including MOFA attestation, embassy legalisation, notary public services, educational certificate attestation, and commercial document clearing. ZETUP PRO processes all document types with real-time status tracking and transparent per-document pricing.",
     priceRange: "AED 150 - AED 1,000/document",
     serviceName: "Document Clearing and Attestation Dubai",
     sections: [
@@ -746,7 +746,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "The Attestation Process",
         content:
-          "Most documents follow a standard attestation chain:\n\n1. Home country attestation — document authenticated by the issuing country's authorities\n2. UAE Embassy attestation — UAE embassy in the home country authenticates the document\n3. MOFA attestation — Ministry of Foreign Affairs in the UAE provides final authentication\n\nFor documents already in the UAE, the chain may start at the notary public or relevant government department. ZETUP PRO manages the entire chain, tracking each document through every stage and providing updates via WhatsApp.",
+          "Most documents follow a standard attestation chain:\n\n1. Home country attestation — document authenticated by the issuing country's authorities\n2. UAE Embassy attestation — UAE embassy in the home country authenticates the document\n3. MOFA attestation — Ministry of Foreign Affairs in the UAE provides final authentication\n\nFor documents already in the UAE, the chain may start at the notary public or relevant government department. ZETUP PRO_PRO_HOLD manages the entire chain, tracking each document through every stage and providing updates via WhatsApp.",
       },
       {
         heading: "Pricing",
@@ -799,13 +799,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "golden-visa": {
     meta: {
-      title: "Golden Visa Dubai 2026 — 10-Year Residency Application | ZETUP",
+      title: "Golden Visa Dubai 2026 — 10-Year Residency Application | ZETUP PRO",
       description:
-        "ZETUP PRO handles end-to-end Golden Visa applications in Dubai. Updated Feb 2026 criteria: AED 2M property (no down payment), new AI & creator categories. Processing in 2-4 weeks.",
+        "ZETUP PRO_PRO_HOLD handles end-to-end Golden Visa applications in Dubai. Updated Feb 2026 criteria: AED 2M property (no down payment), new AI & creator categories. Processing in 2-4 weeks.",
     },
     h1: "Golden Visa Dubai — 10-Year Residency, Processed End-to-End",
     answerCapsule:
-      "The UAE Golden Visa grants 10-year residency without a sponsor, with benefits including extended overseas stays and family sponsorship. As of February 2026, property investors qualify with a DLD valuation of AED 2 million (no down payment requirement). ZETUP PRO provides end-to-end application management for AED 5,000-10,000 plus government fees of approximately AED 3,000-5,000.",
+      "The UAE Golden Visa grants 10-year residency without a sponsor, with benefits including extended overseas stays and family sponsorship. As of February 2026, property investors qualify with a DLD valuation of AED 2 million (no down payment requirement). ZETUP PRO_PRO_HOLD provides end-to-end application management for AED 5,000-10,000 plus government fees of approximately AED 3,000-5,000.",
     priceRange: "AED 5,000 - AED 10,000",
     serviceName: "Golden Visa Dubai",
     sections: [
@@ -865,7 +865,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
         ],
       },
       {
-        heading: "ZETUP PRO's Golden Visa Service",
+        heading: "ZETUP PRO_PRO_HOLD's Golden Visa Service",
         content:
           "Our end-to-end service covers every step of the Golden Visa application process.\n\n1. Eligibility assessment — We confirm your qualification based on current criteria\n2. Document preparation — Complete checklist tailored to your category\n3. DLD coordination (property investors) — Valuation certificate procurement\n4. Application submission — Full application management through government channels\n5. Medical and Emirates ID — Coordination of all required processing\n6. Family applications — Dependent Golden Visa processing for spouse and children\n7. Status updates — Real-time progress via WhatsApp throughout\n\nPricing: AED 5,000-10,000 service fee plus approximately AED 3,000-5,000 in government fees. Total timeline: 2-4 weeks.",
       },
@@ -964,7 +964,7 @@ export async function generateMetadata({
   const service = SERVICE_DATA[slug];
 
   if (!service) {
-    return { title: "Service Not Found | ZETUP" };
+    return { title: "Service Not Found | ZETUP PRO" };
   }
 
   return {

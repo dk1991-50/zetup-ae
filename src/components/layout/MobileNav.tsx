@@ -47,7 +47,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-mist px-4 py-4">
             <span className="font-display text-xl font-extrabold text-fjord-900">
-              ZETUP
+              ZETUP PRO
             </span>
             <button
               type="button"

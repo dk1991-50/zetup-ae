@@ -62,7 +62,7 @@ export function Header() {
           <Link href="/" className="flex items-center">
             <img
               src="/images/misc/logos/zetup_pro_logo_wordmark_color.png"
-              alt="ZETUP PRO Corporate Services"
+              alt="ZETUP PRO_PRO_HOLD Corporate Services"
               width={140}
               height={36}
               className="h-9 w-auto"

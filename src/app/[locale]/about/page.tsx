@@ -13,11 +13,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "من نحن — زيتب للخدمات المؤسسية"
-        : "About ZETUP — Scandinavian Transparency in Dubai Corporate Services",
+        : "About ZETUP PRO — Scandinavian Transparency in Dubai Corporate Services",
     description:
       locale === "ar"
         ? "تعرف على مؤسسي زيتب: دينيس كريستنسن (الدنمارك) وإيدينا سلطان (خبرة +17 عامًا في الإمارات). شفافية اسكندنافية في خدمات PRO بدبي."
-        : "Founded by Dennis Kristensen (Denmark) and Edina Sultan (17+ years UAE expertise), ZETUP brings Scandinavian transparency to PRO services in Dubai.",
+        : "Founded by Dennis Kristensen (Denmark) and Edina Sultan (17+ years UAE expertise), ZETUP PRO brings Scandinavian transparency to PRO services in Dubai.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/about`,
       languages: {
@@ -55,18 +55,18 @@ export default async function AboutPage({
       <section className="py-16 md:py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-8">
-            Why We Started ZETUP
+            Why We Started ZETUP PRO
           </h2>
           <div className="prose prose-lg text-slate max-w-none prose-p:leading-relaxed">
             <p>
-              ZETUP PRO Corporate Services was founded on a simple observation: the
+              ZETUP PRO_PRO_HOLD Corporate Services was founded on a simple observation: the
               PRO services market in Dubai is broken. Business owners pay too
               much, get too little transparency, and spend too much of their own
               time managing the people who are supposed to manage their
               government paperwork.
             </p>
             <p>
-              We built ZETUP to be the PRO company we wished existed when we
+              We built ZETUP PRO to be the PRO company we wished existed when we
               were setting up our own businesses in Dubai.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default async function AboutPage({
       <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-10">
-            What Makes ZETUP Different
+            What Makes ZETUP PRO Different
           </h2>
           <div className="space-y-8">
             <div className="p-8 rounded-2xl border border-mist bg-white">

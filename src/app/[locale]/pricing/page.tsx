@@ -21,7 +21,7 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "زيتب تنشر أسعار خدمات PRO الحقيقية. الاشتراكات المؤسسية تبدأ من 8,000 درهم/شهرياً. بدون رسوم مخفية."
-        : "ZETUP PRO publishes real PRO services pricing. Corporate retainers from AED 8,000/month. No hidden fees. See our three service tiers.",
+        : "ZETUP PRO_PRO_HOLD publishes real PRO services pricing. Corporate retainers from AED 8,000/month. No hidden fees. See our three service tiers.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/pricing`,
       languages: {
@@ -180,7 +180,7 @@ export default async function PricingPage({
             <p className="text-lg text-slate leading-relaxed font-body">
               We separate our service fees from government fees on every
               invoice. Government fees are passed through at cost with receipts
-              attached. This means you always know exactly what ZETUP charges
+              attached. This means you always know exactly what ZETUP PRO charges
               and exactly what the government charges — no blending, no markup
               on government fees.
             </p>

@@ -21,7 +21,7 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "فحص صحة PRO مجاني — زيتب للخدمات المؤسسية"
-        : "Free PRO Health Check — Is Your PRO Company Protecting Your Business? | ZETUP",
+        : "Free PRO Health Check — Is Your PRO Company Protecting Your Business? | ZETUP PRO",
     description:
       locale === "ar"
         ? "احصل على تقييم مجاني لمدة 30 دقيقة لإعداد PRO الخاص بك. تحليل الامتثال، مقارنة التكاليف، وخطة عمل واضحة."
@@ -45,7 +45,7 @@ const healthCheckFAQs = [
   {
     question: "Is the PRO Health Check really free?",
     answer:
-      "Yes. There is no cost and no obligation. We believe in demonstrating value before asking for commitment. If we identify issues, we will explain them clearly. Whether you choose ZETUP or not is entirely up to you.",
+      "Yes. There is no cost and no obligation. We believe in demonstrating value before asking for commitment. If we identify issues, we will explain them clearly. Whether you choose ZETUP PRO or not is entirely up to you.",
   },
   {
     question: "How long does the Health Check take?",
@@ -55,7 +55,7 @@ const healthCheckFAQs = [
   {
     question: "Do I need to share sensitive documents?",
     answer:
-      "Not for the initial assessment. We work with the information you share during the call. If you choose to proceed with ZETUP, we will request documents during the formal onboarding process.",
+      "Not for the initial assessment. We work with the information you share during the call. If you choose to proceed with ZETUP PRO, we will request documents during the formal onboarding process.",
   },
   {
     question: "What if I am happy with my current PRO provider?",

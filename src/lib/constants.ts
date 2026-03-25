@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  name: "ZETUP PRO Corporate Services",
+  name: "ZETUP PRO_PRO_HOLD Corporate Services",
   url: "https://zetup.ae",
   phone: "+971 4 323 4578",
   whatsapp: "+971585738177",
@@ -159,7 +159,7 @@ export const COMPANY = {
   email: SITE_CONFIG.email,
   whatsapp: SITE_CONFIG.whatsappUrl,
   description:
-    "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
+    "ZETUP PRO_PRO_HOLD Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
   address: {
     street: SITE_CONFIG.address.street,
     city: SITE_CONFIG.address.city,
@@ -283,12 +283,12 @@ export const ORGANIZATION_SCHEMA = {
   "@type": "ProfessionalService",
   "@id": `${SITE_CONFIG.url}/#organization`,
   name: SITE_CONFIG.name,
-  alternateName: "ZETUP PRO",
+  alternateName: "ZETUP PRO_PRO_HOLD",
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/images/misc/logos/zetup_pro_logo_wordmark_color.png`,
   image: `${SITE_CONFIG.url}/images/og/Web_Social_share_templates%20(1).jpg`,
   description:
-    "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai with Scandinavian values.",
+    "ZETUP PRO_PRO_HOLD Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai with Scandinavian values.",
   telephone: "+97143234578",
   email: SITE_CONFIG.email,
   address: {

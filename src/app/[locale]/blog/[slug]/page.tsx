@@ -85,7 +85,7 @@ export default async function BlogPostPage({
 
           <div className="mb-8">
             <p className="text-sm text-stone mb-2">
-              March 23, 2026 &middot; ZETUP Team
+              March 23, 2026 &middot; ZETUP PRO Team
             </p>
             <h1 className="font-display text-3xl md:text-4xl font-bold text-fjord-900 mb-4">
               {title}
@@ -141,7 +141,7 @@ export default async function BlogPostPage({
         title={title}
         description=""
         date="2026-03-23"
-        author="ZETUP Team"
+        author="ZETUP PRO Team"
         slug={slug}
       />
       <BreadcrumbSchema

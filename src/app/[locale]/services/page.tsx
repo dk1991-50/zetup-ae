@@ -43,11 +43,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "خدمات الشركات دبي — PRO، تأسيس، تأشيرات، ضرائب | زيتب"
-        : "Corporate Services Dubai — PRO, Formation, Visa, Tax | ZETUP",
+        : "Corporate Services Dubai — PRO, Formation, Visa, Tax | ZETUP PRO",
     description:
       locale === "ar"
         ? "زيتب تقدم خدمات شركات شفافة لشركات دبي البر الرئيسي. خدمات PRO، تأسيس الشركات، معالجة التأشيرات، التوطين، الضرائب، والمزيد."
-        : "ZETUP PRO provides transparent corporate services for Dubai mainland companies. PRO services, company formation, visa processing, Emiratisation, tax, and more.",
+        : "ZETUP PRO_PRO_HOLD provides transparent corporate services for Dubai mainland companies. PRO services, company formation, visa processing, Emiratisation, tax, and more.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/services`,
       languages: {
@@ -80,7 +80,7 @@ export default async function ServicesIndexPage({
             Corporate Services for Dubai Mainland Companies
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl font-body">
-            ZETUP PRO provides a complete range of corporate services for companies
+            ZETUP PRO_PRO_HOLD provides a complete range of corporate services for companies
             operating on Dubai mainland. Every service is delivered with
             Scandinavian transparency — published pricing, proactive
             communication, and invoices that match your quote.

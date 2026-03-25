@@ -12,11 +12,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "شروط الخدمة — زيتب للخدمات المؤسسية"
-        : "Terms of Service — ZETUP PRO Corporate Services",
+        : "Terms of Service — ZETUP PRO_PRO_HOLD Corporate Services",
     description:
       locale === "ar"
         ? "شروط الخدمة لزيتب للخدمات المؤسسية. الشروط والأحكام لخدمات PRO وتأسيس الشركات والتأشيرات في دبي."
-        : "Terms of Service for ZETUP PRO Corporate Services. Terms and conditions governing PRO services, company formation, visa processing, and corporate services in Dubai.",
+        : "Terms of Service for ZETUP PRO_PRO_HOLD Corporate Services. Terms and conditions governing PRO services, company formation, visa processing, and corporate services in Dubai.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/terms-of-service`,
       languages: {
@@ -51,9 +51,9 @@ export default async function TermsOfServicePage({
               </h2>
               <p>
                 These Terms of Service (&ldquo;Terms&rdquo;) govern your use of
-                the ZETUP PRO Corporate Services website ({SITE_CONFIG.url}) and the
-                engagement of any services provided by ZETUP PRO Corporate Services
-                (&ldquo;ZETUP,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+                the ZETUP PRO_PRO_HOLD Corporate Services website ({SITE_CONFIG.url}) and the
+                engagement of any services provided by ZETUP PRO_PRO_HOLD Corporate Services
+                (&ldquo;ZETUP PRO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
                 &ldquo;our&rdquo;), a company registered and operating in Dubai,
                 United Arab Emirates.
               </p>
@@ -70,7 +70,7 @@ export default async function TermsOfServicePage({
                 2. Services
               </h2>
               <p>
-                ZETUP PRO provides corporate services for companies operating in the
+                ZETUP PRO_PRO_HOLD provides corporate services for companies operating in the
                 United Arab Emirates, including but not limited to:
               </p>
               <ul className="list-disc ps-6 space-y-2">
@@ -128,7 +128,7 @@ export default async function TermsOfServicePage({
                 </li>
                 <li>
                   Ensure all documents provided are genuine and legally valid.
-                  ZETUP is not responsible for verifying the authenticity of
+                  ZETUP PRO is not responsible for verifying the authenticity of
                   documents provided by the client.
                 </li>
                 <li>
@@ -156,7 +156,7 @@ export default async function TermsOfServicePage({
               </p>
               <p>
                 <strong>Government fees:</strong> Government fees are billed
-                separately at cost, with official receipts attached. ZETUP does
+                separately at cost, with official receipts attached. ZETUP PRO does
                 not mark up government fees. These fees are subject to change by
                 the relevant government authority without prior notice.
               </p>
@@ -189,12 +189,12 @@ export default async function TermsOfServicePage({
               <p>
                 <strong>Termination clause:</strong> Either party may terminate
                 the Service Agreement by providing 30 days&apos; written notice.
-                Upon termination, ZETUP will complete any in-progress
+                Upon termination, ZETUP PRO will complete any in-progress
                 transactions, transfer all client documents, and provide a final
                 invoice for outstanding services and government fees.
               </p>
               <p>
-                <strong>Immediate termination:</strong> ZETUP reserves the right
+                <strong>Immediate termination:</strong> ZETUP PRO reserves the right
                 to terminate services immediately if the client breaches these
                 Terms, provides fraudulent documents, engages in illegal
                 activity, or fails to pay outstanding invoices after a 30-day
@@ -215,7 +215,7 @@ export default async function TermsOfServicePage({
                 6. Limitation of Liability
               </h2>
               <p>
-                <strong>Government decisions:</strong> ZETUP acts as a
+                <strong>Government decisions:</strong> ZETUP PRO acts as a
                 processing agent and government liaison. We do not control
                 government decisions, processing timelines, or fee changes. We
                 cannot guarantee the approval of any visa application, licence
@@ -230,13 +230,13 @@ export default async function TermsOfServicePage({
               </p>
               <p>
                 <strong>Maximum liability:</strong> To the maximum extent
-                permitted by UAE law, ZETUP&apos;s total liability for any
+                permitted by UAE law, ZETUP PRO&apos;s total liability for any
                 claims arising from our services shall not exceed the total fees
                 paid by the client for the specific service giving rise to the
                 claim in the 12 months preceding the claim.
               </p>
               <p>
-                <strong>Exclusions:</strong> ZETUP shall not be liable for
+                <strong>Exclusions:</strong> ZETUP PRO shall not be liable for
                 indirect, incidental, consequential, or punitive damages,
                 including loss of profits, business interruption, or loss of
                 data, regardless of the cause of action.
@@ -249,7 +249,7 @@ export default async function TermsOfServicePage({
                 7. Confidentiality
               </h2>
               <p>
-                ZETUP treats all client information as confidential. We will not
+                ZETUP PRO treats all client information as confidential. We will not
                 disclose your business information, documents, or personal data
                 to any third party except as required to perform the services
                 (e.g., government submissions), as required by law, or with your
@@ -267,8 +267,8 @@ export default async function TermsOfServicePage({
                 8. Intellectual Property
               </h2>
               <p>
-                All content on the ZETUP website — including text, graphics,
-                logos, images, and software — is the property of ZETUP Corporate
+                All content on the ZETUP PRO website — including text, graphics,
+                logos, images, and software — is the property of ZETUP PRO Corporate
                 Services and is protected by applicable intellectual property
                 laws. You may not reproduce, distribute, modify, or create
                 derivative works from our website content without prior written
@@ -294,13 +294,13 @@ export default async function TermsOfServicePage({
                 of any information.
               </p>
               <p>
-                ZETUP is not a law firm and does not provide legal advice. For
+                ZETUP PRO is not a law firm and does not provide legal advice. For
                 complex legal matters, including company structuring, dispute
                 resolution, or regulatory interpretation, we recommend engaging
                 a qualified UAE lawyer.
               </p>
               <p>
-                ZETUP is not an accounting firm and does not provide tax
+                ZETUP PRO is not an accounting firm and does not provide tax
                 advisory, financial statement preparation, or audit services. We
                 coordinate with your accountant for government filings but do
                 not perform tax computation.
@@ -330,7 +330,7 @@ export default async function TermsOfServicePage({
                 These Terms shall be governed by and construed in accordance
                 with the laws of the United Arab Emirates. Any disputes arising
                 from or in connection with these Terms or the services provided
-                by ZETUP shall be subject to the exclusive jurisdiction of the
+                by ZETUP PRO shall be subject to the exclusive jurisdiction of the
                 courts of Dubai, UAE.
               </p>
               <p>
@@ -346,7 +346,7 @@ export default async function TermsOfServicePage({
                 12. Changes to Terms
               </h2>
               <p>
-                ZETUP reserves the right to update these Terms at any time. The
+                ZETUP PRO reserves the right to update these Terms at any time. The
                 updated Terms will be posted on this page with the revised
                 &ldquo;Last updated&rdquo; date. Continued use of our website or
                 services after changes constitutes acceptance of the revised
@@ -363,7 +363,7 @@ export default async function TermsOfServicePage({
               <p>For questions about these Terms of Service, contact us at:</p>
               <div className="bg-frost rounded-xl p-6 not-prose">
                 <p className="font-semibold text-fjord-900">
-                  ZETUP PRO Corporate Services
+                  ZETUP PRO_PRO_HOLD Corporate Services
                 </p>
                 <p className="text-slate mt-1">{SITE_CONFIG.address.street}</p>
                 <p className="text-slate">

@@ -45,11 +45,11 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "خدمات PRO دبي | تأسيس الشركات ومعالجة التأشيرات | زيتب"
-        : "PRO Services Dubai | Company Formation & Visa Processing | ZETUP",
+        : "PRO Services Dubai | Company Formation & Visa Processing | ZETUP PRO",
     description:
       locale === "ar"
         ? "زيتب للخدمات المؤسسية تقدم خدمات PRO شفافة وتأسيس الشركات ومعالجة التأشيرات والامتثال للتوطين في دبي. بمعايير اسكندنافية: بدون رسوم مخفية."
-        : "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
+        : "ZETUP PRO_PRO_HOLD Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}`,
       languages: { en: `${SITE_CONFIG.url}/en`, ar: `${SITE_CONFIG.url}/ar` },
@@ -92,7 +92,7 @@ const homepageFAQs = [
   {
     question: "Can I switch PRO providers without disruption?",
     answer:
-      "Yes. ZETUP PRO manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
+      "Yes. ZETUP PRO_PRO_HOLD manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
   },
   {
     question: "What is a PRO Health Check?",
@@ -100,12 +100,12 @@ const homepageFAQs = [
       "Our free 30-minute assessment where we review your current PRO setup, check Emiratisation compliance status, identify any overpayments or gaps, and provide a clear action plan.",
   },
   {
-    question: "Does ZETUP handle free zone companies?",
+    question: "Does ZETUP PRO handle free zone companies?",
     answer:
       "Our primary focus is Dubai mainland (DET) companies. We can assist free zone companies with visa processing, document attestation, and certain government services.",
   },
   {
-    question: "Where is ZETUP PRO's office?",
+    question: "Where is ZETUP PRO_PRO_HOLD's office?",
     answer:
       "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Sunday to Thursday, 9 AM to 6 PM.",
   },
@@ -137,21 +137,21 @@ const processSteps = [
 const testimonials = [
   {
     quote:
-      "Switching to ZETUP PRO was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
+      "Switching to ZETUP PRO_PRO_HOLD was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
     author: "Client",
     title: "Operations Director",
     company: "Construction Company, 50+ employees",
   },
   {
     quote:
-      "After years of surprise fees from our previous PRO company, ZETUP PRO's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
+      "After years of surprise fees from our previous PRO company, ZETUP PRO_PRO_HOLD's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
     author: "Client",
     title: "Managing Director",
     company: "Consultancy, 30+ employees",
   },
   {
     quote:
-      "ZETUP PRO handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
+      "ZETUP PRO_PRO_HOLD handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
     author: "Client",
     title: "HR Director",
     company: "Hospitality Company, 70+ employees",
@@ -222,14 +222,14 @@ export default function HomePage() {
               Your invoice arrives with charges you never agreed to.
             </p>
             <p>
-              We started ZETUP because we experienced these problems ourselves.
+              We started ZETUP PRO because we experienced these problems ourselves.
               As a Danish entrepreneur setting up in Dubai, Dennis Kristensen
               saw firsthand how opaque the PRO services market can be. Edina
               Sultan, with over 17 years of UAE government expertise, knew it
               could be done better.
             </p>
             <p className="text-fjord-900 font-semibold border-s-4 border-sage-400 ps-6">
-              ZETUP is the result: a PRO company built on Scandinavian values of
+              ZETUP PRO is the result: a PRO company built on Scandinavian values of
               transparency, reliability, and straight talk.
             </p>
           </div>
@@ -470,7 +470,7 @@ export default function HomePage() {
             </p>
             <div className="space-y-4">
               <a
-                href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
+                href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-graphite hover:text-sage-600 transition-colors"

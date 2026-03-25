@@ -1,4 +1,4 @@
-ZETUP Image Dimensions Guide
+ZETUP PRO Image Dimensions Guide
 =============================
 
 HERO BACKGROUNDS (public/images/hero/)
