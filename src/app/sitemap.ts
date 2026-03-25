@@ -14,6 +14,7 @@ const staticPages = [
   "/blog",
   "/privacy-policy",
   "/terms-of-service",
+  "/tools/emiratisation-calculator",
 ];
 
 const servicePages = [
@@ -34,6 +35,13 @@ const guidePages = [
   "/guides/uae-visa-processing",
   "/guides/emiratisation-compliance-2026",
   "/guides/uae-corporate-tax",
+];
+
+const comparePages = [
+  "/compare/zetup-pro-vs-virtuzone",
+  "/compare/zetup-pro-vs-creative-zone",
+  "/compare/zetup-pro-vs-shuraa",
+  "/compare/pro-services-pricing-comparison-dubai",
 ];
 
 const blogPosts = [
@@ -65,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...servicePages,
     ...guidePages,
+    ...comparePages,
     ...blogPosts,
   ];
 
@@ -80,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 1
           : page.startsWith("/services/")
             ? 0.9
-            : page.startsWith("/guides/")
+            : page.startsWith("/guides/") || page.startsWith("/compare/")
               ? 0.8
               : 0.7,
       alternates: {
