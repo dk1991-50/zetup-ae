@@ -53,24 +53,37 @@ export function Hero({
           </div>
 
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            {title
-              .split(".")
-              .filter(Boolean)
-              .map((part, i, arr) => (
-                <span key={i}>
-                  {i > 0 && <span className="text-sage-400">.</span>}
-                  {i === arr.length - 1 ? (
-                    <span className="relative inline-block">
-                      <span className="hero-glare relative z-10">{part}</span>
-                      {title.endsWith(".") && (
-                        <span className="text-sage-400">.</span>
+            {title.split("\n").map((line, lineIdx, lines) => {
+              const parts = line.split(".").filter(Boolean);
+              const isLastLine = lineIdx === lines.length - 1;
+              return (
+                <span key={lineIdx}>
+                  {lineIdx > 0 && <br />}
+                  {parts.map((part, i) => (
+                    <span key={i}>
+                      {i > 0 && <span className="text-sage-400">.</span>}
+                      {isLastLine && i === parts.length - 1 ? (
+                        <span className="relative inline-block">
+                          <span className="hero-glare relative z-10">
+                            {part}
+                          </span>
+                          {line.endsWith(".") && (
+                            <span className="text-sage-400">.</span>
+                          )}
+                        </span>
+                      ) : (
+                        <>
+                          {part}
+                          {i === parts.length - 1 && line.endsWith(".") && (
+                            <span className="text-sage-400">.</span>
+                          )}
+                        </>
                       )}
                     </span>
-                  ) : (
-                    part
-                  )}
+                  ))}
                 </span>
-              ))}
+              );
+            })}
           </h1>
 
           {subtitle && (
