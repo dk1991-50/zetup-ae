@@ -93,7 +93,7 @@ export default async function AboutPage({
             What Makes ZETUP PRO Different
           </h2>
           <div className="space-y-8">
-            <div className="p-8 rounded-2xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-2xl border border-mist bg-white">
               <h3 className="font-display text-lg font-semibold text-fjord-900 mb-3">
                 We are not a typing center with a website.
               </h3>
@@ -105,7 +105,7 @@ export default async function AboutPage({
                 agree to.
               </p>
             </div>
-            <div className="p-8 rounded-2xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-2xl border border-mist bg-white">
               <h3 className="font-display text-lg font-semibold text-fjord-900 mb-3">
                 Our positioning is intentional.
               </h3>
@@ -118,7 +118,7 @@ export default async function AboutPage({
                 government fees.
               </p>
             </div>
-            <div className="p-8 rounded-2xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-2xl border border-mist bg-white">
               <h3 className="font-display text-lg font-semibold text-fjord-900 mb-3">
                 We are small by design — for now.
               </h3>

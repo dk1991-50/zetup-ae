@@ -213,7 +213,7 @@ export default function HomePage() {
         primaryCta={
           <Link
             href="/pro-health-check"
-            className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-lg"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-base sm:text-lg"
           >
             {t("hero.ctaPrimary")}
           </Link>
@@ -221,7 +221,7 @@ export default function HomePage() {
         secondaryCta={
           <Link
             href="/pricing"
-            className="inline-block px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors text-lg"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors text-base sm:text-lg"
           >
             {t("hero.ctaSecondary")}
           </Link>
@@ -269,27 +269,27 @@ export default function HomePage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
             We Work With
           </p>
-          <div className="flex items-center justify-center gap-16">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16">
             <Image
               src="/images/misc/government_logos/misc_dubai-det-logo.jpg"
               alt="Dubai DET"
               width={120}
               height={64}
-              className="h-16 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
             <Image
               src="/images/misc/government_logos/misc_mohre-logo.jpg"
               alt="MOHRE"
               width={120}
               height={64}
-              className="h-16 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
             <Image
               src="/images/misc/government_logos/misc_dubai-government-logo.jpg"
               alt="Dubai Government"
               width={120}
               height={64}
-              className="h-16 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
           </div>
         </div>
@@ -346,9 +346,9 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group relative p-8 rounded-2xl border border-mist bg-white shadow-md shadow-fjord-900/5 hover:border-sage-300 hover:shadow-2xl hover:shadow-sage-500/15 hover:-translate-y-2 transition-all duration-300"
+                className="group relative p-5 sm:p-8 rounded-2xl border border-mist bg-white shadow-md shadow-fjord-900/5 hover:border-sage-300 hover:shadow-2xl hover:shadow-sage-500/15 hover:-translate-y-2 transition-all duration-300"
               >
-                <span className="absolute top-5 end-6 font-display text-6xl font-extrabold text-fjord-100 group-hover:text-sage-200 transition-colors duration-300">
+                <span className="absolute top-5 end-4 sm:end-6 font-display text-4xl sm:text-6xl font-extrabold text-fjord-100 group-hover:text-sage-200 transition-colors duration-300">
                   {item.num}
                 </span>
                 <h3 className="relative font-display text-lg font-bold text-fjord-900 mb-3">
@@ -375,7 +375,7 @@ export default function HomePage() {
       </section>
 
       {/* Video background CTA */}
-      <section className="relative min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
         <LazyVideo
           src="/videos/web_landscape_video_template%20(2).mp4"
           className="absolute inset-0 h-full w-full object-cover"
@@ -423,7 +423,7 @@ export default function HomePage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-stone mb-8">
             Trusted By Companies Across Dubai
           </p>
-          <div className="flex items-center justify-center gap-16">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16">
             {clientLogos.map((logo) => (
               <Image
                 key={logo.alt}
@@ -431,7 +431,7 @@ export default function HomePage() {
                 alt={logo.alt}
                 width={120}
                 height={64}
-                className="h-16 w-auto object-contain"
+                className="h-12 sm:h-16 w-auto object-contain"
               />
             ))}
           </div>
@@ -539,7 +539,7 @@ export default function HomePage() {
 
           <form
             action={handleContactForm}
-            className="bg-white rounded-2xl border border-mist p-8 shadow-md"
+            className="bg-white rounded-2xl border border-mist p-5 sm:p-8 shadow-md"
           >
             <input type="hidden" name="locale" value={locale} />
             <input

@@ -24,7 +24,7 @@ export function Hero({
   return (
     <section
       className={cn(
-        "relative flex min-h-[90vh] items-center overflow-hidden",
+        "relative flex min-h-[70vh] sm:min-h-[80vh] lg:min-h-[90vh] items-center overflow-hidden",
         className,
       )}
     >
@@ -56,7 +56,7 @@ export function Hero({
             </span>
           </div>
 
-          <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             {title.split("\n").map((line, lineIdx, lines) => {
               const parts = line.split(".").filter(Boolean);
               const isLastLine = lineIdx === lines.length - 1;
