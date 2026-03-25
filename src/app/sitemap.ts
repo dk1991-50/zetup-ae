@@ -15,6 +15,8 @@ const staticPages = [
   "/privacy-policy",
   "/terms-of-service",
   "/tools/emiratisation-calculator",
+  "/tools/cost-calculator",
+  "/tools/government-fees",
 ];
 
 const servicePages = [
