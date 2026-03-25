@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Phone, Mail, MapPin } from "lucide-react";
@@ -14,12 +15,11 @@ export function Footer() {
           {/* Col 1: Brand */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <img
+              <Image
                 src="/images/misc/logos/zetup_pro_logo_wordmark_white_black.png"
-                alt="ZETUP PRO_PRO_HOLD Corporate Services"
+                alt="ZETUP PRO Corporate Services"
                 width={140}
                 height={36}
-                loading="lazy"
                 className="h-9 w-auto"
               />
             </Link>

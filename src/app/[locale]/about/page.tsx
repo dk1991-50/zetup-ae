@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -23,6 +24,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE_CONFIG.url}/en/about`,
         ar: `${SITE_CONFIG.url}/ar/about`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };
@@ -39,10 +41,13 @@ export default async function AboutPage({
     <>
       {/* Hero with background image */}
       <section className="relative h-[50vh] min-h-[350px] flex items-end overflow-hidden">
-        <img
+        <Image
           src="/images/hero/zetup_hero2.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-fjord-950/90 via-fjord-950/50 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-12 md:px-8 lg:px-12">
@@ -59,10 +64,10 @@ export default async function AboutPage({
           </h2>
           <div className="prose prose-lg text-slate max-w-none prose-p:leading-relaxed">
             <p>
-              ZETUP PRO_PRO_HOLD Corporate Services was founded on a simple observation: the
-              PRO services market in Dubai is broken. Business owners pay too
-              much, get too little transparency, and spend too much of their own
-              time managing the people who are supposed to manage their
+              ZETUP PRO Corporate Services was founded on a simple observation:
+              the PRO services market in Dubai is broken. Business owners pay
+              too much, get too little transparency, and spend too much of their
+              own time managing the people who are supposed to manage their
               government paperwork.
             </p>
             <p>

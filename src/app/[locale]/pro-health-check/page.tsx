@@ -31,6 +31,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE_CONFIG.url}/en/pro-health-check`,
         ar: `${SITE_CONFIG.url}/ar/pro-health-check`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };
@@ -68,21 +69,43 @@ async function handleHealthCheckForm(formData: FormData) {
   "use server";
   const { redirect } = await import("next/navigation");
   const { supabase } = await import("@/lib/supabase");
+  const { healthCheckSchema } = await import("@/lib/validation");
+  const locale = formData.get("locale")?.toString() || "en";
+
+  if (formData.get("website")) {
+    redirect(`/${locale}/pro-health-check?success=true`);
+  }
+
+  const parsed = healthCheckSchema.safeParse({
+    name: formData.get("name")?.toString(),
+    company: formData.get("company")?.toString(),
+    email: formData.get("email")?.toString(),
+    phone: formData.get("phone")?.toString(),
+    employees: formData.get("employees")?.toString() || undefined,
+    currentProvider: formData.get("currentProvider")?.toString() || undefined,
+    painPoint: formData.get("painPoint")?.toString() || undefined,
+    preferredTime: formData.get("preferredTime")?.toString() || undefined,
+  });
+
+  if (!parsed.success) {
+    return redirect(`/${locale}/pro-health-check?error=validation`);
+  }
+
+  const d = parsed.data;
   const { error } = await supabase.from("contact_submissions").insert({
     form_type: "pro-health-check",
-    full_name: formData.get("name")?.toString() ?? "",
-    company_name: formData.get("company")?.toString() ?? "",
-    email: formData.get("email")?.toString() ?? "",
-    phone: formData.get("phone")?.toString() ?? "",
-    employee_count: formData.get("employees")?.toString() || null,
-    current_provider: formData.get("currentProvider")?.toString() || null,
-    pain_point: formData.get("painPoint")?.toString() || null,
-    preferred_time: formData.get("preferredTime")?.toString() || null,
+    full_name: d.name,
+    company_name: d.company,
+    email: d.email,
+    phone: d.phone,
+    employee_count: d.employees || null,
+    current_provider: d.currentProvider || null,
+    pain_point: d.painPoint || null,
+    preferred_time: d.preferredTime || null,
   });
   if (error) {
-    throw new Error("Failed to submit form. Please try again.");
+    redirect(`/${locale}/pro-health-check?error=server`);
   }
-  const locale = formData.get("locale")?.toString() || "en";
   redirect(`/${locale}/pro-health-check?success=true`);
 }
 
@@ -200,6 +223,14 @@ export default async function ProHealthCheckPage({
             className="bg-white rounded-2xl border border-mist p-8 md:p-10 space-y-6"
           >
             <input type="hidden" name="locale" value={locale} />
+            <input
+              type="text"
+              name="website"
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
                 <label

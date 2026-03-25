@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
@@ -13,24 +14,46 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
+import { LazyVideo } from "@/components/ui/LazyVideo";
 
 async function handleContactForm(formData: FormData) {
   "use server";
   const { redirect } = await import("next/navigation");
   const { supabase } = await import("@/lib/supabase");
+  const { contactSchema } = await import("@/lib/validation");
+  const locale = formData.get("locale")?.toString() || "en";
+
+  // Honeypot — bots fill this hidden field
+  if (formData.get("website")) {
+    redirect(`/${locale}/contact?success=true`);
+  }
+
+  const parsed = contactSchema.safeParse({
+    name: formData.get("name")?.toString(),
+    company: formData.get("company")?.toString(),
+    email: formData.get("email")?.toString(),
+    phone: formData.get("phone")?.toString(),
+    service: formData.get("service")?.toString() || undefined,
+    message: formData.get("message")?.toString() || undefined,
+  });
+
+  if (!parsed.success) {
+    return redirect(`/${locale}/contact?error=validation`);
+  }
+
+  const d = parsed.data;
   const { error } = await supabase.from("contact_submissions").insert({
     form_type: "contact",
-    full_name: formData.get("name")?.toString() ?? "",
-    company_name: formData.get("company")?.toString() ?? "",
-    email: formData.get("email")?.toString() ?? "",
-    phone: formData.get("phone")?.toString() ?? "",
-    service_interest: formData.get("service")?.toString() || null,
-    message: formData.get("message")?.toString() || null,
+    full_name: d.name,
+    company_name: d.company,
+    email: d.email,
+    phone: d.phone,
+    service_interest: d.service || null,
+    message: d.message || null,
   });
   if (error) {
-    throw new Error("Failed to submit form");
+    redirect(`/${locale}/contact?error=server`);
   }
-  const locale = formData.get("locale")?.toString() || "en";
   redirect(`/${locale}/contact?success=true`);
 }
 
@@ -49,10 +72,14 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "زيتب للخدمات المؤسسية تقدم خدمات PRO شفافة وتأسيس الشركات ومعالجة التأشيرات والامتثال للتوطين في دبي. بمعايير اسكندنافية: بدون رسوم مخفية."
-        : "ZETUP PRO_PRO_HOLD Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
+        : "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai. Scandinavian values: no hidden fees.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}`,
-      languages: { en: `${SITE_CONFIG.url}/en`, ar: `${SITE_CONFIG.url}/ar` },
+      languages: {
+        en: `${SITE_CONFIG.url}/en`,
+        ar: `${SITE_CONFIG.url}/ar`,
+        "x-default": `${SITE_CONFIG.url}/en`,
+      },
     },
   };
 }
@@ -92,7 +119,7 @@ const homepageFAQs = [
   {
     question: "Can I switch PRO providers without disruption?",
     answer:
-      "Yes. ZETUP PRO_PRO_HOLD manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
+      "Yes. ZETUP PRO manages the full handover from your current provider. We audit all existing visa and license statuses, create a renewal calendar, and take over active transactions without any gap in service.",
   },
   {
     question: "What is a PRO Health Check?",
@@ -105,7 +132,7 @@ const homepageFAQs = [
       "Our primary focus is Dubai mainland (DET) companies. We can assist free zone companies with visa processing, document attestation, and certain government services.",
   },
   {
-    question: "Where is ZETUP PRO_PRO_HOLD's office?",
+    question: "Where is ZETUP PRO's office?",
     answer:
       "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Sunday to Thursday, 9 AM to 6 PM.",
   },
@@ -137,21 +164,21 @@ const processSteps = [
 const testimonials = [
   {
     quote:
-      "Switching to ZETUP PRO_PRO_HOLD was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
+      "Switching to ZETUP PRO was the best operational decision we made in 2025. For the first time, our visa renewals happen on schedule and our invoices match what we agreed.",
     author: "Client",
     title: "Operations Director",
     company: "Construction Company, 50+ employees",
   },
   {
     quote:
-      "After years of surprise fees from our previous PRO company, ZETUP PRO_PRO_HOLD's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
+      "After years of surprise fees from our previous PRO company, ZETUP PRO's transparency is genuinely refreshing. They told us the price, delivered the service, and the invoice matched.",
     author: "Client",
     title: "Managing Director",
     company: "Consultancy, 30+ employees",
   },
   {
     quote:
-      "ZETUP PRO_PRO_HOLD handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
+      "ZETUP PRO handled our entire Emiratisation compliance setup and we went from non-compliant to fully meeting our target in under three months.",
     author: "Client",
     title: "HR Director",
     company: "Hospitality Company, 70+ employees",
@@ -222,15 +249,15 @@ export default function HomePage() {
               Your invoice arrives with charges you never agreed to.
             </p>
             <p>
-              We started ZETUP PRO because we experienced these problems ourselves.
-              As a Danish entrepreneur setting up in Dubai, Dennis Kristensen
-              saw firsthand how opaque the PRO services market can be. Edina
-              Sultan, with over 17 years of UAE government expertise, knew it
-              could be done better.
+              We started ZETUP PRO because we experienced these problems
+              ourselves. As a Danish entrepreneur setting up in Dubai, Dennis
+              Kristensen saw firsthand how opaque the PRO services market can
+              be. Edina Sultan, with over 17 years of UAE government expertise,
+              knew it could be done better.
             </p>
             <p className="text-fjord-900 font-semibold border-s-4 border-sage-400 ps-6">
-              ZETUP PRO is the result: a PRO company built on Scandinavian values of
-              transparency, reliability, and straight talk.
+              ZETUP PRO is the result: a PRO company built on Scandinavian
+              values of transparency, reliability, and straight talk.
             </p>
           </div>
         </div>
@@ -243,22 +270,25 @@ export default function HomePage() {
             We Work With
           </p>
           <div className="flex items-center justify-center gap-16">
-            <img
+            <Image
               src="/images/misc/government_logos/misc_dubai-det-logo.jpg"
               alt="Dubai DET"
-              loading="lazy"
+              width={120}
+              height={64}
               className="h-16 w-auto object-contain"
             />
-            <img
+            <Image
               src="/images/misc/government_logos/misc_mohre-logo.jpg"
               alt="MOHRE"
-              loading="lazy"
+              width={120}
+              height={64}
               className="h-16 w-auto object-contain"
             />
-            <img
+            <Image
               src="/images/misc/government_logos/misc_dubai-government-logo.jpg"
               alt="Dubai Government"
-              loading="lazy"
+              width={120}
+              height={64}
               className="h-16 w-auto object-contain"
             />
           </div>
@@ -266,18 +296,10 @@ export default function HomePage() {
       </section>
 
       <section className="relative py-24 px-6 md:px-8 lg:px-12 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        <LazyVideo
+          src="/videos/web_landscape_video_template%20(1).mp4"
           className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source
-            src="/videos/web_landscape_video_template%20(1).mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         <div className="absolute inset-0 bg-white/90" />
         <div className="relative max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-12 text-center">
@@ -354,18 +376,10 @@ export default function HomePage() {
 
       {/* Video background CTA */}
       <section className="relative min-h-[500px] flex items-center overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        <LazyVideo
+          src="/videos/web_landscape_video_template%20(2).mp4"
           className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source
-            src="/videos/web_landscape_video_template%20(2).mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         <div className="absolute inset-0 bg-fjord-950/80" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center sm:px-8 lg:px-12">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -411,11 +425,12 @@ export default function HomePage() {
           </p>
           <div className="flex items-center justify-center gap-16">
             {clientLogos.map((logo) => (
-              <img
+              <Image
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                loading="lazy"
+                width={120}
+                height={64}
                 className="h-16 w-auto object-contain"
               />
             ))}
@@ -470,7 +485,7 @@ export default function HomePage() {
             </p>
             <div className="space-y-4">
               <a
-                href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
+                href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%20PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-graphite hover:text-sage-600 transition-colors"
@@ -527,6 +542,14 @@ export default function HomePage() {
             className="bg-white rounded-2xl border border-mist p-8 shadow-md"
           >
             <input type="hidden" name="locale" value={locale} />
+            <input
+              type="text"
+              name="website"
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <div className="grid sm:grid-cols-2 gap-5 mb-5">
               <div>
                 <label

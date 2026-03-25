@@ -21,12 +21,13 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "زيتب تنشر أسعار خدمات PRO الحقيقية. الاشتراكات المؤسسية تبدأ من 8,000 درهم/شهرياً. بدون رسوم مخفية."
-        : "ZETUP PRO_PRO_HOLD publishes real PRO services pricing. Corporate retainers from AED 8,000/month. No hidden fees. See our three service tiers.",
+        : "ZETUP PRO publishes real PRO services pricing. Corporate retainers from AED 8,000/month. No hidden fees. See our three service tiers.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/pricing`,
       languages: {
         en: `${SITE_CONFIG.url}/en/pricing`,
         ar: `${SITE_CONFIG.url}/ar/pricing`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };

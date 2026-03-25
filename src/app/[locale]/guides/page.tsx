@@ -24,6 +24,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE_CONFIG.url}/en/guides`,
         ar: `${SITE_CONFIG.url}/ar/guides`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };

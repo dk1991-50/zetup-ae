@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { TEAM } from "@/lib/constants";
 
@@ -14,11 +15,13 @@ export function TeamSection({ className }: TeamSectionProps) {
           className="group rounded-2xl border border-mist bg-white p-8 transition-shadow hover:shadow-lg"
         >
           <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-start gap-6">
-            <img
+            <Image
               src={member.image}
               alt={member.name}
-              loading="lazy"
+              width={112}
+              height={112}
               className="h-28 w-28 shrink-0 rounded-2xl object-cover shadow-sm"
+              sizes="112px"
             />
             <div>
               <h3 className="font-display text-xl font-bold text-fjord-900">

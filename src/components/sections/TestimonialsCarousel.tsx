@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/Card";
 
@@ -33,10 +34,11 @@ export function TestimonialsCarousel({
                 {/* Attribution */}
                 <div className="mt-6 border-t border-mist pt-4 flex items-center gap-3">
                   {testimonial.logo && (
-                    <img
+                    <Image
                       src={testimonial.logo}
                       alt={testimonial.company}
-                      loading="lazy"
+                      width={32}
+                      height={32}
                       className="h-8 w-8 rounded object-contain shrink-0"
                     />
                   )}

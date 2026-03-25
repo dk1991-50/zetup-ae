@@ -16,12 +16,12 @@ export function LocalBusinessSchema() {
       streetAddress: COMPANY.address.street,
       addressLocality: COMPANY.address.city,
       addressRegion: COMPANY.address.region,
-      addressCountry: COMPANY.address.country,
+      addressCountry: "AE",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "25.1865",
-      longitude: "55.2613",
+      latitude: "25.186",
+      longitude: "55.2644",
     },
     sameAs: [COMPANY.social.linkedin],
     openingHoursSpecification: [
@@ -32,7 +32,7 @@ export function LocalBusinessSchema() {
         closes: "18:00",
       },
     ],
-    priceRange: "AED 5,000 - AED 50,000+",
+    priceRange: "AED 8,000 - 35,000/month",
   };
 
   return <JsonLd data={data} />;

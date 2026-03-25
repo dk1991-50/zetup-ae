@@ -2,37 +2,22 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft } from "lucide-react";
+import { MDXContent } from "@content-collections/mdx/react";
+import { allPosts } from "@/../.content-collections/generated";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
-const blogSlugs = [
-  "how-much-company-setup-cost-dubai-mainland-2026",
-  "what-is-pro-service-dubai-expats-guide",
-  "documents-required-dubai-mainland-company-formation",
-  "how-to-renew-dubai-trade-license",
-  "golden-visa-uae-2026-eligibility-requirements",
-  "top-10-business-activities-dubai-mainland",
-  "how-to-open-corporate-bank-account-dubai",
-  "start-business-dubai-european-expat-guide",
-  "100-percent-foreign-ownership-dubai",
-  "pro-services-cost-dubai-transparent-pricing",
-  "emiratisation-fines-2026-penalties",
-  "in-house-pro-vs-outsourced-comparison",
-  "how-to-switch-pro-providers-dubai",
-  "nafis-incentives-explained",
-  "free-zone-mainland-operating-permit-2026",
-  "dubai-corporate-tax-small-business-relief",
-  "mainland-vs-dmcc-company-formation",
-  "cheapest-business-setup-dubai-2026",
-  "ejari-registration-dubai-guide",
-  "visa-cancellation-dubai-process",
-];
+function getPost(locale: string, slug: string) {
+  return allPosts.find(
+    (p) => p.slug === slug && p.locale === locale && p.contentType === "blog",
+  );
+}
 
 export function generateStaticParams() {
-  return ["en", "ar"].flatMap((locale) =>
-    blogSlugs.map((slug) => ({ locale, slug })),
-  );
+  return allPosts
+    .filter((p) => p.contentType === "blog")
+    .map((p) => ({ locale: p.locale, slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -41,16 +26,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const title = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const post = getPost(locale, slug);
+  const title =
+    post?.title ??
+    slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const description = post?.description;
   return {
     title,
+    description,
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/blog/${slug}`,
       languages: {
         en: `${SITE_CONFIG.url}/en/blog/${slug}`,
         ar: `${SITE_CONFIG.url}/ar/blog/${slug}`,
+        "x-default": `${SITE_CONFIG.url}/en/blog/${slug}`,
       },
     },
   };
@@ -62,14 +51,11 @@ export default async function BlogPostPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  const post = getPost(locale, slug);
 
-  if (!blogSlugs.includes(slug)) {
+  if (!post) {
     notFound();
   }
-
-  const title = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
 
   return (
     <>
@@ -79,76 +65,83 @@ export default async function BlogPostPage({
             href="/blog"
             className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 mb-8 text-sm font-medium"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
             {locale === "ar" ? "العودة إلى المدونة" : "Back to Blog"}
           </Link>
 
           <div className="mb-8">
             <p className="text-sm text-stone mb-2">
-              March 23, 2026 &middot; ZETUP PRO Team
+              {new Date(post.date).toLocaleDateString(
+                locale === "ar" ? "ar-AE" : "en-US",
+                {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                },
+              )}{" "}
+              &middot; {post.author || "ZETUP PRO Team"}
             </p>
             <h1 className="font-display text-3xl md:text-4xl font-bold text-fjord-900 mb-4">
-              {title}
+              {post.title}
             </h1>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-0.5 bg-frost text-xs font-medium text-fjord-700 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="prose prose-lg max-w-none text-slate prose-headings:text-fjord-900 prose-headings:font-display prose-a:text-sage-600 prose-a:no-underline hover:prose-a:underline">
-            <p>
-              This blog post content will be loaded from MDX content
-              collections. The full content for this article is available in the
-              content/en/blog/ directory.
-            </p>
-            <p>
-              For now, this page serves as the template that will render the MDX
-              content once Content Collections is fully configured and built.
-            </p>
-
-            <h2>Related Services</h2>
-            <ul>
-              <li>
-                <Link href="/services/pro-services">PRO Services Dubai</Link>
-              </li>
-              <li>
-                <Link href="/services/company-formation">
-                  Company Formation Dubai
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/visa-services">Visa Processing</Link>
-              </li>
-            </ul>
+            <MDXContent code={post.mdx} />
           </div>
 
           <div className="mt-16 p-8 rounded-xl bg-fjord-900 text-white text-center">
             <h2 className="font-display text-2xl font-semibold mb-4">
-              Need Help With Your Dubai Business?
+              {locale === "ar"
+                ? "هل تحتاج مساعدة في عملك في دبي؟"
+                : "Need Help With Your Dubai Business?"}
             </h2>
             <p className="text-mist mb-6">
-              Book a free PRO Health Check and get a clear picture of your
-              compliance status.
+              {locale === "ar"
+                ? "احجز فحص PRO صحي مجاني واحصل على صورة واضحة عن وضع الامتثال الخاص بك."
+                : "Book a free PRO Health Check and get a clear picture of your compliance status."}
             </p>
             <Link
               href="/pro-health-check"
               className="inline-block px-8 py-3 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors"
             >
-              Book Free Health Check
+              {locale === "ar"
+                ? "احجز فحص صحي مجاني"
+                : "Book Free Health Check"}
             </Link>
           </div>
         </div>
       </article>
 
       <ArticleSchema
-        title={title}
-        description=""
-        date="2026-03-23"
-        author="ZETUP PRO Team"
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        author={post.author || "ZETUP PRO Team"}
         slug={slug}
+        locale={locale}
+        contentType="blog"
       />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: SITE_CONFIG.url },
           { name: "Blog", url: `${SITE_CONFIG.url}/${locale}/blog` },
-          { name: title, url: `${SITE_CONFIG.url}/${locale}/blog/${slug}` },
+          {
+            name: post.title,
+            url: `${SITE_CONFIG.url}/${locale}/blog/${slug}`,
+          },
         ]}
       />
     </>

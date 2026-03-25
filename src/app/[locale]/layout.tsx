@@ -48,7 +48,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
-      className={`${plusJakarta.variable} ${dmSans.variable} ${notoArabic.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${dmSans.variable} ${locale === "ar" ? notoArabic.variable : ""} h-full antialiased`}
     >
       <head>
         {/* Favicon is defined via metadata.icons in src/app/layout.tsx.

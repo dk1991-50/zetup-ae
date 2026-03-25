@@ -29,12 +29,13 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "انتقل إلى زيتب بسلاسة. نحن ندير عملية التسليم الكاملة من مزودك الحالي بدون أي انقطاع في الخدمة أو فجوات في الامتثال."
-        : "Switch to ZETUP PRO_PRO_HOLD seamlessly. We manage the full handover from your current PRO provider with zero service disruption, full compliance continuity, and transparent pricing from day one.",
+        : "Switch to ZETUP PRO seamlessly. We manage the full handover from your current PRO provider with zero service disruption, full compliance continuity, and transparent pricing from day one.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/switch-pro`,
       languages: {
         en: `${SITE_CONFIG.url}/en/switch-pro`,
         ar: `${SITE_CONFIG.url}/ar/switch-pro`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };
@@ -79,7 +80,7 @@ export default async function SwitchProPage({
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
         <div className="relative max-w-4xl mx-auto">
           <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
-            Switch to ZETUP PRO_PRO_HOLD
+            Switch to ZETUP PRO
           </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Switch Your PRO Provider Without Missing a Beat
@@ -146,7 +147,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 Visa processing that takes weeks instead of days. Licence
                 renewals submitted at the last minute. Status updates only when
-                you chase. ZETUP PRO_PRO_HOLD provides proactive WhatsApp updates and 60-day
+                you chase. ZETUP PRO provides proactive WhatsApp updates and 60-day
                 advance deadline management.
               </p>
             </div>
@@ -178,7 +179,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 Visa applications rejected because of errors your PRO should
                 have caught. Documents submitted with wrong information. Each
-                rejection adds 1-3 weeks. ZETUP PRO_PRO_HOLD's pre-submission review prevents
+                rejection adds 1-3 weeks. ZETUP PRO's pre-submission review prevents
                 this.
               </p>
             </div>
@@ -382,7 +383,7 @@ export default async function SwitchProPage({
       {/* CTA */}
       <CTABanner
         title="Ready to Switch?"
-        description="Start with a free PRO Health Check. In 30 minutes, you will know exactly where you stand — and exactly what switching to ZETUP PRO_PRO_HOLD would look like."
+        description="Start with a free PRO Health Check. In 30 minutes, you will know exactly where you stand — and exactly what switching to ZETUP PRO would look like."
         primaryCta={
           <Link
             href="/pro-health-check"

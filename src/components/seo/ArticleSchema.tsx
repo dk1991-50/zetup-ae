@@ -7,6 +7,8 @@ interface ArticleSchemaProps {
   date: string;
   author: string;
   slug: string;
+  locale: string;
+  contentType: "blog" | "guide";
 }
 
 export function ArticleSchema({
@@ -15,12 +17,16 @@ export function ArticleSchema({
   date,
   author,
   slug,
+  locale,
+  contentType,
 }: ArticleSchemaProps) {
+  const section = contentType === "guide" ? "guides" : "blog";
   const data = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
-    description,
+    description:
+      description || `${title} — published by ZETUP PRO Corporate Services.`,
     datePublished: date,
     dateModified: date,
     author: {
@@ -34,7 +40,7 @@ export function ArticleSchema({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${COMPANY.url}/blog/${slug}`,
+      "@id": `${COMPANY.url}/${locale}/${section}/${slug}`,
     },
   };
 

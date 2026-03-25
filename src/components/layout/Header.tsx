@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
+import Image from "next/image";
 import { Globe, ChevronDown, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/lib/constants";
@@ -17,6 +18,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -60,11 +62,12 @@ export function Header() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/images/misc/logos/zetup_pro_logo_wordmark_color.png"
-              alt="ZETUP PRO_PRO_HOLD Corporate Services"
+              alt="ZETUP PRO Corporate Services"
               width={140}
               height={36}
+              priority
               className="h-9 w-auto"
             />
           </Link>
@@ -85,6 +88,16 @@ export function Header() {
                   >
                     <button
                       type="button"
+                      aria-haspopup="true"
+                      aria-expanded={openDropdown === item.labelKey}
+                      onClick={() =>
+                        setOpenDropdown((prev) =>
+                          prev === item.labelKey ? null : item.labelKey,
+                        )
+                      }
+                      onKeyDown={(e) => {
+                        if (e.key === "Escape") setOpenDropdown(null);
+                      }}
                       className={cn(
                         "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium font-display text-fjord-700 transition-colors hover:bg-frost hover:text-fjord-900",
                         openDropdown === item.labelKey &&
@@ -95,6 +108,7 @@ export function Header() {
                       <ChevronDown
                         size={14}
                         strokeWidth={1.5}
+                        aria-hidden="true"
                         className={cn(
                           "transition-transform duration-200",
                           openDropdown === item.labelKey && "rotate-180",
@@ -102,12 +116,21 @@ export function Header() {
                       />
                     </button>
                     {openDropdown === item.labelKey && (
-                      <div className="absolute start-0 top-full pt-1">
-                        <div className="min-w-[220px] rounded-xl border border-mist bg-white p-2 shadow-lg">
+                      <div
+                        className="absolute start-0 top-full pt-1"
+                        onKeyDown={(e) => {
+                          if (e.key === "Escape") setOpenDropdown(null);
+                        }}
+                      >
+                        <div
+                          role="menu"
+                          className="min-w-[220px] rounded-xl border border-mist bg-white p-2 shadow-lg"
+                        >
                           {item.children!.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
+                              role="menuitem"
                               className="block rounded-lg px-3 py-2 text-sm font-body text-fjord-700 transition-colors hover:bg-frost hover:text-fjord-900"
                             >
                               {t(child.labelKey)}
@@ -160,6 +183,7 @@ export function Header() {
 
             {/* Mobile hamburger */}
             <button
+              ref={hamburgerRef}
               type="button"
               onClick={() => setMobileOpen(true)}
               className="flex items-center justify-center rounded-lg p-2 text-fjord-700 transition-colors hover:bg-frost lg:hidden"
@@ -176,6 +200,7 @@ export function Header() {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         onSwitchLocale={switchLocale}
+        triggerRef={hamburgerRef}
       />
     </>
   );

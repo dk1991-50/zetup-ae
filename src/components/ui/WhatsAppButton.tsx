@@ -12,7 +12,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
+      href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%20PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t("aria.chatWhatsApp")}

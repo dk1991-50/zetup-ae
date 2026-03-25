@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { X, ChevronDown, Globe } from "lucide-react";
@@ -12,15 +12,62 @@ interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
   onSwitchLocale: () => void;
+  triggerRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
-export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
+export function MobileNav({
+  isOpen,
+  onClose,
+  onSwitchLocale,
+  triggerRef,
+}: MobileNavProps) {
   const t = useTranslations();
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   const toggleItem = (label: string) => {
     setExpandedItem((prev) => (prev === label ? null : label));
   };
+
+  // Focus management: move focus to close button on open, return on close
+  useEffect(() => {
+    if (isOpen) {
+      closeRef.current?.focus();
+    } else {
+      triggerRef?.current?.focus();
+    }
+  }, [isOpen, triggerRef]);
+
+  // Escape key handler
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
+  // Focus trap
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !drawerRef.current) return;
+    const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])',
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, []);
 
   return (
     <>
@@ -38,6 +85,11 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
 
       {/* Drawer */}
       <div
+        ref={drawerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("aria.openMenu")}
+        onKeyDown={handleKeyDown}
         className={cn(
           "fixed inset-y-0 end-0 z-50 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out lg:hidden",
           isOpen ? "translate-x-0" : "translate-x-full rtl:-translate-x-full",
@@ -50,6 +102,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
               ZETUP PRO
             </span>
             <button
+              ref={closeRef}
               type="button"
               onClick={onClose}
               className="rounded-lg p-2 text-fjord-700 transition-colors hover:bg-frost"
@@ -76,12 +129,14 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
                       <button
                         type="button"
                         onClick={() => toggleItem(item.labelKey)}
+                        aria-expanded={isExpanded}
                         className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium font-display text-fjord-700 transition-colors hover:bg-frost"
                       >
                         {t(item.labelKey)}
                         <ChevronDown
                           size={16}
                           strokeWidth={1.5}
+                          aria-hidden="true"
                           className={cn(
                             "transition-transform duration-200",
                             isExpanded && "rotate-180",
@@ -145,9 +200,11 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
               }}
               className="flex w-full items-center justify-center gap-2 rounded-lg border border-mist px-3 py-2.5 text-sm font-medium text-fjord-700 transition-colors hover:bg-frost"
             >
-              <Globe size={16} strokeWidth={1.5} />
+              <Globe size={16} strokeWidth={1.5} aria-hidden="true" />
               <span className="font-display">EN</span>
-              <span className="text-mist">/</span>
+              <span className="text-mist" aria-hidden="true">
+                /
+              </span>
               <span className="font-arabic">العربية</span>
             </button>
           </div>

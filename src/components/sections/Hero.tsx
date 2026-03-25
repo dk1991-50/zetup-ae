@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface HeroProps {
@@ -28,10 +29,13 @@ export function Hero({
       )}
     >
       {/* Background photo */}
-      <img
+      <Image
         src={backgroundImage}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
       />
 
       {/* Dark overlay on photo */}

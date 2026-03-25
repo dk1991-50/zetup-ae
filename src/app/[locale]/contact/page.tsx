@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
@@ -19,12 +20,13 @@ export async function generateMetadata({
     description:
       locale === "ar"
         ? "تواصل مع زيتب للخدمات المؤسسية في الخليج التجاري، دبي. هاتف: +971 4 323 4578، واتساب: +971 58 573 8177"
-        : "Reach ZETUP PRO_PRO_HOLD Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
+        : "Reach ZETUP PRO Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/contact`,
       languages: {
         en: `${SITE_CONFIG.url}/en/contact`,
         ar: `${SITE_CONFIG.url}/ar/contact`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };
@@ -34,20 +36,40 @@ async function handleContactForm(formData: FormData) {
   "use server";
   const { redirect } = await import("next/navigation");
   const { supabase } = await import("@/lib/supabase");
+  const { contactSchema } = await import("@/lib/validation");
+  const locale = formData.get("locale")?.toString() || "en";
+
+  if (formData.get("website")) {
+    redirect(`/${locale}/contact?success=true`);
+  }
+
+  const parsed = contactSchema.safeParse({
+    name: formData.get("name")?.toString(),
+    company: formData.get("company")?.toString(),
+    email: formData.get("email")?.toString(),
+    phone: formData.get("phone")?.toString(),
+    service: formData.get("service")?.toString() || undefined,
+    message: formData.get("message")?.toString() || undefined,
+  });
+
+  if (!parsed.success) {
+    return redirect(`/${locale}/contact?error=validation`);
+  }
+
+  const d = parsed.data;
   const { error } = await supabase.from("contact_submissions").insert({
     form_type: "contact",
-    full_name: formData.get("name")?.toString() ?? "",
-    company_name: formData.get("company")?.toString() ?? "",
-    email: formData.get("email")?.toString() ?? "",
-    phone: formData.get("phone")?.toString() ?? "",
+    full_name: d.name,
+    company_name: d.company,
+    email: d.email,
+    phone: d.phone,
     employee_count: formData.get("employees")?.toString() || null,
-    service_interest: formData.get("service")?.toString() || null,
-    message: formData.get("message")?.toString() || null,
+    service_interest: d.service || null,
+    message: d.message || null,
   });
   if (error) {
-    throw new Error("Failed to submit contact form");
+    redirect(`/${locale}/contact?error=server`);
   }
-  const locale = formData.get("locale")?.toString() || "en";
   redirect(`/${locale}/contact?success=true`);
 }
 
@@ -62,10 +84,13 @@ export default async function ContactPage({
   return (
     <>
       <section className="relative h-[40vh] min-h-[300px] flex items-end overflow-hidden">
-        <img
+        <Image
           src="/images/hero/zetup_hero3.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-fjord-950/90 via-fjord-950/50 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 md:px-8 lg:px-12">
@@ -87,7 +112,7 @@ export default async function ContactPage({
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <a
-              href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
+              href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%20PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
               target="_blank"
               rel="noopener noreferrer"
               className="p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center group"
@@ -166,6 +191,14 @@ export default async function ContactPage({
               </h2>
               <form action={handleContactForm} className="space-y-5">
                 <input type="hidden" name="locale" value={locale} />
+                <input
+                  type="text"
+                  name="website"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label

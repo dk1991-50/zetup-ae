@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, type ReactNode } from "react";
+import { useState, useRef, useEffect, useId, type ReactNode } from "react";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +37,9 @@ function AccordionItem({
   const [height, setHeight] = useState<number | undefined>(
     defaultOpen ? undefined : 0,
   );
+  const id = useId();
+  const triggerId = `accordion-trigger-${id}`;
+  const panelId = `accordion-panel-${id}`;
 
   useEffect(() => {
     if (!contentRef.current) return;
@@ -61,12 +64,17 @@ function AccordionItem({
     <div className={cn("py-1", className)}>
       <button
         type="button"
+        id={triggerId}
         onClick={() => setIsOpen((prev) => !prev)}
         className="flex w-full items-center justify-between gap-4 py-4 text-start font-display font-semibold text-fjord-900 transition-colors hover:text-sage-600"
         aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span>{trigger}</span>
-        <span className="shrink-0 text-sage-500 transition-transform duration-300">
+        <span
+          className="shrink-0 text-sage-500 transition-transform duration-300"
+          aria-hidden="true"
+        >
           {isOpen ? (
             <Minus size={20} strokeWidth={1.5} />
           ) : (
@@ -75,6 +83,9 @@ function AccordionItem({
         </span>
       </button>
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={triggerId}
         style={{ height: height !== undefined ? `${height}px` : "auto" }}
         className="overflow-hidden transition-[height] duration-300 ease-in-out"
       >

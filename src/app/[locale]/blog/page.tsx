@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -13,7 +14,7 @@ export async function generateMetadata({
     title:
       locale === "ar"
         ? "المدونة — زيتب للخدمات المؤسسية"
-        : "Blog — ZETUP PRO_PRO_HOLD Corporate Services",
+        : "Blog — ZETUP PRO Corporate Services",
     description:
       locale === "ar"
         ? "مقالات ونصائح حول خدمات PRO وتأسيس الشركات والتأشيرات والتوطين في دبي."
@@ -23,6 +24,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE_CONFIG.url}/en/blog`,
         ar: `${SITE_CONFIG.url}/ar/blog`,
+        "x-default": `${SITE_CONFIG.url}/en`,
       },
     },
   };
@@ -230,11 +232,13 @@ export default async function BlogPage({
                 className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-all duration-200 overflow-hidden hover:border-sage-200"
               >
                 <div className="h-48 relative overflow-hidden bg-fjord-50">
-                  <img
+                  <Image
                     src={`/images/blog/${post.slug}.svg`}
                     alt=""
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">
