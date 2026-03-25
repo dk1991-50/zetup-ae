@@ -15,8 +15,11 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/images/misc/logos/zetup_pro_logo_wordmark_white black.png"
+                src="/images/misc/logos/zetup_pro_logo_wordmark_white_black.png"
                 alt="ZETUP Corporate Services"
+                width={140}
+                height={36}
+                loading="lazy"
                 className="h-9 w-auto"
               />
             </Link>
@@ -72,7 +75,7 @@ export function Footer() {
                     href={item.href}
                     className="text-sm text-slate-300 transition-colors hover:text-white font-body"
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                 </li>
               ))}
@@ -167,7 +170,7 @@ export function Footer() {
               {t("footer.privacy")}
             </Link>
             <Link
-              href="/terms"
+              href="/terms-of-service"
               className="text-xs text-slate-400 transition-colors hover:text-white font-body"
             >
               {t("footer.terms")}

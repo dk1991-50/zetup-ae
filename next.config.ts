@@ -23,15 +23,6 @@ const nextConfig: NextConfig = {
           { key: "X-Llms-Txt", value: "/llms.txt" },
         ],
       },
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
     ];
   },
   async redirects() {

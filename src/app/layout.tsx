@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   },
   description:
     "ZETUP Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
+  icons: {
+    icon: [{ url: "/images/misc/logos/zetup_favicon.png", type: "image/png" }],
+    apple: [{ url: "/images/misc/logos/zetup_favicon.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     siteName: "ZETUP Corporate Services",
@@ -16,11 +20,16 @@ export const metadata: Metadata = {
         url: "/images/og/Web_Social_share_templates%20(1).jpg",
         width: 1200,
         height: 630,
+        alt: "ZETUP Corporate Services — Transparent PRO Services in Dubai",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "ZETUP Corporate Services | PRO Services Dubai",
+    description:
+      "Transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
+    images: ["/images/og/Web_Social_share_templates%20(1).jpg"],
   },
   robots: {
     index: true,

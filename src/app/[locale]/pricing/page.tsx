@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/routing";
 import { PricingTable } from "@/components/sections/PricingTable";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
@@ -69,76 +69,99 @@ export default async function PricingPage({
 
   return (
     <>
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-6">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-fjord-900 py-24 md:py-32 px-6 md:px-8 lg:px-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -top-40 end-0 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[100px]" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
+            Transparent Pricing
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Real Prices. Published. Before You Commit.
           </h1>
-          <p className="text-xl text-slate max-w-3xl mb-16">
+          <p className="text-xl text-slate-300 max-w-3xl font-body">
             Every competitor in the Dubai PRO services market hides their
             pricing behind a contact form. We do not. Below are our three
             corporate PRO service tiers with clear starting prices, explicit
             inclusions, and no surprise fees.
           </p>
+        </div>
+      </section>
 
+      {/* Pricing Tiers */}
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
           <PricingTable />
         </div>
       </section>
 
       <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold text-fjord-900 mb-8">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-3">
             Add-On Services
           </h2>
-          <div className="overflow-x-auto">
+          <p className="text-lg text-slate mb-10 font-body">
+            Extend your retainer with specialist services as your needs grow.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-mist bg-white">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-mist">
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                <tr className="border-b-2 border-mist bg-frost">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Service
                   </th>
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Price Range
                   </th>
-                  <th className="text-start py-4 font-display font-semibold text-fjord-900">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Details
                   </th>
                 </tr>
               </thead>
               <tbody className="text-slate">
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
                     Emiratisation Programme
                   </td>
-                  <td className="py-4 pe-6">AED 3,000–8,000/month</td>
-                  <td className="py-4">
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    AED 3,000–8,000/month
+                  </td>
+                  <td className="py-4 px-6">
                     Full lifecycle: quota calc, Nafis, recruitment coordination
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
                     Golden Visa Processing
                   </td>
-                  <td className="py-4 pe-6">AED 5,000–10,000/application</td>
-                  <td className="py-4">
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    AED 5,000–10,000/application
+                  </td>
+                  <td className="py-4 px-6">
                     End-to-end application for executives and investors
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
                     Corporate Tax Filing
                   </td>
-                  <td className="py-4 pe-6">AED 2,000–5,000/quarter</td>
-                  <td className="py-4">
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    AED 2,000–5,000/quarter
+                  </td>
+                  <td className="py-4 px-6">
                     FTA liaison, EmaraTax submissions, audit coordination
                   </td>
                 </tr>
-                <tr>
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
                     Emergency/Expedite Processing
                   </td>
-                  <td className="py-4 pe-6">25–50% premium</td>
-                  <td className="py-4">
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    25–50% premium
+                  </td>
+                  <td className="py-4 px-6">
                     Rush processing for urgent situations
                   </td>
                 </tr>
@@ -150,11 +173,11 @@ export default async function PricingPage({
 
       <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold text-fjord-900 mb-6">
-            Our Pricing Philosophy
-          </h2>
-          <div className="prose prose-lg text-slate max-w-none">
-            <p>
+          <div className="p-8 md:p-10 rounded-2xl bg-sage-50 border border-sage-200 mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-4">
+              Our Pricing Philosophy
+            </h2>
+            <p className="text-lg text-slate leading-relaxed font-body">
               We separate our service fees from government fees on every
               invoice. Government fees are passed through at cost with receipts
               attached. This means you always know exactly what ZETUP charges
@@ -163,54 +186,82 @@ export default async function PricingPage({
             </p>
           </div>
 
-          <h2 className="font-display text-3xl font-semibold text-fjord-900 mt-16 mb-8">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-fjord-900 mb-3">
             How Government Fees Work
           </h2>
-          <div className="overflow-x-auto">
+          <p className="text-lg text-slate mb-8 font-body">
+            These are the standard government fees you can expect — separate
+            from our retainer.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-mist bg-white">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-mist">
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                <tr className="border-b-2 border-mist bg-frost">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Fee Type
                   </th>
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Range (AED)
                   </th>
-                  <th className="text-start py-4 font-display font-semibold text-fjord-900">
+                  <th className="text-start py-4 px-6 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Authority
                   </th>
                 </tr>
               </thead>
               <tbody className="text-slate">
-                <tr className="border-b border-mist">
-                  <td className="py-3 pe-6">Employment visa</td>
-                  <td className="py-3 pe-6">3,000–5,000</td>
-                  <td className="py-3">MOHRE / GDRFA</td>
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Employment visa
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    3,000–5,000
+                  </td>
+                  <td className="py-4 px-6">MOHRE / GDRFA</td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-3 pe-6">Trade license renewal</td>
-                  <td className="py-3 pe-6">10,000–15,000+</td>
-                  <td className="py-3">DET</td>
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Trade license renewal
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    10,000–15,000+
+                  </td>
+                  <td className="py-4 px-6">DET</td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-3 pe-6">Emirates ID</td>
-                  <td className="py-3 pe-6">370</td>
-                  <td className="py-3">ICP</td>
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Emirates ID
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    370
+                  </td>
+                  <td className="py-4 px-6">ICP</td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-3 pe-6">Medical fitness test</td>
-                  <td className="py-3 pe-6">300–500</td>
-                  <td className="py-3">DHA</td>
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Medical fitness test
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    300–500
+                  </td>
+                  <td className="py-4 px-6">DHA</td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-3 pe-6">Labour card</td>
-                  <td className="py-3 pe-6">300</td>
-                  <td className="py-3">MOHRE</td>
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Labour card
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    300
+                  </td>
+                  <td className="py-4 px-6">MOHRE</td>
                 </tr>
-                <tr>
-                  <td className="py-3 pe-6">Establishment card</td>
-                  <td className="py-3 pe-6">2,000</td>
-                  <td className="py-3">MOHRE</td>
+                <tr className="hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-6 font-medium text-graphite">
+                    Establishment card
+                  </td>
+                  <td className="py-4 px-6 font-semibold text-fjord-900">
+                    2,000
+                  </td>
+                  <td className="py-4 px-6">MOHRE</td>
                 </tr>
               </tbody>
             </table>
@@ -222,22 +273,20 @@ export default async function PricingPage({
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-8 lg:px-12 bg-frost">
-        <div className="max-w-4xl mx-auto">
-          <FAQSection items={pricingFAQs} />
-        </div>
+      <section className="bg-frost">
+        <FAQSection items={pricingFAQs} />
       </section>
 
       <CTABanner
         title="Ready to See Your Personalized Quote?"
         description="Book a free PRO Health Check. We will review your current setup and provide an itemized quote within 48 hours."
         primaryCta={
-          <a
-            href="/en/pro-health-check"
-            className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors"
+          <Link
+            href="/pro-health-check"
+            className="inline-block px-8 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors font-display"
           >
             Book Free Health Check
-          </a>
+          </Link>
         }
       />
 

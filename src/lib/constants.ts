@@ -185,7 +185,7 @@ export const NAV_ITEMS = [
     labelKey: "nav.services",
     href: "/services",
     children: SERVICES.map((s) => ({
-      label: SERVICE_LABELS[s.titleKey] || s.titleKey,
+      labelKey: `services.${s.titleKey}`,
       href: `/services/${s.slug}`,
     })),
   },
@@ -194,20 +194,29 @@ export const NAV_ITEMS = [
     href: "/guides",
     children: [
       {
-        label: "PRO Services Guide",
+        labelKey: "guides.proServices",
         href: "/guides/pro-services-dubai-complete-guide",
       },
       {
-        label: "Company Formation Guide",
+        labelKey: "guides.companyFormation",
         href: "/guides/dubai-mainland-company-formation",
       },
-      { label: "Free Zone vs Mainland", href: "/guides/free-zone-vs-mainland" },
-      { label: "Visa Processing Guide", href: "/guides/uae-visa-processing" },
       {
-        label: "Emiratisation Guide",
+        labelKey: "guides.freeZoneVsMainland",
+        href: "/guides/free-zone-vs-mainland",
+      },
+      {
+        labelKey: "guides.visaProcessing",
+        href: "/guides/uae-visa-processing",
+      },
+      {
+        labelKey: "guides.emiratisation",
         href: "/guides/emiratisation-compliance-2026",
       },
-      { label: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
+      {
+        labelKey: "guides.corporateTax",
+        href: "/guides/uae-corporate-tax",
+      },
     ],
   },
   { labelKey: "nav.pricing", href: "/pricing" },
@@ -223,20 +232,29 @@ export const NAV_SERVICES = SERVICES.map((s) => ({
 
 export const NAV_GUIDES = [
   {
-    label: "PRO Services Guide",
+    labelKey: "guides.proServices",
     href: "/guides/pro-services-dubai-complete-guide",
   },
   {
-    label: "Company Formation Guide",
+    labelKey: "guides.companyFormation",
     href: "/guides/dubai-mainland-company-formation",
   },
-  { label: "Free Zone vs Mainland", href: "/guides/free-zone-vs-mainland" },
-  { label: "Visa Processing Guide", href: "/guides/uae-visa-processing" },
   {
-    label: "Emiratisation Guide",
+    labelKey: "guides.freeZoneVsMainland",
+    href: "/guides/free-zone-vs-mainland",
+  },
+  {
+    labelKey: "guides.visaProcessing",
+    href: "/guides/uae-visa-processing",
+  },
+  {
+    labelKey: "guides.emiratisation",
     href: "/guides/emiratisation-compliance-2026",
   },
-  { label: "Corporate Tax Guide", href: "/guides/uae-corporate-tax" },
+  {
+    labelKey: "guides.corporateTax",
+    href: "/guides/uae-corporate-tax",
+  },
 ];
 
 export const STATS = [

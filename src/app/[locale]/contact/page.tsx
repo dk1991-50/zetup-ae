@@ -47,7 +47,8 @@ async function handleContactForm(formData: FormData) {
   if (error) {
     throw new Error("Failed to submit contact form");
   }
-  redirect("/en/contact?success=true");
+  const locale = formData.get("locale")?.toString() || "en";
+  redirect(`/${locale}/contact?success=true`);
 }
 
 export default async function ContactPage({
@@ -164,6 +165,7 @@ export default async function ContactPage({
                 {locale === "ar" ? "نموذج التواصل" : "Contact Form"}
               </h2>
               <form action={handleContactForm} className="space-y-5">
+                <input type="hidden" name="locale" value={locale} />
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label

@@ -51,10 +51,16 @@ export default async function LocaleLayout({
       className={`${plusJakarta.variable} ${dmSans.variable} ${notoArabic.variable} h-full antialiased`}
     >
       <head>
+        {/* Favicon is defined via metadata.icons in src/app/layout.tsx.
+            Keeping this as a fallback for older browsers. */}
         <link
           rel="icon"
           href="/images/misc/logos/zetup_favicon.png"
           type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/misc/logos/zetup_favicon.png"
         />
       </head>
       <body className="min-h-full flex flex-col bg-snow text-midnight">

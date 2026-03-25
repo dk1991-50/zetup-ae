@@ -94,6 +94,20 @@
     "relatedPosts": "Related Posts",
     "backToBlog": "Back to Blog"
   },
+  "guides": {
+    "proServices": "PRO Services Guide",
+    "companyFormation": "Company Formation Guide",
+    "freeZoneVsMainland": "Free Zone vs Mainland",
+    "visaProcessing": "Visa Processing Guide",
+    "emiratisation": "Emiratisation Guide",
+    "corporateTax": "Corporate Tax Guide"
+  },
+  "aria": {
+    "switchLanguage": "Switch language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "chatWhatsApp": "Chat on WhatsApp"
+  },
   "common": {
     "step": "Step",
     "faq": "FAQ",

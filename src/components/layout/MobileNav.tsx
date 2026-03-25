@@ -53,7 +53,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
               type="button"
               onClick={onClose}
               className="rounded-lg p-2 text-fjord-700 transition-colors hover:bg-frost"
-              aria-label="Close menu"
+              aria-label={t("aria.closeMenu")}
             >
               <X size={24} strokeWidth={1.5} />
             </button>
@@ -104,7 +104,7 @@ export function MobileNav({ isOpen, onClose, onSwitchLocale }: MobileNavProps) {
                                 onClick={onClose}
                                 className="block rounded-lg px-3 py-2 text-sm font-body text-fjord-600 transition-colors hover:bg-frost hover:text-fjord-900"
                               >
-                                {child.label}
+                                {t(child.labelKey)}
                               </Link>
                             </li>
                           ))}

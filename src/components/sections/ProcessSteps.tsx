@@ -12,8 +12,8 @@ interface ProcessStepsProps {
 
 export function ProcessSteps({ steps, className }: ProcessStepsProps) {
   return (
-    <section className={cn("py-20", className)}>
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div className={cn("", className)}>
+      <div className="mx-auto max-w-5xl">
         {/* Desktop: horizontal */}
         <div className="hidden md:flex md:items-start md:gap-0">
           {steps.map((step, index) => (
@@ -73,6 +73,6 @@ export function ProcessSteps({ steps, className }: ProcessStepsProps) {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

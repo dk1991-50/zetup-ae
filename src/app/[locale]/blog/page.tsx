@@ -199,29 +199,42 @@ export default async function BlogPage({
 
   return (
     <>
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-6">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-fjord-900 py-24 md:py-28 px-6 md:px-8 lg:px-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -bottom-20 end-1/3 h-[400px] w-[400px] rounded-full bg-sage-500/10 blur-[80px]" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
             {locale === "ar" ? "المدونة" : "Blog"}
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            {locale === "ar" ? "المدونة" : "Insights for Dubai Business Owners"}
           </h1>
-          <p className="text-xl text-slate mb-16 max-w-2xl">
+          <p className="text-xl text-slate-300 max-w-2xl font-body">
             {locale === "ar"
               ? "مقالات ونصائح عملية حول إدارة الأعمال في دبي — من التأسيس إلى الامتثال."
               : "Practical articles and guides for running a business in Dubai — from formation to compliance."}
           </p>
+        </div>
+      </section>
 
+      {/* Blog Grid */}
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow overflow-hidden"
+                className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-all duration-200 overflow-hidden hover:border-sage-200"
               >
-                <div className="h-48 relative overflow-hidden">
+                <div className="h-48 relative overflow-hidden bg-fjord-50">
                   <img
                     src={`/images/blog/${post.slug}.svg`}
                     alt=""
-                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
@@ -229,7 +242,7 @@ export default async function BlogPage({
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-fjord-50 text-fjord-600"
+                        className="text-xs px-2.5 py-1 rounded-full bg-fjord-50 text-fjord-600 font-medium"
                       >
                         {tag}
                       </span>
@@ -238,10 +251,12 @@ export default async function BlogPage({
                   <h2 className="font-display text-lg font-semibold text-fjord-900 group-hover:text-sage-600 transition-colors mb-2 line-clamp-2">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-slate line-clamp-2">
+                  <p className="text-sm text-slate line-clamp-2 font-body leading-relaxed">
                     {post.description}
                   </p>
-                  <p className="text-xs text-stone mt-4">{post.date}</p>
+                  <p className="text-xs text-stone mt-4 font-body">
+                    {post.date}
+                  </p>
                 </div>
               </Link>
             ))}

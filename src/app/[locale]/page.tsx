@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Hero } from "@/components/sections/Hero";
@@ -10,7 +10,6 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTABanner } from "@/components/sections/CTABanner";
-import { BlogGrid } from "@/components/sections/BlogGrid";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -31,7 +30,8 @@ async function handleContactForm(formData: FormData) {
   if (error) {
     throw new Error("Failed to submit form");
   }
-  redirect("/en/contact?success=true");
+  const locale = formData.get("locale")?.toString() || "en";
+  redirect(`/${locale}/contact?success=true`);
 }
 
 export async function generateMetadata({
@@ -176,6 +176,7 @@ const clientLogos = [
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <>
@@ -245,16 +246,19 @@ export default function HomePage() {
             <img
               src="/images/misc/government_logos/misc_dubai-det-logo.jpg"
               alt="Dubai DET"
+              loading="lazy"
               className="h-16 w-auto object-contain"
             />
             <img
               src="/images/misc/government_logos/misc_mohre-logo.jpg"
               alt="MOHRE"
+              loading="lazy"
               className="h-16 w-auto object-contain"
             />
             <img
               src="/images/misc/government_logos/misc_dubai-government-logo.jpg"
               alt="Dubai Government"
+              loading="lazy"
               className="h-16 w-auto object-contain"
             />
           </div>
@@ -411,6 +415,7 @@ export default function HomePage() {
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
+                loading="lazy"
                 className="h-16 w-auto object-contain"
               />
             ))}
@@ -521,6 +526,7 @@ export default function HomePage() {
             action={handleContactForm}
             className="bg-white rounded-2xl border border-mist p-8 shadow-md"
           >
+            <input type="hidden" name="locale" value={locale} />
             <div className="grid sm:grid-cols-2 gap-5 mb-5">
               <div>
                 <label

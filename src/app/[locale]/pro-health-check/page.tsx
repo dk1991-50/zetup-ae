@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   CheckCircle2,
 } from "lucide-react";
+import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -81,7 +82,8 @@ async function handleHealthCheckForm(formData: FormData) {
   if (error) {
     throw new Error("Failed to submit form. Please try again.");
   }
-  redirect("/en/pro-health-check?success=true");
+  const locale = formData.get("locale")?.toString() || "en";
+  redirect(`/${locale}/pro-health-check?success=true`);
 }
 
 export default async function ProHealthCheckPage({
@@ -94,12 +96,18 @@ export default async function ProHealthCheckPage({
   return (
     <>
       {/* Hero */}
-      <section className="py-20 px-6 md:px-8 lg:px-12 bg-fjord-900 text-white">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-6">
+      <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-fjord-900 text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -top-20 end-1/4 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[100px]" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
+            Free Assessment
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Is Your PRO Company Actually Protecting Your Business?
           </h1>
-          <p className="text-xl text-mist max-w-3xl">
+          <p className="text-xl text-slate-300 max-w-3xl font-body">
             Most companies in Dubai do not know whether their PRO provider is
             compliant, competitive, or even doing the basics right. Our free
             30-minute Health Check gives you the answers — with zero obligation.
@@ -191,6 +199,7 @@ export default async function ProHealthCheckPage({
             action={handleHealthCheckForm}
             className="bg-white rounded-2xl border border-mist p-8 md:p-10 space-y-6"
           >
+            <input type="hidden" name="locale" value={locale} />
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
                 <label
@@ -371,40 +380,46 @@ export default async function ProHealthCheckPage({
             Why Companies Book a Health Check
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center p-8 rounded-2xl border border-mist bg-white">
               <div className="flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-8 h-8 text-sage-500" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50">
+                  <CheckCircle2 className="w-7 h-7 text-sage-500" />
+                </div>
               </div>
-              <p className="text-3xl font-display font-bold text-fjord-900 mb-2">
+              <p className="text-4xl font-display font-bold text-fjord-900 mb-2">
                 67%
               </p>
-              <p className="text-slate leading-relaxed">
+              <p className="text-sm text-slate leading-relaxed font-body">
                 of companies we audit have at least one compliance gap they were
                 not aware of — an expired card, a missed deadline, or a visa
                 that should have been renewed.
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-8 rounded-2xl border border-mist bg-white">
               <div className="flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-8 h-8 text-sage-500" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50">
+                  <CheckCircle2 className="w-7 h-7 text-sage-500" />
+                </div>
               </div>
-              <p className="text-3xl font-display font-bold text-fjord-900 mb-2">
+              <p className="text-4xl font-display font-bold text-fjord-900 mb-2">
                 40%
               </p>
-              <p className="text-slate leading-relaxed">
+              <p className="text-sm text-slate leading-relaxed font-body">
                 of companies are overpaying for PRO services compared to what
                 they should be paying based on company size and transaction
                 volume.
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-8 rounded-2xl border border-mist bg-white">
               <div className="flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-8 h-8 text-sage-500" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50">
+                  <CheckCircle2 className="w-7 h-7 text-sage-500" />
+                </div>
               </div>
-              <p className="text-3xl font-display font-bold text-fjord-900 mb-2">
+              <p className="text-4xl font-display font-bold text-fjord-900 mb-2">
                 Most
               </p>
-              <p className="text-slate leading-relaxed">
+              <p className="text-sm text-slate leading-relaxed font-body">
                 companies have never received a proactive renewal calendar from
                 their PRO provider. They only find out about deadlines when
                 something is already overdue.
@@ -412,6 +427,11 @@ export default async function ProHealthCheckPage({
             </div>
           </div>
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-frost">
+        <FAQSection items={healthCheckFAQs} />
       </section>
 
       {/* Schema */}

@@ -73,12 +73,18 @@ export default async function SwitchProPage({
   return (
     <>
       {/* Hero */}
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-6">
+      <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-8 lg:px-12 bg-fjord-900">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -bottom-32 start-1/3 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[100px]" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
+            Switch to ZETUP
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Switch Your PRO Provider Without Missing a Beat
           </h1>
-          <p className="text-xl text-slate max-w-3xl mb-8">
+          <p className="text-xl text-slate-300 max-w-3xl mb-10 font-body">
             Changing PRO companies feels risky — you worry about visa delays,
             missing deadlines, or losing documents in the handover. We have
             managed dozens of switches and built a process that eliminates the
@@ -94,7 +100,7 @@ export default async function SwitchProPage({
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 border border-mist bg-white text-fjord-900 font-semibold rounded-lg hover:bg-frost transition-colors font-display"
+              className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors font-display"
             >
               Talk to Us
             </Link>
@@ -239,73 +245,79 @@ export default async function SwitchProPage({
             </p>
           </div>
 
-          <div className="mt-12 overflow-x-auto">
+          <div className="mt-12 overflow-x-auto rounded-xl border border-mist bg-white">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-mist">
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                <tr className="border-b-2 border-mist bg-frost">
+                  <th className="text-start py-4 px-5 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     What You Get
                   </th>
-                  <th className="text-start py-4 pe-6 font-display font-semibold text-fjord-900">
+                  <th className="text-start py-4 px-5 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider">
                     Typical PRO
                   </th>
-                  <th className="text-start py-4 font-display font-semibold text-sage-700">
+                  <th className="text-start py-4 px-5 font-display font-semibold text-sage-700 text-sm uppercase tracking-wider">
                     ZETUP
                   </th>
                 </tr>
               </thead>
               <tbody className="text-slate">
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Published pricing
                   </td>
-                  <td className="py-4 pe-6">Hidden behind contact form</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">
+                    Hidden behind contact form
+                  </td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     Published on website
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Government fee transparency
                   </td>
-                  <td className="py-4 pe-6">Blended into single charge</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">
+                    Blended into single charge
+                  </td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     Separated with receipts
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Communication channel
                   </td>
-                  <td className="py-4 pe-6">Email, often slow</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">Email, often slow</td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     Dedicated WhatsApp group
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Renewal management
                   </td>
-                  <td className="py-4 pe-6">Reactive (after expiry)</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">
+                    Reactive (after expiry)
+                  </td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     60-day advance reminders
                   </td>
                 </tr>
-                <tr className="border-b border-mist">
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="border-b border-mist hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Contract term
                   </td>
-                  <td className="py-4 pe-6">12-month lock-in</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">12-month lock-in</td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     30-day termination clause
                   </td>
                 </tr>
-                <tr>
-                  <td className="py-4 pe-6 font-medium text-graphite">
+                <tr className="hover:bg-frost/50 transition-colors">
+                  <td className="py-4 px-5 font-medium text-graphite">
                     Emiratisation support
                   </td>
-                  <td className="py-4 pe-6">Usually not offered</td>
-                  <td className="py-4 text-sage-700 font-medium">
+                  <td className="py-4 px-5 text-stone">Usually not offered</td>
+                  <td className="py-4 px-5 text-sage-700 font-semibold">
                     Included in Professional and Enterprise
                   </td>
                 </tr>

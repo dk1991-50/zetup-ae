@@ -67,18 +67,30 @@ export default async function ServicesIndexPage({
 
   return (
     <>
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-6">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-fjord-900 py-24 md:py-32 px-6 md:px-8 lg:px-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -bottom-20 start-1/4 h-[400px] w-[400px] rounded-full bg-sage-500/10 blur-[80px]" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
+            Our Services
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Corporate Services for Dubai Mainland Companies
           </h1>
-          <p className="text-xl text-slate max-w-3xl mb-16">
+          <p className="text-xl text-slate-300 max-w-3xl font-body">
             ZETUP provides a complete range of corporate services for companies
             operating on Dubai mainland. Every service is delivered with
             Scandinavian transparency — published pricing, proactive
             communication, and invoices that match your quote.
           </p>
+        </div>
+      </section>
 
+      {/* Service Cards */}
+      <section className="py-20 px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => {
               const Icon = iconMap[service.icon];

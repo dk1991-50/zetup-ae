@@ -6,7 +6,6 @@ import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Globe, ChevronDown, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
 import { MobileNav } from "./MobileNav";
 
 export function Header() {
@@ -64,6 +63,8 @@ export function Header() {
             <img
               src="/images/misc/logos/zetup_pro_logo_wordmark_color.png"
               alt="ZETUP Corporate Services"
+              width={140}
+              height={36}
               className="h-9 w-auto"
             />
           </Link>
@@ -109,7 +110,7 @@ export function Header() {
                               href={child.href}
                               className="block rounded-lg px-3 py-2 text-sm font-body text-fjord-700 transition-colors hover:bg-frost hover:text-fjord-900"
                             >
-                              {child.label}
+                              {t(child.labelKey)}
                             </Link>
                           ))}
                         </div>
@@ -141,7 +142,7 @@ export function Header() {
               type="button"
               onClick={switchLocale}
               className="hidden items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium text-fjord-700 transition-colors hover:bg-frost sm:flex"
-              aria-label="Switch language"
+              aria-label={t("aria.switchLanguage")}
             >
               <Globe size={16} strokeWidth={1.5} />
               <span className="font-display">EN</span>
@@ -162,7 +163,7 @@ export function Header() {
               type="button"
               onClick={() => setMobileOpen(true)}
               className="flex items-center justify-center rounded-lg p-2 text-fjord-700 transition-colors hover:bg-frost lg:hidden"
-              aria-label="Open menu"
+              aria-label={t("aria.openMenu")}
             >
               <Menu size={24} strokeWidth={1.5} />
             </button>

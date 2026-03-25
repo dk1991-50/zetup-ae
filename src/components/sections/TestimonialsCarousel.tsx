@@ -36,6 +36,7 @@ export function TestimonialsCarousel({
                     <img
                       src={testimonial.logo}
                       alt={testimonial.company}
+                      loading="lazy"
                       className="h-8 w-8 rounded object-contain shrink-0"
                     />
                   )}

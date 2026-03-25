@@ -907,8 +907,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 };
 
 const SERVICE_HEADER_IMAGES: Record<string, string> = {
-  "pro-services":
-    "/images/services/photos/services_photos_pro-services.jpg.jpg",
+  "pro-services": "/images/services/photos/services_photos_pro-services.jpg",
   "company-formation":
     "/images/services/photos/services_photos_company-formation.jpg",
   "visa-services": "/images/services/photos/services_photos_visa-services.jpg",
@@ -999,19 +998,29 @@ export default async function ServicePage({
 
   return (
     <>
-      {/* Hero / H1 */}
-      <section className="py-20 px-6 md:px-8 lg:px-12">
+      {/* Hero with header image */}
+      {SERVICE_HEADER_IMAGES[slug] && (
+        <section className="relative h-[40vh] min-h-[280px] md:h-[50vh] md:min-h-[350px] flex items-end overflow-hidden">
+          <img
+            src={SERVICE_HEADER_IMAGES[slug]}
+            alt={SERVICE_TITLES[slug] || slug}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-fjord-950/90 via-fjord-950/50 to-transparent" />
+          <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-10 md:pb-14 md:px-8 lg:px-12">
+            <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display backdrop-blur-sm">
+              {SERVICE_TITLES[slug] || slug}
+            </span>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              {service.h1}
+            </h1>
+          </div>
+        </section>
+      )}
+
+      {/* Answer Capsule */}
+      <section className="py-12 px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          {SERVICE_HEADER_IMAGES[slug] && (
-            <img
-              src={SERVICE_HEADER_IMAGES[slug]}
-              alt={SERVICE_TITLES[slug] || slug}
-              className="mb-10 h-64 w-full rounded-2xl object-cover"
-            />
-          )}
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-fjord-900 mb-8">
-            {service.h1}
-          </h1>
           <AnswerCapsule>
             <p>{service.answerCapsule}</p>
           </AnswerCapsule>
@@ -1022,13 +1031,13 @@ export default async function ServicePage({
       {service.sections.map((section, index) => (
         <section
           key={section.heading}
-          className={`py-16 px-6 md:px-8 lg:px-12 ${index % 2 === 1 ? "bg-frost" : ""}`}
+          className={`py-16 md:py-20 px-6 md:px-8 lg:px-12 ${index % 2 === 1 ? "bg-frost" : ""}`}
         >
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-fjord-900 mb-6">
               {section.heading}
             </h2>
-            <div className="prose prose-lg text-slate max-w-none">
+            <div className="prose prose-lg text-slate max-w-none prose-p:leading-relaxed">
               {section.content.split("\n\n").map((paragraph, pIndex) => (
                 <p key={pIndex}>{paragraph}</p>
               ))}
@@ -1036,14 +1045,16 @@ export default async function ServicePage({
 
             {/* Optional list */}
             {section.list && (
-              <ul className="mt-6 space-y-2">
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {section.list.map((item, lIndex) => (
                   <li
                     key={lIndex}
                     className="flex items-start gap-3 text-slate"
                   >
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500" />
-                    <span className="leading-relaxed">{item}</span>
+                    <span className="leading-relaxed text-sm font-body">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -1051,14 +1062,14 @@ export default async function ServicePage({
 
             {/* Optional table */}
             {section.table && (
-              <div className="mt-8 overflow-x-auto">
+              <div className="mt-8 overflow-x-auto rounded-xl border border-mist bg-white">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b-2 border-mist">
+                    <tr className="border-b-2 border-mist bg-frost">
                       {section.table.headers.map((header) => (
                         <th
                           key={header}
-                          className="text-start py-4 pe-6 font-display font-semibold text-fjord-900"
+                          className="text-start py-4 px-5 font-display font-semibold text-fjord-900 text-sm uppercase tracking-wider"
                         >
                           {header}
                         </th>
@@ -1067,11 +1078,14 @@ export default async function ServicePage({
                   </thead>
                   <tbody className="text-slate">
                     {section.table.rows.map((row, rIndex) => (
-                      <tr key={rIndex} className="border-b border-mist">
+                      <tr
+                        key={rIndex}
+                        className="border-b border-mist last:border-b-0 hover:bg-frost/50 transition-colors"
+                      >
                         {row.map((cell, cIndex) => (
                           <td
                             key={cIndex}
-                            className={`py-3 pe-6 ${cIndex === 0 ? "font-medium text-graphite" : ""}`}
+                            className={`py-3.5 px-5 ${cIndex === 0 ? "font-medium text-graphite" : ""}`}
                           >
                             {cell}
                           </td>
@@ -1087,10 +1101,8 @@ export default async function ServicePage({
       ))}
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <FAQSection items={service.faqs} />
-        </div>
+      <section className="bg-frost">
+        <FAQSection items={service.faqs} />
       </section>
 
       {/* CTA */}
