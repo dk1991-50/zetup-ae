@@ -59,9 +59,15 @@ export function Hero({
               .map((part, i, arr) => (
                 <span key={i}>
                   {i > 0 && <span className="text-sage-400">.</span>}
-                  {part}
-                  {i === arr.length - 1 && title.endsWith(".") && (
-                    <span className="text-sage-400">.</span>
+                  {i === arr.length - 1 ? (
+                    <span className="relative inline-block">
+                      <span className="hero-glare relative z-10">{part}</span>
+                      {title.endsWith(".") && (
+                        <span className="text-sage-400">.</span>
+                      )}
+                    </span>
+                  ) : (
+                    part
                   )}
                 </span>
               ))}

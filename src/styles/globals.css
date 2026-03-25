@@ -86,3 +86,30 @@ h6 {
 [dir="rtl"] th {
   line-height: 1.9;
 }
+
+/* Hero green glare animation */
+.hero-glare {
+  background: linear-gradient(
+    90deg,
+    white 0%,
+    white 40%,
+    #47b5a0 50%,
+    white 60%,
+    white 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-glare-sweep 4s ease-in-out infinite;
+}
+
+@keyframes hero-glare-sweep {
+  0%,
+  100% {
+    background-position: 200% center;
+  }
+  50% {
+    background-position: -200% center;
+  }
+}
