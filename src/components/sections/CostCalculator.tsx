@@ -17,28 +17,40 @@ export function CostCalculator({ locale }: { locale: string }) {
   const [attestations, setAttestations] = useState(1);
 
   const calc = useMemo(() => {
+    // ZETUP PRO actual pricing table: [maxEmployees, monthlyRate, annualRate]
+    const pricingTable: [number, number, number][] = [
+      [5, 839, 8750],
+      [10, 1198, 12500],
+      [15, 1438, 15000],
+      [25, 2180, 22750],
+      [35, 3048, 36570],
+      [45, 3899, 46782],
+      [55, 4102, 49225],
+      [65, 4848, 58175],
+      [75, 5563, 66750],
+      [85, 6304, 75650],
+      [95, 7006, 84075],
+      [105, 7656, 91875],
+      [115, 8385, 100625],
+      [125, 9063, 108750],
+      [135, 9788, 117450],
+      [145, 10513, 126150],
+      [155, 11238, 134850],
+      [165, 11963, 143550],
+      [175, 12688, 152250],
+      [185, 13413, 160950],
+      [195, 14138, 169650],
+      [205, 14008, 168100],
+    ];
+
+    // Find the matching tier (first tier where maxEmployees >= employee count)
     const tier =
-      employees >= 80
-        ? "enterprise"
-        : employees >= 40
-          ? "professional"
-          : "essentials";
-    const tierLabel =
-      tier === "enterprise"
-        ? "Enterprise"
-        : tier === "professional"
-          ? "Professional"
-          : "Essentials";
-    const retainer = employees >= 80 ? 22000 : employees >= 40 ? 14000 : 8000;
-    const included = employees >= 80 ? Infinity : employees >= 40 ? 30 : 15;
-    const monthlyTransactions = Math.round(
-      (newHires + renewals + cancellations) / 12,
-    );
-    const overageRate = employees >= 40 ? 375 : 425;
-    const overage =
-      included === Infinity
-        ? 0
-        : Math.max(0, monthlyTransactions - included) * overageRate;
+      pricingTable.find(([max]) => employees <= max) ||
+      pricingTable[pricingTable.length - 1];
+    const retainerMonthly = tier[1];
+    const retainerAnnual = tier[2];
+    const perEmpYear =
+      employees > 0 ? Math.round(retainerAnnual / employees) : 0;
 
     const emiratisationFee = emiratisation ? 5500 : 0;
     const goldenVisaFee = Math.round((goldenVisa * 7500) / 12);
@@ -46,8 +58,10 @@ export function CostCalculator({ locale }: { locale: string }) {
     const docFee = attestations * 250;
 
     const serviceMonthly =
-      retainer + overage + emiratisationFee + goldenVisaFee + taxFee + docFee;
-    const serviceAnnual = serviceMonthly * 12;
+      retainerMonthly + emiratisationFee + goldenVisaFee + taxFee + docFee;
+    const serviceAnnual =
+      retainerAnnual +
+      (emiratisationFee + goldenVisaFee + taxFee + docFee) * 12;
 
     // Government fees
     const govVisaNew = Math.round((newHires * 4000) / 12);
@@ -76,25 +90,17 @@ export function CostCalculator({ locale }: { locale: string }) {
       employees > 0 ? Math.round(totalMonthly / employees) : 0;
 
     return {
-      tier,
-      tierLabel,
-      retainer,
-      included,
-      monthlyTransactions,
+      retainerMonthly,
+      retainerAnnual,
+      perEmpYear,
+      tierMax: tier[0],
       service: [
         {
           label: isAr ? "رسوم الخدمات الشهرية" : "PRO Services Retainer",
-          monthly: retainer,
+          monthly: retainerMonthly,
           note: isAr
-            ? "جميع الخدمات المشمولة في فئتك"
-            : "All included services per your tier",
-        },
-        {
-          label: isAr ? "معاملات إضافية" : "Overage Transactions",
-          monthly: overage,
-          note: isAr
-            ? "فقط إذا تجاوزت الحد الشهري"
-            : "Only if you exceed monthly allocation",
+            ? `حتى ${tier[0]} موظف — ${fmt(perEmpYear)} درهم/موظف/سنة`
+            : `Up to ${tier[0]} employees — AED ${fmt(perEmpYear)}/employee/year`,
         },
         {
           label: isAr ? "برنامج التوطين" : "Emiratisation Programme",
@@ -274,9 +280,9 @@ export function CostCalculator({ locale }: { locale: string }) {
             label={isAr ? "عدد الموظفين" : "Employees"}
             value={employees}
             onChange={setEmployees}
-            min={10}
-            max={300}
-            step={5}
+            min={1}
+            max={210}
+            step={1}
             suffix=""
           />
           <SliderInput
@@ -344,14 +350,16 @@ export function CostCalculator({ locale }: { locale: string }) {
         </div>
       </div>
 
-      {/* Tier Badge */}
+      {/* Pricing Badge */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-sage-50 border border-sage-200 rounded-2xl p-6 sm:p-8">
         <div className="flex-1">
           <p className="text-sm font-medium text-sage-600 mb-1">
-            {isAr ? "الفئة الموصى بها" : "Recommended Plan"}
+            {isAr ? "فئتك" : "Your Plan"}
           </p>
           <p className="font-display text-2xl sm:text-3xl font-bold text-fjord-900">
-            {calc.tierLabel}
+            {isAr
+              ? `حتى ${calc.tierMax} موظف`
+              : `Up to ${calc.tierMax} employees`}
           </p>
         </div>
         <div className="text-start sm:text-end">
@@ -359,14 +367,11 @@ export function CostCalculator({ locale }: { locale: string }) {
             {isAr ? "الرسوم الشهرية" : "Monthly retainer"}
           </p>
           <p className="font-display text-2xl font-bold text-sage-600">
-            AED {fmt(calc.retainer)}
+            AED {fmt(calc.retainerMonthly)}
           </p>
           <p className="text-xs text-stone">
-            {calc.included === Infinity
-              ? isAr
-                ? "معاملات غير محدودة"
-                : "Unlimited transactions"
-              : `${calc.included} ${isAr ? "معاملة/شهر" : "transactions/month"}`}
+            AED {fmt(calc.retainerAnnual)}/{isAr ? "سنة" : "year"} — AED{" "}
+            {fmt(calc.perEmpYear)}/{isAr ? "موظف" : "employee"}
           </p>
         </div>
       </div>
