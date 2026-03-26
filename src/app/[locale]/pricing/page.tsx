@@ -20,8 +20,8 @@ export async function generateMetadata({
         : "PRO Services Pricing Dubai — Transparent Rates",
     description:
       locale === "ar"
-        ? "زيتب تنشر أسعار خدمات PRO الحقيقية. الاشتراكات المؤسسية تبدأ من 8,000 درهم/شهرياً. بدون رسوم مخفية."
-        : "ZETUP PRO publishes real PRO services pricing. Corporate retainers from AED 8,000/month. No hidden fees. See our three service tiers.",
+        ? "زيتب تنشر أسعار خدمات PRO الحقيقية. احسب تكلفتك الفعلية بناءً على حجم شركتك. بدون رسوم مخفية."
+        : "ZETUP PRO publishes real PRO services pricing. Calculate your exact cost based on company size. Retainers from AED 839/month. No hidden fees.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/pricing`,
       languages: {
@@ -40,9 +40,9 @@ const pricingFAQs = [
       "Because we believe you should know what things cost before you commit. Hidden pricing is one of the biggest frustrations in this market.",
   },
   {
-    question: "What happens if my company grows and I need more transactions?",
+    question: "What happens if my company grows?",
     answer:
-      "We review usage quarterly. If you consistently exceed your tier, we recommend an upgrade and agree on new pricing before making changes.",
+      "Your pricing adjusts based on employee count. As you grow, you move to the next pricing band. We review quarterly and agree on any changes before they take effect.",
   },
   {
     question: "Are government fees included in the retainer?",
@@ -50,9 +50,9 @@ const pricingFAQs = [
       "No. Government fees are billed separately at cost with official receipts attached. Our retainer covers professional service fees only.",
   },
   {
-    question: "Can I start with Essentials and upgrade later?",
+    question: "How does the pricing scale work?",
     answer:
-      "Absolutely. Many clients start with Essentials and upgrade to Professional once they hit 40–50 employees or face Emiratisation requirements.",
+      "Our pricing is based on your employee count — the more employees, the lower the cost per person. Use the calculator above to see your exact rate. Pricing starts at AED 839/month for up to 5 employees.",
   },
   {
     question: "Is there a minimum contract term?",
@@ -242,7 +242,7 @@ export default async function PricingPage({
                     Medical fitness test
                   </td>
                   <td className="py-4 px-6 font-semibold text-fjord-900">
-                    300–500
+                    260–500
                   </td>
                   <td className="py-4 px-6">DHA</td>
                 </tr>

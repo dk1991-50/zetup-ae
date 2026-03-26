@@ -38,7 +38,7 @@ export const SERVICES = [
     icon: "FileText",
     description:
       "Government liaison, document processing, and everything between you and Dubai's bureaucracy. We handle Amer, Tasheel, MOHRE, DET, and immigration — so you stay focused on your business.",
-    price: "From AED 8,000/month",
+    price: "From AED 839/month",
   },
   {
     slug: "company-formation",
