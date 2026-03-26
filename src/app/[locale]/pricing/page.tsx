@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
-import { PricingTable } from "@/components/sections/PricingTable";
+import { CostCalculator } from "@/components/sections/CostCalculator";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { CTABanner } from "@/components/sections/CTABanner";
@@ -84,17 +84,17 @@ export default async function PricingPage({
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl font-body">
             Every competitor in the Dubai PRO services market hides their
-            pricing behind a contact form. We do not. Below are our three
-            corporate PRO service tiers with clear starting prices, explicit
-            inclusions, and no surprise fees.
+            pricing behind a contact form. We do not. Use our calculator below
+            to see exactly what you will pay — service fees and government fees
+            shown separately.
           </p>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Interactive Cost Calculator */}
       <section className="py-20 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <PricingTable />
+        <div className="max-w-3xl mx-auto">
+          <CostCalculator locale={locale} />
         </div>
       </section>
 
@@ -181,9 +181,9 @@ export default async function PricingPage({
             <p className="text-lg text-slate leading-relaxed font-body">
               We separate our service fees from government fees on every
               invoice. Government fees are passed through at cost with receipts
-              attached. This means you always know exactly what ZETUP PRO charges
-              and exactly what the government charges — no blending, no markup
-              on government fees.
+              attached. This means you always know exactly what ZETUP PRO
+              charges and exactly what the government charges — no blending, no
+              markup on government fees.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ export default async function PricingPage({
                     Employment visa
                   </td>
                   <td className="py-4 px-6 font-semibold text-fjord-900">
-                    3,000–5,000
+                    3,500–7,500
                   </td>
                   <td className="py-4 px-6">MOHRE / GDRFA</td>
                 </tr>

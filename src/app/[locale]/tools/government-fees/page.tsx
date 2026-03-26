@@ -47,10 +47,11 @@ type FeeRow = {
 const visaFees: FeeRow[] = [
   {
     transaction: "Employment visa — new issue",
-    low: 3000,
-    high: 5000,
+    low: 3500,
+    high: 7500,
     authority: "MOHRE / GDRFA",
-    notes: "Includes entry permit + status change + stamping",
+    notes:
+      "Entry permit + status change + stamping. Cat 1/2: ~5K–7K, Cat 3: up to 12K",
   },
   {
     transaction: "Employment visa — renewal",
@@ -82,10 +83,10 @@ const visaFees: FeeRow[] = [
   },
   {
     transaction: "Golden Visa (10-year)",
-    low: 2800,
-    high: 4500,
+    low: 6500,
+    high: 9500,
     authority: "ICP / GDRFA",
-    notes: "Government portion only",
+    notes: "Total gov fees incl. visa issuance, 10-yr Emirates ID, medical",
   },
   {
     transaction: "Green Visa (5-year)",
@@ -103,10 +104,10 @@ const visaFees: FeeRow[] = [
   },
   {
     transaction: "Status change (visit → residence)",
-    low: 500,
-    high: 700,
+    low: 520,
+    high: 575,
     authority: "GDRFA",
-    notes: "Inside-country conversion",
+    notes: "Inside-country conversion without exit",
   },
   {
     transaction: "Visa stamping",
@@ -134,10 +135,10 @@ const idFees: FeeRow[] = [
   },
   {
     transaction: "Medical fitness test",
-    low: 300,
+    low: 260,
     high: 500,
     authority: "DHA",
-    notes: "Required for residency",
+    notes: "HIV test + chest X-ray. Varies by emirate and centre",
   },
   {
     transaction: "Health insurance (annual)",

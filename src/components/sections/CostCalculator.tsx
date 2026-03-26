@@ -63,12 +63,12 @@ export function CostCalculator({ locale }: { locale: string }) {
       retainerAnnual +
       (emiratisationFee + goldenVisaFee + taxFee + docFee) * 12;
 
-    // Government fees
-    const govVisaNew = Math.round((newHires * 4000) / 12);
+    // Government fees (mid-estimates based on 2026 rates)
+    const govVisaNew = Math.round((newHires * 5500) / 12);
     const govVisaRenew = Math.round((renewals * 3000) / 12);
     const govVisaCancel = Math.round((cancellations * 750) / 12);
     const govEID = Math.round(((newHires + renewals) * 370) / 12);
-    const govMedical = Math.round((newHires * 400) / 12);
+    const govMedical = Math.round((newHires * 380) / 12);
     const govLabour = Math.round(((newHires + renewals) * 300) / 12);
     const govLicense = Math.round(12500 / 12);
     const govEstab = Math.round(2000 / 12);
