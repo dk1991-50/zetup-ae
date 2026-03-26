@@ -187,41 +187,146 @@ export function CostCalculator({ locale }: { locale: string }) {
 
   return (
     <div className="space-y-10">
-      {/* Input Section */}
+      {/* Quick Presets */}
       <div className="bg-white rounded-2xl border border-mist p-6 sm:p-8 shadow-md">
-        <h3 className="font-display text-xl font-bold text-fjord-900 mb-6">
-          {isAr ? "بيانات شركتك" : "Your Company Details"}
+        <h3 className="font-display text-xl font-bold text-fjord-900 mb-2">
+          {isAr ? "ما حجم شركتك؟" : "How big is your company?"}
         </h3>
-        <div className="grid sm:grid-cols-2 gap-5">
-          <NumberInput
-            label={isAr ? "عدد الموظفين" : "Number of employees"}
+        <p className="text-sm text-stone mb-5">
+          {isAr
+            ? "اختر الأقرب — يمكنك تعديل التفاصيل أدناه"
+            : "Pick the closest match — fine-tune below"}
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            {
+              label: isAr ? "صغيرة" : "Small",
+              sub: "15–30",
+              emp: 25,
+              hires: 5,
+              ren: 4,
+              canc: 2,
+              att: 1,
+            },
+            {
+              label: isAr ? "متوسطة" : "Medium",
+              sub: "30–60",
+              emp: 50,
+              hires: 10,
+              ren: 8,
+              canc: 4,
+              att: 2,
+            },
+            {
+              label: isAr ? "كبيرة" : "Large",
+              sub: "60–120",
+              emp: 80,
+              hires: 20,
+              ren: 15,
+              canc: 6,
+              att: 4,
+            },
+            {
+              label: isAr ? "مؤسسة" : "Enterprise",
+              sub: "120–250+",
+              emp: 150,
+              hires: 35,
+              ren: 25,
+              canc: 10,
+              att: 6,
+            },
+          ].map((preset) => (
+            <button
+              key={preset.emp}
+              type="button"
+              onClick={() => {
+                setEmployees(preset.emp);
+                setNewHires(preset.hires);
+                setRenewals(preset.ren);
+                setCancellations(preset.canc);
+                setAttestations(preset.att);
+                setEmiratisation(preset.emp >= 50);
+              }}
+              className={`flex flex-col items-center rounded-xl border-2 p-4 transition-all ${
+                employees === preset.emp
+                  ? "border-sage-500 bg-sage-50 shadow-md"
+                  : "border-mist bg-white hover:border-sage-300 hover:shadow-sm"
+              }`}
+            >
+              <span className="font-display text-lg font-bold text-fjord-900">
+                {preset.label}
+              </span>
+              <span className="text-xs text-stone mt-1">
+                {preset.sub} {isAr ? "موظف" : "employees"}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Sliders & Fine-Tune */}
+      <div className="bg-white rounded-2xl border border-mist p-6 sm:p-8 shadow-md">
+        <h3 className="font-display text-lg font-bold text-fjord-900 mb-6">
+          {isAr ? "تعديل التفاصيل" : "Fine-Tune Your Details"}
+        </h3>
+        <div className="space-y-6">
+          <SliderInput
+            label={isAr ? "عدد الموظفين" : "Employees"}
             value={employees}
             onChange={setEmployees}
-            hint={isAr ? "إجمالي العاملين في الإمارات" : "Total UAE headcount"}
+            min={10}
+            max={300}
+            step={5}
+            suffix=""
           />
-          <NumberInput
-            label={isAr ? "التعيينات الجديدة هذا العام" : "New hires this year"}
+          <SliderInput
+            label={isAr ? "تعيينات جديدة/سنة" : "New hires / year"}
             value={newHires}
             onChange={setNewHires}
-            hint={isAr ? "تأشيرات موظفين جدد" : "New staff visas"}
+            min={0}
+            max={60}
+            step={1}
+            suffix=""
           />
-          <NumberInput
-            label={
-              isAr ? "تجديد التأشيرات هذا العام" : "Visa renewals this year"
-            }
+          <SliderInput
+            label={isAr ? "تجديد تأشيرات/سنة" : "Visa renewals / year"}
             value={renewals}
             onChange={setRenewals}
-            hint={isAr ? "تجديدات موظفين حاليين" : "Existing staff renewals"}
+            min={0}
+            max={50}
+            step={1}
+            suffix=""
           />
-          <NumberInput
-            label={isAr ? "إلغاء تأشيرات هذا العام" : "Cancellations this year"}
+          <SliderInput
+            label={isAr ? "إلغاءات/سنة" : "Cancellations / year"}
             value={cancellations}
             onChange={setCancellations}
-            hint={isAr ? "مغادرة موظفين" : "Staff departures"}
+            min={0}
+            max={30}
+            step={1}
+            suffix=""
+          />
+          <SliderInput
+            label={isAr ? "توثيقات/شهر" : "Attestations / month"}
+            value={attestations}
+            onChange={setAttestations}
+            min={0}
+            max={20}
+            step={1}
+            suffix=""
+          />
+          <SliderInput
+            label={isAr ? "تأشيرات ذهبية/سنة" : "Golden Visas / year"}
+            value={goldenVisa}
+            onChange={setGoldenVisa}
+            min={0}
+            max={10}
+            step={1}
+            suffix=""
           />
         </div>
 
-        <div className="mt-6 grid sm:grid-cols-2 gap-5">
+        <div className="mt-6 grid sm:grid-cols-2 gap-4">
           <ToggleInput
             label={isAr ? "دعم التوطين؟" : "Emiratisation support?"}
             value={emiratisation}
@@ -234,22 +339,6 @@ export function CostCalculator({ locale }: { locale: string }) {
             onChange={setCorporateTax}
             hint={
               isAr ? "تنسيق ربع سنوي مع الهيئة" : "Quarterly FTA coordination"
-            }
-          />
-          <NumberInput
-            label={isAr ? "طلبات تأشيرة ذهبية" : "Golden Visa applications"}
-            value={goldenVisa}
-            onChange={setGoldenVisa}
-            hint={isAr ? "للمستثمرين أو المديرين" : "For investors/executives"}
-          />
-          <NumberInput
-            label={isAr ? "توثيقات شهرية" : "Attestations per month"}
-            value={attestations}
-            onChange={setAttestations}
-            hint={
-              isAr
-                ? "وزارة الخارجية، سفارات، ترجمة"
-                : "MOFA, embassy, translations"
             }
           />
         </div>
@@ -427,30 +516,50 @@ export function CostCalculator({ locale }: { locale: string }) {
   );
 }
 
-function NumberInput({
+function SliderInput({
   label,
   value,
   onChange,
-  hint,
+  min,
+  max,
+  step,
 }: {
   label: string;
   value: number;
   onChange: (n: number) => void;
-  hint: string;
+  min: number;
+  max: number;
+  step: number;
+  suffix: string;
 }) {
+  const pct = ((value - min) / (max - min)) * 100;
   return (
     <div>
-      <label className="block text-sm font-medium text-graphite mb-1.5">
-        {label}
-      </label>
+      <div className="flex items-center justify-between mb-2">
+        <label className="text-sm font-medium text-graphite">{label}</label>
+        <span className="font-display text-lg font-bold text-fjord-900 tabular-nums">
+          {value}
+        </span>
+      </div>
       <input
-        type="number"
-        min={0}
+        type="range"
+        min={min}
+        max={max}
+        step={step}
         value={value}
-        onChange={(e) => onChange(Math.max(0, parseInt(e.target.value) || 0))}
-        className="w-full px-4 py-3 rounded-lg border border-mist focus:ring-2 focus:ring-sage-400 focus:border-sage-400 outline-none transition bg-snow text-fjord-900 font-display font-bold text-lg"
+        onChange={(e) => onChange(parseInt(e.target.value))}
+        className="w-full h-2 rounded-full appearance-none cursor-pointer"
+        style={{
+          background: `linear-gradient(to right, #2E9B87 0%, #2E9B87 ${pct}%, #E2E8F0 ${pct}%, #E2E8F0 100%)`,
+        }}
       />
-      <p className="text-xs text-stone mt-1">{hint}</p>
+      <div className="flex justify-between text-xs text-stone mt-1">
+        <span>{min}</span>
+        <span>
+          {max}
+          {max === 300 ? "+" : ""}
+        </span>
+      </div>
     </div>
   );
 }
