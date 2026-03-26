@@ -145,7 +145,7 @@ export default async function ProHealthCheckPage({
             What You Get in 30 Minutes
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-xl border border-mist bg-white">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage-50 text-sage-600 mb-4">
                 <ShieldCheck size={28} strokeWidth={1.5} />
               </div>
@@ -160,7 +160,7 @@ export default async function ProHealthCheckPage({
               </p>
             </div>
 
-            <div className="p-8 rounded-xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-xl border border-mist bg-white">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage-50 text-sage-600 mb-4">
                 <Users size={28} strokeWidth={1.5} />
               </div>
@@ -175,7 +175,7 @@ export default async function ProHealthCheckPage({
               </p>
             </div>
 
-            <div className="p-8 rounded-xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-xl border border-mist bg-white">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage-50 text-sage-600 mb-4">
                 <BarChart3 size={28} strokeWidth={1.5} />
               </div>
@@ -190,7 +190,7 @@ export default async function ProHealthCheckPage({
               </p>
             </div>
 
-            <div className="p-8 rounded-xl border border-mist bg-white">
+            <div className="p-5 sm:p-8 rounded-xl border border-mist bg-white">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage-50 text-sage-600 mb-4">
                 <ClipboardCheck size={28} strokeWidth={1.5} />
               </div>

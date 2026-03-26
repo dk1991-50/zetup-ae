@@ -230,7 +230,7 @@ export default function HomePage() {
       <TrustBar />
 
       <section className="py-24 px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-16 items-start">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
           <div className="lg:col-span-2">
             <div className="inline-block mb-4 px-3 py-1 rounded-full bg-aurora-50 border border-aurora-200">
               <span className="text-xs font-bold text-aurora-600 uppercase tracking-widest">
@@ -469,7 +469,7 @@ export default function HomePage() {
 
       {/* Contact form */}
       <section className="py-24 px-6 md:px-8 lg:px-12 bg-frost border-t border-mist">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           <div>
             <div className="inline-block mb-4 px-3 py-1 rounded-full bg-sage-50 border border-sage-200">
               <span className="text-xs font-bold text-sage-600 uppercase tracking-widest">

@@ -129,7 +129,7 @@ export default async function ContactPage({
 
             <a
               href={`tel:${SITE_CONFIG.phone}`}
-              className="p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center"
+              className="p-5 sm:p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center"
             >
               <Phone className="w-10 h-10 text-fjord-500 mx-auto mb-4" />
               <h3 className="font-display text-lg font-semibold text-fjord-900 mb-2">
@@ -145,7 +145,7 @@ export default async function ContactPage({
 
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center"
+              className="p-5 sm:p-8 rounded-xl border border-mist bg-white hover:shadow-lg transition-shadow text-center"
             >
               <Mail className="w-10 h-10 text-aurora-500 mx-auto mb-4" />
               <h3 className="font-display text-lg font-semibold text-fjord-900 mb-2">
@@ -162,7 +162,7 @@ export default async function ContactPage({
             </a>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
               <h2 className="font-display text-2xl font-semibold text-fjord-900 mb-6">
                 {locale === "ar" ? "زورنا في مكتبنا" : "Visit Our Office"}
