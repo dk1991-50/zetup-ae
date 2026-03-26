@@ -14,23 +14,23 @@ export function TeamSection({ className }: TeamSectionProps) {
           key={member.name}
           className="group rounded-2xl border border-mist bg-white p-8 transition-shadow hover:shadow-lg"
         >
-          <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-start gap-6">
+          <div className="flex flex-col items-center text-center gap-6">
             <Image
               src={member.image}
               alt={member.name}
-              width={112}
-              height={112}
-              className="h-28 w-28 shrink-0 rounded-2xl object-cover shadow-sm"
-              sizes="112px"
+              width={280}
+              height={280}
+              className="h-48 w-48 sm:h-56 sm:w-56 shrink-0 rounded-2xl object-cover shadow-md"
+              sizes="(max-width: 640px) 192px, 224px"
             />
             <div>
-              <h3 className="font-display text-xl font-bold text-fjord-900">
+              <h3 className="font-display text-2xl font-bold text-fjord-900">
                 {member.name}
               </h3>
               <p className="mt-1 text-sm font-semibold text-sage-600 font-display">
                 {member.role}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 font-body">
+              <p className="mt-3 text-base leading-relaxed text-slate-600 font-body max-w-sm mx-auto">
                 {member.bio}
               </p>
             </div>
