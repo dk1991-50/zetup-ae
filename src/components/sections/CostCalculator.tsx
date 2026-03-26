@@ -7,14 +7,14 @@ const fmt = (n: number) => n.toLocaleString("en-AE");
 export function CostCalculator({ locale }: { locale: string }) {
   const isAr = locale === "ar";
 
-  const [employees, setEmployees] = useState(50);
-  const [newHires, setNewHires] = useState(10);
-  const [renewals, setRenewals] = useState(8);
-  const [cancellations, setCancellations] = useState(4);
-  const [emiratisation, setEmiratisation] = useState(true);
+  const [employees, setEmployees] = useState(15);
+  const [newHires, setNewHires] = useState(3);
+  const [renewals, setRenewals] = useState(2);
+  const [cancellations, setCancellations] = useState(1);
+  const [emiratisation, setEmiratisation] = useState(false);
   const [goldenVisa, setGoldenVisa] = useState(0);
   const [corporateTax, setCorporateTax] = useState(true);
-  const [attestations, setAttestations] = useState(2);
+  const [attestations, setAttestations] = useState(1);
 
   const calc = useMemo(() => {
     const tier =
@@ -201,11 +201,11 @@ export function CostCalculator({ locale }: { locale: string }) {
           {[
             {
               label: isAr ? "صغيرة" : "Small",
-              sub: "15–30",
-              emp: 25,
-              hires: 5,
-              ren: 4,
-              canc: 2,
+              sub: "10–25",
+              emp: 15,
+              hires: 3,
+              ren: 2,
+              canc: 1,
               att: 1,
             },
             {
