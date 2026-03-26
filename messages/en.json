@@ -6,8 +6,14 @@
     "about": "About",
     "blog": "Blog",
     "contact": "Contact",
+    "tools": "Tools",
     "proHealthCheck": "Free PRO Check",
     "switchLocale": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  "tools": {
+    "costCalculator": "Cost Calculator",
+    "governmentFees": "Government Fees",
+    "emiratisationCalculator": "Emiratisation Calculator"
   },
   "hero": {
     "title": "Your Business\nRuns Dubai.\nWe Run the Paperwork.",

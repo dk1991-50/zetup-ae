@@ -219,6 +219,18 @@ export const NAV_ITEMS = [
       },
     ],
   },
+  {
+    labelKey: "nav.tools",
+    href: "/tools/cost-calculator",
+    children: [
+      { labelKey: "tools.costCalculator", href: "/tools/cost-calculator" },
+      { labelKey: "tools.governmentFees", href: "/tools/government-fees" },
+      {
+        labelKey: "tools.emiratisationCalculator",
+        href: "/tools/emiratisation-calculator",
+      },
+    ],
+  },
   { labelKey: "nav.pricing", href: "/pricing" },
   { labelKey: "nav.about", href: "/about" },
   { labelKey: "nav.blog", href: "/blog" },
