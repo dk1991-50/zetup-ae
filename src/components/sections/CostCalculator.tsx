@@ -7,9 +7,9 @@ const fmt = (n: number) => n.toLocaleString("en-AE");
 export function CostCalculator({ locale }: { locale: string }) {
   const isAr = locale === "ar";
 
-  const [employees, setEmployees] = useState(15);
-  const [newHires, setNewHires] = useState(3);
-  const [renewals, setRenewals] = useState(2);
+  const [employees, setEmployees] = useState(5);
+  const [newHires, setNewHires] = useState(2);
+  const [renewals, setRenewals] = useState(1);
   const [cancellations, setCancellations] = useState(1);
   const [emiratisation, setEmiratisation] = useState(false);
   const [goldenVisa, setGoldenVisa] = useState(0);
@@ -207,10 +207,10 @@ export function CostCalculator({ locale }: { locale: string }) {
           {[
             {
               label: isAr ? "صغيرة" : "Small",
-              sub: "10–25",
-              emp: 15,
-              hires: 3,
-              ren: 2,
+              sub: "5–15",
+              emp: 5,
+              hires: 2,
+              ren: 1,
               canc: 1,
               att: 1,
             },
@@ -280,7 +280,7 @@ export function CostCalculator({ locale }: { locale: string }) {
             label={isAr ? "عدد الموظفين" : "Employees"}
             value={employees}
             onChange={setEmployees}
-            min={1}
+            min={5}
             max={210}
             step={1}
             suffix=""
