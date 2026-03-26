@@ -42,12 +42,12 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     meta: {
       title: "PRO Services Dubai — Transparent Government Liaison | ZETUP PRO",
       description:
-        "ZETUP PRO provides transparent PRO services for Dubai mainland companies. Visa processing, trade license renewals, document clearing, and Emiratisation compliance. From AED 8,000/month.",
+        "ZETUP PRO provides transparent PRO services for Dubai mainland companies. Visa processing, trade license renewals, document clearing, and Emiratisation compliance. From AED 839/month based on company size.",
     },
     h1: "PRO Services in Dubai — Government Liaison Without the Headaches",
     answerCapsule:
-      "PRO services in Dubai handle all government liaison work for your business — including visa processing, trade license renewals, Emirates ID registration, labour card processing, Emiratisation compliance, and document attestation with MOHRE, DET, and GDRFA. ZETUP PRO provides these services on a monthly retainer basis starting from AED 8,000/month for companies with 25+ employees, with transparent pricing and no hidden fees.",
-    priceRange: "AED 8,000 - AED 22,000+/month",
+      "PRO services in Dubai handle all government liaison work for your business — including visa processing, trade license renewals, Emirates ID registration, labour card processing, Emiratisation compliance, and document attestation with MOHRE, DET, and GDRFA. ZETUP PRO provides these services on a monthly retainer basis starting from AED 839/month based on employee count, with transparent pricing and no hidden fees.",
+    priceRange: "AED 839 - AED 14,008/month",
     serviceName: "PRO Services Dubai",
     sections: [
       {
@@ -86,27 +86,29 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         heading: "PRO Services Pricing",
         content:
-          "Our corporate PRO retainers are structured in three tiers based on company size and transaction volume. Government fees are always billed separately at cost with receipts attached.",
+          "Our corporate PRO retainers are structured in a sliding scale based on employee count. Government fees are always billed separately at cost with receipts attached.",
         table: {
-          headers: ["Tier", "Monthly Retainer", "Best For", "Key Inclusions"],
+          headers: [
+            "Company Size",
+            "Monthly Retainer",
+            "Per Employee/Year",
+            "Example",
+          ],
           rows: [
             [
-              "Essentials",
-              "From AED 8,000",
-              "25-40 employees",
-              "Up to 15 transactions/month, monthly reporting",
+              "5 employees",
+              "AED 839",
+              "AED 1,750",
+              "Startups and micro-businesses",
             ],
+            ["25 employees", "AED 2,180", "AED 910", "Growing SMEs"],
+            ["55 employees", "AED 4,102", "AED 895", "Mid-market companies"],
+            ["105 employees", "AED 7,656", "AED 875", "Large companies"],
             [
-              "Professional",
-              "From AED 14,000",
-              "40-80 employees",
-              "Up to 30 transactions/month, Emiratisation tracking, bi-weekly calls",
-            ],
-            [
-              "Enterprise",
-              "From AED 22,000",
-              "80-250+ employees",
-              "Unlimited transactions, full Emiratisation management",
+              "205 employees",
+              "AED 14,008",
+              "AED 820",
+              "Enterprise / multi-entity",
             ],
           ],
         },
@@ -136,7 +138,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "How much do PRO services cost in Dubai?",
         answer:
-          "ZETUP PRO's corporate PRO retainers start from AED 8,000/month for companies with 25-40 employees. The exact cost depends on employee count, expected transaction volume, and service complexity. Government fees are billed separately at cost. We always provide a detailed written quote before engagement.",
+          "ZETUP PRO's corporate PRO retainers start from AED 839/month based on employee count. The exact cost depends on employee count, expected transaction volume, and service complexity. Government fees are billed separately at cost. We always provide a detailed written quote before engagement.",
       },
       {
         question:
@@ -445,13 +447,13 @@ const SERVICE_DATA: Record<string, ServiceData> = {
               "Companies needing Emiratisation support only",
             ],
             [
-              "Included in PRO Professional",
-              "Part of AED 14,000+/month retainer",
+              "Included for mid-size companies",
+              "Included for mid-size companies",
               "40-80 employee companies",
             ],
             [
-              "Included in PRO Enterprise",
-              "Part of AED 22,000+/month retainer",
+              "Included for larger companies",
+              "Included for larger companies",
               "80+ employee companies",
             ],
           ],
@@ -634,7 +636,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
       {
         question: "Can ZETUP PRO handle renewals for multiple entities?",
         answer:
-          "Yes. Our PRO Enterprise tier includes multi-entity support, managing renewals across all your mainland-registered companies from a single account.",
+          "Yes. Our plans for larger companies include multi-entity support, managing renewals across all your mainland-registered companies from a single account.",
       },
     ],
   },
@@ -680,8 +682,8 @@ const SERVICE_DATA: Record<string, ServiceData> = {
               "AED 2,000-5,000/quarter",
             ],
             [
-              "Included in PRO Enterprise tier",
-              "Part of AED 22,000+/month retainer",
+              "Included for larger companies tier",
+              "Included for larger companies",
             ],
             [
               "FTA registration (one-time)",

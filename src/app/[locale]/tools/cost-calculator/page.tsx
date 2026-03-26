@@ -50,12 +50,12 @@ const faqs = [
   {
     question: "What happens if I exceed my monthly transaction limit?",
     answer:
-      "Overage transactions are charged at AED 350–500 per transaction depending on your tier. The Enterprise tier includes unlimited transactions. We always notify you before processing overages.",
+      "Additional transactions beyond your plan allocation are charged at AED 350–500 per transaction. We always notify you before processing overages so there are no surprises.",
   },
   {
-    question: "Can I switch tiers if my company grows?",
+    question: "What happens when my company grows?",
     answer:
-      "Yes. You can upgrade or downgrade your tier at any time with 30 days notice. There are no lock-in contracts — we earn your business every month through performance.",
+      "Your pricing adjusts based on your new employee count — the sliding scale means you move to the next band automatically. We review quarterly and always agree changes before they take effect. 30-day termination clause on all agreements.",
   },
   {
     question: "What is included in the monthly retainer?",

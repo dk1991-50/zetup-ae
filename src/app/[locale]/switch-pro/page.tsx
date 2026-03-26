@@ -208,7 +208,7 @@ export default async function SwitchProPage({
               <p className="text-slate leading-relaxed text-sm">
                 With the December 2026 deadline approaching, many PRO companies
                 still do not offer Emiratisation programme management. ZETUP PRO
-                includes it in our Professional and Enterprise tiers.
+                includes it for mid-size and larger companies.
               </p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default async function SwitchProPage({
                   </td>
                   <td className="py-4 px-5 text-stone">Usually not offered</td>
                   <td className="py-4 px-5 text-sage-700 font-semibold">
-                    Included in Professional and Enterprise
+                    Included for mid-size and larger companies
                   </td>
                 </tr>
               </tbody>

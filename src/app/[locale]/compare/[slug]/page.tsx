@@ -52,7 +52,8 @@ const COMPARISONS: Record<string, ComparisonData> = {
     rows: [
       {
         category: "Published Pricing",
-        zetup: "All retainer tiers published on website (from AED 8,000/month)",
+        zetup:
+          "Full sliding-scale pricing published online (from AED 839/month)",
         competitor: "Pricing requires consultation; not publicly listed",
       },
       {
@@ -75,8 +76,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       },
       {
         category: "Emiratisation Support",
-        zetup:
-          "Full programme management included in Professional and Enterprise tiers",
+        zetup: "Full programme management included for larger companies",
         competitor: "Emiratisation services available as separate add-on",
       },
       {
@@ -89,7 +89,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Response Time",
         zetup:
-          "Same business day (Essentials), 4-hour (Professional), 2-hour (Enterprise)",
+          "Same business day for standard, 4-hour urgent, 2-hour guaranteed for larger companies",
         competitor: "Standard business hours response",
       },
     ],
@@ -123,7 +123,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         question: "Why does ZETUP PRO publish pricing when Virtuzone does not?",
         answer:
-          "We believe business owners should know what things cost before they commit. Our published retainer tiers (Essentials from AED 8,000/month, Professional from AED 14,000/month, Enterprise from AED 22,000/month) provide clarity that helps companies budget accurately.",
+          "We believe business owners should know what things cost before they commit. Our published sliding-scale pricing (from AED 839/month for 5 employees up to AED 14,008/month for 205 employees) lets companies budget accurately using our online cost calculator.",
       },
     ],
   },
@@ -148,7 +148,8 @@ const COMPARISONS: Record<string, ComparisonData> = {
     rows: [
       {
         category: "Published Pricing",
-        zetup: "All retainer tiers published on website (from AED 8,000/month)",
+        zetup:
+          "Full sliding-scale pricing published online (from AED 839/month)",
         competitor: "Pricing available upon request; packages vary by service",
       },
       {
@@ -171,8 +172,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       },
       {
         category: "Emiratisation Support",
-        zetup:
-          "Full programme management included in Professional and Enterprise tiers",
+        zetup: "Full programme management included for larger companies",
         competitor: "Emiratisation advisory available as part of HR solutions",
       },
       {
@@ -185,7 +185,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Response Time",
         zetup:
-          "Same business day (Essentials), 4-hour (Professional), 2-hour (Enterprise)",
+          "Same business day for standard, 4-hour urgent, 2-hour guaranteed for larger companies",
         competitor: "Standard business hours support",
       },
     ],
@@ -197,7 +197,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       "Companies that have been set up by Creative Zone often find they need a specialist PRO partner once their team grows beyond 25 employees. ZETUP PRO is purpose-built for this stage.",
       "Our transparent, published pricing means no surprises. Every invoice separates service fees from government fees with receipts attached.",
       "Dedicated WhatsApp groups with named coordinators replace generic support channels, giving you direct access to the person handling your transactions.",
-      "Emiratisation programme management is built into our Professional and Enterprise tiers, not offered as a separate, add-on service.",
+      "Emiratisation programme management is included for larger companies and available as an add-on for smaller ones (from AED 3,000/month).",
     ],
     faqs: [
       {
@@ -218,7 +218,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         question: "What size companies does ZETUP PRO serve?",
         answer:
-          "Our retainer packages are designed for companies with 25 to 250+ employees. Our Essentials tier (from AED 8,000/month) suits 25\u201340 employees, Professional (from AED 14,000/month) suits 40\u201380, and Enterprise (from AED 22,000/month) suits 80\u2013250+.",
+          "We serve companies with 5 to 205+ employees. Pricing scales with your headcount — from AED 839/month for up to 5 employees to AED 14,008/month for 205 employees. Use our online cost calculator to see your exact rate.",
       },
     ],
   },
@@ -243,7 +243,8 @@ const COMPARISONS: Record<string, ComparisonData> = {
     rows: [
       {
         category: "Published Pricing",
-        zetup: "All retainer tiers published on website (from AED 8,000/month)",
+        zetup:
+          "Full sliding-scale pricing published online (from AED 839/month)",
         competitor: "Pricing provided upon enquiry; not publicly listed",
       },
       {
@@ -265,8 +266,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       },
       {
         category: "Emiratisation Support",
-        zetup:
-          "Full programme management included in Professional and Enterprise tiers",
+        zetup: "Full programme management included for larger companies",
         competitor: "Advisory services available; scope varies by engagement",
       },
       {
@@ -279,7 +279,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Response Time",
         zetup:
-          "Same business day (Essentials), 4-hour (Professional), 2-hour (Enterprise)",
+          "Same business day for standard, 4-hour urgent, 2-hour guaranteed for larger companies",
         competitor: "Standard business hours availability",
       },
     ],
@@ -288,7 +288,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       ar: "لماذا تنتقل الشركات إلى زيتب برو من شورى",
     },
     whySwitchPoints: [
-      "Growing companies need a PRO partner that scales with them. ZETUP PRO offers three clear tiers designed for different team sizes, so you only pay for what you need.",
+      "Growing companies need a PRO partner that scales with them. ZETUP PRO uses a sliding-scale pricing model based on employee count, so you only pay for what you need.",
       "Published pricing on our website means you can compare costs before your first call. No sales meetings required to understand what things cost.",
       "Our WhatsApp-first communication model gives you direct, same-day access to your named account coordinator rather than going through a front desk.",
       "Full Emiratisation programme management, including Nafis registration and quota tracking, is included rather than billed as a separate advisory engagement.",
@@ -326,8 +326,8 @@ const COMPARISONS: Record<string, ComparisonData> = {
       ar: "مقارنة أسعار خدمات PRO في دبي [2026] \u2014 زيتب برو مقابل السوق",
     },
     metaDescription: {
-      en: "Compare PRO services pricing across Dubai providers. See how ZETUP PRO's published retainer model (from AED 8,000/month) compares to typical market rates for visa processing, trade licence renewals, and Emiratisation.",
-      ar: "قارن أسعار خدمات PRO عبر مزودي الخدمة في دبي. اكتشف كيف تقارن أسعار زيتب برو المنشورة (من 8,000 درهم/شهريًا) بأسعار السوق النموذجية لمعالجة التأشيرات وتجديد الرخص التجارية والتوطين.",
+      en: "Compare PRO services pricing across Dubai providers. See how ZETUP PRO's published sliding-scale pricing (from AED 839/month) compares to typical market rates for visa processing, trade licence renewals, and Emiratisation.",
+      ar: "قارن أسعار خدمات PRO عبر مزودي الخدمة في دبي. اكتشف كيف تقارن أسعار زيتب برو المنشورة (من 839 درهم/شهريًا) بأسعار السوق النموذجية.",
     },
     heroTitle: {
       en: "PRO Services Pricing Comparison Dubai 2026",
@@ -339,7 +339,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Published Pricing",
         zetup:
-          "All retainer tiers published on website (Essentials AED 8,000, Professional AED 14,000, Enterprise AED 22,000/month)",
+          "Full sliding-scale pricing published online — from AED 839/month based on employee count",
         competitor:
           "Most providers require a consultation before disclosing any pricing",
       },
@@ -367,7 +367,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Emiratisation Support",
         zetup:
-          "Full programme management included in Professional and Enterprise (Nafis, quota tracking, MoHRE reporting)",
+          "Full programme management included for larger companies (Nafis, quota tracking, MoHRE reporting)",
         competitor:
           "Often billed separately at AED 3,000\u201310,000/month or not offered",
       },
@@ -381,7 +381,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         category: "Response Time",
         zetup:
-          "Same business day (Essentials), 4-hour (Professional), 2-hour (Enterprise)",
+          "Same business day for standard, 4-hour urgent, 2-hour guaranteed for larger companies",
         competitor:
           "Response time commitments are rarely published or guaranteed",
       },
@@ -405,7 +405,7 @@ const COMPARISONS: Record<string, ComparisonData> = {
       {
         question: "How much do PRO services typically cost in Dubai?",
         answer:
-          "For mid-market companies (25\u2013250 employees), monthly PRO retainers typically range from AED 5,000 to AED 30,000 depending on scope, employee count, and transaction volume. ZETUP PRO's published tiers start at AED 8,000/month for companies with 25\u201340 employees.",
+          "Monthly PRO retainers in Dubai typically range from AED 800 to AED 30,000 depending on employee count and transaction volume. ZETUP PRO's published pricing starts at AED 839/month for up to 5 employees and scales based on headcount. Use our online cost calculator for your exact rate.",
       },
       {
         question: "What should I look for when comparing PRO providers?",
