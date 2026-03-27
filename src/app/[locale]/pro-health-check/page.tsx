@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {
   ShieldCheck,
   Users,
@@ -9,6 +10,8 @@ import {
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { FormFeedback } from "@/components/ui/FormFeedback";
+import { handleHealthCheckForm } from "@/lib/actions";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export async function generateMetadata({
@@ -64,50 +67,6 @@ const healthCheckFAQs = [
       "Then the Health Check simply confirms you are in good shape. Many companies discover compliance gaps or overpayments they were not aware of. Either way, you gain valuable insight at no cost.",
   },
 ];
-
-async function handleHealthCheckForm(formData: FormData) {
-  "use server";
-  const { redirect } = await import("next/navigation");
-  const { supabase } = await import("@/lib/supabase");
-  const { healthCheckSchema } = await import("@/lib/validation");
-  const locale = formData.get("locale")?.toString() || "en";
-
-  if (formData.get("website")) {
-    redirect(`/${locale}/pro-health-check?success=true`);
-  }
-
-  const parsed = healthCheckSchema.safeParse({
-    name: formData.get("name")?.toString(),
-    company: formData.get("company")?.toString(),
-    email: formData.get("email")?.toString(),
-    phone: formData.get("phone")?.toString(),
-    employees: formData.get("employees")?.toString() || undefined,
-    currentProvider: formData.get("currentProvider")?.toString() || undefined,
-    painPoint: formData.get("painPoint")?.toString() || undefined,
-    preferredTime: formData.get("preferredTime")?.toString() || undefined,
-  });
-
-  if (!parsed.success) {
-    return redirect(`/${locale}/pro-health-check?error=validation`);
-  }
-
-  const d = parsed.data;
-  const { error } = await supabase.from("contact_submissions").insert({
-    form_type: "pro-health-check",
-    full_name: d.name,
-    company_name: d.company,
-    email: d.email,
-    phone: d.phone,
-    employee_count: d.employees || null,
-    current_provider: d.currentProvider || null,
-    pain_point: d.painPoint || null,
-    preferred_time: d.preferredTime || null,
-  });
-  if (error) {
-    redirect(`/${locale}/pro-health-check?error=server`);
-  }
-  redirect(`/${locale}/pro-health-check?success=true`);
-}
 
 export default async function ProHealthCheckPage({
   params,
@@ -218,6 +177,12 @@ export default async function ProHealthCheckPage({
             assessment within 2 business days.
           </p>
 
+          <Suspense>
+            <FormFeedback
+              successTitle="Health Check booked!"
+              successMessage="We will contact you within 2 business days to schedule your free 30-minute assessment."
+            />
+          </Suspense>
           <form
             action={handleHealthCheckForm}
             className="bg-white rounded-2xl border border-mist p-8 md:p-10 space-y-6"

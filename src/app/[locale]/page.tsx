@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -14,48 +15,9 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SITE_CONFIG } from "@/lib/constants";
+import { handleContactForm } from "@/lib/actions";
 import { LazyVideo } from "@/components/ui/LazyVideo";
-
-async function handleContactForm(formData: FormData) {
-  "use server";
-  const { redirect } = await import("next/navigation");
-  const { supabase } = await import("@/lib/supabase");
-  const { contactSchema } = await import("@/lib/validation");
-  const locale = formData.get("locale")?.toString() || "en";
-
-  // Honeypot — bots fill this hidden field
-  if (formData.get("website")) {
-    redirect(`/${locale}/contact?success=true`);
-  }
-
-  const parsed = contactSchema.safeParse({
-    name: formData.get("name")?.toString(),
-    company: formData.get("company")?.toString(),
-    email: formData.get("email")?.toString(),
-    phone: formData.get("phone")?.toString(),
-    service: formData.get("service")?.toString() || undefined,
-    message: formData.get("message")?.toString() || undefined,
-  });
-
-  if (!parsed.success) {
-    return redirect(`/${locale}/contact?error=validation`);
-  }
-
-  const d = parsed.data;
-  const { error } = await supabase.from("contact_submissions").insert({
-    form_type: "contact",
-    full_name: d.name,
-    company_name: d.company,
-    email: d.email,
-    phone: d.phone,
-    service_interest: d.service || null,
-    message: d.message || null,
-  });
-  if (error) {
-    redirect(`/${locale}/contact?error=server`);
-  }
-  redirect(`/${locale}/contact?success=true`);
-}
+import { FormFeedback } from "@/components/ui/FormFeedback";
 
 export async function generateMetadata({
   params,
@@ -537,6 +499,12 @@ export default function HomePage() {
             </div>
           </div>
 
+          <Suspense>
+            <FormFeedback
+              successTitle="Message sent!"
+              successMessage="Thank you for reaching out. We will get back to you within 24 hours."
+            />
+          </Suspense>
           <form
             action={handleContactForm}
             className="bg-white rounded-2xl border border-mist p-5 sm:p-8 shadow-md"

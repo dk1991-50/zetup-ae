@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Suspense } from "react";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { FormFeedback } from "@/components/ui/FormFeedback";
+import { handleContactForm } from "@/lib/actions";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export async function generateMetadata({
@@ -30,47 +33,6 @@ export async function generateMetadata({
       },
     },
   };
-}
-
-async function handleContactForm(formData: FormData) {
-  "use server";
-  const { redirect } = await import("next/navigation");
-  const { supabase } = await import("@/lib/supabase");
-  const { contactSchema } = await import("@/lib/validation");
-  const locale = formData.get("locale")?.toString() || "en";
-
-  if (formData.get("website")) {
-    redirect(`/${locale}/contact?success=true`);
-  }
-
-  const parsed = contactSchema.safeParse({
-    name: formData.get("name")?.toString(),
-    company: formData.get("company")?.toString(),
-    email: formData.get("email")?.toString(),
-    phone: formData.get("phone")?.toString(),
-    service: formData.get("service")?.toString() || undefined,
-    message: formData.get("message")?.toString() || undefined,
-  });
-
-  if (!parsed.success) {
-    return redirect(`/${locale}/contact?error=validation`);
-  }
-
-  const d = parsed.data;
-  const { error } = await supabase.from("contact_submissions").insert({
-    form_type: "contact",
-    full_name: d.name,
-    company_name: d.company,
-    email: d.email,
-    phone: d.phone,
-    employee_count: formData.get("employees")?.toString() || null,
-    service_interest: d.service || null,
-    message: d.message || null,
-  });
-  if (error) {
-    redirect(`/${locale}/contact?error=server`);
-  }
-  redirect(`/${locale}/contact?success=true`);
 }
 
 export default async function ContactPage({
@@ -179,16 +141,29 @@ export default async function ContactPage({
                   </p>
                 </div>
               </div>
-              <div className="w-full h-64 rounded-xl bg-frost border border-mist flex items-center justify-center text-slate">
-                <MapPin className="w-8 h-8 me-2" />
-                Google Maps — Business Bay, Dubai
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178!2d55.2644!3d25.186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzA5LjYiTiA1NcKwMTUnNTEuOCJF!5e0!3m2!1sen!2sae!4v1"
+                width="100%"
+                height="256"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-xl"
+                title="ZETUP PRO office location — Business Bay, Dubai"
+              />
             </div>
 
             <div>
               <h2 className="font-display text-2xl font-semibold text-fjord-900 mb-6">
                 {locale === "ar" ? "نموذج التواصل" : "Contact Form"}
               </h2>
+              <Suspense>
+                <FormFeedback
+                  successTitle="Message sent!"
+                  successMessage="Thank you for reaching out. We will get back to you within 24 hours."
+                />
+              </Suspense>
               <form action={handleContactForm} className="space-y-5">
                 <input type="hidden" name="locale" value={locale} />
                 <input

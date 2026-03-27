@@ -2,11 +2,14 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Plus_Jakarta_Sans, DM_Sans, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "@/styles/globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -51,6 +54,7 @@ export default async function LocaleLayout({
       className={`${plusJakarta.variable} ${dmSans.variable} ${locale === "ar" ? notoArabic.variable : ""} h-full antialiased`}
     >
       <head>
+        <GoogleAnalytics />
         {/* Favicon is defined via metadata.icons in src/app/layout.tsx.
             Keeping this as a fallback for older browsers. */}
         <link
@@ -62,6 +66,12 @@ export default async function LocaleLayout({
           rel="apple-touch-icon"
           href="/images/misc/logos/zetup_favicon.png"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="ZETUP PRO Blog"
+          href="/feed"
+        />
       </head>
       <body className="min-h-full flex flex-col bg-snow text-midnight">
         <NextIntlClientProvider messages={messages}>
@@ -70,6 +80,8 @@ export default async function LocaleLayout({
           <Footer />
           <WhatsAppButton />
           <OrganizationSchema />
+          <Analytics />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>
