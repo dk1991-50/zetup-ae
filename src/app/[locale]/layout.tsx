@@ -59,8 +59,15 @@ export default async function LocaleLayout({
             Keeping this as a fallback for older browsers. */}
         <link
           rel="icon"
-          href="/images/misc/logos/zetup_favicon.png"
+          href="/images/misc/logos/favicon-48x48.png"
           type="image/png"
+          sizes="48x48"
+        />
+        <link
+          rel="icon"
+          href="/images/misc/logos/favicon-192x192.png"
+          type="image/png"
+          sizes="192x192"
         />
         <link
           rel="apple-touch-icon"

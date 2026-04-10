@@ -9,8 +9,30 @@ export const metadata: Metadata = {
   description:
     "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
   icons: {
-    icon: [{ url: "/images/misc/logos/zetup_favicon.png", type: "image/png" }],
-    apple: [{ url: "/images/misc/logos/zetup_favicon.png", type: "image/png" }],
+    icon: [
+      {
+        url: "/images/misc/logos/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/images/misc/logos/favicon-48x48.png",
+        type: "image/png",
+        sizes: "48x48",
+      },
+      {
+        url: "/images/misc/logos/favicon-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
+    apple: [
+      {
+        url: "/images/misc/logos/zetup_favicon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
   },
   openGraph: {
     type: "website",

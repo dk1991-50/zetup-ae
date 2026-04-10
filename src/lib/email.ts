@@ -46,7 +46,7 @@ Submitted via zetup.ae`;
 
   try {
     await resend.emails.send({
-      from: "ZETUP PRO <notifications@zetup.ae>",
+      from: "ZETUP PRO <onboarding@resend.dev>",
       to: [NOTIFY_EMAIL],
       subject,
       text,
