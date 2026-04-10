@@ -82,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return allPages.flatMap((page) =>
     locales.map((locale) => ({
       url: `${BASE_URL}/${locale}${page}`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-04-10"),
       changeFrequency: page.startsWith("/blog/")
         ? ("monthly" as const)
         : ("weekly" as const),

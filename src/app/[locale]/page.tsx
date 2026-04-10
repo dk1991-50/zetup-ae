@@ -175,7 +175,7 @@ export default function HomePage() {
         primaryCta={
           <Link
             href="/pro-health-check"
-            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-base sm:text-lg"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-base sm:text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-fjord-900"
           >
             {t("hero.ctaPrimary")}
           </Link>
@@ -183,7 +183,7 @@ export default function HomePage() {
         secondaryCta={
           <Link
             href="/pricing"
-            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors text-base sm:text-lg"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-colors text-base sm:text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-fjord-900"
           >
             {t("hero.ctaSecondary")}
           </Link>
@@ -621,7 +621,7 @@ export default function HomePage() {
             </div>
             <button
               type="submit"
-              className="w-full px-8 py-3.5 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-base"
+              className="w-full px-8 py-3.5 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2"
             >
               {t("cta.sendMessage")}
             </button>

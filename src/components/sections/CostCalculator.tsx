@@ -537,16 +537,20 @@ function SliderInput({
   step: number;
   suffix: string;
 }) {
+  const inputId = `slider-${label.toLowerCase().replace(/\s+/g, "-")}`;
   const pct = ((value - min) / (max - min)) * 100;
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <label className="text-sm font-medium text-graphite">{label}</label>
+        <label htmlFor={inputId} className="text-sm font-medium text-graphite">
+          {label}
+        </label>
         <span className="font-display text-lg font-bold text-fjord-900 tabular-nums">
           {value}
         </span>
       </div>
       <input
+        id={inputId}
         type="range"
         min={min}
         max={max}

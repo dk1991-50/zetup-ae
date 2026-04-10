@@ -234,7 +234,7 @@ export default async function BlogPage({
                 <div className="h-48 relative overflow-hidden bg-fjord-50">
                   <Image
                     src={`/images/blog/${post.slug}.svg`}
-                    alt=""
+                    alt={post.title}
                     fill
                     unoptimized
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

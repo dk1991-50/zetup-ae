@@ -82,8 +82,18 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col bg-snow text-midnight">
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-sage-500 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold"
+          >
+            {locale === "ar"
+              ? "انتقل إلى المحتوى الرئيسي"
+              : "Skip to main content"}
+          </a>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
           <WhatsAppButton />
           <OrganizationSchema />

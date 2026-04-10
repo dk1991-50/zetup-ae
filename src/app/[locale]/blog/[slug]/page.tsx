@@ -43,6 +43,16 @@ export async function generateMetadata({
         "x-default": `${SITE_CONFIG.url}/en/blog/${slug}`,
       },
     },
+    openGraph: {
+      images: [
+        {
+          url: `/images/blog/${slug}.svg`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
   };
 }
 

@@ -303,7 +303,7 @@ export default async function ContactPage({
                 </div>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors"
+                  className="w-full sm:w-auto px-8 py-3 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2"
                 >
                   {t("cta.sendMessage")}
                 </button>

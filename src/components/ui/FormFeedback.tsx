@@ -20,7 +20,10 @@ export function FormFeedback({
 
   if (success) {
     return (
-      <div className="rounded-xl border border-sage-200 bg-sage-50 p-6 text-center">
+      <div
+        role="alert"
+        className="rounded-xl border border-sage-200 bg-sage-50 p-6 text-center"
+      >
         <CheckCircle2 className="mx-auto mb-3 h-10 w-10 text-sage-500" />
         <h3 className="font-display text-xl font-semibold text-fjord-900 mb-2">
           {successTitle}
@@ -32,7 +35,10 @@ export function FormFeedback({
 
   if (error) {
     return (
-      <div className="rounded-xl border border-aurora-200 bg-aurora-50 p-6 mb-6">
+      <div
+        role="alert"
+        className="rounded-xl border border-aurora-200 bg-aurora-50 p-6 mb-6"
+      >
         <div className="flex items-start gap-3">
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-aurora-500" />
           <p className="text-sm text-aurora-800 font-body">

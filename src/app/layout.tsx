@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "ZETUP PRO Corporate Services",
     images: [
       {
-        url: "/images/og/Web_Social_share_templates%20(1).jpg",
+        url: "/images/og/zetup-og.jpg",
         width: 1200,
         height: 630,
         alt: "ZETUP PRO Corporate Services — Transparent PRO Services in Dubai",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "ZETUP PRO Corporate Services | PRO Services Dubai",
     description:
       "Transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai.",
-    images: ["/images/og/Web_Social_share_templates%20(1).jpg"],
+    images: ["/images/og/zetup-og.jpg"],
   },
   robots: {
     index: true,
