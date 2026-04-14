@@ -155,7 +155,7 @@ export default async function AboutPage({
                   Hours
                 </p>
                 <p className="text-mist">
-                  Sunday to Thursday, 9:00 AM &ndash; 6:00 PM
+                  Monday to Friday, 9:00 AM &ndash; 6:00 PM
                 </p>
               </div>
             </div>

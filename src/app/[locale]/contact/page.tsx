@@ -137,7 +137,7 @@ export default async function ContactPage({
                   </p>
                   <p className="text-slate">Business Bay, Dubai, UAE</p>
                   <p className="text-slate mt-2">
-                    Sunday to Thursday, 9:00 AM – 6:00 PM
+                    Monday to Friday, 9:00 AM – 6:00 PM
                   </p>
                 </div>
               </div>

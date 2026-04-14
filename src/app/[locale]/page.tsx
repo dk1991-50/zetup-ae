@@ -96,7 +96,7 @@ const homepageFAQs = [
   {
     question: "Where is ZETUP PRO's office?",
     answer:
-      "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Sunday to Thursday, 9 AM to 6 PM.",
+      "We are located on Floor 35 of Churchill Executive Tower in Business Bay, Dubai. Our office is open Monday to Friday, 9 AM to 6 PM.",
   },
 ];
 
