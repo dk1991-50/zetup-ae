@@ -15,6 +15,8 @@ import {
   GoogleTagManagerNoScript,
 } from "@/components/GoogleTagManager";
 import { TrackingListeners } from "@/components/TrackingListeners";
+import { ConsentDefault } from "@/components/ConsentDefault";
+import { CookieBanner } from "@/components/CookieBanner";
 import "@/styles/globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -59,6 +61,7 @@ export default async function LocaleLayout({
       className={`${plusJakarta.variable} ${dmSans.variable} ${locale === "ar" ? notoArabic.variable : ""} h-full antialiased`}
     >
       <head>
+        <ConsentDefault />
         <GoogleTagManager />
         <GoogleAnalytics />
         {/* Favicon is defined via metadata.icons in src/app/layout.tsx.
@@ -104,6 +107,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <WhatsAppButton />
+          <CookieBanner />
           <OrganizationSchema />
           <Analytics />
           <SpeedInsights />

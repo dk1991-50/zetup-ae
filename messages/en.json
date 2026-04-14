@@ -8,7 +8,7 @@
     "contact": "Contact",
     "tools": "Tools",
     "proHealthCheck": "Free PRO Check",
-    "switchLocale": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+    "switchLocale": "العربية"
   },
   "tools": {
     "costCalculator": "Cost Calculator",
@@ -17,21 +17,21 @@
   },
   "hero": {
     "title": "Your Business\nRuns Dubai.\nWe Run the Paperwork.",
-    "subtitle": "ZETUP PRO handles PRO services, visa processing, company formation, and Emiratisation compliance for Dubai mainland companies \u2014 with Scandinavian transparency and zero hidden fees.",
+    "subtitle": "ZETUP PRO handles PRO services, visa processing, company formation, and Emiratisation compliance for Dubai mainland companies — with Scandinavian transparency and zero hidden fees.",
     "ctaPrimary": "Get a Free PRO Health Check",
     "ctaSecondary": "View Our Pricing"
   },
   "trustBar": {
     "experience": "17+ Years UAE Experience",
     "location": "Business Bay, Dubai",
-    "pricing": "Transparent Pricing \u2014 No Hidden Fees",
+    "pricing": "Transparent Pricing — No Hidden Fees",
     "licensed": "Licensed & Government-Approved"
   },
   "sections": {
-    "problemTitle": "Running a Business in Dubai Shouldn\u2019t Mean Fighting Bureaucracy",
-    "servicesTitle": "Everything Your Dubai Company Needs \u2014 One Partner",
-    "whyTitle": "Built Different \u2014 The ZETUP PRO Promise",
-    "processTitle": "How It Works \u2014 From First Call to Full Service",
+    "problemTitle": "Running a Business in Dubai Shouldn’t Mean Fighting Bureaucracy",
+    "servicesTitle": "Everything Your Dubai Company Needs — One Partner",
+    "whyTitle": "Built Different — The ZETUP PRO Promise",
+    "processTitle": "How It Works — From First Call to Full Service",
     "testimonialsTitle": "What Our Clients Say",
     "ctaTitle": "Stop Overpaying for Unreliable PRO Services",
     "blogTitle": "Latest from the Blog",
@@ -74,7 +74,7 @@
     "services": "Services",
     "resources": "Resources",
     "contact": "Contact",
-    "copyright": "\u00a9 2026 ZETUP PRO Corporate Services. All rights reserved.",
+    "copyright": "© 2026 ZETUP PRO Corporate Services. All rights reserved.",
     "blog": "Blog",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
@@ -122,5 +122,13 @@
     "tableOfContents": "Table of Contents",
     "readingTime": "Reading Time",
     "shareArticle": "Share this article"
+  },
+  "cookies": {
+    "aria": "Cookie consent",
+    "title": "We use cookies",
+    "body": "We use analytics cookies to understand how you use ZETUP PRO and improve our services. You can accept or reject. Essential cookies are always on.",
+    "accept": "Accept all",
+    "reject": "Reject non-essential",
+    "close": "Close"
   }
 }
