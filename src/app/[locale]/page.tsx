@@ -501,6 +501,7 @@ export default function HomePage() {
 
           <Suspense>
             <FormFeedback
+              formType="contact"
               successTitle="Message sent!"
               successMessage="Thank you for reaching out. We will get back to you within 24 hours."
             />

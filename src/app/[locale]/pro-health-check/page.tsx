@@ -179,6 +179,7 @@ export default async function ProHealthCheckPage({
 
           <Suspense>
             <FormFeedback
+              formType="pro-health-check"
               successTitle="Health Check booked!"
               successMessage="We will contact you within 2 business days to schedule your free 30-minute assessment."
             />
@@ -277,7 +278,7 @@ export default async function ProHealthCheckPage({
                   required
                   className="w-full px-4 py-3 rounded-lg border border-mist focus:ring-2 focus:ring-sage-400 focus:border-sage-400 outline-none transition bg-white"
                 >
-                  <option value="">Select...</option>
+                  <option value="">Select employee range</option>
                   <option value="1-10">1-10</option>
                   <option value="10-25">10-25</option>
                   <option value="25-50">25-50</option>
@@ -316,7 +317,7 @@ export default async function ProHealthCheckPage({
                   name="painPoint"
                   className="w-full px-4 py-3 rounded-lg border border-mist focus:ring-2 focus:ring-sage-400 focus:border-sage-400 outline-none transition bg-white"
                 >
-                  <option value="">Select...</option>
+                  <option value="">Select your biggest challenge</option>
                   <option value="delays">Visa and document delays</option>
                   <option value="pricing">
                     Hidden fees and pricing issues
@@ -342,7 +343,7 @@ export default async function ProHealthCheckPage({
                   name="preferredTime"
                   className="w-full px-4 py-3 rounded-lg border border-mist focus:ring-2 focus:ring-sage-400 focus:border-sage-400 outline-none transition bg-white"
                 >
-                  <option value="">Select...</option>
+                  <option value="">Select preferred time</option>
                   <option value="morning">Morning (9 AM - 12 PM GST)</option>
                   <option value="afternoon">
                     Afternoon (12 PM - 3 PM GST)
@@ -357,7 +358,7 @@ export default async function ProHealthCheckPage({
 
             <button
               type="submit"
-              className="w-full sm:w-auto px-10 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors font-display text-lg"
+              className="w-full sm:w-auto px-10 py-4 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors font-display text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2"
             >
               Book My Free Health Check
             </button>

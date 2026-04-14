@@ -1,22 +1,34 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, AlertCircle } from "lucide-react";
+import { trackFormSubmission } from "@/lib/analytics";
 
 interface FormFeedbackProps {
   successTitle?: string;
   successMessage?: string;
   errorMessage?: string;
+  formType?: "contact" | "pro-health-check";
 }
 
 export function FormFeedback({
   successTitle = "Message sent!",
   successMessage = "We will get back to you within 24 hours.",
   errorMessage = "Something went wrong. Please try again or contact us via WhatsApp.",
+  formType,
 }: FormFeedbackProps) {
   const searchParams = useSearchParams();
   const success = searchParams.get("success") === "true";
   const error = searchParams.get("error");
+  const fired = useRef(false);
+
+  useEffect(() => {
+    if (success && formType && !fired.current) {
+      trackFormSubmission(formType);
+      fired.current = true;
+    }
+  }, [success, formType]);
 
   if (success) {
     return (

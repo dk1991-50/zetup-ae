@@ -1,15 +1,15 @@
-// Google Analytics 4 event tracking utility
-// GA_MEASUREMENT_ID is set via env var NEXT_PUBLIC_GA_ID
+// Unified analytics layer. GA4 events are imported into Google Ads automatically
+// via the GA4 ↔ Google Ads account link, so no AW- conversion IDs are needed.
+// Add GTM_ID or GOOGLE_SITE_VERIFICATION via env vars when ready.
 
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
+export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "";
 
-// Track page views (called by GA script automatically, but available for SPA nav)
 export function pageview(url: string) {
-  if (!GA_ID || typeof window === "undefined") return;
+  if (typeof window === "undefined" || !GA_ID) return;
   window.gtag?.("config", GA_ID, { page_path: url });
 }
 
-// Generic event
 export function event(
   action: string,
   params?: Record<string, string | number | boolean>,
@@ -18,7 +18,7 @@ export function event(
   window.gtag?.("event", action, params);
 }
 
-// --- Conversion events ---
+// --- Conversion events (imported into Google Ads via GA4 link) ---
 
 export function trackFormSubmission(formType: "contact" | "pro-health-check") {
   event("generate_lead", {
@@ -76,9 +76,9 @@ export function trackBlogRead(slug: string) {
   });
 }
 
-// Type augmentation for window.gtag
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }

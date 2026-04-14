@@ -10,6 +10,11 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import {
+  GoogleTagManager,
+  GoogleTagManagerNoScript,
+} from "@/components/GoogleTagManager";
+import { TrackingListeners } from "@/components/TrackingListeners";
 import "@/styles/globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -54,6 +59,7 @@ export default async function LocaleLayout({
       className={`${plusJakarta.variable} ${dmSans.variable} ${locale === "ar" ? notoArabic.variable : ""} h-full antialiased`}
     >
       <head>
+        <GoogleTagManager />
         <GoogleAnalytics />
         {/* Favicon is defined via metadata.icons in src/app/layout.tsx.
             Keeping this as a fallback for older browsers. */}
@@ -81,6 +87,8 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-snow text-midnight">
+        <GoogleTagManagerNoScript />
+        <TrackingListeners />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main-content"

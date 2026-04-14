@@ -15,6 +15,7 @@ export function WhatsAppButton() {
       href={`${SITE_CONFIG.whatsappUrl}?text=Hi%20ZETUP%20PRO%2C%20I%27d%20like%20to%20learn%20about%20your%20services.`}
       target="_blank"
       rel="noopener noreferrer"
+      data-track-source="floating_button"
       aria-label={t("aria.chatWhatsApp")}
       className="fixed bottom-6 end-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
     >
