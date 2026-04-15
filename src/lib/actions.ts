@@ -21,16 +21,23 @@ async function postToFormSubmit(
     for (const [k, v] of Object.entries(fields)) {
       if (v) body.append(k, v);
     }
-    await fetch(FORMSUBMIT_ENDPOINT, {
+    // FormSubmit.co blocks server-side POSTs unless Origin/Referer headers
+    // identify a trusted web origin. zetup.ae is whitelisted on first
+    // submission via the activation email it sends to info@zetup.ae.
+    const res = await fetch(FORMSUBMIT_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         Accept: "application/json",
+        Origin: "https://zetup.ae",
+        Referer: "https://zetup.ae/",
       },
       body,
-      // don't block the response on slow upstream
       signal: AbortSignal.timeout(8000),
     });
+    if (!res.ok) {
+      console.error("[FormSubmit] non-OK response:", res.status);
+    }
   } catch (err) {
     console.error("[FormSubmit] failed:", err);
   }
