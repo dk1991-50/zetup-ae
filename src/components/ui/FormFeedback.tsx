@@ -2,14 +2,23 @@
 
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, AlertCircle } from "lucide-react";
+import { CheckCircle2, AlertCircle, MessageCircle } from "lucide-react";
 import { trackFormSubmission } from "@/lib/analytics";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface FormFeedbackProps {
   successTitle?: string;
   successMessage?: string;
   errorMessage?: string;
   formType?: "contact" | "pro-health-check";
+}
+
+function buildWhatsAppUrl(formType?: "contact" | "pro-health-check") {
+  const text =
+    formType === "pro-health-check"
+      ? "Hi ZETUP PRO — I just submitted the PRO Health Check form on zetup.ae. Looking forward to hearing from you."
+      : "Hi ZETUP PRO — I just submitted the contact form on zetup.ae. Looking forward to hearing from you.";
+  return `${SITE_CONFIG.whatsappUrl}?text=${encodeURIComponent(text)}`;
 }
 
 export function FormFeedback({
@@ -20,17 +29,24 @@ export function FormFeedback({
 }: FormFeedbackProps) {
   const searchParams = useSearchParams();
   const success = searchParams.get("success") === "true";
+  const wantsWhatsApp = searchParams.get("wa") === "1";
   const error = searchParams.get("error");
   const fired = useRef(false);
 
   useEffect(() => {
-    if (success && formType && !fired.current) {
-      trackFormSubmission(formType);
+    if (success && !fired.current) {
+      if (formType) trackFormSubmission(formType);
       fired.current = true;
+      // Auto-open WhatsApp in a new tab when ?wa=1 is present
+      if (wantsWhatsApp && typeof window !== "undefined") {
+        const url = buildWhatsAppUrl(formType);
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
     }
-  }, [success, formType]);
+  }, [success, formType, wantsWhatsApp]);
 
   if (success) {
+    const waUrl = buildWhatsAppUrl(formType);
     return (
       <div
         role="alert"
@@ -41,6 +57,24 @@ export function FormFeedback({
           {successTitle}
         </h3>
         <p className="text-slate font-body">{successMessage}</p>
+        {wantsWhatsApp && (
+          <div className="mt-4">
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track-source="form_success_wa"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1fb155]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Continue on WhatsApp
+            </a>
+            <p className="mt-2 text-xs text-slate-500 font-body">
+              WhatsApp should open automatically. Tap the button if it
+              doesn&apos;t.
+            </p>
+          </div>
+        )}
       </div>
     );
   }

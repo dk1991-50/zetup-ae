@@ -1,16 +1,47 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { supabase } from "@/lib/supabase";
 import { contactSchema, healthCheckSchema } from "@/lib/validation";
 import { notifyNewLead } from "@/lib/email";
+
+// FormSubmit.co — free email-webhook service, no account needed.
+// First submission triggers an email verification to info@zetup.ae;
+// after that, every POST is forwarded as an email.
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/info@zetup.ae";
+
+async function postToFormSubmit(
+  subject: string,
+  fields: Record<string, string | undefined>,
+) {
+  try {
+    const body = new URLSearchParams();
+    body.append("_subject", subject);
+    body.append("_template", "table");
+    body.append("_captcha", "false");
+    for (const [k, v] of Object.entries(fields)) {
+      if (v) body.append(k, v);
+    }
+    await fetch(FORMSUBMIT_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body,
+      // don't block the response on slow upstream
+      signal: AbortSignal.timeout(8000),
+    });
+  } catch (err) {
+    console.error("[FormSubmit] failed:", err);
+  }
+}
 
 export async function handleContactForm(formData: FormData) {
   const locale = formData.get("locale")?.toString() || "en";
 
   // Honeypot — bots fill this hidden field
   if (formData.get("website")) {
-    redirect(`/${locale}/contact?success=true`);
+    redirect(`/${locale}/contact?success=true&wa=1`);
   }
 
   const parsed = contactSchema.safeParse({
@@ -27,22 +58,21 @@ export async function handleContactForm(formData: FormData) {
   }
 
   const d = parsed.data;
-  const { error } = await supabase.from("contact_submissions").insert({
+  const employees = formData.get("employees")?.toString() || "";
+
+  // Backup path (permanent email record) — fire-and-forget
+  await postToFormSubmit(`New Contact Form — ${d.company}`, {
     form_type: "contact",
     full_name: d.name,
     company_name: d.company,
     email: d.email,
     phone: d.phone,
-    employee_count: formData.get("employees")?.toString() || null,
-    service_interest: d.service || null,
-    message: d.message || null,
+    employees,
+    service_interest: d.service,
+    message: d.message,
   });
 
-  if (error) {
-    redirect(`/${locale}/contact?error=server`);
-  }
-
-  // Fire-and-forget email notification
+  // Fire-and-forget Resend email (only if RESEND_API_KEY configured)
   notifyNewLead({
     formType: "contact",
     name: d.name,
@@ -51,19 +81,20 @@ export async function handleContactForm(formData: FormData) {
     phone: d.phone,
     extras: {
       Service: d.service,
-      Employees: formData.get("employees")?.toString(),
+      Employees: employees,
       Message: d.message,
     },
   }).catch(() => {});
 
-  redirect(`/${locale}/contact?success=true`);
+  // Primary path: success page opens WhatsApp automatically
+  redirect(`/${locale}/contact?success=true&wa=1`);
 }
 
 export async function handleHealthCheckForm(formData: FormData) {
   const locale = formData.get("locale")?.toString() || "en";
 
   if (formData.get("website")) {
-    redirect(`/${locale}/pro-health-check?success=true`);
+    redirect(`/${locale}/pro-health-check?success=true&wa=1`);
   }
 
   const parsed = healthCheckSchema.safeParse({
@@ -82,21 +113,18 @@ export async function handleHealthCheckForm(formData: FormData) {
   }
 
   const d = parsed.data;
-  const { error } = await supabase.from("contact_submissions").insert({
+
+  await postToFormSubmit(`New PRO Health Check — ${d.company}`, {
     form_type: "pro-health-check",
     full_name: d.name,
     company_name: d.company,
     email: d.email,
     phone: d.phone,
-    employee_count: d.employees || null,
-    current_provider: d.currentProvider || null,
-    pain_point: d.painPoint || null,
-    preferred_time: d.preferredTime || null,
+    employees: d.employees,
+    current_provider: d.currentProvider,
+    pain_point: d.painPoint,
+    preferred_time: d.preferredTime,
   });
-
-  if (error) {
-    redirect(`/${locale}/pro-health-check?error=server`);
-  }
 
   notifyNewLead({
     formType: "pro-health-check",
@@ -112,5 +140,5 @@ export async function handleHealthCheckForm(formData: FormData) {
     },
   }).catch(() => {});
 
-  redirect(`/${locale}/pro-health-check?success=true`);
+  redirect(`/${locale}/pro-health-check?success=true&wa=1`);
 }
