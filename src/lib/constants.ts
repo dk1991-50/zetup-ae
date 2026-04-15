@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
     city: "Dubai",
     country: "UAE",
   },
-  coordinates: { lat: 25.186, lng: 55.2644 },
+  coordinates: { lat: 25.1810619, lng: 55.2627555 },
   social: {
     linkedin: "https://www.linkedin.com/company/zetup-corporate-services",
   },

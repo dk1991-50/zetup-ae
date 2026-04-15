@@ -1,5 +1,5 @@
 import { JsonLd } from "./JsonLd";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, SITE_CONFIG } from "@/lib/constants";
 
 export function LocalBusinessSchema() {
   const data = {
@@ -20,8 +20,8 @@ export function LocalBusinessSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "25.186",
-      longitude: "55.2644",
+      latitude: String(SITE_CONFIG.coordinates.lat),
+      longitude: String(SITE_CONFIG.coordinates.lng),
     },
     sameAs: [COMPANY.social.linkedin],
     openingHoursSpecification: [
