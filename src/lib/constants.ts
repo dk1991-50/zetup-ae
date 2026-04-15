@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "ZETUP PRO Corporate Services",
   url: "https://zetup.ae",
-  phone: "+971 4 323 4578",
+  phone: "+971 58 573 8177",
   whatsapp: "+971585738177",
   whatsappUrl: "https://wa.me/971585738177",
   email: "info@zetup.ae",
@@ -78,7 +78,7 @@ export const SERVICES = [
     icon: "Calculator",
     description:
       "FTA coordination, EmaraTax management, and filing deadline tracking. Your bridge between accountant and government.",
-    price: "From AED 2,000/quarter",
+    price: "From AED 3,500/quarter",
   },
   {
     slug: "document-clearing",
@@ -301,7 +301,7 @@ export const ORGANIZATION_SCHEMA = {
   image: `${SITE_CONFIG.url}/images/og/Web_Social_share_templates%20(1).jpg`,
   description:
     "ZETUP PRO Corporate Services provides transparent PRO services, mainland company formation, visa processing, and Emiratisation compliance in Dubai with Scandinavian values.",
-  telephone: "+97143234578",
+  telephone: "+971585738177",
   email: SITE_CONFIG.email,
   address: {
     "@type": "PostalAddress",
@@ -318,15 +318,12 @@ export const ORGANIZATION_SCHEMA = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "09:00",
       closes: "18:00",
     },
   ],
-  areaServed: [
-    { "@type": "Country", name: "United Arab Emirates" },
-    { "@type": "City", name: "Dubai" },
-  ],
+  areaServed: [{ "@type": "City", name: "Dubai" }],
   priceRange: "AED 8,000 - 35,000/month",
   founder: [
     {

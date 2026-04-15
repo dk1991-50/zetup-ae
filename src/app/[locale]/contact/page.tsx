@@ -22,8 +22,8 @@ export async function generateMetadata({
         : "Contact ZETUP PRO — PRO Services & Company Formation Dubai",
     description:
       locale === "ar"
-        ? "تواصل مع زيتب للخدمات المؤسسية في الخليج التجاري، دبي. هاتف: +971 4 323 4578، واتساب: +971 58 573 8177"
-        : "Reach ZETUP PRO Corporate Services in Business Bay, Dubai. Call +971 4 323 4578, WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
+        ? "تواصل مع زيتب للخدمات المؤسسية في الخليج التجاري، دبي. هاتف وواتساب: +971 58 573 8177"
+        : "Reach ZETUP PRO Corporate Services in Business Bay, Dubai. Call or WhatsApp +971 58 573 8177, or visit our office on Floor 35, Churchill Executive Tower.",
     alternates: {
       canonical: `${SITE_CONFIG.url}/${locale}/contact`,
       languages: {
@@ -101,7 +101,7 @@ export default async function ContactPage({
                 {SITE_CONFIG.phone}
               </p>
               <p className="text-sm text-slate mt-2">
-                Sun–Thu, 9 AM – 6 PM GST
+                Mon–Fri, 9 AM – 6 PM GST
               </p>
             </a>
 
