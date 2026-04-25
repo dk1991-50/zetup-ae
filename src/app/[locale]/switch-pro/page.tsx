@@ -24,8 +24,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "غيّر مزود PRO بدون أي انقطاع — زيتب"
-        : "Switch Your PRO Provider Without Missing a Beat | ZETUP PRO",
+        ? "غيّر مزود PRO بدون أي انقطاع"
+        : "Switch Your PRO Provider Without Missing a Beat",
     description:
       locale === "ar"
         ? "انتقل إلى زيتب بسلاسة. نحن ندير عملية التسليم الكاملة من مزودك الحالي بدون أي انقطاع في الخدمة أو فجوات في الامتثال."

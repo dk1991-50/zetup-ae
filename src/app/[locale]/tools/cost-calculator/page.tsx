@@ -19,8 +19,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "حاسبة تكلفة خدمات PRO دبي 2026 | زيتب برو"
-        : "PRO Services Cost Calculator Dubai 2026 | ZETUP PRO",
+        ? "حاسبة تكلفة خدمات PRO دبي 2026"
+        : "PRO Services Cost Calculator Dubai 2026",
     description:
       locale === "ar"
         ? "احسب تكلفة خدمات PRO الشهرية والسنوية لشركتك في دبي. رسوم الخدمات والرسوم الحكومية مفصلة بشفافية كاملة."

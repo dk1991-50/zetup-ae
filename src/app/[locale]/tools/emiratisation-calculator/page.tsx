@@ -28,8 +28,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "حاسبة التوطين 2026 | تحقق من الامتثال والغرامات | زيتب برو"
-        : "Emiratisation Calculator 2026 | Check Compliance & Fines | ZETUP PRO",
+        ? "حاسبة التوطين 2026 — تحقق من الامتثال والغرامات"
+        : "Emiratisation Calculator 2026 — Check Compliance & Fines",
     description:
       locale === "ar"
         ? "احسب متطلبات التوطين لشركتك في دبي. تعرف على عدد الموظفين الإماراتيين المطلوبين والغرامات المحتملة قبل الموعد النهائي ديسمبر 2026."

@@ -29,8 +29,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "خدمات PRO دبي | تأسيس الشركات ومعالجة التأشيرات | زيتب"
-        : "PRO Services Dubai | Company Formation & Visa Processing | ZETUP PRO",
+        ? "خدمات PRO دبي — تأسيس الشركات ومعالجة التأشيرات"
+        : "PRO Services Dubai — Company Formation & Visa Processing",
     description:
       locale === "ar"
         ? "زيتب للخدمات المؤسسية تقدم خدمات PRO شفافة وتأسيس الشركات ومعالجة التأشيرات والامتثال للتوطين في دبي. بمعايير اسكندنافية: بدون رسوم مخفية."

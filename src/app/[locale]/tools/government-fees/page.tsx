@@ -19,8 +19,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "جدول الرسوم الحكومية دبي 2026 | كل المعاملات والتكاليف | زيتب برو"
-        : "Dubai Government Fees 2026 | Complete Transaction Cost Table | ZETUP PRO",
+        ? "جدول الرسوم الحكومية دبي 2026 — كل المعاملات والتكاليف"
+        : "Dubai Government Fees 2026 — Complete Transaction Cost Table",
     description:
       locale === "ar"
         ? "جدول شامل لجميع الرسوم الحكومية في دبي: تأشيرات، هوية إماراتية، رخص تجارية، توثيق مستندات، وتوطين. محدث مارس 2026."

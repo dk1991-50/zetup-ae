@@ -324,7 +324,7 @@ export const ORGANIZATION_SCHEMA = {
     },
   ],
   areaServed: [{ "@type": "City", name: "Dubai" }],
-  priceRange: "AED 8,000 - 35,000/month",
+  priceRange: "AED 839 - AED 22,000/month",
   founder: [
     {
       "@type": "Person",

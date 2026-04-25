@@ -23,8 +23,8 @@ export async function generateMetadata({
   return {
     title:
       locale === "ar"
-        ? "فحص صحة PRO مجاني — زيتب للخدمات المؤسسية"
-        : "Free PRO Health Check — Is Your PRO Company Protecting Your Business? | ZETUP PRO",
+        ? "فحص صحة PRO مجاني"
+        : "Free PRO Health Check — Is Your PRO Company Protecting Your Business?",
     description:
       locale === "ar"
         ? "احصل على تقييم مجاني لمدة 30 دقيقة لإعداد PRO الخاص بك. تحليل الامتثال، مقارنة التكاليف، وخطة عمل واضحة."

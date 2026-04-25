@@ -40,7 +40,7 @@ interface ServiceData {
 const SERVICE_DATA: Record<string, ServiceData> = {
   "pro-services": {
     meta: {
-      title: "PRO Services Dubai — Transparent Government Liaison | ZETUP PRO",
+      title: "PRO Services Dubai — Transparent Government Liaison",
       description:
         "ZETUP PRO provides transparent PRO services for Dubai mainland companies. Visa processing, trade license renewals, document clearing, and Emiratisation compliance. From AED 839/month based on company size.",
     },
@@ -176,7 +176,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "company-formation": {
     meta: {
-      title: "Company Formation Dubai Mainland — Setup in Weeks | ZETUP PRO",
+      title: "Company Formation Dubai Mainland — Setup in Weeks",
       description:
         "Set up your Dubai mainland company with ZETUP PRO. 100% foreign ownership, transparent costs, and step-by-step guidance from trade name to trade license. No hidden fees.",
     },
@@ -319,7 +319,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   "visa-services": {
     meta: {
       title:
-        "Visa Processing Dubai — Employment, Investor & Golden Visa | ZETUP PRO",
+        "Visa Processing Dubai — Employment, Investor & Golden Visa",
       description:
         "ZETUP PRO handles all visa processing for Dubai mainland companies. Employment visas, investor visas, Golden Visas, dependent visas — processed accurately the first time. No surprises.",
     },
@@ -414,7 +414,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   emiratisation: {
     meta: {
       title:
-        "Emiratisation Compliance Services Dubai — 2026 Deadlines | ZETUP PRO",
+        "Emiratisation Compliance Services Dubai — 2026 Deadlines",
       description:
         "ZETUP PRO manages your Emiratisation compliance end-to-end. Quota tracking, Nafis registration, MOHRE reporting, and penalty avoidance. December 2026 deadline — act now.",
     },
@@ -529,7 +529,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
 
   "trade-license-renewal": {
     meta: {
-      title: "Trade License Renewal Dubai — Never Miss a Deadline | ZETUP PRO",
+      title: "Trade License Renewal Dubai — Never Miss a Deadline",
       description:
         "ZETUP PRO manages your Dubai trade licence renewal proactively. 60-day advance reminders, activity amendments, partner changes, and penalty prevention. No missed deadlines.",
     },
@@ -644,7 +644,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   "corporate-tax": {
     meta: {
       title:
-        "Corporate Tax Services Dubai — FTA Filing & Compliance | ZETUP PRO",
+        "Corporate Tax Services Dubai — FTA Filing & Compliance",
       description:
         "ZETUP PRO coordinates your UAE corporate tax compliance. FTA registration, EmaraTax portal management, filing deadline tracking, and accountant liaison. Small Business Relief guidance.",
     },
@@ -726,7 +726,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   "document-clearing": {
     meta: {
       title:
-        "Document Clearing & Attestation Dubai — MOFA, Embassy | ZETUP PRO",
+        "Document Clearing & Attestation Dubai — MOFA, Embassy",
       description:
         "ZETUP PRO handles document attestation, MOFA legalisation, embassy attestation, and certificate clearing in Dubai. Fast processing, transparent pricing, status tracking.",
     },
@@ -806,7 +806,7 @@ const SERVICE_DATA: Record<string, ServiceData> = {
   "golden-visa": {
     meta: {
       title:
-        "Golden Visa Dubai 2026 — 10-Year Residency Application | ZETUP PRO",
+        "Golden Visa Dubai 2026 — 10-Year Residency Application",
       description:
         "ZETUP PRO handles end-to-end Golden Visa applications in Dubai. Updated Feb 2026 criteria: AED 2M property (no down payment), new AI & creator categories. Processing in 2-4 weeks.",
     },
@@ -971,7 +971,7 @@ export async function generateMetadata({
   const service = SERVICE_DATA[slug];
 
   if (!service) {
-    return { title: "Service Not Found | ZETUP PRO" };
+    return { title: "Service Not Found" };
   }
 
   return {
