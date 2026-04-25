@@ -55,6 +55,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Canonicalize host: 301 www → non-www so Google sees a single host.
+      // Matches any path on www.zetup.ae and forwards to the same path on zetup.ae.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.zetup.ae" }],
+        destination: "https://zetup.ae/:path*",
+        permanent: true,
+      },
       {
         source: "/services/business-setup",
         destination: "/en/services/company-formation",
