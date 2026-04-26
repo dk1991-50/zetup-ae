@@ -32,6 +32,12 @@ interface ServiceData {
   h1: string;
   answerCapsule: string;
   priceRange: string;
+  /** Optional structured Offer for SERP price rich snippets */
+  offer?: {
+    priceFrom: string;
+    priceCurrency: string;
+    billingPeriod: "month" | "year" | "quarter" | "transaction" | "one-time";
+  };
   serviceName: string;
   sections: ServiceSection[];
   faqs: ServiceFAQ[];
@@ -48,6 +54,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "PRO services in Dubai handle all government liaison work for your business — including visa processing, trade license renewals, Emirates ID registration, labour card processing, Emiratisation compliance, and document attestation with MOHRE, DET, and GDRFA. ZETUP PRO provides these services on a monthly retainer basis starting from AED 839/month based on employee count, with transparent pricing and no hidden fees.",
     priceRange: "AED 839 - AED 14,008/month",
+    offer: {
+      priceFrom: "839",
+      priceCurrency: "AED",
+      billingPeriod: "month",
+    },
     serviceName: "PRO Services Dubai",
     sections: [
       {
@@ -184,6 +195,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "Setting up a mainland company in Dubai costs approximately AED 25,000-50,000 in the first year, including trade license fees, visa costs, and office registration. The process takes 2-4 weeks from initial approval to trade license issuance. Since 2021, foreign investors can own 100% of mainland companies without a local sponsor for most business activities. ZETUP PRO handles the entire formation process with transparent, itemized pricing.",
     priceRange: "AED 7,500 - AED 15,000",
+    offer: {
+      priceFrom: "7500",
+      priceCurrency: "AED",
+      billingPeriod: "one-time",
+    },
     serviceName: "Company Formation Dubai",
     sections: [
       {
@@ -327,6 +343,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "Visa processing in Dubai covers employment visas (3-7 business days, AED 3,500-6,000 per employee), investor visas (5-10 days, AED 5,000-8,000), Golden Visas (2-4 weeks, 10-year residency), dependent visas (5-10 days, AED 3,000-5,000), and Green Visas (2-3 weeks, 5-year self-sponsored). ZETUP PRO manages the full process for Dubai mainland companies — from MOHRE work permit through Emirates ID and residence visa stamping.",
     priceRange: "AED 3,500 - AED 15,000",
+    offer: {
+      priceFrom: "3500",
+      priceCurrency: "AED",
+      billingPeriod: "transaction",
+    },
     serviceName: "Visa Processing Dubai",
     sections: [
       {
@@ -814,6 +835,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "The UAE Golden Visa grants 10-year residency without a sponsor, with benefits including extended overseas stays and family sponsorship. As of February 2026, property investors qualify with a DLD valuation of AED 2 million (no down payment requirement). ZETUP PRO provides end-to-end application management for AED 5,000-10,000 plus government fees of approximately AED 3,000-5,000.",
     priceRange: "AED 5,000 - AED 10,000",
+    offer: {
+      priceFrom: "5000",
+      priceCurrency: "AED",
+      billingPeriod: "one-time",
+    },
     serviceName: "Golden Visa Dubai",
     sections: [
       {
@@ -1145,6 +1171,8 @@ export default async function ServicePage({
         name={service.serviceName}
         description={service.meta.description}
         priceRange={service.priceRange}
+        offer={service.offer}
+        slug={slug}
       />
       <FAQSchema items={service.faqs} />
       <BreadcrumbSchema

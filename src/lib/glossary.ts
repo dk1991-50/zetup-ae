@@ -498,6 +498,154 @@ export const GLOSSARY: GlossaryEntry[] = [
     relatedService: "document-clearing",
   },
   {
+    slug: "fta",
+    term: { en: "FTA (Federal Tax Authority)", ar: "هيئة الضرائب الاتحادية" },
+    category: "government-body",
+    alsoKnownAs: ["UAE FTA"],
+    shortDef: {
+      en: "The FTA — Federal Tax Authority — is the UAE federal authority that administers VAT, corporate tax, excise tax, and the EmaraTax filing portal. Every UAE company that's registered for any tax interacts with the FTA.",
+      ar: "هيئة الضرائب الاتحادية هي السلطة الاتحادية في الإمارات التي تدير ضريبة القيمة المضافة وضريبة الشركات والضريبة الانتقائية وبوابة إمارا تاكس للإقرارات. كل شركة إماراتية مسجلة في أي ضريبة تتعامل مع الهيئة.",
+    },
+    longDef: {
+      en: [
+        "The FTA was established in 2017 ahead of VAT launch in 2018, and gained significantly more authority with the introduction of corporate tax in June 2023. It's the federal counterpart to local economic departments like DET — every emirate's companies file taxes with the FTA, regardless of where they're licensed.",
+        "FTA registration is required for: VAT (mandatory at AED 375,000 turnover, voluntary at AED 187,500), corporate tax (mandatory for every taxable person, even loss-makers), and excise tax (for tobacco, energy drinks, and sweetened beverages).",
+        "All filings flow through the EmaraTax portal. The FTA can audit any registered taxpayer and impose penalties for late filings (AED 1,000 first offence), missing records (AED 10,000+), and underreporting. ZETUP PRO assists with FTA registration and TRN issuance; tax returns themselves are handled by clients' accountants.",
+      ],
+      ar: [
+        "أُسست هيئة الضرائب الاتحادية في 2017 قبل إطلاق ضريبة القيمة المضافة في 2018، واكتسبت سلطة أكبر بتقديم ضريبة الشركات في يونيو 2023. هي النظير الاتحادي للدوائر الاقتصادية المحلية مثل دائرة الاقتصاد — شركات كل إمارة تقدم ضرائبها للهيئة الاتحادية بغض النظر عن مكان ترخيصها.",
+        "التسجيل في الهيئة مطلوب لـ: ضريبة القيمة المضافة (إلزامي عند 375,000 درهم دوران، طوعي عند 187,500 درهم)، ضريبة الشركات (إلزامي لكل شخص خاضع للضريبة، حتى الخاسرين)، والضريبة الانتقائية (للتبغ ومشروبات الطاقة والمشروبات المحلاة).",
+        "كل التقديمات تتم عبر بوابة إمارا تاكس. يمكن للهيئة تدقيق أي دافع ضرائب مسجل وفرض غرامات على التأخير (1,000 درهم لأول مخالفة)، وفقدان السجلات (10,000+ درهم)، والإبلاغ الناقص. تساعد زيتب برو في التسجيل في الهيئة وإصدار رقم التسجيل الضريبي.",
+      ],
+    },
+    related: ["emaratax", "corporate-tax", "vat"],
+    relatedService: "corporate-tax",
+    relatedGuide: "uae-corporate-tax",
+  },
+  {
+    slug: "icp",
+    term: { en: "ICP (Federal Authority for Identity, Citizenship, Customs and Ports Security)", ar: "هيئة الهوية والجنسية والمنافذ الاتحادية" },
+    category: "government-body",
+    alsoKnownAs: ["ICA", "Federal Authority for Identity"],
+    shortDef: {
+      en: "ICP is the UAE federal authority that issues Emirates IDs, manages residency visas in some emirates, oversees passport and citizenship matters, and runs the federal e-services portal for residency-related transactions.",
+      ar: "هيئة الهوية والجنسية والمنافذ الاتحادية هي السلطة الاتحادية في الإمارات التي تُصدر الهوية الإماراتية، وتدير تأشيرات الإقامة في بعض الإمارات، وتشرف على شؤون الجوازات والجنسية، وتدير البوابة الإلكترونية الاتحادية للمعاملات المتعلقة بالإقامة.",
+    },
+    longDef: {
+      en: [
+        "ICP (formerly ICA — the rebrand happened in 2022) is the federal authority that handles Emirates ID issuance for everyone, plus residency visa transactions in emirates that don't have their own residency authority (most emirates outside Dubai). In Dubai, residency visas are handled by GDRFA, but Emirates IDs still come from ICP.",
+        "ICP runs the federal smartphone app and web portal where residents can renew Emirates IDs, view their visa status, complete residency status changes, and manage dependents. It's the most important federal-level digital touchpoint for UAE residents.",
+        "Emirates ID biometrics (photo, fingerprint, signature) are captured at ICP-affiliated centres. ZETUP PRO coordinates ICP appointments and Emirates ID issuance as part of every visa flow.",
+      ],
+      ar: [
+        "هيئة الهوية والجنسية والمنافذ الاتحادية (المعروفة سابقًا بـ ICA — تم تغيير الاسم في 2022) هي السلطة الاتحادية التي تتولى إصدار الهوية الإماراتية للجميع، إضافة إلى معاملات تأشيرات الإقامة في الإمارات التي ليس لديها سلطة إقامة خاصة بها. في دبي تتولى الإدارة العامة للإقامة تأشيرات الإقامة، لكن الهوية الإماراتية تأتي من ICP.",
+        "تدير ICP تطبيق الهاتف الذكي الاتحادي والبوابة الإلكترونية حيث يمكن للمقيمين تجديد الهوية الإماراتية وعرض حالة تأشيرتهم وإكمال تغييرات حالة الإقامة وإدارة المعالين.",
+        "بصمات الهوية الإماراتية (الصورة، البصمة، التوقيع) تُلتقط في مراكز ICP. تنسق زيتب برو مواعيد ICP وإصدار الهوية الإماراتية كجزء من كل تدفق تأشيرة.",
+      ],
+    },
+    related: ["emirates-id", "gdrfa", "amer"],
+    relatedService: "visa-services",
+  },
+  {
+    slug: "vat",
+    term: { en: "VAT (Value Added Tax)", ar: "ضريبة القيمة المضافة" },
+    category: "concept",
+    alsoKnownAs: ["UAE VAT", "Sales Tax"],
+    shortDef: {
+      en: "VAT is the 5% consumption tax applied to most goods and services in the UAE since January 2018. Companies with annual taxable turnover above AED 375,000 must register with the FTA, charge VAT to customers, and file quarterly returns.",
+      ar: "ضريبة القيمة المضافة هي ضريبة الاستهلاك بنسبة 5% المطبقة على معظم السلع والخدمات في الإمارات منذ يناير 2018. الشركات التي يتجاوز دورانها السنوي الخاضع للضريبة 375,000 درهم يجب أن تسجل في الهيئة، وتفرض الضريبة على العملاء، وتقدم إقرارات ربع سنوية.",
+    },
+    longDef: {
+      en: [
+        "VAT registration is mandatory once a company's rolling 12-month taxable turnover exceeds AED 375,000, and voluntary above AED 187,500. Most B2B and B2C transactions are taxable at 5%; some categories (healthcare, education, certain transport, specific food items) are zero-rated, and a small list of activities (residential property rentals, certain financial services) is exempt.",
+        "Once registered, you receive a TRN (tax-registration number) that must appear on every tax invoice. You file VAT returns quarterly via EmaraTax — usually within 28 days of the end of each tax period. You collect output tax from customers, pay input tax to suppliers, and remit the net to the FTA.",
+        "Failure to register on time is AED 10,000. Late filings start at AED 1,000 per offence. ZETUP PRO assists with FTA registration and TRN issuance; quarterly returns are handled by clients' accountants.",
+      ],
+      ar: [
+        "التسجيل في الضريبة إلزامي عندما يتجاوز الدوران المتدحرج للشركة لمدة 12 شهرًا 375,000 درهم، وطوعي فوق 187,500 درهم. معظم معاملات B2B وB2C خاضعة للضريبة بنسبة 5%؛ بعض الفئات (الرعاية الصحية، التعليم، نقل معين، أصناف غذائية محددة) معفاة بنسبة صفر، وقائمة صغيرة من الأنشطة (إيجارات العقارات السكنية، خدمات مالية معينة) معفاة كليًا.",
+        "بمجرد التسجيل، تتلقى رقم تسجيل ضريبي (TRN) يجب أن يظهر على كل فاتورة ضريبية. تقدم إقرارات الضريبة ربع سنويًا عبر إمارا تاكس — عادةً خلال 28 يومًا من نهاية كل فترة ضريبية. تحصل ضريبة المخرجات من العملاء، وتدفع ضريبة المدخلات للموردين، وتحول الصافي للهيئة.",
+        "عدم التسجيل في الوقت المحدد 10,000 درهم. التقديمات المتأخرة تبدأ بـ 1,000 درهم لكل مخالفة.",
+      ],
+    },
+    related: ["fta", "emaratax", "corporate-tax"],
+    relatedService: "corporate-tax",
+  },
+  {
+    slug: "corporate-tax",
+    term: { en: "UAE Corporate Tax", ar: "ضريبة الشركات الإماراتية" },
+    category: "concept",
+    alsoKnownAs: ["CT", "9% Corporate Tax"],
+    shortDef: {
+      en: "UAE Corporate Tax is the 9% federal tax on net taxable income above AED 375,000 introduced in June 2023. Every UAE company — including freelancers and free-zone entities — must register with the FTA and file annually, even if loss-making.",
+      ar: "ضريبة الشركات الإماراتية هي ضريبة اتحادية بنسبة 9% على صافي الدخل الخاضع للضريبة الذي يتجاوز 375,000 درهم، أُطلقت في يونيو 2023. كل شركة إماراتية — بما في ذلك العاملون لحسابهم الخاص وكيانات المناطق الحرة — يجب أن تسجل في الهيئة وتقدم إقرارات سنوية، حتى الخاسرة.",
+    },
+    longDef: {
+      en: [
+        "Corporate Tax (CT) applies for fiscal years starting on or after 1 June 2023. The headline rates: 0% on the first AED 375,000 of taxable income, 9% on everything above. Qualifying free-zone income gets 0% at the entity level (free-zone-to-free-zone, exports, qualifying activities), while non-qualifying free-zone income is taxed at 9%.",
+        "Every taxable person — every UAE company, branch, or partnership — must register with the FTA, even if they expect to make no taxable profit. Returns are due 9 months after fiscal year-end via EmaraTax, with audited financial statements required for entities above certain revenue thresholds.",
+        "Small Business Relief is in place until December 2026: businesses with revenue under AED 3 million can elect to be treated as having zero taxable income. After SBR ends, the standard 0% / 9% bracket applies.",
+      ],
+      ar: [
+        "ضريبة الشركات تطبق على السنوات المالية التي تبدأ في 1 يونيو 2023 أو بعدها. المعدلات الرئيسية: 0% على أول 375,000 درهم من الدخل الخاضع للضريبة، و9% على كل ما يتجاوز. دخل المنطقة الحرة المؤهل يحصل على 0% على مستوى الكيان (من منطقة حرة إلى منطقة حرة، التصدير، الأنشطة المؤهلة)، بينما دخل المنطقة الحرة غير المؤهل يخضع لضريبة 9%.",
+        "كل شخص خاضع للضريبة — كل شركة أو فرع أو شراكة إماراتية — يجب أن يسجل في الهيئة، حتى لو لم يتوقع تحقيق ربح خاضع للضريبة. الإقرارات مستحقة بعد 9 أشهر من نهاية السنة المالية عبر إمارا تاكس.",
+        "إعفاء الأعمال الصغيرة ساري حتى ديسمبر 2026: الأعمال بإيرادات أقل من 3 مليون درهم يمكنها اختيار معاملتها كصفر دخل خاضع للضريبة. بعد انتهاء الإعفاء، يطبق الشطر القياسي 0%/9%.",
+      ],
+    },
+    related: ["fta", "emaratax", "vat", "free-zone"],
+    relatedService: "corporate-tax",
+    relatedGuide: "uae-corporate-tax",
+  },
+  {
+    slug: "investor-visa",
+    term: { en: "Investor Visa", ar: "تأشيرة المستثمر" },
+    category: "visa",
+    alsoKnownAs: ["Partner Visa", "Shareholder Visa"],
+    shortDef: {
+      en: "An investor visa is a UAE residency permit issued to a non-resident shareholder in a UAE company. Validity is typically 2 or 3 years, with the company itself acting as sponsor and the visa tied to the shareholder's stake.",
+      ar: "تأشيرة المستثمر هي تصريح إقامة إماراتي يُصدر لمساهم غير مقيم في شركة إماراتية. الصلاحية عادةً سنتان أو ثلاث سنوات، والشركة نفسها تعمل ككفيل، والتأشيرة مرتبطة بحصة المساهم.",
+    },
+    longDef: {
+      en: [
+        "When you set up a Dubai company as an expat, you typically apply for an investor visa for yourself and any other non-resident shareholders. The company sponsors the visa — there's no employer-employee relationship, just the shareholder's stake in the entity.",
+        "Eligibility usually requires a minimum shareholding (often AED 50,000 in paid-up capital, though this varies by entity type and emirate). The application is filed at GDRFA / ICP, requires medical fitness and biometrics, and results in an Emirates ID with the holder's residency status set as 'Investor / Partner'.",
+        "Investor visas allow the holder to sponsor family members. They do not allow the holder to also be on a separate employment visa with a different company without specific approvals. Most golden-visa-eligible founders eventually transition off investor visas onto Golden Visas for the longer validity and flexibility.",
+      ],
+      ar: [
+        "عند تأسيس شركة دبي كأجنبي، تتقدم عادةً بطلب تأشيرة مستثمر لنفسك ولأي مساهمين غير مقيمين آخرين. الشركة تكفل التأشيرة — لا توجد علاقة صاحب عمل وموظف، فقط حصة المساهم في الكيان.",
+        "الأهلية عادةً تتطلب حد أدنى من المساهمة (غالبًا 50,000 درهم رأس مال مدفوع، رغم أن هذا يختلف حسب نوع الكيان والإمارة). يُقدم الطلب لدى الإدارة العامة للإقامة / هيئة الهوية، ويتطلب فحصًا طبيًا وبصمات، ويُنتج هوية إماراتية بحالة الإقامة كـ'مستثمر/شريك'.",
+        "تأشيرات المستثمر تتيح لحاملها كفالة أفراد العائلة. لا تسمح لحاملها بأن يكون على تأشيرة عمل منفصلة مع شركة مختلفة دون موافقات محددة. معظم المؤسسين المؤهلين للتأشيرة الذهبية ينتقلون إليها لاحقًا للحصول على صلاحية ومرونة أطول.",
+      ],
+    },
+    related: ["gdrfa", "amer", "golden-visa", "employment-visa"],
+    relatedService: "visa-services",
+    relatedGuide: "uae-visa-processing",
+  },
+  {
+    slug: "dependent-visa",
+    term: { en: "Dependent Visa", ar: "تأشيرة المعالين" },
+    category: "visa",
+    alsoKnownAs: ["Family Visa", "Spouse Visa", "Family Sponsorship"],
+    shortDef: {
+      en: "A dependent visa (also called family or spouse visa) is a UAE residency permit issued to a sponsor's family member — typically a spouse, child, or parent. The sponsor must meet minimum salary thresholds and provide accommodation.",
+      ar: "تأشيرة المعالين (تسمى أيضًا تأشيرة العائلة أو الزوج) هي تصريح إقامة إماراتي يُصدر لأحد أفراد عائلة الكفيل — عادةً زوج أو طفل أو والد. يجب أن يستوفي الكفيل الحد الأدنى للراتب ويوفر سكنًا.",
+    },
+    longDef: {
+      en: [
+        "Any UAE resident — employee, investor, or Golden Visa holder — can sponsor immediate family members for residency. The most common categories are spouses, children under 18 (unmarried daughters of any age, unmarried sons up to 25 if studying), and parents (under specific conditions).",
+        "Minimum salary thresholds apply: typically AED 4,000 + accommodation for sponsoring a spouse, AED 4,000 for children, and around AED 20,000 for parents (rules vary by emirate and update periodically). Golden Visa holders have looser thresholds and broader eligibility.",
+        "Process: sponsor applies for an entry permit at GDRFA / ICP, dependent enters UAE, completes medical fitness (parents over 60 may have extra checks) and biometrics, and is issued a residency stamp + Emirates ID. Dependents can study and, with separate work permits, sometimes work.",
+      ],
+      ar: [
+        "أي مقيم إماراتي — موظف، مستثمر، أو حامل تأشيرة ذهبية — يمكنه كفالة أفراد العائلة المباشرين للإقامة. الفئات الأكثر شيوعًا هي الأزواج والأطفال دون 18 (البنات غير المتزوجات من أي عمر، الأبناء غير المتزوجين حتى 25 إذا كانوا يدرسون)، والوالدين (بشروط محددة).",
+        "تطبق حدود دنيا للراتب: عادة 4,000 درهم + سكن لكفالة الزوج، 4,000 درهم للأطفال، وحوالي 20,000 درهم للوالدين (تختلف القواعد حسب الإمارة وتُحدث دوريًا). حاملو التأشيرة الذهبية لديهم حدود أكثر مرونة وأهلية أوسع.",
+        "العملية: يتقدم الكفيل بطلب تصريح دخول لدى الإدارة العامة للإقامة / هيئة الهوية، يدخل المُعال الإمارات، يكمل الفحص الطبي والبصمات، ويُصدر له ختم إقامة + هوية إماراتية.",
+      ],
+    },
+    related: ["gdrfa", "amer", "emirates-id", "investor-visa"],
+    relatedService: "visa-services",
+    relatedGuide: "uae-visa-processing",
+  },
+  {
     slug: "emaratax",
     term: { en: "EmaraTax", ar: "إمارا تاكس" },
     category: "service-center",
