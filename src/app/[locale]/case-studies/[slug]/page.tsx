@@ -216,8 +216,37 @@ export default async function CaseStudyPage({
         </section>
       )}
 
+      {/* Related case studies */}
+      {(() => {
+        const others = CASE_STUDIES.filter((c) => c.slug !== slug).slice(0, 4);
+        if (others.length === 0) return null;
+        return (
+          <section className="py-16 px-6 md:px-8 lg:px-12">
+            <div className="max-w-3xl mx-auto">
+              <RelatedPosts
+                heading={
+                  isAr
+                    ? "دراسات حالة أخرى"
+                    : "More client outcomes"
+                }
+                seeAllLabel={
+                  isAr ? "كل دراسات الحالة" : "All case studies"
+                }
+                seeAllHref="/case-studies"
+                items={others.map((c) => ({
+                  href: `/case-studies/${c.slug}`,
+                  title: c.title[isAr ? "ar" : "en"],
+                  description: c.summary[isAr ? "ar" : "en"],
+                  badge: c.industry[isAr ? "ar" : "en"],
+                }))}
+              />
+            </div>
+          </section>
+        );
+      })()}
+
       {/* CTA */}
-      <section className="py-16 px-6 md:px-8 lg:px-12">
+      <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-t border-mist">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-2xl md:text-3xl font-semibold text-fjord-900 mb-4">
             {isAr ? "تريد نتائج مثل هذه؟" : "Want outcomes like these?"}

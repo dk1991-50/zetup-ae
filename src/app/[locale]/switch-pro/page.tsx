@@ -13,6 +13,8 @@ import {
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { RelatedPosts } from "@/components/sections/RelatedPosts";
+import { CASE_STUDIES } from "@/lib/case-studies";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export async function generateMetadata({
@@ -412,6 +414,42 @@ export default async function SwitchProPage({
           },
         ]}
       />
+
+      {/* Real-outcome case studies — proof block for switch story */}
+      {(() => {
+        // Surface the construction-switch case study + the family-business
+        // modernisation case study, both directly relevant to switching
+        const switchStories = CASE_STUDIES.filter((c) =>
+          [
+            "switching-pro-without-disruption",
+            "modernising-pro-for-family-business",
+          ].includes(c.slug),
+        );
+        if (switchStories.length === 0) return null;
+        return (
+          <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-y border-mist">
+            <div className="max-w-3xl mx-auto">
+              <RelatedPosts
+                heading={
+                  locale === "ar"
+                    ? "كيف نقلنا عملاء آخرين بنجاح"
+                    : "How we've moved other clients across"
+                }
+                seeAllLabel={
+                  locale === "ar" ? "كل دراسات الحالة" : "All case studies"
+                }
+                seeAllHref="/case-studies"
+                items={switchStories.map((c) => ({
+                  href: `/case-studies/${c.slug}`,
+                  title: c.title[locale === "ar" ? "ar" : "en"],
+                  description: c.summary[locale === "ar" ? "ar" : "en"],
+                  badge: c.industry[locale === "ar" ? "ar" : "en"],
+                }))}
+              />
+            </div>
+          </section>
+        );
+      })()}
     </>
   );
 }
