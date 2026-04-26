@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export async function generateMetadata({
@@ -194,10 +195,30 @@ const blogPosts = [
 
 export default async function BlogPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams?: Promise<{ q?: string }>;
 }) {
   const { locale } = await params;
+  const sp = (await searchParams) ?? {};
+  const rawQuery = (sp.q ?? "").trim();
+  const query = rawQuery.toLowerCase();
+
+  const filteredPosts = query
+    ? blogPosts.filter((post) => {
+        const haystack = [
+          post.title,
+          post.description,
+          ...(post.tags ?? []),
+        ]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(query);
+      })
+    : blogPosts;
+
+  const isAr = locale === "ar";
 
   return (
     <>
@@ -208,63 +229,119 @@ export default async function BlogPage({
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage-400/30 to-transparent" />
         <div className="relative max-w-4xl mx-auto">
           <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
-            {locale === "ar" ? "المدونة" : "Blog"}
+            {isAr ? "المدونة" : "Blog"}
           </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            {locale === "ar" ? "المدونة" : "Insights for Dubai Business Owners"}
+            {isAr ? "المدونة" : "Insights for Dubai Business Owners"}
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl font-body">
-            {locale === "ar"
+            {isAr
               ? "مقالات ونصائح عملية حول إدارة الأعمال في دبي — من التأسيس إلى الامتثال."
               : "Practical articles and guides for running a business in Dubai — from formation to compliance."}
           </p>
+          {/* Inline search */}
+          <form
+            action={`/${locale}/blog`}
+            method="get"
+            className="mt-8 flex max-w-xl gap-2"
+            role="search"
+            aria-label={isAr ? "بحث المدونة" : "Blog search"}
+          >
+            <input
+              type="search"
+              name="q"
+              defaultValue={rawQuery}
+              placeholder={
+                isAr
+                  ? "ابحث في المدونة..."
+                  : "Search articles by topic, tag, or keyword..."
+              }
+              className="flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sage-400"
+            />
+            <button
+              type="submit"
+              className="rounded-lg bg-sage-500 px-5 py-3 font-semibold text-white hover:bg-sage-600 transition-colors"
+            >
+              {isAr ? "بحث" : "Search"}
+            </button>
+          </form>
         </div>
       </section>
 
       {/* Blog Grid */}
       <section className="py-20 px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+          {rawQuery && (
+            <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+              <p className="text-graphite font-body">
+                {isAr
+                  ? `${filteredPosts.length} نتيجة لـ`
+                  : `${filteredPosts.length} ${
+                      filteredPosts.length === 1 ? "result" : "results"
+                    } for`}{" "}
+                <span className="font-semibold text-fjord-900">
+                  &ldquo;{rawQuery}&rdquo;
+                </span>
+              </p>
               <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-all duration-200 overflow-hidden hover:border-sage-200"
+                href="/blog"
+                className="text-sm font-medium text-sage-600 hover:text-sage-700"
               >
-                <div className="h-48 relative overflow-hidden bg-fjord-50">
-                  <Image
-                    src={`/images/blog/${post.slug}.svg`}
-                    alt={post.title}
-                    fill
-                    unoptimized
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2.5 py-1 rounded-full bg-fjord-50 text-fjord-600 font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="font-display text-lg font-semibold text-fjord-900 group-hover:text-sage-600 transition-colors mb-2 line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-slate line-clamp-2 font-body leading-relaxed">
-                    {post.description}
-                  </p>
-                  <p className="text-xs text-stone mt-4 font-body">
-                    {post.date}
-                  </p>
-                </div>
+                {isAr ? "إعادة تعيين" : "Clear search"}
               </Link>
-            ))}
-          </div>
+            </div>
+          )}
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="text-lg text-slate font-body">
+                {isAr
+                  ? "لم نجد أي مقال يطابق بحثك. جرّب كلمة مختلفة."
+                  : "No articles matched your search. Try a different keyword."}
+              </p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group block rounded-xl border border-mist bg-white hover:shadow-lg transition-all duration-200 overflow-hidden hover:border-sage-200"
+                >
+                  <div className="h-48 relative overflow-hidden bg-fjord-50">
+                    <Image
+                      src={`/images/blog/${post.slug}.svg`}
+                      alt={post.title}
+                      fill
+                      unoptimized
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2.5 py-1 rounded-full bg-fjord-50 text-fjord-600 font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="font-display text-lg font-semibold text-fjord-900 group-hover:text-sage-600 transition-colors mb-2 line-clamp-2">
+                      {post.title}
+                    </h2>
+                    <p className="text-sm text-slate line-clamp-2 font-body leading-relaxed">
+                      {post.description}
+                    </p>
+                    <p className="text-xs text-stone mt-4 font-body">
+                      {post.date}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -273,6 +350,19 @@ export default async function BlogPage({
           { name: "Home", url: SITE_CONFIG.url },
           { name: "Blog", url: `${SITE_CONFIG.url}/${locale}/blog` },
         ]}
+      />
+      <ItemListSchema
+        name={isAr ? "مدونة زيتب" : "ZETUP PRO Blog"}
+        description={
+          isAr
+            ? "مقالات ونصائح عملية حول إدارة الأعمال في دبي."
+            : "Articles and guides on PRO services, company formation, visa processing, and Emiratisation compliance in Dubai."
+        }
+        items={blogPosts.map((post) => ({
+          name: post.title,
+          url: `${SITE_CONFIG.url}/${locale}/blog/${post.slug}`,
+          description: post.description,
+        }))}
       />
     </>
   );

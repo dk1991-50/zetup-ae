@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 import { BookOpen } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export async function generateMetadata({
@@ -123,6 +124,23 @@ export default async function GuidesPage({
           { name: "Home", url: SITE_CONFIG.url },
           { name: "Guides", url: `${SITE_CONFIG.url}/${locale}/guides` },
         ]}
+      />
+      <ItemListSchema
+        name={
+          locale === "ar"
+            ? "أدلة زيتب الشاملة"
+            : "ZETUP PRO Comprehensive Guides"
+        }
+        description={
+          locale === "ar"
+            ? "أدلة شاملة حول خدمات PRO وتأسيس الشركات والتأشيرات والتوطين وضريبة الشركات في دبي."
+            : "In-depth guides on PRO services, company formation, visas, Emiratisation, and UAE corporate tax."
+        }
+        items={guides.map((guide) => ({
+          name: guide.title,
+          url: `${SITE_CONFIG.url}/${locale}/guides/${guide.slug}`,
+          description: guide.description,
+        }))}
       />
     </>
   );

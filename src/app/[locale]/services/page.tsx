@@ -20,7 +20,19 @@ import {
 } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { ItemListSchema } from "@/components/seo/ItemListSchema";
 import { SITE_CONFIG, SERVICES } from "@/lib/constants";
+
+const SERVICE_NAMES: Record<string, string> = {
+  proServices: "PRO Services",
+  companyFormation: "Company Formation",
+  visaServices: "Visa Processing",
+  emiratisation: "Emiratisation",
+  tradeLicense: "Trade License Renewal",
+  corporateTax: "Corporate Tax",
+  documentClearing: "Document Clearing",
+  goldenVisa: "Golden Visa",
+};
 
 const iconMap: Record<string, LucideIcon> = {
   FileText,
@@ -170,6 +182,23 @@ export default async function ServicesIndexPage({
           { name: "Home", url: SITE_CONFIG.url },
           { name: "Services", url: `${SITE_CONFIG.url}/${locale}/services` },
         ]}
+      />
+      <ItemListSchema
+        name={
+          locale === "ar"
+            ? "خدمات زيتب للشركات"
+            : "ZETUP PRO Corporate Services"
+        }
+        description={
+          locale === "ar"
+            ? "مجموعة كاملة من خدمات الشركات لشركات دبي البر الرئيسي."
+            : "A complete range of corporate services for Dubai mainland companies — PRO services, company formation, visa processing, Emiratisation, trade license renewal, corporate tax, document clearing, and Golden Visa."
+        }
+        items={SERVICES.map((service) => ({
+          name: SERVICE_NAMES[service.titleKey] ?? service.titleKey,
+          url: `${SITE_CONFIG.url}/${locale}/services/${service.slug}`,
+          description: service.description,
+        }))}
       />
     </>
   );

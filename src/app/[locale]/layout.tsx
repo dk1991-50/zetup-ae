@@ -9,6 +9,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import {
   GoogleTagManager,
@@ -109,6 +110,7 @@ export default async function LocaleLayout({
           <WhatsAppButton />
           <CookieBanner />
           <OrganizationSchema />
+          <WebSiteSchema />
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
