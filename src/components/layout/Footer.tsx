@@ -69,7 +69,44 @@ export function Footer() {
               {t("footer.resources")}
             </h3>
             <ul className="space-y-2.5">
-              {NAV_GUIDES.map((item) => (
+              <li>
+                <Link
+                  href="/compare"
+                  className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
+                >
+                  {t("nav.compare")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/glossary"
+                  className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
+                >
+                  {t("nav.glossary")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/cost-calculator"
+                  className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
+                >
+                  {t("nav.tools")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
+                >
+                  {t("footer.blog")}
+                </Link>
+              </li>
+              <li className="pt-3">
+                <p className="text-xs uppercase tracking-wider text-slate-400 font-display mb-2">
+                  {t("footer.popularGuides")}
+                </p>
+              </li>
+              {NAV_GUIDES.slice(0, 4).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -81,10 +118,11 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/blog"
-                  className="text-sm text-slate-300 transition-colors hover:text-white font-body"
+                  href="/guides"
+                  className="text-sm text-sage-400 transition-colors hover:text-sage-300 font-body inline-flex items-center gap-1"
                 >
-                  {t("footer.blog")}
+                  {t("footer.allGuides")}
+                  <span aria-hidden="true">→</span>
                 </Link>
               </li>
             </ul>
