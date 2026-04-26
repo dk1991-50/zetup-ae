@@ -1,0 +1,210 @@
+import type { Metadata } from "next";
+import { Link } from "@/i18n/routing";
+import { CalendarDays, Sparkles } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { SITE_CONFIG } from "@/lib/constants";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title:
+      locale === "ar"
+        ? "سجل تحديثات الموقع — ما الجديد في زيتب برو"
+        : "Site Changelog — What's New at ZETUP PRO",
+    description:
+      locale === "ar"
+        ? "تحديثات منتظمة لموقعنا وموارده. نشارك ما نضيفه ومتى، حتى تعرف بالضبط ما هو محدث وقابل للاعتماد."
+        : "Regular updates to our site and resources. We share what we add and when, so you know exactly what's current and reliable.",
+    alternates: {
+      canonical: `${SITE_CONFIG.url}/${locale}/changelog`,
+      languages: {
+        en: `${SITE_CONFIG.url}/en/changelog`,
+        ar: `${SITE_CONFIG.url}/ar/changelog`,
+        "x-default": `${SITE_CONFIG.url}/en/changelog`,
+      },
+    },
+  };
+}
+
+interface ChangelogEntry {
+  date: string; // ISO
+  title: { en: string; ar: string };
+  bullets: { en: string[]; ar: string[] };
+}
+
+// Most recent first.
+const ENTRIES: ChangelogEntry[] = [
+  {
+    date: "2026-04-26",
+    title: {
+      en: "Glossary launched, Service pricing schema, calculator schemas",
+      ar: "إطلاق القاموس، مخطط أسعار الخدمات، مخطط الحاسبات",
+    },
+    bullets: {
+      en: [
+        "New /glossary section with 26 UAE business-setup terms (Tasheel, Amer, MOHRE, GDRFA, FTA, ICP, Emirates ID, Ejari, WPS, Emiratisation, Nafis, VAT, Corporate Tax, and more) — each with EN+AR definitions and DefinedTerm schema.",
+        "Hyperlocal landing pages for 4 Dubai areas: Business Bay, Downtown Dubai, Sheikh Zayed Road, Deira. Each with Service schema and areaServed geo coordinates.",
+        "Free Resources hub with the 38-step Dubai Mainland Setup Checklist (free, printable, email-gated).",
+        "Service pages now emit Schema.org Offer with structured price data — should trigger price rich snippets in Google SERPs.",
+        "Tool pages (Cost Calculator, Emiratisation Calculator) now emit WebApplication schema for app-style SERP eligibility.",
+        "Compare battlecards now have a /compare hub page and a top-level nav slot — previously hidden.",
+        "Person schema for both founders on /about with stable @id, referenced from Article author and Organization founder.",
+        "Sitemap now generates 174+ URL entries (was 108) with dynamic dates from MDX frontmatter.",
+        "Footer reorganised: Resources, Compare, Glossary, Tools, Blog now top of column with Popular Guides below.",
+      ],
+      ar: [
+        "إطلاق قسم /glossary مع 26 مصطلحًا تجاريًا إماراتيًا (تسهيل، عامر، الوزارة، الإدارة العامة للإقامة، الهيئة الاتحادية، هيئة الهوية، الهوية الإماراتية، إيجاري، نظام الأجور، التوطين، نافس، ضريبة القيمة المضافة، ضريبة الشركات، والمزيد). كل مصطلح بتعريفات إنجليزية وعربية ومخطط DefinedTerm.",
+        "صفحات هبوط محلية لـ 4 مناطق في دبي: الخليج التجاري، وسط المدينة، شارع الشيخ زايد، ديرة. كل صفحة مع مخطط الخدمة وإحداثيات الموقع.",
+        "مركز موارد مجاني مع قائمة تحقق تأسيس البر الرئيسي (38 خطوة، مجاني، قابل للطباعة، مع نموذج بريد إلكتروني).",
+        "صفحات الخدمات الآن تصدر مخطط Schema.org Offer ببيانات سعر منظمة — يجب أن يطلق مقتطفات أسعار غنية في نتائج Google.",
+        "صفحات الأدوات (حاسبة التكلفة، حاسبة التوطين) الآن تصدر مخطط WebApplication.",
+        "بطاقات المقارنة الآن لها صفحة /compare وفتحة قائمة من المستوى الأعلى — كانت مخفية سابقًا.",
+        "مخطط شخص لكلا المؤسسين في /about مع معرف ثابت، مُشار إليه من مؤلف المقال ومؤسس المنظمة.",
+        "خريطة الموقع الآن تنتج 174+ إدخال URL (كانت 108) بتواريخ ديناميكية من MDX.",
+      ],
+    },
+  },
+  {
+    date: "2026-04-25",
+    title: {
+      en: "GSC verified, title fix, schema/llms reconciliation, www redirect",
+      ar: "التحقق من GSC، إصلاح العناوين، توحيد المخططات، إعادة توجيه www",
+    },
+    bullets: {
+      en: [
+        "Google Search Console verified for the canonical zetup.ae Domain property.",
+        "Killed duplicate brand suffix in titles (was: '… | ZETUP PRO | ZETUP PRO'). 13 titles fixed across 9 pages.",
+        "Schema priceRange aligned to actual sliding scale (AED 839 – 22,000/month).",
+        "llms.txt and llms-full.txt reconciled with schema (Mon–Fri hours, single phone number).",
+        "301 redirect www → non-www to consolidate canonical signal.",
+        "Sitemap dates made dynamic from MDX frontmatter (was: hardcoded).",
+        "Added WebSite + SearchAction schema for Google sitelinks search box.",
+        "Added ItemList schema on hub pages (services, guides, blog).",
+      ],
+      ar: [
+        "تم التحقق من Google Search Console لخاصية النطاق zetup.ae القانونية.",
+        "تم إزالة تكرار اسم العلامة التجارية في العناوين. 13 عنوانًا تم إصلاحه عبر 9 صفحات.",
+        "تم توحيد priceRange المخطط مع السلم التدريجي الفعلي (839 – 22,000 درهم/شهريًا).",
+        "تم توحيد llms.txt و llms-full.txt مع المخطط (الإثنين–الجمعة، رقم هاتف واحد).",
+        "إعادة توجيه 301 من www إلى غير www لتوحيد الإشارة القانونية.",
+        "تواريخ خريطة الموقع أصبحت ديناميكية من MDX.",
+        "تمت إضافة مخطط WebSite + SearchAction لصندوق بحث الروابط الفرعية في Google.",
+        "تمت إضافة مخطط ItemList على صفحات المركز (الخدمات، الأدلة، المدونة).",
+      ],
+    },
+  },
+];
+
+export default async function ChangelogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isAr = locale === "ar";
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-fjord-900 py-20 md:py-24 px-6 md:px-8 lg:px-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-fjord-950 via-fjord-900 to-fjord-800" />
+        <div className="absolute -top-40 end-1/4 h-[500px] w-[500px] rounded-full bg-sage-500/10 blur-[100px]" />
+        <div className="relative max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold uppercase tracking-wider bg-sage-500/20 text-sage-300 rounded-full font-display">
+            <Sparkles size={14} strokeWidth={1.5} />
+            {isAr ? "ما الجديد" : "What's new"}
+          </span>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            {isAr ? "سجل تحديثات الموقع" : "Site Changelog"}
+          </h1>
+          <p className="text-xl text-slate-300 font-body">
+            {isAr
+              ? "نحدّث هذا الموقع باستمرار. هذه قائمة بكل تغيير ملموس قمنا به مؤخرًا — لتعرف ما هو حديث وما هو موثوق."
+              : "We update this site continuously. Here's a running log of every meaningful change we've made — so you know what's current and trustworthy."}
+          </p>
+        </div>
+      </section>
+
+      {/* Entries */}
+      <section className="py-16 px-6 md:px-8 lg:px-12">
+        <div className="max-w-3xl mx-auto">
+          <ol className="relative border-s-2 border-mist ps-8 space-y-12">
+            {ENTRIES.map((entry, i) => (
+              <li key={i} className="relative">
+                <span
+                  aria-hidden="true"
+                  className="absolute -start-[9px] top-2 h-4 w-4 rounded-full bg-sage-500 ring-4 ring-snow"
+                />
+                <p className="flex items-center gap-2 text-sm text-stone font-body mb-2">
+                  <CalendarDays
+                    size={14}
+                    strokeWidth={1.5}
+                    className="shrink-0 text-sage-500"
+                  />
+                  <time dateTime={entry.date}>
+                    {new Date(entry.date).toLocaleDateString(
+                      isAr ? "ar-AE" : "en-GB",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      },
+                    )}
+                  </time>
+                </p>
+                <h2 className="font-display text-xl md:text-2xl font-bold text-fjord-900 mb-4">
+                  {entry.title[isAr ? "ar" : "en"]}
+                </h2>
+                <ul className="space-y-2.5">
+                  {entry.bullets[isAr ? "ar" : "en"].map((b, j) => (
+                    <li
+                      key={j}
+                      className="flex gap-2.5 text-base leading-relaxed text-graphite font-body"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500"
+                      />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-t border-mist">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-lg text-slate font-body mb-6">
+            {isAr
+              ? "نحب الشفافية في كل شيء — بما في ذلك في كيفية تطورنا. هل لديك اقتراح؟ راسلنا."
+              : "We believe in transparency in everything — including how we evolve. Got a suggestion? Email us."}
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors font-display"
+          >
+            {isAr ? "تواصل معنا" : "Contact us"}
+          </Link>
+        </div>
+      </section>
+
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: SITE_CONFIG.url },
+          {
+            name: "Changelog",
+            url: `${SITE_CONFIG.url}/${locale}/changelog`,
+          },
+        ]}
+      />
+    </>
+  );
+}
