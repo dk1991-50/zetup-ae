@@ -26,6 +26,8 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/compare": "2026-04-26",
   "/glossary": "2026-04-26",
   "/locations": "2026-04-26",
+  "/resources": "2026-04-26",
+  "/resources/dubai-mainland-setup-checklist": "2026-04-26",
 };
 
 const SERVICE_PAGE_DATES: Record<string, string> = {

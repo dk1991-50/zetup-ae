@@ -71,6 +71,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/resources"
+                  className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
+                >
+                  {t("footer.freeResources")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/compare"
                   className="text-sm font-semibold text-white transition-colors hover:text-sage-300 font-body"
                 >

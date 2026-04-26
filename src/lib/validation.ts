@@ -19,3 +19,11 @@ export const healthCheckSchema = z.object({
   painPoint: z.string().max(200).optional(),
   preferredTime: z.string().max(100).optional(),
 });
+
+export const resourceDownloadSchema = z.object({
+  email: z.string().email().max(320),
+  resource: z.string().min(1).max(200),
+  // Optional fields — not required to download but help qualify the lead
+  name: z.string().max(200).optional(),
+  company: z.string().max(200).optional(),
+});

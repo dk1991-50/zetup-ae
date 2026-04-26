@@ -1,8 +1,12 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { contactSchema, healthCheckSchema } from "@/lib/validation";
-import { notifyNewLead } from "@/lib/email";
+import {
+  contactSchema,
+  healthCheckSchema,
+  resourceDownloadSchema,
+} from "@/lib/validation";
+import { notifyNewLead, sendResourceLink } from "@/lib/email";
 
 // FormSubmit.co — free email-webhook service, no account needed.
 // First submission triggers an email verification to info@zetup.ae;
@@ -148,4 +152,68 @@ export async function handleHealthCheckForm(formData: FormData) {
   }).catch(() => {});
 
   redirect(`/${locale}/pro-health-check?success=true&wa=1`);
+}
+
+/**
+ * Resource downloads — public-facing email gate for lead-magnet PDFs
+ * and printable checklists. Honeypot, validation, Resend transactional
+ * email with the resource link, plus internal notification.
+ */
+export async function handleResourceDownload(formData: FormData) {
+  const locale = formData.get("locale")?.toString() || "en";
+  const resource = formData.get("resource")?.toString() || "";
+  const resourceUrl = formData.get("resourceUrl")?.toString() || "";
+
+  if (formData.get("website")) {
+    redirect(
+      `/${locale}/resources/${resource}?success=true`,
+    );
+  }
+
+  const parsed = resourceDownloadSchema.safeParse({
+    email: formData.get("email")?.toString(),
+    resource,
+    name: formData.get("name")?.toString() || undefined,
+    company: formData.get("company")?.toString() || undefined,
+  });
+
+  if (!parsed.success) {
+    return redirect(`/${locale}/resources/${resource}?error=validation`);
+  }
+
+  const d = parsed.data;
+  const RESOURCE_TITLES: Record<string, string> = {
+    "dubai-mainland-setup-checklist": "Dubai Mainland Setup Checklist",
+  };
+  const resourceTitle = RESOURCE_TITLES[d.resource] ?? "ZETUP PRO Resource";
+
+  // Notification to internal team (FormSubmit + Resend)
+  await postToFormSubmit(`Resource Download — ${resourceTitle}`, {
+    form_type: "resource-download",
+    resource: resourceTitle,
+    email: d.email,
+    full_name: d.name ?? "",
+    company_name: d.company ?? "",
+  });
+
+  notifyNewLead({
+    formType: "resource-download",
+    name: d.name ?? "(not provided)",
+    company: d.company ?? "(not provided)",
+    email: d.email,
+    phone: "(not provided)",
+    extras: { Resource: resourceTitle },
+  }).catch(() => {});
+
+  // Send the resource to the requester
+  if (resourceUrl) {
+    sendResourceLink({
+      to: d.email,
+      resourceTitle,
+      resourceUrl,
+      recipientName: d.name,
+    }).catch(() => {});
+  }
+
+  redirect(`/${locale}/resources/${d.resource}?success=true`);
 }
