@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { ArrowRight, ArrowLeft, MapPin, CheckCircle2 } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { RelatedPosts } from "@/components/sections/RelatedPosts";
 import { SITE_CONFIG, COMPANY, SERVICES } from "@/lib/constants";
 import { LOCATIONS, findLocation } from "@/lib/locations";
 
@@ -239,28 +240,29 @@ export default async function LocationPage({
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-6 md:px-8 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-semibold text-fjord-900 mb-4">
-            {isAr
-              ? `احصل على تواصل خاص بـ ${name}`
-              : `Get ${name}-Specific Coverage`}
-          </h2>
-          <p className="text-lg text-slate mb-8 font-body">
-            {isAr
-              ? "احجز فحص PRO صحي مجاني لمدة 30 دقيقة. سنراجع إعدادك الحالي ونوضح بالضبط ما يجب أن يبدو عليه التواصل معنا في منطقتك."
-              : "Book a free 30-minute PRO Health Check. We'll review your current setup and walk you through what working with us looks like for a company in your area."}
-          </p>
-          <Link
-            href="/pro-health-check"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-sage-500 text-white font-semibold rounded-lg hover:bg-sage-600 transition-colors font-display"
-          >
-            {isAr ? "احجز فحص PRO مجاني" : "Book a Free PRO Health Check"}
-            <ArrowRight size={18} strokeWidth={1.5} />
-          </Link>
-        </div>
-      </section>
+      {/* Cross-location links */}
+      {(() => {
+        const otherLocations = LOCATIONS.filter((l) => l.slug !== slug);
+        if (otherLocations.length === 0) return null;
+        return (
+          <section className="py-16 px-6 md:px-8 lg:px-12">
+            <div className="max-w-3xl mx-auto">
+              <RelatedPosts
+                heading={
+                  isAr ? "مناطق دبي الأخرى التي نخدمها" : "Other Dubai areas we serve"
+                }
+                seeAllLabel={isAr ? "كل المناطق" : "All locations"}
+                seeAllHref="/locations"
+                items={otherLocations.map((l) => ({
+                  href: `/locations/${l.slug}`,
+                  title: l.name[isAr ? "ar" : "en"],
+                  description: l.tagline[isAr ? "ar" : "en"],
+                }))}
+              />
+            </div>
+          </section>
+        );
+      })()}
 
       <BreadcrumbSchema
         items={[

@@ -7,6 +7,8 @@ import { allPosts } from "@/../.content-collections/generated";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { SpeakableSchema } from "@/components/seo/SpeakableSchema";
+import { AuthorCard } from "@/components/sections/AuthorCard";
+import { RelatedPosts } from "@/components/sections/RelatedPosts";
 import { SITE_CONFIG } from "@/lib/constants";
 
 function getPost(locale: string, slug: string) {
@@ -112,6 +114,35 @@ export default async function BlogPostPage({
           <div className="prose prose-lg max-w-none text-slate prose-headings:text-fjord-900 prose-headings:font-display prose-a:text-sage-600 prose-a:no-underline hover:prose-a:underline">
             <MDXContent code={post.mdx} />
           </div>
+
+          <AuthorCard
+            authorName={post.author || "ZETUP PRO Team"}
+            locale={locale}
+            date={post.date}
+          />
+
+          <RelatedPosts
+            heading={
+              locale === "ar"
+                ? "اقرأ أيضًا — مقالات ذات صلة"
+                : "Related blog posts"
+            }
+            seeAllLabel={locale === "ar" ? "كل المقالات" : "All articles"}
+            seeAllHref="/blog"
+            items={allPosts
+              .filter(
+                (p) =>
+                  p.contentType === "blog" &&
+                  p.locale === locale &&
+                  p.slug !== slug,
+              )
+              .slice(0, 4)
+              .map((p) => ({
+                href: `/blog/${p.slug}`,
+                title: p.title,
+                description: p.description,
+              }))}
+          />
 
           <div className="mt-16 p-8 rounded-xl bg-fjord-900 text-white text-center">
             <h2 className="font-display text-2xl font-semibold mb-4">

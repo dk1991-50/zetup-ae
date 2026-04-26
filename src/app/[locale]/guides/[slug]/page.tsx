@@ -8,6 +8,8 @@ import { allPosts } from "@/../.content-collections/generated";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { SpeakableSchema } from "@/components/seo/SpeakableSchema";
+import { AuthorCard } from "@/components/sections/AuthorCard";
+import { RelatedPosts } from "@/components/sections/RelatedPosts";
 import { SITE_CONFIG } from "@/lib/constants";
 
 function getGuide(locale: string, slug: string) {
@@ -122,6 +124,35 @@ export default async function GuidePage({
           <div className="prose prose-lg max-w-none text-slate prose-headings:text-fjord-900 prose-headings:font-display prose-a:text-sage-600 prose-a:no-underline hover:prose-a:underline prose-p:leading-relaxed">
             <MDXContent code={guide.mdx} />
           </div>
+
+          <AuthorCard
+            authorName={guide.author || "ZETUP PRO Team"}
+            locale={locale}
+            date={guide.date}
+          />
+
+          <RelatedPosts
+            heading={
+              locale === "ar"
+                ? "أدلة ذات صلة"
+                : "Related guides"
+            }
+            seeAllLabel={locale === "ar" ? "كل الأدلة" : "All guides"}
+            seeAllHref="/guides"
+            items={allPosts
+              .filter(
+                (p) =>
+                  p.contentType === "guide" &&
+                  p.locale === locale &&
+                  p.slug !== slug,
+              )
+              .slice(0, 4)
+              .map((p) => ({
+                href: `/guides/${p.slug}`,
+                title: p.title,
+                description: p.description,
+              }))}
+          />
 
           {/* CTA box */}
           <div className="mt-16 p-8 md:p-10 rounded-2xl bg-sage-50 border border-sage-200">

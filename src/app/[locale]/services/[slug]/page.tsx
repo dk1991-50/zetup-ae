@@ -9,7 +9,9 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { RelatedPosts } from "@/components/sections/RelatedPosts";
 import { SITE_CONFIG } from "@/lib/constants";
+import { GLOSSARY as GLOSSARY_LIST } from "@/lib/glossary";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /*  Service data for all 8 pages                                             */
@@ -1180,6 +1182,33 @@ export default async function ServicePage({
           </Link>
         }
       />
+
+      {/* Related glossary cross-links — internal linking for AEO */}
+      {(() => {
+        const relatedTerms = GLOSSARY_LIST.filter((g) => g.relatedService === slug).slice(0, 4);
+        if (relatedTerms.length === 0) return null;
+        return (
+          <section className="py-16 px-6 md:px-8 lg:px-12 bg-frost border-y border-mist">
+            <div className="max-w-3xl mx-auto">
+              <RelatedPosts
+                heading={
+                  locale === "ar"
+                    ? "مصطلحات ذات صلة من القاموس"
+                    : "Related glossary terms"
+                }
+                seeAllLabel={locale === "ar" ? "كل المصطلحات" : "All terms"}
+                seeAllHref="/glossary"
+                items={relatedTerms.map((g) => ({
+                  href: `/glossary/${g.slug}`,
+                  title: g.term[locale === "ar" ? "ar" : "en"],
+                  description: g.shortDef[locale === "ar" ? "ar" : "en"],
+                  badge: locale === "ar" ? "مصطلح" : "Term",
+                }))}
+              />
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Schema Markup */}
       <ServiceSchema
