@@ -180,6 +180,159 @@ export const LOCATIONS: LocationEntry[] = [
     ],
   },
   {
+    slug: "dubai-marina",
+    name: { en: "Dubai Marina", ar: "دبي مارينا" },
+    tagline: {
+      en: "Lifestyle-meets-business waterfront district",
+      ar: "منطقة واجهة بحرية تجمع بين الحياة والأعمال",
+    },
+    coordinates: { lat: 25.0805, lng: 55.1403 },
+    shortDef: {
+      en: "Dubai Marina is the waterfront mixed-use district of high-rises, restaurants, and hotels. The business mix here is heavy on real-estate brokerages, lifestyle brands, online businesses, and remote-work mainland LLCs whose founders also live in the area.",
+      ar: "دبي مارينا هي منطقة الواجهة البحرية متعددة الاستخدامات بأبراجها العالية ومطاعمها وفنادقها. التركيبة التجارية هنا تركز على وكالات العقارات والعلامات التجارية للأسلوب الحياتي والأعمال عبر الإنترنت وشركات ذ.م.م في البر الرئيسي التي يعيش مؤسسوها أيضًا في المنطقة.",
+    },
+    intro: {
+      en: [
+        "Dubai Marina is one of Dubai's most recognisable skylines — a 3 km artificial canal lined with 200+ towers, the Walk promenade, and JBR beach next door. From a business standpoint it's a mix: many residents are entrepreneurs running small mainland LLCs from co-working spaces or home, plus traditional offices in towers like DAMAC Heights and Marina Plaza.",
+        "Common Marina business profiles: real-estate brokerages (Marina is the highest-density rental and sale market in Dubai), lifestyle and wellness brands, content creators with their own LLCs, online businesses, and small consultancies. Most are 1–10 employees — Marina is not where you find Sheikh Zayed Road's enterprise-scale companies.",
+        "Trade-licence-wise, Marina addresses are usually serviced by DET via the broader Jebel Ali / Internet City service-centre catchment. Free-zone alternatives (DMCC, Internet City, Media City) sit just inland but are licensed differently.",
+      ],
+      ar: [
+        "دبي مارينا هي أحد أفقها الأكثر شهرة في دبي — قناة اصطناعية بطول 3 كم تصطف على جانبيها 200+ برج، ممشى الووك، وشاطئ JBR المجاور. من منظور الأعمال هي مزيج: كثير من السكان رواد أعمال يديرون شركات ذ.م.م صغيرة من مساحات العمل المشترك أو من المنزل، إضافة إلى المكاتب التقليدية في أبراج مثل داماك هايتس ومارينا بلازا.",
+        "ملامح الأعمال الشائعة في المارينا: وكالات العقارات (المارينا أكثر الأسواق كثافة في دبي للإيجار والبيع)، العلامات التجارية للحياة والعافية، صانعو المحتوى بشركاتهم الخاصة، الأعمال عبر الإنترنت، والاستشارات الصغيرة. معظمها 1-10 موظفين.",
+        "فيما يتعلق بالرخصة التجارية، عناوين المارينا عادةً مخدومة من الدائرة عبر منطقة جبل علي / الإنترنت سيتي الواسعة. البدائل في المناطق الحرة (DMCC، الإنترنت سيتي، الميديا سيتي) تقع داخليًا قريبًا لكنها مرخصة بشكل مختلف.",
+      ],
+    },
+    whyZetupHere: {
+      en: [
+        "Lean retainer pricing optimised for 1–10-employee Marina businesses (from AED 839/month)",
+        "Familiar with Marina-specific challenges: real-estate broker compliance, RERA registration, ad-hoc visa needs",
+        "Same-day pickup/dropoff in the broader Marina/JBR/Media City corridor",
+        "Bilingual Arabic+English support for international founders running Dubai businesses remotely",
+      ],
+      ar: [
+        "تسعير راتب مبسّط محسّن لأعمال المارينا التي لديها 1-10 موظفين (من 839 درهم/شهر)",
+        "نعرف تحديات المارينا الخاصة: امتثال وسطاء العقارات، تسجيل ريرا، احتياجات التأشيرات المخصصة",
+        "تسليم في نفس اليوم في ممر المارينا/JBR/الميديا سيتي الأوسع",
+        "دعم ثنائي اللغة عربي+إنجليزي للمؤسسين الدوليين الذين يديرون أعمال دبي عن بُعد",
+      ],
+    },
+    nearbyOffices: [
+      { name: "Tasheel Internet City", type: "MOHRE service centre" },
+      { name: "Amer Centre Mall of the Emirates", type: "GDRFA service centre" },
+      { name: "RERA (for real-estate brokerages)", type: "Real-estate registration" },
+      { name: "DET Jebel Ali branch", type: "Trade licence" },
+    ],
+    relevantServices: [
+      "pro-services",
+      "company-formation",
+      "visa-services",
+      "trade-license-renewal",
+    ],
+  },
+  {
+    slug: "jlt",
+    name: { en: "JLT (Jumeirah Lakes Towers)", ar: "أبراج بحيرات جميرا" },
+    tagline: {
+      en: "DMCC free zone — different rules apply",
+      ar: "المنطقة الحرة DMCC — قواعد مختلفة",
+    },
+    coordinates: { lat: 25.0682, lng: 55.1389 },
+    shortDef: {
+      en: "JLT is the Jumeirah Lakes Towers cluster — a free zone administered by DMCC, not DET. Companies here have 100% foreign ownership by default and different tax rules, but face restrictions when billing UAE mainland customers. ZETUP PRO can help with specific JLT/DMCC tasks.",
+      ar: "أبراج بحيرات جميرا (JLT) هي تجمع تابع للمنطقة الحرة DMCC، وليس دائرة الاقتصاد. للشركات هنا ملكية أجنبية 100% افتراضيًا وقواعد ضريبية مختلفة، لكنها تواجه قيودًا عند الفوترة لعملاء البر الرئيسي. زيتب برو يمكنها المساعدة في مهام JLT/DMCC المحددة.",
+    },
+    intro: {
+      en: [
+        "JLT (Jumeirah Lakes Towers) is one of Dubai's largest free-zone clusters, home to 7,000+ companies operating under DMCC (Dubai Multi Commodities Centre). Despite the name, DMCC isn't just for commodities — it's a general-purpose free zone for trade, professional services, fintech, crypto, and pretty much anything except heavy industry.",
+        "Key differences from mainland: 100% foreign ownership by default, 0% corporate tax on qualifying income (free-zone-to-free-zone, exports, certain qualifying activities), simpler company-formation flow, and a single-authority structure (DMCC handles licence + visa + Emirates ID together via its own systems, not Tasheel/Amer).",
+        "The trade-off: a JLT/DMCC company can't directly bill UAE mainland customers above AED 5 million revenue threshold without specific permits. For pure-export businesses, fintech serving international clients, or commodity traders, JLT is excellent. For service businesses targeting UAE mainland customers, DET mainland is usually better.",
+      ],
+      ar: [
+        "JLT هي أحد أكبر تجمعات المناطق الحرة في دبي، تضم 7,000+ شركة تعمل تحت DMCC (مركز دبي للسلع المتعددة). على الرغم من الاسم، DMCC ليس للسلع فقط — هي منطقة حرة عامة للتجارة والخدمات المهنية والتقنية المالية والعملات الرقمية وأي شيء تقريبًا ما عدا الصناعة الثقيلة.",
+        "الاختلافات الرئيسية عن البر الرئيسي: ملكية أجنبية 100% افتراضيًا، ضريبة شركات 0% على الدخل المؤهل، تدفق تأسيس شركة أبسط، وهيكل سلطة واحدة (DMCC تعالج الرخصة والتأشيرة والهوية الإماراتية معًا عبر أنظمتها الخاصة، وليس تسهيل/عامر).",
+        "المقايضة: لا تستطيع شركة JLT/DMCC الفوترة المباشرة لعملاء البر الرئيسي فوق حد 5 مليون درهم بدون تصاريح محددة. للأعمال التي تركز على التصدير، التقنية المالية للعملاء الدوليين، أو تجار السلع، JLT ممتازة. لأعمال الخدمات المستهدفة لعملاء البر الرئيسي، البر الرئيسي عادةً أفضل.",
+      ],
+    },
+    whyZetupHere: {
+      en: [
+        "Most JLT-located founders also need mainland presence at some stage — we handle the dual-entity coordination",
+        "DMCC requirements for visa renewals, change-of-shareholders, and annual licence renewals",
+        "Free-zone-to-mainland transitions when companies outgrow JLT restrictions",
+        "Cross-jurisdictional document flows: DMCC → MOFA → mainland banks → mainland clients",
+      ],
+      ar: [
+        "معظم المؤسسين في JLT يحتاجون أيضًا حضور في البر الرئيسي في مرحلة ما — نتعامل مع تنسيق الكيانين",
+        "متطلبات DMCC لتجديد التأشيرات، تغيير المساهمين، والتجديد السنوي للرخصة",
+        "التحولات من المنطقة الحرة إلى البر الرئيسي عندما تتجاوز الشركات قيود JLT",
+        "تدفقات المستندات متعددة الاختصاصات: DMCC ← وزارة الخارجية ← البنوك ← العملاء",
+      ],
+    },
+    nearbyOffices: [
+      { name: "DMCC Authority", type: "Free zone licensing" },
+      { name: "Amer Centre Mall of the Emirates", type: "GDRFA service centre (for non-DMCC residency)" },
+      { name: "Federal Tax Authority HQ", type: "Corporate tax / VAT" },
+      { name: "MOFA Tecom branch", type: "Document attestation" },
+    ],
+    relevantServices: [
+      "visa-services",
+      "document-clearing",
+      "corporate-tax",
+      "company-formation",
+    ],
+  },
+  {
+    slug: "al-quoz",
+    name: { en: "Al Quoz", ar: "القوز" },
+    tagline: {
+      en: "Dubai's industrial backbone",
+      ar: "العمود الفقري الصناعي لدبي",
+    },
+    coordinates: { lat: 25.1383, lng: 55.2358 },
+    shortDef: {
+      en: "Al Quoz is Dubai's industrial backbone — warehouses, workshops, fabrication, logistics, automotive, and small manufacturing. Mainland LLCs here typically have 30–300 blue-collar workers, multi-warehouse operations, and high-volume PRO needs.",
+      ar: "القوز هو العمود الفقري الصناعي لدبي — المستودعات وورش العمل والتصنيع والخدمات اللوجستية والسيارات والتصنيع الصغير. شركات ذ.م.م في البر الرئيسي هنا عادةً لديها 30-300 عامل من ذوي الياقات الزرقاء، وعمليات متعددة المستودعات، واحتياجات PRO عالية الحجم.",
+    },
+    intro: {
+      en: [
+        "Al Quoz spans four main sectors (Industrial 1–4) plus Al Quoz Industrial Area, hosting thousands of mainland LLCs across heavy and light industry. Common business profiles: workshops (woodworking, metalwork, signage), automotive (showrooms, service centres, parts), logistics (warehouses, last-mile delivery), printing and packaging, fabrication, and small-scale manufacturing.",
+        "From a corporate-services perspective, Al Quoz companies are typically larger and more labour-intensive than Business Bay tenants. A typical Al Quoz client has 50+ blue-collar employees on Tasheel-managed visas, 1+ company vehicles, and frequent need for activity amendments as they take on new contracts.",
+        "Industrial activities trigger extra approvals beyond DET: Dubai Municipality (food production, health-related), Civil Defence (warehousing, hazardous materials), Trakhees (for some industrial buildings). Trade-licence renewals here are not just paperwork — they involve coordinating multiple regulators.",
+      ],
+      ar: [
+        "القوز يمتد عبر أربعة قطاعات رئيسية (الصناعية 1-4) إضافة إلى منطقة القوز الصناعية، ويضم آلاف شركات ذ.م.م في البر الرئيسي عبر الصناعات الثقيلة والخفيفة. ملامح الأعمال الشائعة: ورش عمل (نجارة، حدادة، يافطات)، سيارات (صالات عرض، مراكز خدمة، قطع غيار)، خدمات لوجستية (مستودعات، توصيل الميل الأخير)، طباعة وتغليف، تصنيع، وتصنيع صغير الحجم.",
+        "من منظور الخدمات المؤسسية، شركات القوز عادةً أكبر وأكثر كثافة في العمالة من مستأجري الخليج التجاري. عميل القوز النموذجي لديه 50+ موظفًا من ذوي الياقات الزرقاء على تأشيرات مدارة عبر تسهيل، مركبة شركة واحدة أو أكثر، وحاجة متكررة لتعديلات النشاط مع تولي عقود جديدة.",
+        "الأنشطة الصناعية تستوجب موافقات إضافية بخلاف الدائرة: بلدية دبي (إنتاج الأغذية، الصحة)، الدفاع المدني (التخزين، المواد الخطرة)، تراخيص (لبعض المباني الصناعية).",
+      ],
+    },
+    whyZetupHere: {
+      en: [
+        "High-volume processing for companies with 50+ blue-collar visas — bulk-rate pricing",
+        "Experience with industrial-activity approvals: Dubai Municipality, Civil Defence, Trakhees",
+        "WPS coordination for large workforces and labour-court representation when disputes arise",
+        "Activity-amendment expertise as Al Quoz businesses pivot product/service mix",
+      ],
+      ar: [
+        "معالجة عالية الحجم للشركات التي لديها 50+ تأشيرة من ذوي الياقات الزرقاء — تسعير حجمي",
+        "خبرة بموافقات الأنشطة الصناعية: بلدية دبي، الدفاع المدني، تراخيص",
+        "تنسيق نظام حماية الأجور للقوى العاملة الكبيرة وتمثيل محكمة العمل عند نشوب نزاعات",
+        "خبرة بتعديل الأنشطة عند تغيير شركات القوز لمزيج المنتجات/الخدمات",
+      ],
+    },
+    nearbyOffices: [
+      { name: "Tasheel Al Quoz", type: "MOHRE service centre" },
+      { name: "Amer Centre Al Barsha", type: "GDRFA service centre" },
+      { name: "Dubai Municipality", type: "Industrial-activity approvals" },
+      { name: "Civil Defence Dubai", type: "Warehousing / hazmat permits" },
+    ],
+    relevantServices: [
+      "pro-services",
+      "trade-license-renewal",
+      "visa-services",
+      "document-clearing",
+    ],
+  },
+  {
     slug: "deira",
     name: { en: "Deira", ar: "ديرة" },
     tagline: {
