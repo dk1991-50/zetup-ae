@@ -12,6 +12,7 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { RelatedPosts } from "@/components/sections/RelatedPosts";
 import { SITE_CONFIG } from "@/lib/constants";
 import { GLOSSARY as GLOSSARY_LIST } from "@/lib/glossary";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /*  Service data for all 8 pages                                             */
@@ -1182,6 +1183,37 @@ export default async function ServicePage({
           </Link>
         }
       />
+
+      {/* Real-outcome case studies — proof block for conversion */}
+      {(() => {
+        const matchingCaseStudies = CASE_STUDIES.filter((c) =>
+          c.servicesUsed.includes(slug),
+        ).slice(0, 2);
+        if (matchingCaseStudies.length === 0) return null;
+        return (
+          <section className="py-16 px-6 md:px-8 lg:px-12">
+            <div className="max-w-3xl mx-auto">
+              <RelatedPosts
+                heading={
+                  locale === "ar"
+                    ? "نتائج حقيقية لعملاء حقيقيين"
+                    : "Real outcomes for real clients"
+                }
+                seeAllLabel={
+                  locale === "ar" ? "كل دراسات الحالة" : "All case studies"
+                }
+                seeAllHref="/case-studies"
+                items={matchingCaseStudies.map((c) => ({
+                  href: `/case-studies/${c.slug}`,
+                  title: c.title[locale === "ar" ? "ar" : "en"],
+                  description: c.summary[locale === "ar" ? "ar" : "en"],
+                  badge: c.industry[locale === "ar" ? "ar" : "en"],
+                }))}
+              />
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Related glossary cross-links — internal linking for AEO */}
       {(() => {
