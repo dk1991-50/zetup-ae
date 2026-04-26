@@ -3,12 +3,19 @@
     "services": "خدماتنا",
     "guides": "الأدلة",
     "pricing": "الأسعار",
+    "compare": "قارن",
     "about": "من نحن",
     "blog": "المدونة",
     "contact": "تواصل معنا",
     "tools": "أدوات",
     "proHealthCheck": "فحص PRO مجاني",
     "switchLocale": "English"
+  },
+  "compare": {
+    "virtuzone": "مقابل فيرتوزون",
+    "creativeZone": "مقابل كرييتف زون",
+    "shuraa": "مقابل شورى",
+    "marketPricing": "مقارنة أسعار السوق"
   },
   "tools": {
     "costCalculator": "حاسبة التكلفة",

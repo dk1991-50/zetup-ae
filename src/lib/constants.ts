@@ -18,15 +18,35 @@ export const SITE_CONFIG = {
   founders: {
     dennis: {
       name: "Dennis Kristensen",
+      slug: "dennis-kristensen",
       role: "Co-Founder",
       origin: "Denmark",
+      nationality: "Danish",
       image: "/images/team/zetup_dennis.jpg",
+      // TODO: add personal LinkedIn URL when available
+      linkedin: "" as string,
+      knowsAbout: [
+        "Dubai business setup",
+        "PRO services",
+        "Scandinavian business culture",
+        "UAE corporate transparency",
+      ],
     },
     edina: {
       name: "Edina Sultan",
+      slug: "edina-sultan",
       role: "Co-Founder",
       experience: "17+ years UAE government expertise",
       image: "/images/team/zetup_edina.jpg",
+      // TODO: add personal LinkedIn URL when available
+      linkedin: "" as string,
+      knowsAbout: [
+        "UAE government processes",
+        "Visa processing",
+        "Emiratisation compliance",
+        "Trade license management",
+        "Document attestation",
+      ],
     },
   },
 } as const;
@@ -232,6 +252,28 @@ export const NAV_ITEMS = [
     ],
   },
   { labelKey: "nav.pricing", href: "/pricing" },
+  {
+    labelKey: "nav.compare",
+    href: "/compare",
+    children: [
+      {
+        labelKey: "compare.virtuzone",
+        href: "/compare/zetup-pro-vs-virtuzone",
+      },
+      {
+        labelKey: "compare.creativeZone",
+        href: "/compare/zetup-pro-vs-creative-zone",
+      },
+      {
+        labelKey: "compare.shuraa",
+        href: "/compare/zetup-pro-vs-shuraa",
+      },
+      {
+        labelKey: "compare.marketPricing",
+        href: "/compare/pro-services-pricing-comparison-dubai",
+      },
+    ],
+  },
   { labelKey: "nav.about", href: "/about" },
   { labelKey: "nav.blog", href: "/blog" },
   { labelKey: "nav.contact", href: "/contact" },
@@ -328,12 +370,14 @@ export const ORGANIZATION_SCHEMA = {
   founder: [
     {
       "@type": "Person",
+      "@id": `${SITE_CONFIG.url}/about#person-dennis-kristensen`,
       name: "Dennis Kristensen",
       jobTitle: "Co-Founder",
       nationality: "Danish",
     },
     {
       "@type": "Person",
+      "@id": `${SITE_CONFIG.url}/about#person-edina-sultan`,
       name: "Edina Sultan",
       jobTitle: "Co-Founder",
       description: "17+ years UAE government expertise",

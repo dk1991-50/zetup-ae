@@ -21,6 +21,7 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/tools/emiratisation-calculator": "2026-04-26",
   "/tools/cost-calculator": "2026-04-26",
   "/tools/government-fees": "2026-04-26",
+  "/compare": "2026-04-26",
 };
 
 const SERVICE_PAGE_DATES: Record<string, string> = {

@@ -1,5 +1,6 @@
 import { JsonLd } from "./JsonLd";
 import { COMPANY } from "@/lib/constants";
+import { personRef } from "./PersonSchema";
 
 interface ArticleSchemaProps {
   title: string;
@@ -29,12 +30,12 @@ export function ArticleSchema({
       description || `${title} — published by ZETUP PRO Corporate Services.`,
     datePublished: date,
     dateModified: date,
-    author: {
-      "@type": "Person",
-      name: author,
-    },
+    // Resolves to the Person @id on /about for known team members,
+    // falls back to a plain name for "ZETUP Team" or unknown authors.
+    author: personRef(author),
     publisher: {
       "@type": "Organization",
+      "@id": `${COMPANY.url}/#organization`,
       name: COMPANY.legalName,
       url: COMPANY.url,
     },

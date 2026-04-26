@@ -3,12 +3,19 @@
     "services": "Services",
     "guides": "Guides",
     "pricing": "Pricing",
+    "compare": "Compare",
     "about": "About",
     "blog": "Blog",
     "contact": "Contact",
     "tools": "Tools",
     "proHealthCheck": "Free PRO Check",
     "switchLocale": "العربية"
+  },
+  "compare": {
+    "virtuzone": "vs Virtuzone",
+    "creativeZone": "vs Creative Zone",
+    "shuraa": "vs Shuraa",
+    "marketPricing": "Market pricing comparison"
   },
   "tools": {
     "costCalculator": "Cost Calculator",

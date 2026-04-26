@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
-import { SITE_CONFIG } from "@/lib/constants";
+import { PersonSchema } from "@/components/seo/PersonSchema";
+import { SITE_CONFIG, TEAM } from "@/lib/constants";
 
 export async function generateMetadata({
   params,
@@ -204,6 +205,30 @@ export default async function AboutPage({
           { name: "About", url: `${SITE_CONFIG.url}/${locale}/about` },
         ]}
       />
+      {/* Person schemas — render once per founder. The @id is referenced
+          from Article.author for blog/guide pages, strengthening E-E-A-T. */}
+      {TEAM.map((member) => {
+        const founderKey = member.name === "Dennis Kristensen" ? "dennis" : "edina";
+        const founder = SITE_CONFIG.founders[founderKey];
+        return (
+          <PersonSchema
+            key={member.name}
+            name={member.name}
+            jobTitle={member.role}
+            description={member.bio}
+            image={member.image}
+            slug={founder.slug}
+            sameAs={[
+              SITE_CONFIG.social.linkedin,
+              ...(founder.linkedin ? [founder.linkedin] : []),
+            ]}
+            knowsAbout={[...founder.knowsAbout]}
+            nationality={
+              "nationality" in founder ? founder.nationality : undefined
+            }
+          />
+        );
+      })}
     </>
   );
 }
