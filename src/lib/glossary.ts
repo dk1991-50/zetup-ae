@@ -498,6 +498,75 @@ export const GLOSSARY: GlossaryEntry[] = [
     relatedService: "document-clearing",
   },
   {
+    slug: "tadbeer",
+    term: { en: "TADBEER", ar: "تدبير" },
+    category: "service-center",
+    alsoKnownAs: ["MOHRE TADBEER", "Domestic Worker Service Centre"],
+    shortDef: {
+      en: "TADBEER is the MOHRE-authorised service centre network in the UAE for domestic-worker recruitment, contracts, and visa processing — separate from the Tasheel network used for company-employee paperwork.",
+      ar: "تدبير هي شبكة مراكز الخدمات المعتمدة من وزارة الموارد البشرية في الإمارات لتوظيف العمال المنزليين والعقود ومعالجة التأشيرات — منفصلة عن شبكة تسهيل المستخدمة لأوراق موظفي الشركات.",
+    },
+    longDef: {
+      en: [
+        "TADBEER (Arabic for 'planning' or 'management') is MOHRE's dedicated channel for the domestic-worker market — drivers, nannies, cooks, gardeners, household helpers. It runs as a separate ecosystem from Tasheel because the regulations, contract templates, and protections are different.",
+        "Through TADBEER, UAE residents (households, not companies) can recruit domestic workers, sign MOHRE-standard domestic-worker contracts, register on the Wage Protection System variant for domestic workers, and process visa renewals. TADBEER centres also offer training programmes for incoming workers.",
+        "Domestic-worker employers can use TADBEER directly or via authorised agents. ZETUP PRO does not run domestic-worker recruitment but advises clients on the regulatory framework when relevant.",
+      ],
+      ar: [
+        "تدبير هي قناة الوزارة المخصصة لسوق العمالة المنزلية — السائقين، المربيات، الطهاة، البستانيين، عمال المنازل. تعمل كنظام منفصل عن تسهيل لأن اللوائح ونماذج العقود والحماية مختلفة.",
+        "من خلال تدبير، يمكن للمقيمين في الإمارات (الأسر، وليس الشركات) توظيف العمال المنزليين وتوقيع عقود العمل المنزلي المعتمدة من الوزارة والتسجيل في نسخة نظام حماية الأجور للعمال المنزليين ومعالجة تجديد التأشيرات. تقدم مراكز تدبير أيضًا برامج تدريبية للعمال الوافدين.",
+        "يمكن لأصحاب العمل في المنازل استخدام تدبير مباشرة أو عبر وكلاء معتمدين. لا تدير زيتب برو توظيف العمال المنزليين لكنها تقدم المشورة للعملاء بشأن الإطار التنظيمي عند الحاجة.",
+      ],
+    },
+    related: ["tasheel", "mohre", "wps"],
+  },
+  {
+    slug: "tawjeeh",
+    term: { en: "Tawjeeh", ar: "توجيه" },
+    category: "service-center",
+    alsoKnownAs: ["MOHRE Tawjeeh", "Pre-Employment Orientation"],
+    shortDef: {
+      en: "Tawjeeh is MOHRE's mandatory pre-employment orientation and training centre network. New employees in the UAE — particularly blue-collar workers — must complete Tawjeeh-administered orientation before their employment contract is finalised.",
+      ar: "توجيه هي شبكة مراكز التوجيه والتدريب الإلزامية قبل التوظيف التابعة للوزارة. يجب على الموظفين الجدد في الإمارات — خاصة عمال الياقات الزرقاء — إكمال التوجيه قبل اكتمال عقد عملهم.",
+    },
+    longDef: {
+      en: [
+        "Tawjeeh (Arabic for 'orientation' or 'guidance') exists to ensure incoming workers understand UAE labour law, their rights and responsibilities, the standard MOHRE employment contract, the WPS, and basic workplace safety. It's a regulatory compliance step, not an optional training.",
+        "Tawjeeh sessions are typically 1–2 hours, delivered in the worker's native language at any of the dozens of MOHRE-authorised centres. Once completed, the worker receives a Tawjeeh certificate, which becomes part of their employment file.",
+        "Tawjeeh is most relevant for skill levels 5 (semi-skilled) and below — domestic workers, construction, hospitality. White-collar professionals on standard employment visas usually skip this step.",
+      ],
+      ar: [
+        "توجيه يضمن فهم العمال الوافدين لقانون العمل الإماراتي وحقوقهم ومسؤولياتهم وعقد العمل القياسي للوزارة ونظام حماية الأجور وسلامة مكان العمل الأساسية. هي خطوة امتثال تنظيمية، وليست تدريبًا اختياريًا.",
+        "جلسات توجيه عادةً 1-2 ساعة، تقدم بلغة العامل الأم في أي من العشرات من المراكز المعتمدة من الوزارة. بعد الإكمال، يتلقى العامل شهادة توجيه تصبح جزءًا من ملف عمله.",
+        "توجيه أكثر صلة بمستويات المهارة 5 (شبه ماهرة) وما دون — العمال المنزليون، البناء، الضيافة. المهنيون من ذوي الياقات البيضاء على تأشيرات العمل القياسية يتخطون هذه الخطوة عادةً.",
+      ],
+    },
+    related: ["mohre", "tasheel", "labour-card"],
+  },
+  {
+    slug: "goaml",
+    term: { en: "goAML", ar: "نظام goAML" },
+    category: "concept",
+    alsoKnownAs: ["UAE FIU goAML", "Anti-Money Laundering Reporting"],
+    shortDef: {
+      en: "goAML is the UAE Financial Intelligence Unit's mandatory anti-money-laundering reporting platform. Designated non-financial businesses (real-estate brokers, lawyers, accountants, gold dealers, corporate-services firms) must register and file Suspicious Transaction Reports through goAML.",
+      ar: "goAML هي منصة الإبلاغ الإلزامية لوحدة المعلومات المالية الإماراتية لمكافحة غسل الأموال. يجب على الأعمال غير المالية المحددة (وسطاء العقارات، المحامون، المحاسبون، تجار الذهب، شركات الخدمات المؤسسية) التسجيل وتقديم تقارير المعاملات المشبوهة عبر goAML.",
+    },
+    longDef: {
+      en: [
+        "goAML was deployed by the UAE Financial Intelligence Unit (FIU) in 2019 to centralise anti-money-laundering (AML) and counter-financing-of-terrorism (CFT) reporting. Every UAE Designated Non-Financial Business or Profession (DNFBP) must register on goAML and file Suspicious Transaction Reports (STRs) when red flags appear.",
+        "DNFBPs include real-estate agents, lawyers, accountants, auditors, gold and precious-metal dealers, and corporate-services providers like ZETUP PRO. Failure to register — or to file an STR when required — triggers fines starting at AED 50,000 and can escalate to AED 5 million for repeat offences.",
+        "goAML registration is a one-time setup: the company enters details on goAML's portal, designates a Money Laundering Reporting Officer (MLRO), and receives credentials. STRs are filed within 30 days of identifying a red flag. ZETUP PRO is registered on goAML and complies with all DNFBP obligations.",
+      ],
+      ar: [
+        "نشرت وحدة المعلومات المالية الإماراتية goAML في 2019 لمركزية الإبلاغ عن غسل الأموال وتمويل الإرهاب. يجب على كل عمل أو مهنة غير مالية محددة في الإمارات التسجيل في goAML وتقديم تقارير المعاملات المشبوهة عند ظهور إشارات تحذير.",
+        "تشمل هذه الأعمال وسطاء العقارات والمحامين والمحاسبين والمدققين وتجار الذهب والمعادن الثمينة ومزودي الخدمات المؤسسية مثل زيتب برو. عدم التسجيل أو تقديم التقرير المطلوب يستوجب غرامات تبدأ بـ 50,000 درهم ويمكن أن تصل إلى 5 ملايين درهم للمخالفات المتكررة.",
+        "التسجيل في goAML إعداد لمرة واحدة: تدخل الشركة التفاصيل في بوابة goAML، وتعين مسؤولًا للإبلاغ عن غسل الأموال، وتتلقى بيانات الاعتماد. تُقدم التقارير خلال 30 يومًا من تحديد إشارة تحذير. زيتب برو مسجلة في goAML وتمتثل لجميع التزامات DNFBP.",
+      ],
+    },
+    related: ["fta", "corporate-tax"],
+  },
+  {
     slug: "fta",
     term: { en: "FTA (Federal Tax Authority)", ar: "هيئة الضرائب الاتحادية" },
     category: "government-body",

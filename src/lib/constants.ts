@@ -242,6 +242,10 @@ export const NAV_ITEMS = [
         href: "/glossary",
       },
       {
+        labelKey: "nav.faq",
+        href: "/faq",
+      },
+      {
         labelKey: "nav.resources",
         href: "/resources",
       },
