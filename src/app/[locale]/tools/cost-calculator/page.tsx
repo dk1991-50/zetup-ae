@@ -4,6 +4,7 @@ import { CostCalculator } from "@/components/sections/CostCalculator";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
+import { WebApplicationSchema } from "@/components/seo/WebApplicationSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -146,6 +147,21 @@ export default async function CostCalculatorPage({
             url: `${SITE_CONFIG.url}/${locale}/tools/cost-calculator`,
           },
         ]}
+      />
+      <WebApplicationSchema
+        name={
+          locale === "ar"
+            ? "حاسبة تكلفة خدمات PRO دبي"
+            : "Dubai PRO Services Cost Calculator"
+        }
+        description={
+          locale === "ar"
+            ? "احسب تكلفتك الشهرية والسنوية لخدمات PRO في دبي بناءً على عدد الموظفين وحجم المعاملات. رسوم الخدمة والرسوم الحكومية مفصلة بشفافية كاملة."
+            : "Calculate your monthly and annual Dubai PRO services cost based on employee count and transaction volume. Service fees and government fees broken down with full transparency."
+        }
+        slug="cost-calculator"
+        url={`${SITE_CONFIG.url}/${locale}/tools/cost-calculator`}
+        locale={locale}
       />
     </>
   );

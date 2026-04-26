@@ -5,6 +5,7 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { WebApplicationSchema } from "@/components/seo/WebApplicationSchema";
 import { SITE_CONFIG } from "@/lib/constants";
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -271,6 +272,21 @@ export default async function EmiratisationCalculatorPage({
             url: `${SITE_CONFIG.url}/${locale}/tools/emiratisation-calculator`,
           },
         ]}
+      />
+      <WebApplicationSchema
+        name={
+          locale === "ar"
+            ? "حاسبة التوطين 2026"
+            : "UAE Emiratisation Calculator 2026"
+        }
+        description={
+          locale === "ar"
+            ? "احسب متطلبات التوطين لشركتك في دبي. تعرف على عدد الموظفين الإماراتيين المطلوبين والغرامات المحتملة قبل الموعد النهائي ديسمبر 2026."
+            : "Calculate your company's UAE Emiratisation quota requirements and potential fines. See exactly how many Emirati hires you need before the December 2026 deadline."
+        }
+        slug="emiratisation-calculator"
+        url={`${SITE_CONFIG.url}/${locale}/tools/emiratisation-calculator`}
+        locale={locale}
       />
     </>
   );
