@@ -237,6 +237,10 @@ export const NAV_ITEMS = [
         labelKey: "guides.corporateTax",
         href: "/guides/uae-corporate-tax",
       },
+      {
+        labelKey: "nav.glossary",
+        href: "/glossary",
+      },
     ],
   },
   {
