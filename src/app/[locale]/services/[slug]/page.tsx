@@ -443,6 +443,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "Emiratisation requires companies with 50+ employees to reach 10% Emirati skilled workforce by December 2026, with fines of AED 9,000 per month per missing position. ZETUP PRO provides full compliance management — quota calculation, Nafis registration, MOHRE reporting, and recruitment coordination — as an add-on service from AED 3,000/month or included in our Professional and Enterprise PRO tiers.",
     priceRange: "AED 3,000 - AED 8,000/month",
+    offer: {
+      priceFrom: "3000",
+      priceCurrency: "AED",
+      billingPeriod: "month",
+    },
     serviceName: "Emiratisation Compliance Services",
     sections: [
       {
@@ -673,6 +678,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "UAE Corporate Tax applies a 9% rate on taxable income above AED 375,000 for mainland companies. Small Business Relief (zero tax for revenue under AED 3 million) expires December 2026. ZETUP PRO handles the government coordination layer — FTA registration, EmaraTax portal submissions, deadline tracking, and liaison with your accounting firm — from AED 2,000 per quarter.",
     priceRange: "AED 2,000 - AED 5,000/quarter",
+    offer: {
+      priceFrom: "2000",
+      priceCurrency: "AED",
+      billingPeriod: "quarter",
+    },
     serviceName: "Corporate Tax Services Dubai",
     sections: [
       {
@@ -755,6 +765,11 @@ const SERVICE_DATA: Record<string, ServiceData> = {
     answerCapsule:
       "Document clearing services in Dubai handle the attestation and legalisation of documents required for business and personal purposes — including MOFA attestation, embassy legalisation, notary public services, educational certificate attestation, and commercial document clearing. ZETUP PRO processes all document types with real-time status tracking and transparent per-document pricing.",
     priceRange: "AED 150 - AED 1,000/document",
+    offer: {
+      priceFrom: "150",
+      priceCurrency: "AED",
+      billingPeriod: "transaction",
+    },
     serviceName: "Document Clearing and Attestation Dubai",
     sections: [
       {
