@@ -264,6 +264,7 @@ export const NAV_ITEMS = [
     ],
   },
   { labelKey: "nav.pricing", href: "/pricing" },
+  { labelKey: "nav.caseStudies", href: "/case-studies" },
   {
     labelKey: "nav.compare",
     href: "/compare",

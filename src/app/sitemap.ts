@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { allPosts } from "@/../.content-collections/generated";
 import { GLOSSARY } from "@/lib/glossary";
 import { LOCATIONS } from "@/lib/locations";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
 const BASE_URL = "https://zetup.ae";
 
@@ -30,6 +31,7 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/resources/dubai-mainland-setup-checklist": "2026-04-26",
   "/changelog": "2026-04-26",
   "/faq": "2026-04-26",
+  "/case-studies": "2026-04-26",
 };
 
 const SERVICE_PAGE_DATES: Record<string, string> = {
@@ -208,11 +210,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  // Case-study entries
+  const caseStudyEntries: MetadataRoute.Sitemap = CASE_STUDIES.flatMap((c) =>
+    locales.map((locale) => ({
+      url: `${BASE_URL}/${locale}/case-studies/${c.slug}`,
+      lastModified: dateOrFallback(c.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/en/case-studies/${c.slug}`,
+          ar: `${BASE_URL}/ar/case-studies/${c.slug}`,
+        },
+      },
+    })),
+  );
+
   return [
     ...staticEntries,
     ...guideEntries,
     ...blogEntries,
     ...glossaryEntries,
     ...locationEntries,
+    ...caseStudyEntries,
   ];
 }
