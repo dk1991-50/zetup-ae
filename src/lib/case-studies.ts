@@ -156,6 +156,133 @@ export const CASE_STUDIES: CaseStudyEntry[] = [
     servicesUsed: ["emiratisation", "pro-services"],
   },
   {
+    slug: "modernising-pro-for-family-business",
+    industry: { en: "Trading & wholesale", ar: "التجارة والجملة" },
+    companyDescriptor: {
+      en: "Family-owned trading group · 110 employees · Deira",
+      ar: "مجموعة تجارة عائلية · 110 موظف · ديرة",
+    },
+    date: "2025-09-12",
+    title: {
+      en: "Bringing modern PRO to a 30-year-old family business",
+      ar: "تحديث PRO لشركة عائلية عمرها 30 سنة",
+    },
+    pullQuote: {
+      en: "Our family business has been in Dubai for three generations. ZETUP PRO is the first PRO partner that understands our culture and gives us a written invoice we can audit. Long overdue.",
+      ar: "أعمال عائلتنا في دبي منذ ثلاثة أجيال. زيتب برو هي أول شريك PRO يفهم ثقافتنا ويعطينا فاتورة مكتوبة قابلة للتدقيق. كان يجب أن يحدث منذ زمن.",
+    },
+    summary: {
+      en: "A 30-year-old Dubai trading group with 110 employees had used the same PRO 'fixer' for two decades — based on personal trust and cash invoices. As the business modernised (corporate banking, audit, succession), they needed a PRO partner with proper invoicing and digital records. ZETUP PRO took over without disrupting the relationship-based culture.",
+      ar: "مجموعة تجارة في دبي عمرها 30 عامًا بـ 110 موظفًا استخدمت نفس 'مُيسّر' PRO لمدة عقدين — على أساس الثقة الشخصية وفواتير نقدية. مع تحديث الأعمال (مصرفية الشركات، التدقيق، الخلافة)، احتاجوا إلى شريك PRO بفواتير مناسبة وسجلات رقمية. تولت زيتب برو دون تعطيل ثقافة العلاقات.",
+    },
+    challenge: {
+      en: [
+        "The previous PRO operated entirely on personal trust — no formal invoices, no digital records, payments in cash. The arrangement had worked for 20 years but failed every test the new generation of management put it through (audit, corporate banking compliance, succession planning).",
+        "AED 280,000+ in PRO transactions over the previous 24 months had no documented breakdown between government fees and service fees. The CFO couldn't reconcile to the books, and external auditors flagged this for two consecutive years.",
+        "Switching had political complexity: the previous PRO was a trusted family contact going back two generations. Cutting ties cleanly without burning the relationship was as important as the operational improvement.",
+      ],
+      ar: [
+        "كان مزود PRO السابق يعمل بالكامل على الثقة الشخصية — لا فواتير رسمية، لا سجلات رقمية، دفعات نقدية. الترتيب نجح لمدة 20 عامًا لكنه فشل في كل اختبار وضعه الجيل الجديد من الإدارة (التدقيق، الامتثال المصرفي، تخطيط الخلافة).",
+        "تجاوزت معاملات PRO 280,000 درهم خلال 24 شهرًا السابقة بدون تفصيل موثق بين الرسوم الحكومية ورسوم الخدمات. لم يستطع المدير المالي التوفيق مع الدفاتر، والمدققون الخارجيون أبلغوا عن هذا لعامين متتاليين.",
+        "كان للتبديل تعقيد سياسي: مزود PRO السابق كان جهة اتصال عائلية موثوقة منذ جيلين. قطع العلاقات بنظافة دون حرق العلاقة كان مهمًا بقدر التحسن التشغيلي.",
+      ],
+    },
+    solution: {
+      en: [
+        "Sequenced 90-day handover with full transparency to the previous PRO — written notice, formal acknowledgement of past service, and inclusion in any final paperwork that needed his signature.",
+        "Audit-grade documentation from day one: every government fee itemised at actual cost with attached official receipts, every service fee mapped to a specific transaction, monthly compliance summary delivered as a PDF the CFO can hand directly to auditors.",
+        "Cultural sensitivity through bilingual coordinators (Arabic + English + Urdu) so the older generation of family management could continue working in their preferred language while younger management got the digital tools they wanted.",
+      ],
+      ar: [
+        "تسليم متسلسل لمدة 90 يومًا بشفافية كاملة لمزود PRO السابق — إشعار مكتوب، تقدير رسمي للخدمة الماضية، وإدراجه في أي أوراق نهائية احتاجت توقيعه.",
+        "توثيق بمستوى التدقيق من اليوم الأول: كل رسوم حكومية مفصلة بالتكلفة الفعلية مع إيصالات رسمية مرفقة، كل رسم خدمة مرتبط بمعاملة محددة، ملخص امتثال شهري يُسلم كـ PDF يمكن للمدير المالي تسليمه مباشرة للمدققين.",
+        "حساسية ثقافية من خلال منسقين ثنائيي اللغة (عربي + إنجليزي + أردو) حتى يستطيع الجيل الأكبر من إدارة العائلة الاستمرار في العمل بلغتهم المفضلة بينما تحصل الإدارة الأصغر على الأدوات الرقمية التي يريدونها.",
+      ],
+    },
+    results: {
+      en: [
+        { label: "Days to clean handover", value: "90" },
+        { label: "Audit findings cleared (Year 1)", value: "100%" },
+        { label: "Documented PRO fee breakdown", value: "Full" },
+        { label: "Family relationship preserved", value: "Yes" },
+      ],
+      ar: [
+        { label: "أيام التسليم النظيف", value: "90" },
+        { label: "نتائج التدقيق التي تم تسويتها", value: "100%" },
+        { label: "تفصيل رسوم PRO الموثق", value: "كامل" },
+        { label: "العلاقة العائلية محفوظة", value: "نعم" },
+      ],
+    },
+    servicesUsed: ["pro-services", "trade-license-renewal", "visa-services"],
+  },
+  {
+    slug: "european-tech-startup-uae-expansion",
+    industry: { en: "SaaS / Tech", ar: "البرمجيات / التقنية" },
+    companyDescriptor: {
+      en: "European SaaS startup · 18 employees · expanding to Dubai mainland",
+      ar: "شركة SaaS أوروبية ناشئة · 18 موظفًا · توسع إلى دبي البر الرئيسي",
+    },
+    date: "2025-12-03",
+    title: {
+      en: "From Berlin to Business Bay — first UAE entity in 5 weeks",
+      ar: "من برلين إلى الخليج التجاري — أول كيان إماراتي في 5 أسابيع",
+    },
+    pullQuote: {
+      en: "We came in expecting Dubai bureaucracy to be a black box. ZETUP PRO walked us through everything in plain English, gave us a Notion-ready timeline, and our trade licence was in our hands in under 5 weeks.",
+      ar: "جئنا نتوقع أن تكون البيروقراطية في دبي صندوقًا أسود. ساعدتنا زيتب برو في كل شيء بالإنجليزية الواضحة، قدمت لنا جدولًا زمنيًا جاهزًا لـ Notion، وكانت رخصتنا التجارية في أيدينا في أقل من 5 أسابيع.",
+    },
+    summary: {
+      en: "A Berlin-headquartered SaaS startup planned a Dubai mainland subsidiary as their first UAE office. They needed a partner who could explain the system to non-Arabic speakers, work async with their European product team, and get a trade licence + first 3 visas issued in their MVP timeline. ZETUP PRO delivered in 5 weeks.",
+      ar: "شركة SaaS ناشئة مقرها برلين خططت لشركة فرعية في دبي البر الرئيسي كأول مكتب لها في الإمارات. احتاجوا إلى شريك يستطيع شرح النظام لغير الناطقين بالعربية، العمل بشكل غير متزامن مع فريق منتجاتهم الأوروبي، والحصول على رخصة تجارية + أول 3 تأشيرات في الجدول الزمني لـ MVP. سلمت زيتب برو في 5 أسابيع.",
+    },
+    challenge: {
+      en: [
+        "The startup's European founders had no UAE business experience and the team was scattered across Berlin, Lisbon, and Dubai. They needed a PRO partner that worked async, communicated in English (everything in writing), and could be relied on without weekly calls.",
+        "Their fundraising calendar required a UAE entity for invoicing 2 enterprise customers in the GCC by quarter-end. Missing that deadline would have meant pushing those contracts to Q1 — a material revenue hit.",
+        "They wanted to open a corporate bank account on the same accelerated timeline. UAE banking due-diligence is famously slow (4-8 weeks), and many companies time it last. They wanted it parallelised.",
+      ],
+      ar: [
+        "لم يكن لدى المؤسسين الأوروبيين أي خبرة في الأعمال الإماراتية، وكان الفريق متناثرًا عبر برلين ولشبونة ودبي. احتاجوا إلى شريك PRO يعمل بشكل غير متزامن، ويتواصل بالإنجليزية (كل شيء كتابيًا)، ويمكن الاعتماد عليه دون مكالمات أسبوعية.",
+        "تطلب جدول جمع التبرعات وجود كيان إماراتي للفوترة لـ 2 من عملاء المؤسسات في دول مجلس التعاون بنهاية الربع. تفويت ذلك الموعد كان سيعني دفع تلك العقود إلى الربع الأول — ضربة إيرادات كبيرة.",
+        "أرادوا فتح حساب بنكي للشركة في نفس الجدول الزمني المتسارع. العناية الواجبة المصرفية الإماراتية بطيئة بشكل مشهور (4-8 أسابيع)، وكثير من الشركات تجدول هذا في النهاية.",
+      ],
+    },
+    solution: {
+      en: [
+        "Async-first communication: shared Notion workspace with every step, every government fee, every required document. Daily Slack-style updates. Founder calls limited to 30-minute decision points only.",
+        "Parallel-track execution: trade-name reservation, MOA drafting, and bank-introduction calls all initiated in Week 1 instead of sequentially. Bank due-diligence pack prepared simultaneously with DET application.",
+        "European-friendly documentation: all paperwork translated, certified, and apostilled in advance using their home-country notaries — saved 2 weeks of round-tripping documents.",
+        "Dedicated bilingual coordinator handled every government touchpoint in person while the founders stayed remote. Trade licence in hand by Week 4; first 3 visas processed Week 5; bank account opened Week 7.",
+      ],
+      ar: [
+        "تواصل غير متزامن: مساحة عمل Notion مشتركة مع كل خطوة، كل رسوم حكومية، كل وثيقة مطلوبة. تحديثات يومية بنمط Slack. مكالمات المؤسسين محدودة بنقاط القرار 30 دقيقة فقط.",
+        "تنفيذ بمسارات متوازية: حجز الاسم التجاري، صياغة العقد، ومكالمات تعريف البنوك جميعها بدأت في الأسبوع الأول بدلًا من التسلسل.",
+        "توثيق صديق للأوروبيين: كل الأوراق مترجمة ومصادقة ومُصدقة مسبقًا باستخدام كتاب العدل في بلدهم الأصلي — وفر أسبوعين من إعادة تدوير الوثائق.",
+        "منسق ثنائي اللغة مخصص تولى كل معاملة حكومية شخصيًا بينما بقي المؤسسون عن بُعد. الرخصة التجارية في اليد بحلول الأسبوع 4؛ أول 3 تأشيرات في الأسبوع 5؛ الحساب البنكي مفتوح في الأسبوع 7.",
+      ],
+    },
+    results: {
+      en: [
+        { label: "Days from kickoff to trade licence", value: "30" },
+        { label: "Days to first paid invoice from UAE entity", value: "42" },
+        { label: "GCC enterprise contracts saved", value: "2" },
+        { label: "Async-first delivery preserved", value: "100%" },
+      ],
+      ar: [
+        { label: "أيام من البدء إلى الرخصة التجارية", value: "30" },
+        { label: "أيام إلى أول فاتورة مدفوعة من الكيان الإماراتي", value: "42" },
+        { label: "عقود مؤسسات الخليج المحفوظة", value: "2" },
+        { label: "تسليم بمنهج غير متزامن أولًا", value: "100%" },
+      ],
+    },
+    servicesUsed: [
+      "company-formation",
+      "pro-services",
+      "visa-services",
+      "document-clearing",
+    ],
+  },
+  {
     slug: "transparent-pricing-for-growing-consultancy",
     industry: { en: "Consultancy", ar: "الاستشارات" },
     companyDescriptor: {
