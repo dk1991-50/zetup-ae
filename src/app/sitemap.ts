@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allPosts } from "@/../.content-collections/generated";
 import { GLOSSARY } from "@/lib/glossary";
+import { LOCATIONS } from "@/lib/locations";
 
 const BASE_URL = "https://zetup.ae";
 
@@ -24,6 +25,7 @@ const STATIC_PAGE_DATES: Record<string, string> = {
   "/tools/government-fees": "2026-04-26",
   "/compare": "2026-04-26",
   "/glossary": "2026-04-26",
+  "/locations": "2026-04-26",
 };
 
 const SERVICE_PAGE_DATES: Record<string, string> = {
@@ -186,10 +188,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  // Location entries — one per location × 2 locales
+  const locationEntries: MetadataRoute.Sitemap = LOCATIONS.flatMap((loc) =>
+    locales.map((locale) => ({
+      url: `${BASE_URL}/${locale}/locations/${loc.slug}`,
+      lastModified: dateOrFallback("2026-04-26"),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/en/locations/${loc.slug}`,
+          ar: `${BASE_URL}/ar/locations/${loc.slug}`,
+        },
+      },
+    })),
+  );
+
   return [
     ...staticEntries,
     ...guideEntries,
     ...blogEntries,
     ...glossaryEntries,
+    ...locationEntries,
   ];
 }
