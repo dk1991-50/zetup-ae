@@ -376,6 +376,16 @@ export default function HomePage() {
             {t("sections.testimonialsTitle")}
           </h2>
           <TestimonialsCarousel testimonials={testimonials} />
+          <div className="mt-12 text-center">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-sage-700 hover:text-sage-800 font-display font-semibold"
+            >
+              {locale === "ar"
+                ? "اقرأ قصص العملاء الكاملة →"
+                : "Read full client case studies →"}
+            </Link>
+          </div>
         </div>
       </section>
 
